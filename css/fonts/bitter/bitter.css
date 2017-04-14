@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'bitterregular';
+    src: url('bitter-regular.eot');
+    src: url('bitter-regular.eot?#iefix') format('embedded-opentype'),
+         url('bitter-regular.woff') format('woff'),
+         url('bitter-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bitterbold';
+    src: url('bitter-bold.eot');
+    src: url('bitter-bold.eot?#iefix') format('embedded-opentype'),
+         url('bitter-bold.woff') format('woff'),
+         url('bitter-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bitteritalic';
+    src: url('bitter-italic.eot');
+    src: url('bitter-italic.eot?#iefix') format('embedded-opentype'),
+         url('bitter-italic.woff') format('woff'),
+         url('bitter-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bitterbold_italic';
+    src: url('bitter-bolditalic.eot');
+    src: url('bitter-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('bitter-bolditalic.woff') format('woff'),
+         url('bitter-bolditalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

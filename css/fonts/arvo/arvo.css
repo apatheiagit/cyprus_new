@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'arvoregularregular';
+    src: url('arvo-regular.eot');
+    src: url('arvo-regular.eot?#iefix') format('embedded-opentype'),
+         url('arvo-regular.woff') format('woff'),
+         url('arvo-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'arvoboldbold';
+    src: url('arvo-bold.eot');
+    src: url('arvo-bold.eot?#iefix') format('embedded-opentype'),
+         url('arvo-bold.woff') format('woff'),
+         url('arvo-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'arvoitalicitalic';
+    src: url('arvo-italic.eot');
+    src: url('arvo-italic.eot?#iefix') format('embedded-opentype'),
+         url('arvo-italic.woff') format('woff'),
+         url('arvo-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'arvobolditalicbold_italic';
+    src: url('arvo-bolditalic.eot');
+    src: url('arvo-bolditalic.eot?#iefix') format('embedded-opentype'),
+         url('arvo-bolditalic.woff') format('woff'),
+         url('arvo-bolditalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
