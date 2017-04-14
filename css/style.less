@@ -1,9 +1,11 @@
+@import url('fonts.css');
 @basic-font: 16px;
 @font-family: 'Open Sans', sans-serif;
 @special-font: 'Bitter', serif;
 @text-color: #111111;
 @super-light-text: #ccc;
 @light-text: #969696;
+@middle-text: #4a4a4a;
 @dark-text: #707070;
 @grey-text: #363636;
 @link: #0aaf5f;
@@ -532,6 +534,13 @@ a:focus {  color: inherit; text-decoration: none;}
 		padding-left: 0;
 		padding-right: 0;
 		width: 100%;
+	}
+}
+.wide-container{
+	@media (min-width: 1230px){
+	  padding-left: 30px;
+	  padding-right: 30px;
+	  width: 1200px;
 	}
 }
 .somit-footer .container{
@@ -1256,20 +1265,28 @@ a:focus {  color: inherit; text-decoration: none;}
 		}		
 	}
 	&--recipe{
-		& .article-text{
-			padding: 5px;
-			&:hover{
-				background-color: @light-grey;
-			}
+		background-color: white;
+		margin-bottom: 30px;
+		height: 485px;
+		position: relative;
+		& .article-stat{
+			background-color: white;
+			width: calc(~"100% - 20px");
+		}
+		& .article-text{		
+			padding: 10px 25px 20px 20px;			
+		}
+		& .article-photo{
+			text-align: center;
 		}
 		& .article-type{
 			padding-top: 6px;
 		}
 		& .article-title{
 			font-size: 22px;
-			line-height: 1.2;
-			height: 70px;
-			margin-top: 2px;
+			line-height: 1.33;
+			margin-top: 8px;
+			margin-bottom: 10px;
 			& .subtitle{
 				color: @text-bold;
 				font-size: 17px;
@@ -1278,10 +1295,14 @@ a:focus {  color: inherit; text-decoration: none;}
 		& .article-descr{
 			font-size: 18px;
 			line-height: 1.2;
-			height: 66px;
 		}
 		& .article-category{
-			height: 14px;
+			letter-spacing: 2.6px;
+		}
+		& .article-stat{
+			position: absolute;
+			left: 20px;
+			bottom: 20px;
 		}
 	}
 	&--top{
@@ -1448,6 +1469,42 @@ a:focus {  color: inherit; text-decoration: none;}
 		}
 	}
 }
+.eye-solid.ikon{
+  background-color: #d8d8d8;
+  border-radius: 50%;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  &:before, &:after{
+  	content: '';
+  	position: absolute;
+  }
+  &:before {    
+    color: #FFF;    
+    left: 4px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 95% 5%;
+    border: solid 1px currentColor;
+    background-color: currentColor;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: content-box;*/
+  }
+  &:after {    
+    left: 7px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    color: #d8d8d8;
+    background-color: currentColor;
+  }
+}
 .article-contacts{
 	font-size: 14px;
 	line-height: 1.2;
@@ -1502,9 +1559,22 @@ a:focus {  color: inherit; text-decoration: none;}
 		}
 	}
 } 
+
 .article-stat{
 	overflow: hidden;
 	margin: 10px 0 0 0;
+	&.article-stat--aprel-style{
+		& .stat{
+			color: #9b9b9b;
+			& .ikon{
+				vertical-align: middle;
+			}
+			& .count{
+				margin-left: 6px;
+				vertical-align: middle;
+			}
+		}
+	}
 	& .stat{
 		color: @grey-text;
 		//float: left;
@@ -2486,6 +2556,49 @@ html.js fieldset.collapsed{
 .pager{
 	padding-bottom: 30px;
 }
+.view-display-id-recipes{
+	& .pager-load-more{
+		border: none;		
+		margin-bottom: 30px;
+		padding: 10px;
+		position: relative;
+		&:hover{
+			background: none;
+		}
+		&:before{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			background-color: @text-color;
+			left: 0;
+			top: 50%;
+			z-index: 10;
+		}
+		& li{
+			width: auto;
+			display: inline-block;
+		}
+		& a{
+			border: 1px solid @text-color;
+			border-radius: 3px;
+			background-color: @grey-fon;
+			color: @text-color;
+			display: inline-block;
+			letter-spacing: 3.8px;
+			font-size: 18px;
+			text-transform: uppercase;
+			transition: all 0.4s ease-in;
+			padding: 18px 44px;
+			position: relative;
+			z-index: 100;
+			&:hover{
+				text-decoration: none;
+				background: lighten(@grey-fon, 20%);
+			}
+		}
+	}
+}
 .pager-load-more{
 	border: 2px solid @grey-fon;
 	font-size: 14px;
@@ -3211,16 +3324,28 @@ html.js fieldset.collapsed{
 	}
 }
 .recipe-filter{
+	border-top: solid 2px #d8d8d8;
+	border-bottom: solid 2px #d8d8d8;
 	overflow: hidden;
-	padding-left: 40px;
-	@media @mobile_tablet{
-		padding-left: 0px;
+	margin-top: -2px;
+	padding: 10px 0;
+	margin-bottom: 30px;
+	& .title{
+		float: left;
+		background-color: #eaeaea;
+		padding: 4px 10px;
+		border-radius: 2px;
+		font-size: 12px;
+		font-weight: bold;
+		margin-right: 10px;
+		text-transform: uppercase;
+		vertical-align: middle;
 	}
 	& .item{
-		color: @light-text;
+		color: @middle-text;
 		cursor: pointer;
 		float: left;
-		font-size: 16px;
+		font-size: 12px;
 		margin-right: 10px;
 		text-transform: uppercase;
 		vertical-align: middle;
@@ -3229,31 +3354,21 @@ html.js fieldset.collapsed{
 		}
 		&.selected{
 			& .text{
-				color: @white;
-				background-color: #878787;
+				font-weight: bold;
 			}
 		}
 		&:hover{
 			& .text{
-				color: @white;
-				background-color: lighten(#878787, 20%);
+				color: darken(@middle-text, 40%);
 			}
 		}
 	}
-	& .icon-recipe{
-		float: left;
-		position: relative;
-    z-index: 11;
-	}
-	& .text{
-		border-radius: 2px;
+	& .text{		
 		display: inline-block;
-		padding: 4px 9px 4px 12px;
-		margin-top: 5px;
-    margin-left: -9px;
+		padding: 4px 9px;		
     position: relative;
     z-index: 10;
-    transition: background 0.4s linear;
+    //transition: all 0.4s linear;
 	}
 }
 .view-display-id-pop_places{
@@ -3720,78 +3835,7 @@ img.monochrome {
 #edit-field-when-value-value-wrapper{
   display: none;
 }
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: url("fonts/osans/opensans-light.eot");
-  src: url("fonts/osans/opensans-light.eot?#iefix")format("embedded-opentype"),
-  url("fonts/osans/opensans-light.woff") format("woff"),
-  url("fonts/osans/opensans-light.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/osans/opensans-regular.eot");
-  src: url("fonts/osans/opensans-regular.eot?#iefix")format("embedded-opentype"),
-  url("fonts/osans/opensans-regular.woff") format("woff"),
-  url("fonts/osans/opensans-regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: url("fonts/osans/opensans-semibold.eot");
-  src: url("fonts/osans/opensans-semibold.eot?#iefix")format("embedded-opentype"),
-  url("fonts/osans/opensans-semibold.woff") format("woff"),
-  url("fonts/osans/opensans-semibold.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: italic;
-  font-weight: 400;
-  src: url("fonts/osans/opensans-italic.eot");
-  src: url("fonts/osans/opensans-italic.eot?#iefix")format("embedded-opentype"),
-  url("fonts/osans/opensans-italic.woff") format("woff"),
-  url("fonts/osans/opensans-italic.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 200;
-  src: url("fonts/osans/open_sans_condensed_light.eot");
-  src: url("fonts/osans/open_sans_condensed_light.eot?#iefix")format("embedded-opentype"),
-  url("fonts/osans/open_sans_condensed_light.woff") format("woff"),
-  url("fonts/osans/open_sans_condensed_light.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Arvo';
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/arvo/arvo-regular.eot");
-  src: url("fonts/arvo/arvo-regular.eot?#iefix")format("embedded-opentype"),
-  url("fonts/arvo/arvo-regular.woff") format("woff"),
-  url("fonts/arvo/arvo-regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Bitter';
-  font-style: normal;
-  font-weight: 400;
-  src: url("fonts/bitter/bitter-regular/BitterRegular.eot");
-  src: url("fonts/bitter/bitter-regular/BitterRegular.eot?#iefix")format("embedded-opentype"),
-  url("fonts/bitter/bitter-regular/BitterRegular.woff") format("woff"),
-  url("fonts/bitter/bitter-regular/BitterRegular.ttf") format("truetype");
-}
-@font-face {
-  font-family: 'Bitter';
-  font-style: italic;
-  font-weight: 400;
-  src: url("fonts/bitter/bitter-italic/BitterItalic.eot");
-  src: url("fonts/bitter/bitter-italic/BitterItalic.eot?#iefix")format("embedded-opentype"),
-  url("fonts/bitter/bitter-italic/BitterItalic.woff") format("woff"),
-  url("fonts/bitter/bitter-italic/BitterItalic.ttf") format("truetype");
-}
+
 & .wrap-toggle-btn{
 	background-color: white;
 	border-radius: 4px;

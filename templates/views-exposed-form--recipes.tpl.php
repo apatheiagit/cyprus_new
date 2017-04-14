@@ -20,37 +20,29 @@
  */
 ?>
 
-<div class="main-filter">
- <div class="recipe-filter">
+<div class="recipe-filter">
+    <div class="title"><?php print t("recipes");?></div>
     <div class="item" value="125">
-     <span class="icon-recipe icon-recipe01"></span>
      <span class="text"><?php print t("soups");?></span>
     </div>
     <div class="item" value="126">
-     <span class="icon-recipe icon-recipe02"></span>
      <span class="text"><?php print t("meat dishes");?></span>
     </div>
     <div class="item" value="127">
-     <span class="icon-recipe icon-recipe03"></span>
      <span class="text"><?php print t("seafood");?></span>
     </div>
     <div class="item" value="128">
-     <span class="icon-recipe icon-recipe04"></span>
      <span class="text"><?php print t("snacks");?></span>
     </div>
     <div class="item" value="129">
-     <span class="icon-recipe icon-recipe05"></span>
      <span class="text"><?php print t("salads");?></span>
     </div>
     <div class="item" value="130">
-     <span class="icon-recipe icon-recipe06"></span>
      <span class="text"><?php print t("desserts");?></span>
     </div>
     <div class="item" value="131">
-     <span class="icon-recipe icon-recipe07"></span>
      <span class="text"><?php print t("drinks");?></span>
-   </div>
- </div>
+   </div> 
  <script type="text/javascript">
 (function($) {
   $(function() {  
