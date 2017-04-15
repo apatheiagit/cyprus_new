@@ -1,5 +1,6 @@
 <?php foreach ($fields as $id => $field): 
     if($id == 'field_main_img') { $image = $field->content; }
+    if($id == 'field_advt') { $advt = $field->content; }
     if($id == 'title') { $title = $field->content; }
     if($id == 'field_subtitle') { $subtitle = $field->content; }
     if($id == 'body') { $body = $field->content; }
@@ -7,7 +8,7 @@
     if($id == 'totalcount') { $totalcount = $field->content; }
  endforeach; ?>
 <div class="col-sm-6 col-md-3 col-article">
-	<div class="article-item article-item--recipe">						
+	<div class="article-item article-item--recipe  <?php if($advt == 1) print "article-item--fon";?>">						
 		<div class="article-photo"><?php print $image;?></div>
 		<div class="article-text">			
 			<div class="article-category"><?php print $type;?></div>
