@@ -7,16 +7,15 @@
     if($id == 'field_category_recipe') { $type = $field->content; }
     if($id == 'totalcount') { $totalcount = $field->content; }
  endforeach; ?>
-<div class="col-sm-6 col-md-3 col-article">
-	<div class="article-item article-item--recipe  <?php if($advt == 1) print "article-item--fon";?>">						
-		<div class="article-photo"><?php print $image;?></div>
-		<div class="article-text">			
-			<div class="article-category"><?php print $type;?></div>
-			<div class="article-title"><?php print str_replace("/en/en", "/en", $title)?></div>			
-			<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>		
-		</div>
-		<div class="article-stat article-stat--aprel-style">
-			<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
-		</div>
+
+<div class="article-item article-item--recipe  <?php if($advt == 1) print "article-item--fon";?>">						
+	<div class="article-photo"><?php print $image;?></div>
+	<div class="article-text">			
+		<div class="article-category"><?php print $type;?></div>
+		<div class="article-title"><?php print str_replace("/en/en", "/en", $title)?></div>			
+		<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>		
+	</div>
+	<div class="article-stat article-stat--aprel-style">
+		<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
 	</div>
 </div>

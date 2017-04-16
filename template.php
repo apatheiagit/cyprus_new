@@ -182,6 +182,11 @@ function cyprus_new_form_alter(&$form, &$form_state, $form_id) {
       }      
     }  
   }
+  if ($form['#id'] === 'simplenews-block-form-61') {      
+
+      $form['submit']['#prefix'] = '<div class="form-action">';
+      $form['submit']['#suffix'] = '</div>';
+  }
 }
 function cyprus_new_status_messages($variables) {
   $display = $variables['display'];

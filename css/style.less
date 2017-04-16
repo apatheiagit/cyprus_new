@@ -1337,7 +1337,7 @@ a:focus {  color: inherit; text-decoration: none;}
 			width: calc(~"100% - 20px");
 		}
 		& .article-text{		
-			padding: 10px 25px 20px 20px;			
+			padding: 10px 20px 20px 20px;			
 		}
 		& .article-photo{
 			text-align: center;
@@ -1352,7 +1352,7 @@ a:focus {  color: inherit; text-decoration: none;}
 			font-size: 22px;
 			line-height: 1.33;
 			margin-top: 8px;
-			margin-bottom: 10px;
+			margin-bottom: 8px;
 			& .subtitle{
 				color: @text-bold;
 				font-size: 17px;
@@ -1360,7 +1360,7 @@ a:focus {  color: inherit; text-decoration: none;}
 		}
 		& .article-descr{
 			font-size: 18px;
-			line-height: 1.2;
+			line-height: 1.3;
 		}
 		& .article-category{
 			letter-spacing: 2.6px;
@@ -4179,4 +4179,96 @@ img.monochrome {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+.subscribe-block{
+	margin-bottom: 30px;
+	border-top: 2px solid @new-grey;
+	border-bottom: 2px solid @new-grey;
+	padding: 30px 15px;
+	& .special-text{
+		font-family: @special-font;
+  	font-size: 24px;
+	}
+	& .form-item-mail{
+		display: inline-block;
+		& label{
+			display: none;
+		}
+		& input{
+			border: none;
+			width: 360px;
+		  height: 58px;
+		  border-radius: 52px;
+		  background-color: white;
+		  margin-right: 30px;
+		  padding: 0 26px;
+		  font-size: 18px;
+		  @media @mobile {
+		  	width: 200px;
+		  }
+		  &:focus{
+		  	outline-width: 0;
+		  }
+		}
+	}
+	& .form-action{
+		display: inline-block;
+		width: 262px;
+	  height: 58px;
+		border-radius: 52px;		
+	  background-image: linear-gradient(to bottom, #84bf41, #64ac55);
+	  position: relative;
+	  transition: all 0.5s ease-in;
+   	@media @mobile {
+	  	width: 140px;
+	  	&:before{
+	  		display: none;
+	  	}
+	  }
+	  &:hover{
+			background-image: linear-gradient(to bottom, lighten(#84bf41, 5%), lighten(#64ac55, 5%));
+	  }
+	  &:before{
+	  	content: "";
+	  	background: url(../img/subscribe.png) no-repeat center center;
+	  	background-size: contain;
+	  	height: 16px;
+	  	width: 24px;
+	  	position: absolute;
+	  	left: 52px;
+	  	top: 21px;
+	  }
+	  & input{
+			width: 100%;
+			height: 100%;
+			font-size: 18px;
+			background-color: transparent;
+			border: none;
+			padding-left: 48px;
+			&:focus{
+		  	outline-width: 0;
+		  }
+		  @media @mobile {
+		  	padding-left: 0px;
+		  }
+		}
+	}	  
+	& .col-simplenews-right{
+		text-align: right;
+		@media @medium{
+			text-align: center;
+		}
+		@media @mobile_tablet{
+			text-align: center;
+		}
+	}
+	& .col-simplenews-left{
+		text-align: left;
+		@media @medium{
+			text-align: center;
+		}
+		@media @mobile_tablet{
+			text-align: center;
+		}
+	}
 }
