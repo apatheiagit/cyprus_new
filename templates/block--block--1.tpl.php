@@ -1,12 +1,9 @@
 <?php $current_url = url(current_path(), array('absolute' => TRUE)); $current_title = drupal_get_title();?>
 <div class="wide-container wide-container--gray margin-bottom-30 container">	
 	<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> big-share-block">
-		<div class="row">
-			<div class="col-md-7">
+		<div class="text-center">
 				<div class="title">Делитесь историями, рассказывайте о нас друзьям</div>
-				<div class="text">Поделитесь интересными материалами о Кипре, его особенностях и увлекательных путешествиях.</div>
-			</div>
-			<div class="col-md-5">
+				<div class="text">Поделитесь интересными материалами о Кипре, его особенностях и увлекательных путешествиях.</div>			
 				<div class="share-links">					
 					<a href="http://www.facebook.com/sharer.php?src=sp&amp;u=<?php print urlencode($current_url);?>" class="fa fa-facebook" target="_blank">
 						<span class="visuallyhidden">Facebook</span></a>		
