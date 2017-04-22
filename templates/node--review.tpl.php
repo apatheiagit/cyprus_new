@@ -295,10 +295,14 @@
     case 'text':
       /* Популярные места */
       print views_embed_view('cyprus', 'top_places');
+      /* События из Афиши */
+      print views_embed_view('cyprus', 'top_events');
       break;
     case 'photo':
       /* События из Афиши */
       print views_embed_view('cyprus', 'top_events');
+       /* Популярные места */
+      print views_embed_view('cyprus', 'top_places');
       break;
     case 'recipe':
       /* События из Афиши */

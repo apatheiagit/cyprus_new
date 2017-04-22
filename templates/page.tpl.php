@@ -5,6 +5,7 @@
 <div class="somit somit-header <?php print $page_type; ?>">
   <div class="upper-header">
     <div class="container">
+    <div class="inside-container">  
       <div class="row">
         <div class="col-sm-5 col-weather">
           <div class="weather-block">
@@ -52,6 +53,7 @@
 	          ?>        	
         </div>
       </div>
+    </div>
     </div>
   </div>
   <div class="topMenu">

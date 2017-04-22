@@ -208,7 +208,7 @@
   <?php endif;?>  
   <?php /* Фотографии этого места */ ?>
     <?php if (isset($content['field_photos']['#items'])):?>
-    <div class="somit somit-gallery somit-gallery--small">
+    <div class="somit somit-gallery "><!--somit-gallery--small-->
         <div class="photo-carousel">
           <?php foreach ($content['field_photos']['#items'] as $photo):?>
             <div class="photo-item">
@@ -229,7 +229,7 @@
     <?php endif; ?>
     <?php /* Фотографии из привязанного фотообзора */ ?>
     <?php if (isset($content['field_photo_review']['#items']['0'])):?>
-    <div class="somit somit-gallery somit-gallery--small">
+    <div class="somit somit-gallery "><!--somit-gallery--small-->
         <div class="photo-carousel">
           <?php $photo_review = $content['field_photo_review']['#items']['0']['entity'];?>
           <?php foreach ($photo_review->field_photos['und'] as $photo):?>
