@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="wide-container container <?php print $classes; ?>">
+<div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
@@ -56,9 +56,13 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content">
-      <?php print $rows; ?>
+
+    <div class="view-content wide-container container">
+      <div class="row">
+        <?php print $rows; ?>
+      </div>
     </div>
+
   <?php elseif ($empty): ?>
     <div class="view-empty">
       <?php print $empty; ?>
@@ -66,7 +70,9 @@
   <?php endif; ?>
 
   <?php if ($pager): ?>
-    <?php print $pager; ?>
+    <div class="wide-container container">
+      <?php print $pager; ?>
+    </div>
   <?php endif; ?>
 
   <?php if ($attachment_after): ?>
@@ -90,5 +96,4 @@
       <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
-
 </div><?php /* class view */ ?>

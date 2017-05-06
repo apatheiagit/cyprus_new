@@ -21,6 +21,8 @@
 ?>
 
 <div class="recipe-filter">
+  <div class="container">
+   <div class="inside-container">
     <div class="title"><?php print t("recipes");?></div>
     <div class="item" value="125">
      <span class="text"><?php print t("soups");?></span>
@@ -43,10 +45,17 @@
     <div class="item" value="131">
      <span class="text"><?php print t("drinks");?></span>
    </div> 
+  </div>
+</div>
  <script type="text/javascript">
 (function($) {
   $(function() {  
-      
+      Drupal.behaviors.betterExposedFilters = {
+       attach: function(context, settings) {   
+          $(document).ajaxComplete(function(event, jqXHR, settings) {            
+            $('#subscribe-simplenews').remove();
+          });
+      }}
       var selectedCat = $('#edit-category-recipe').val();
       $('.recipe-filter .item').each(function(){
         if($(this).attr('value') == selectedCat){
@@ -59,6 +68,9 @@
         var value = $(this).attr('value');
         $('#edit-category-recipe').val(value);
         $('#edit-submit-cyprus').click();
+      });
+      $('.recipe-filter .title').on('click', function(){
+      $('#edit-reset').click(); 
       });
 
    })
@@ -78,7 +90,7 @@
           <?php endif; ?>
           <?php print $widget->widget; ?> 
     <?php endforeach; ?>
-  </div>
+  
     <?php if (!empty($sort_by)): ?>
       <div class="views-exposed-widget views-widget-sort-by">
         <?php print $sort_by; ?>
@@ -109,5 +121,5 @@
         </div>
       </div>
     <?php endif; ?>
-
+  </div>
 </div>
