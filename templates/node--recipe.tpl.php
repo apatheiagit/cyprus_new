@@ -71,7 +71,10 @@
         <?php endif; ?>
         <div class="recipe-cooking">
           <h6 class="cuisine"><?php print t("Cooking method");?></h6>
-          <?php print $content['field_body']['#items'][0]['value']; ?>
+           <?php 
+            /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
+            $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $content['field_body']['#items'][0]['value']);
+            print $new_body; ?>
         </div>
       </div>
       <script type="text/javascript">(function() {

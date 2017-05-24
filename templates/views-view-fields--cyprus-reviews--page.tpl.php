@@ -67,11 +67,11 @@
 	<div class="article-title-descr">
 		<div class="article-title"><?php print str_replace("/en/en", "/en", $title)?></div>
 		<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>
-	</div>
-	<div class="article-stat">
-		<div class="stat stat-watch"><span class="icon icon-views"></span><span class="count"><?php print $totalcount;?></span></div>
-	</div>
+	</div>	
 </div>
+<div class="article-stat article-stat--aprel-style">
+		<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
+	</div>
 <?php else:?>
 <div class="<?php if(isset($rubric_type) && $type != "photo"):?>article-photo--rubric<?endif;?> article-review--<?php print $type;?> <?php if($type == 'lifehack'):?>article-item--lifehack<?php endif;?>">
 	<?php if(isset($rubric_type) && $type != "photo"):?>
@@ -83,7 +83,7 @@
 		<?php print $image;?>
 	</div>
 	<?php endif;?>
-	<div class="article-text <?php if(($special == 1) || ($type == 'lifehack')):?>text-center<?php endif;?>">
+	<div class="article-text <?php if(($type == 'lifehack')):?>text-center<?php endif;?>">
 		<?php if($special == 1):?>
 			<?php if(isset($specproekt_tid)):?>
 				<div class="article-type article-type--special"><a class="type-text" href="<?php print $prefix;?>/special/<?php print  $specproekt_tid;?>"><?php print $specproekt;?></a></div>
@@ -106,8 +106,8 @@
 				<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>
 			</div>
 		</div>
-			<div class="article-stat">
-				<div class="stat stat-watch"><span class="icon icon-views"></span><span class="count"><?php print $totalcount;?></span></div>
+			<div class="article-stat article-stat--aprel-style">
+				<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
 			</div>
 		
 	</div>

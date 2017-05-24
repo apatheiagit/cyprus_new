@@ -8,14 +8,14 @@
     if($id == 'totalcount') { $totalcount = $field->content; }
  endforeach; ?>
 
-<div class="article-item article-item--recipe  <?php if($advt == 1) print "article-item--fon";?>">						
-	<div class="article-photo"><?php print $image;?></div>
-	<div class="article-text">			
-		<div class="article-category"><?php print $type;?></div>
-		<div class="article-title"><?php print str_replace("/en/en", "/en", $title)?></div>			
-		<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>		
+<div class="media-block media-block--recipe  <?php if($advt == 1) print "media-block--fon";?>">						
+	<div class="photo"><?php print $image;?></div>
+	<div class="text">			
+		<div class="category"><?php print $type;?></div>
+		<div class="title"><?php print str_replace("/en/en", "/en", $title)?></div>			
+		<div class="descr"><?php print str_replace("/en/en", "/en", $body)?></div>		
 	</div>
-	<div class="article-stat article-stat--aprel-style">
-		<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
+	<div class="statistic">
+		<div class="metrika metrika-watch"><span class="ikon ikon-eye"></span><span class="count"><?php print $totalcount;?></span></div>
 	</div>
 </div>

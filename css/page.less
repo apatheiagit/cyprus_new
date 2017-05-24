@@ -1,0 +1,266 @@
+@import url('constants.less');
+
+.view-faq{
+	& .item-list>ul{
+		padding-left: 0px; 
+	}
+	& .item-list>ul>li{
+		list-style: none;
+	}
+	& .faq-question{
+		cursor: pointer;
+		font-family: @special-font;
+		font-size: 22px;
+    	line-height: 1.3;
+    	margin-bottom: 10px;
+    	&.open{
+    		color: @orange;
+    		& span{
+	    		border-bottom: 2px dashed @white;
+	    	}
+    	}
+    	& span{
+    		border-bottom: 2px dashed @grey-text;
+    	}
+	}
+	& .faq-answer{
+		display: none;
+		margin: 10px 0 20px;
+		& a{
+			color: @text-link;
+			text-decoration: underline;
+		}
+		& b, & strong{
+			color: @text-bold;
+		}
+		& p{
+			margin: 10px 0;
+		}
+
+		& ul{
+			margin-left: 20px;
+			& li{
+				list-style: disc;
+			}
+		}
+	}
+}
+.somit--not-found{
+	& .container{		
+		background-color: white;
+		min-height: 990px;
+		position: relative;
+		& .logo{
+			top: 5%;
+			left: 15px;
+			position: absolute;
+		}
+		& .picture-block{
+			background: url(../img/bg-404.png) no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: 15%;
+			left: 15px;
+			width: 70%;
+			height: 70%;
+			z-index: 0;
+		}
+		& .text-block{
+			position: absolute;
+			right: 0;
+			top: 5%;
+			z-index: 10;
+			@media @mobile{
+				top: 12%;
+			}
+			& .hello-text{
+				font-size: 30px;
+				font-weight: 300;
+				line-height: 1.2;
+				color: @light-text;
+				& span{
+					color: @lime;
+				}
+			}
+			& .menu-block{
+				border-top: 1px solid @grey;
+				border-bottom: 1px solid @grey;
+				margin-top: 40px;
+				overflow: hidden;
+				padding: 8px 0;
+				& ul{
+					font-size: 20px;						
+					text-transform: uppercase;
+					& li{
+						display: inline-block;
+						margin-right: 27px;	
+						padding: 0;
+						&.last-item{
+							margin-right: 0;
+						}
+					}
+					& a{					
+						color: @text-color;					
+						&:hover{
+							text-decoration: none;
+							color: @orange;
+						}
+					}
+					@media @mobile{
+						font-size: 17px;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+.node-page{
+	min-height: 600px;
+	padding: 0px 10px 30px;
+	& h1, & h2, & h3, & h4, & h5, & h6{
+		font-family: @special-font;
+	}
+	& h2{
+		font-size: 26px;
+		margin: 25px 0;
+	}
+	& h3{
+		font-size: 26px;
+		margin: 30px 0 5px 0;
+	}
+	& h4{
+		font-size: 20px;
+		margin: 5px 0 20px 0;
+	}
+	& ul{
+		margin-left: 40px;
+		margin-bottom: 10px;
+		& li{
+			margin: 5px 0;
+		}
+	}
+}
+#block-user-login{
+	background: @white;
+	border-radius: 5px;
+	color: @grey-text;
+	display: none;
+	position: fixed;
+	padding: 20px 40px;
+	top: 15%;
+	left: 50%;
+	margin-left: -220px;
+	text-align: center;
+	width: 440px;
+	z-index: 1000;
+	& .block-title{
+		color: @light-text;
+		font-size: 24px;
+		font-weight: 600;
+		margin:10px 0 20px;
+		text-transform: uppercase;
+	}
+	& .form-item{
+		margin: 10px 0 20px;		
+		& label{
+			display: block;
+			font-size: 14px;
+			font-weight: 400;
+			text-align: center;
+			text-transform: uppercase;
+			& .form-required{
+				display: none;
+			}
+		}
+		& input{
+			border: 1px solid @input-border;
+			border-radius: 3px;
+			display: block;
+			padding: 10px 20px;
+			width: 100%;
+		}
+	}
+	& .item-list{
+		display: none;
+	}
+	& form{
+		position: relative;
+		padding-bottom: 100px;
+	}
+	& .form-actions{
+		& input{
+			background: @lime;
+			color: @white;
+			width: 100%;
+			text-transform: uppercase;
+			padding: 10px 0;
+			font-size: 22px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+			display: inline-block;
+			text-align: center;
+			&:hover{
+				background: saturate(@lime, 20%);
+				text-decoration: none;
+				color: @white;			
+			}
+
+		}
+	}
+	& .form-type-ulogin-widget{
+		background: url(../img/bg-divider.png) no-repeat center top;
+		padding-top: 30px;
+		position: absolute;
+		bottom: 0px;
+		margin: 0;
+	}
+}
+#block-search-form{
+	background-color: transparent;
+	border-bottom: 2px solid @white;
+	display: none;
+	position: fixed;
+	top: 25%;
+	left: 50%;
+	margin-left: -300px;
+	width: 600px;
+	z-index: 1000;
+	& form{
+		padding-top: 60px;
+	}
+	& .form-item{
+		float: right;
+		margin: 0;
+		width: 560px;
+		& input{
+			background: transparent;
+			border: none;
+			color: @white;
+			font-size: 36px;
+			line-height: 36px;
+			height: 40px;
+			padding: 3px 0;
+			width: 100%;
+			&:focus{
+				outline: none;
+			}
+		}
+	}
+	& .form-actions{
+		width: 40px;
+		& input{
+			background-color: transparent;
+			background-image: url(../img/spritesheet.png);
+			background-position: -147px -130px;
+			border: none;
+			cursor: pointer;
+			height: 36px;
+			font-size: 0;
+			overflow: hidden;
+			width: 36px;
+			text-indent: -30px;
+		}
+	}
+}

@@ -1,0 +1,379 @@
+@import url('constants.less');
+@recipe-height: 480px;
+@review-height: 480px;
+
+.statistic{
+  & .count{
+    color: @light-text;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  & .ikon-eye{
+    background-color: @new-grey;
+    border-radius: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    vertical-align: middle;
+    &:before, &:after{
+    	content: '';
+    	position: absolute;
+    }
+    &:before {    
+      color: #FFF;    
+      left: 4px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 95% 5%;
+      border: solid 1px currentColor;
+      background-color: currentColor;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    &:after {    
+      left: 7px;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      color: @new-grey;
+      background-color: currentColor;
+    }
+  }
+}
+
+.media-block{
+  margin-bottom: 30px;
+  position: relative;
+  &:hover{
+    & .photo a:after{
+      opacity: 1;
+    }
+  }
+  & .photo{
+    text-align: center;
+    position: relative;
+    @media @mobile{
+      max-width: 350px;
+    }
+    & a{
+      display: block;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,.2);
+        pointer-events: none;
+        -webkit-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
+      }
+    }   
+  }
+  & .category{
+    color: @category-text;
+    font-size: 10px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+  }
+  & .title {
+    font-size: 24px;
+    font-family: @special-font;
+    line-height: 1.33;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+  & .descr {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  & .statistic{
+    position: absolute;    
+    z-index: 20;
+    overflow: hidden;
+  }
+}
+
+.media-block--recipe{
+  background-color: white;  
+  height: @recipe-height;  
+
+  & .text {
+    padding: 10px 20px 20px 20px;
+  }
+  & .statistic{   
+    left: 20px;
+    bottom: 20px;    
+  }
+}
+.media-block--fon{
+  color: white;
+  padding-top: 200px;
+  & .photo {
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    @media @mobile{
+      max-width: 617px;
+    }
+    & img{
+      max-width: none;
+      height: 100%;
+      transform: translateX(-30%);
+      @media @mobile{ 
+        transform: none;
+      }       
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 50%,rgba(0,0,0,.7));      
+      z-index: 10;
+    }   
+  }
+  & .text{
+    position: relative;
+    z-index: 10;
+  }
+  & .category{
+    color: white;
+  }
+  & .statistic{
+    & .count{
+      color: white;
+    }
+    & .ikon-eye{
+      background-color: white;
+      &:before{
+        color: #111;
+      }
+      &:after {
+        color: white;
+      }
+    }
+  }
+}
+.media-block--review{
+  height: @review-height;
+  & .category{
+    margin-top: 20px;
+  }
+}
+.media-block--text{
+  & .statistic{   
+    left: 0px;
+    bottom: 0px;    
+  }
+}
+.media-wrapper--big{
+  & .media-block--review{
+    color: white;
+    & .photo {
+      position: absolute!important;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 50%,rgba(0,0,0,.7));      
+        z-index: 10;
+      }   
+    }
+    & .text{
+      position: absolute;
+      bottom: 60px;
+      left: 20px;
+      z-index: 20;
+    }
+    & .descr{
+      max-width: 600px;
+    }
+    & .category{
+      color: white;
+    }
+    & .statistic{
+      bottom: 20px;
+      left: 20px;
+      & .count{
+        color: white;
+      }
+      & .ikon-eye{
+        background-color: white;
+        &:before{
+          color: #111;
+        }
+        &:after {
+          color: white;
+        }
+      }
+    }
+  }
+}
+.media-wrapper--normal{
+  & .media-block--lifehack{
+    background-image: url(../img/lifehack.png);
+    background-color: @soft-gray;
+    background-repeat: no-repeat;
+    background-position: center 85px;
+    text-align: center;
+    transition: all .5s ease-in;
+    &:hover{
+      background-color: lighten(@soft-gray, 3%);
+    }
+    & .photo{
+      max-height: 238px;
+      overflow: hidden;
+      & img{
+        visibility: hidden;
+      }
+      & a:after{
+        display: none;
+      }
+    }
+    & .text{
+      padding: 15px;
+    }
+    & .category{
+      margin-top: 0;
+      color: white;
+      display: inline-block;
+      margin-bottom: 4px;
+      background: @orange;
+      border-radius: 3px;
+      padding: 6px 24px;
+    }
+    & .statistic{
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      & .count{
+        color: @text-color;
+      }
+      & .ikon-eye{
+        background-color: @text-color;
+        &:before{
+          color: @soft-gray;
+        }
+        &:after {
+          color: @text-color;
+        }
+      }
+    }
+  }
+}
+.media-block--photo{
+  color: white;
+  text-align: center;
+  & .photo {
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    @media @mobile{
+      max-width: 617px;
+    }
+    & img{
+      max-width: none;
+      height: 100%;
+      transform: translateX(-30%);
+      @media @mobile{ 
+        transform: none;
+      }       
+    }
+    & a:after{
+      display: none;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 50%,rgba(0,0,0,.7));      
+      z-index: 10;
+    }   
+  }
+  & .text{
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    z-index: 20;
+    width: calc(~"100% - 40px");
+  }
+  & .category{
+    color: white;
+  }
+  & .statistic{
+    width: 100%;
+    bottom: 20px;
+    left: 0;
+    & .count{
+      color: white;
+    }
+    & .ikon-eye{
+      background-color: white;
+      &:before{
+        color: #111;
+      }
+      &:after {
+        color: white;
+      }
+    }
+  }
+  & .photo-icon{
+    display: block;
+    position: relative;
+    &:before{
+      content: "";
+      background-image: url(../img/bg-photoreview.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      height: 54px;
+      margin: 10px auto;
+      width: 54px;     
+    }
+  }
+  &.media-block--entertainment{
+    & .photo-icon:before{
+      background-color: @blue;
+    }
+  }
+  &.media-block--culture { 
+    & .photo-icon:before{
+      background-color: @orange;
+    }
+  }
+  &.media-block--cuisine { 
+    & .photo-icon:before{
+      background-color: @lime;
+    }
+  }
+}

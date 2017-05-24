@@ -12,6 +12,12 @@
     <div class="article-content node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix">
       <h1 class="main-title"><?php print $title; ?></h1>  
       <?php  print $content['body']['#items'][0]['value']; ?>
+      <?php if ($node->nid == 2444 || $node->nid == 2445):?>
+        <div class="subscribe-block">
+        <?php $block_simplenews = module_invoke('simplenews', 'block_view', 61);
+          print render($block_simplenews['content']);?>
+        </div>
+      <?php endif;?>
     </div>
   </div>
 </div>

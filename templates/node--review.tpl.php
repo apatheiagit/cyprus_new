@@ -217,7 +217,10 @@
             </div>
             <div class="recipe-cooking">
               <h6 class="green2"><?php print t("Cooking method");?></h6>
-              <?php print $item->field_body['und'][0]['value']; ?>
+               <?php 
+                /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
+                $new_body_cooking = str_replace('<p><img', '<p class="photo-intext"><img', $item->field_body['und'][0]['value']);
+                print  $new_body_cooking; ?>
             </div>
             <hr class="grey" />
           </div>
