@@ -10,8 +10,9 @@
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
+<div class="row">
 <?php foreach ($rows as $id => $row): ?>
-  <?php if (($id == 3)):?>
+  <?php if (($id == 0)):?>
 		<div class="col-sm-8 media-wrapper--big">
 			<?php print $row; ?>
 		</div>
@@ -21,3 +22,4 @@
 		</div>
 	<?php endif;?>
 <?php endforeach; ?>
+</div>

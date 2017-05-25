@@ -11,17 +11,13 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
-  <?php if (($id == 3) || ($id == 4)):?>
-		<div class="col-sm-6">
-			<div class="article-item article-item--typical article-item--into-photo">
-				<?php print $row; ?>
-			</div>
+  <?php if (($id == 3)):?>
+		<div class="col-sm-8 media-wrapper--big">
+			<?php print $row; ?>
 		</div>
 	<?php else:?>
-		<div class="col-sm-4">
-			<div class="article-item article-item--basic article-item--common">
-	    	<?php print $row; ?>
-	  </div>
-	</div>
+		<div class="col-sm-4 media-wrapper--normal">			
+	    <?php print $row; ?>
+		</div>
 	<?php endif;?>
 <?php endforeach; ?>

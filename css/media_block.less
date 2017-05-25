@@ -1,6 +1,8 @@
 @import url('constants.less');
 @recipe-height: 480px;
 @review-height: 480px;
+@top3reviews1-height: 590px;
+@top3reviews2-height: 280px;
 
 .statistic{
   & .count{
@@ -176,7 +178,7 @@
     margin-top: 20px;
   }
 }
-.media-block--text{
+.media-block--text, .media-block--blog{
   & .statistic{   
     left: 0px;
     bottom: 0px;    
@@ -212,6 +214,9 @@
     & .descr{
       max-width: 600px;
     }
+    & .title{
+      max-width: 600px;
+    }
     & .category{
       color: white;
     }
@@ -231,6 +236,17 @@
         }
       }
     }
+  }
+}
+.media-block--lifehack{
+  & .category{
+      margin-top: 0;
+      color: white;
+      display: inline-block;
+      margin-bottom: 4px;
+      background: @orange;
+      border-radius: 3px;
+      padding: 6px 24px;
   }
 }
 .media-wrapper--normal{
@@ -257,15 +273,7 @@
     & .text{
       padding: 15px;
     }
-    & .category{
-      margin-top: 0;
-      color: white;
-      display: inline-block;
-      margin-bottom: 4px;
-      background: @orange;
-      border-radius: 3px;
-      padding: 6px 24px;
-    }
+    
     & .statistic{
       bottom: 20px;
       left: 0;
@@ -374,6 +382,143 @@
   &.media-block--cuisine { 
     & .photo-icon:before{
       background-color: @lime;
+    }
+  }
+}
+.media-wrapper--normal{
+  & .media-block--rubric{
+    background-color: white;
+    text-align: center;
+    & .photo{
+      display: none;
+    }
+    & .rubric{
+      height: 280px;
+    }
+    & .text{
+      padding: 0 15px;
+    }
+    & .statistic{
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      & .count{
+        color: @text-color;
+      }
+      & .ikon-eye{
+        background-color: @text-color;
+        &:before{
+          color: @soft-gray;
+        }
+        &:after {
+          color: @text-color;
+        }
+      }
+    }
+  }
+}
+.canvas{
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 100%;
+  width: 100%;
+  &--bar {background-image: url(../img/special/bar.png)}
+  &--children{background-image: url(../img/special/children.png)}
+  &--food{background-image: url(../img/special/food.png)}
+  &--game{background-image: url(../img/special/game.png)}
+  &--leisure{background-image: url(../img/special/leisure.png)}
+  &--museum{background-image: url(../img/special/museum.png)}
+  &--pilgrim{background-image: url(../img/special/pilgrim.png)}
+  &--shopping{background-image: url(../img/special/shopping.png)}
+  &--sight{background-image: url(../img/special/sight.png)}
+  &--travel{background-image: url(../img/special/travel.png)}
+  
+  @media @tablet{
+    background-size: contain;
+  }
+  @media @mobile{
+    background-size: contain;
+  }
+  .article-item--plain &{
+    background-size: 150px 150px;
+    @media @tablet{
+      background-size: 140px 140px;
+    }
+    @media @mobile{
+      background-size: 120px 120px;
+    }
+  }
+}
+.media-block--top3review{
+  color: white;
+  & .photo {
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 50%,rgba(0,0,0,.7));      
+      z-index: 10;
+    }   
+  }
+  & .text{
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    z-index: 20;
+  }
+  & .descr{
+    max-width: 600px;
+  }
+  & .title{
+    max-width: 600px;
+  }
+  & .category{
+    color: white;
+  }
+  & .statistic{
+    bottom: 20px;
+    left: 20px;
+    & .count{
+      color: white;
+    }
+    & .ikon-eye{
+      background-color: white;
+      &:before{
+        color: #111;
+      }
+      &:after {
+        color: white;
+      }
+    }
+  }
+}
+.media-wrapper--big{
+  & .media-block--top3review{
+    height: @top3reviews1-height;  
+    & .title{
+      font-size: 45px;
+    }
+  }
+}
+.media-wrapper--normal{
+  & .media-block--top3review{
+    height: @top3reviews2-height;
+    & .title{
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+    & .descr{
+      display: none;
     }
   }
 }

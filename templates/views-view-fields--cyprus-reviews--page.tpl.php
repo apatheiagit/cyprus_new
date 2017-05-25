@@ -11,7 +11,6 @@
     if($id == 'field_special') { $special = $field->content; }
     if($id == 'field_type') { $type = $field->content; }
     if($id == 'field_rubtic') { $rubric = $field->content; }
-    if($id == 'field_bloger') { $bloger_tid = $field->content; }
     if($id == 'field_specproekt') { $specproekt_tid = $field->content; }
  endforeach; ?>
 <?php 	
@@ -22,6 +21,7 @@
  		$term_city = taxonomy_term_load($city);
  		$city_name_localize = i18n_taxonomy_localize_terms($term_city);
  		$city_name = $city_name_localize->name;
+ 		if ($city == '134' && $lang == 'ru') $city_name = "Весь Кипр";
  	}
 	if (isset($section)){
  		$terms = taxonomy_term_load($section);
@@ -33,83 +33,44 @@
  		$term = taxonomy_term_load($rubric);
  		$rubric_type = $term->field_english['und'][0]['value']; 		
  	}
- 	if (isset($bloger_tid)){
- 		$bloger = taxonomy_term_load($bloger_tid);
- 		$bloger_photo = $bloger->field_image['und'][0]['uri'];
- 		$bloger_name_localize = i18n_taxonomy_localize_terms($bloger);
- 		$bloger_name = $bloger_name_localize->name;	
- 	}
  	if (isset($specproekt_tid)){
  		$specproekt_term = taxonomy_term_load($specproekt_tid);	
  		$specproekt_name_localize = i18n_taxonomy_localize_terms($specproekt_term);
  		$specproekt = $specproekt_name_localize->name;	
  	}
 ?>
-<?php if ($type == 'blog'):?>
-<div class="article-photo-wrap article-bloger fixed-height">	
-	<div class="article-bloger-info">
-		<div class="article-bloger-photo">
-			<a href="<?php print $path; ?>">
-				<?php 
-	        $params = array(
-	          'style_name' => 'cyprus150x150',
-	          'path' => $bloger_photo,
-	          'alt' => $bloger_name,
-	          'attributes' => array('class' => array('img-circle', 'monochrome')),
-	          'getsize' => FALSE,
-	        );
-	        print theme('image_style', $params); ?>
-			</a>
-		</div>
-		<div class="article-bloger-name"><a href="<?php print $prefix;?>/blog/<?php print $bloger_tid;?>"><?php print $bloger_name;?></a></div>
-	</div>
-	<div class="article-type article-type--blog"><a class="type-text" href="<?php print $prefix;?>/blog"><?php print t("Experience");?></a></div>
-	<div class="article-title-descr">
-		<div class="article-title"><?php print str_replace("/en/en", "/en", $title)?></div>
-		<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>
-	</div>	
-</div>
-<div class="article-stat article-stat--aprel-style">
-		<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
-	</div>
-<?php else:?>
-<div class="<?php if(isset($rubric_type) && $type != "photo"):?>article-photo--rubric<?endif;?> article-review--<?php print $type;?> <?php if($type == 'lifehack'):?>article-item--lifehack<?php endif;?>">
+<div class="media-block media-block--review <?php if(isset($rubric_type)):?>media-block--rubric<?endif;?> media-block--<?php print $type;?> media-block--<?php print $english;?>">
 	<?php if(isset($rubric_type) && $type != "photo"):?>
-		<div class="article-rubric article-rubric--<?php print $english?>">
-			<a href="<?php print $path; ?>" class="fixed-height"><span class="article-canvas article-canvas--<?php print $rubric_type;?>"></span></a>
+		<div class="rubric">
+			<a href="<?php print $path;?>"><span class="canvas canvas--<?php print $rubric_type;?>"></span></a>
 		</div>
-	<?php else:?>
-	<div class="article-photo">		
-		<?php print $image;?>
-	</div>
 	<?php endif;?>
-	<div class="article-text <?php if(($type == 'lifehack')):?>text-center<?php endif;?>">
+	<div class="photo">		
+		<?php print $image;?>
+	</div>	
+	<div class="text">
+		<?php if($type == 'photo'):?>
+			<a class="photo-icon" href="<?php print $prefix;?>/photoreviews"></a>
+		<?php endif;?>
+		<div class="category">
 		<?php if($special == 1):?>
 			<?php if(isset($specproekt_tid)):?>
-				<div class="article-type article-type--special"><a class="type-text" href="<?php print $prefix;?>/special/<?php print  $specproekt_tid;?>"><?php print $specproekt;?></a></div>
+				<a href="<?php print $prefix;?>/special/<?php print $specproekt_tid;?>"><?php print $specproekt;?></a>
 			<?php else:?>
-				<div class="article-type article-type--special"><a class="type-text" href="<?php print $prefix;?>/special"><?php print t("Special project"); ?></a></div>
+				<a href="<?php print $prefix;?>/special"><?php print t("Special project"); ?></a>
 			<?php endif;?>
 		<?php elseif($type == 'lifehack'):?>
-			<div class="article-type article-type--lifehack"><a class="type-text" href="<?php print $prefix;?>/lifehack"><?php print t("Life hack"); ?></a></div>
+				<a href="<?php print $prefix;?>/lifehack"><?php print t("Life hack"); ?></a>
 		<?php elseif(isset($city)):?>
-			<div class="article-type article-type--city"><a class="type-text" href="<?php print $prefix;?>/reviews/<?php print $city;?>"><?php print $city_name; ?></a></div>
+				<a href="<?php print $prefix;?>/reviews/<?php print $city;?>"><?php print $city_name; ?></a>
 		<?php else:?>
-			<div class="article-type article-type--<?php print $english?>"><a class="type-text" href="<?php print $prefix;?>/<?php print $english;?>"><?php print $russian; ?></a></div>
+				<a href="<?php print $prefix;?>/<?php print $english;?>"><?php print $russian; ?></a>
 		<?php endif;?>
-		<div class="article-icon-text">
-			<?php if($type == 'photo'):?>
-				<a class="article-icon article-icon--<?php print $english?>" href="<?php print $prefix;?>/<?php print $english;?>"><span  href="/<?php print $english;?>"></span></a>
-			<?php endif;?>
-			<div class="article-title-descr">
-				<div class="article-title"><?php print str_replace("/en/en", "/en", $title)?></div>
-				<div class="article-descr"><?php print str_replace("/en/en", "/en", $body)?></div>
-			</div>
 		</div>
-			<div class="article-stat article-stat--aprel-style">
-				<div class="stat stat-watch"><span class="eye-solid ikon"></span><span class="count"><?php print $totalcount;?></span></div>
-			</div>
-		
+		<div class="title"><?php print str_replace("/en/en", "/en", $title)?></div>
+		<div class="descr"><?php print str_replace("/en/en", "/en", $body)?></div>
+	</div>
+	<div class="statistic">
+		<div class="metrika metrika-watch"><span class="ikon ikon-eye"></span><span class="count"><?php print $totalcount;?></span></div>
 	</div>
 </div>
-<?php endif;?>	
