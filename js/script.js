@@ -177,8 +177,8 @@ Drupal.behaviors.my_custom_behavior = {
 	    //console.log(xhr.responseText);	  
 	  },
 	  error: function (request, status, error) {
-        console.log('error');
-        console.log(request.responseText);
+        //console.log('error');
+        //console.log(request.responseText);
     	}
 	})		
 	}

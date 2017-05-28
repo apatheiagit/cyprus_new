@@ -51,6 +51,8 @@
 			<?php endif;?>
 		<?php elseif($type == 'lifehack'):?>
 				<a href="<?php print $prefix;?>/lifehack"><?php print t("Life hack"); ?></a>
+		<?php elseif($type == 'blog'):?>
+				<a href="<?php print $prefix;?>/blog"><?php print t("Experience");?></a>
 		<?php elseif(isset($city)):?>
 				<a href="<?php print $prefix;?>/reviews/<?php print $city;?>"><?php print $city_name; ?></a>
 		<?php else:?>

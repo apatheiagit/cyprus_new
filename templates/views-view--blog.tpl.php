@@ -27,17 +27,18 @@
  * @ingroup views_templates
  */
 ?>
+<?php if ($header): ?>
+    <div class="view-header">
+      <?php print $header; ?>
+    </div>
+<?php endif; ?>
 <div class="container <?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
-  <?php if ($header): ?>
-    <div class="view-header">
-      <?php print $header; ?>
-    </div>
-  <?php endif; ?>
+  
 
   <?php if ($exposed): ?>
     <div class="view-filters">
