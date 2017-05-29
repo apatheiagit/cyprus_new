@@ -74,11 +74,12 @@
   </div>
   </div>
 </div>
-<div class="somit somit-body <?php print $page_type; ?>">
-  <?php print $messages; ?>
-  <?php print $breadcrumb; ?>
-  <?php print render($tabs); ?>
+<div class="somit somit-body <?php print $page_type; ?>">   
+  <?php print render($page['help']); ?>
   <?php print render($page['highlighted']); ?>
+  <?php print $messages; ?>
+  <?php print $breadcrumb; ?> 
+  <?php print render($tabs); ?>
   <?php print render($page['top']); ?>
   <?php print render($page['content']); ?>
   <?php print render($page['bottom']); ?>

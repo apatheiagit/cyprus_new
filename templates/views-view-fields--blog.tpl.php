@@ -30,8 +30,10 @@
 	        );
 	        print theme('image_style', $params); ?>
 			</a>
-		</div>		
-		<div class="title"><?php print str_replace("/en/en", "/en", $title)?></div>
+		</div>	
+		<div class="title-wrap">	
+			<div class="title"><?php print str_replace("/en/en", "/en", $title)?></div>
+		</div>
 		<div class="statistic">
 			<div class="metrika metrika-watch"><span class="ikon ikon-eye"></span><span class="count"><?php print $totalcount;?></span></div>
 		</div>		

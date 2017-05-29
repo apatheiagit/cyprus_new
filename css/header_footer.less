@@ -11,13 +11,17 @@
 			height: auto;
 		}
 	}
-	.page-recipes &{
+	.page-recipes &, .page-culture &, .page-entertainment &,
+	.page-cuisine &, .page-photoreviews &, .page-lifehack &,
+	.page-blog &, .page-special &, .page-reviews &{
 		& .upper-header{
 			border-bottom: none;
 			& .inside-container{
 				border-bottom: 2px solid @grey-fon;
 			}
 		}
+	}
+	.page-recipes &, .page-cuisine &{
 		& .fixMenu{
 			& #menu-1160:before, & #menu-806:before{
 				display: none;
@@ -42,6 +46,7 @@
 				border-style: solid;
 				border-width: 2px 2px 0 0;
 				background-color: white;
+				z-index: 100;
 				@media @mobile_tablet{
 					display: none;
 				}
@@ -247,7 +252,10 @@
 					font-size: 15px;
 					font-weight: 600;				
 					text-transform: uppercase;
-					&.active-trail>a { color: @light-text;}					
+					&.active-trail>a { 
+						border-radius: 3px;
+  					background-color: @grey-fon;
+					}					
 					@media @medium{
 						font-size: 14px;
 						font-weight: 500;	
