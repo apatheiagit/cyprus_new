@@ -57,12 +57,19 @@
     & .photo a:after{
       opacity: 1;
     }
+    & .photo img{
+      transform: scale(1.1);
+    }
   }
   & .photo{
     text-align: center;
     position: relative;
+    overflow: hidden;
     @media @mobile{
       max-width: 350px;
+    }
+    & img{
+      transition: 0.5s all ease-in;
     }
     & a{
       display: block;
@@ -132,6 +139,14 @@
     z-index: 1;
     @media @mobile{
       max-width: 617px;
+    }
+    &:hover{
+      & img{
+        transform: translateX(-30%) scale(1.1);
+        @media @mobile{ 
+          transform: none;
+        } 
+      }
     }
     & img{
       max-width: none;
@@ -663,6 +678,25 @@
       &:after {
         color: white;
       }
+    }
+  }
+}
+.video-block{
+  margin-bottom: 25px;
+  & iframe{
+    height: @special-height;
+    @media @mobile{
+      height: @special-height/2;
+    }
+  }
+  & .theimage{
+    cursor: pointer;
+  }
+}
+.blog-wrap--3{
+  @media (min-width: 1200px){
+    & .col-lg-3 {
+      width: 33.33333333%;
     }
   }
 }

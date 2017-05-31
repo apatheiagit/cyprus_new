@@ -38,6 +38,7 @@
  		$specproekt_name_localize = i18n_taxonomy_localize_terms($specproekt_term);
  		$specproekt = $specproekt_name_localize->name;	
  	}
+ 	$titleLength = iconv_strlen($title, 'UTF-8');
 ?>
 <div class="media-block media-block--review <?php if(isset($rubric_type)):?>media-block--rubric<?endif;?> media-block--<?php print $type;?> media-block--<?php print $english;?>">
 	<?php if(isset($rubric_type) && $type != "photo"):?>
@@ -66,9 +67,11 @@
 		<?php else:?>
 				<a href="<?php print $prefix;?>/<?php print $english;?>"><?php print $russian; ?></a>
 		<?php endif;?>
-		</div>
-		<div class="title"><?php print str_replace("/en/en", "/en", $title)?></div>
-		<div class="descr"><?php print str_replace("/en/en", "/en", $body)?></div>
+		</div>		
+		<div class="title"><a href="<?php print $path;?>"><?php print $title?></a></div>
+		<?php if ($titleLength < 46):?>
+			<div class="descr"><a href="<?php print $path;?>"><?php print $body;?></a></div>
+		<?php endif;?>
 	</div>
 	<div class="statistic">
 		<div class="metrika metrika-watch"><span class="ikon ikon-eye"></span><span class="count"><?php print $totalcount;?></span></div>

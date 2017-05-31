@@ -133,7 +133,16 @@ Drupal.behaviors.my_custom_behavior = {
 	           this.settings.dotsClass = 'disable-dots';
 	        }
 	    	}
-		  });		 
+		  });	
+		  $('.thevideo').hide();
+			$('.theimage').click(function(){
+				var src = $('.thevideo iframe').attr('src');
+				$('.thevideo iframe').attr('src', src+'?autoplay=1');			
+				window.setTimeout(function(){
+					$('.theimage').hide();
+					$('.thevideo').show();
+				}, 100);						
+			});	 
 	
 		  var owl = $('.photo-carousel');
 			owl.owlCarousel({
