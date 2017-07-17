@@ -851,9 +851,9 @@ html.js fieldset.collapsed{
 	& .title{
 		display: inline-block;
 		cursor: pointer;
-		background-color: #eaeaea;
+		background-color: @grey-fon;
 		padding: 4px 10px;
-		border-radius: 2px;
+		border-radius: 3px;
 		font-size: 12px;		
 		margin-right: 10px;
 		text-transform: uppercase;
@@ -1388,7 +1388,8 @@ img.monochrome {
 				margin-bottom: 10px;
 			}
 			&.active-trail a, & a.active{
-				font-weight: bold;
+				border-radius: 3px;
+				background-color: @grey-fon;
 			}
 			&:hover{
 				& a{
