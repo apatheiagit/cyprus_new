@@ -32,6 +32,7 @@
     }   
 ?>
 <?php $type = $content['field_type']['#items']['0']['value']; ?>
+<div class="media-detail media-detail--<?php print $type;?>">
 <div class="article-item article-item--detail-photo">  
   <?php if($type == 'blog'):?>
   <div class="article-photo-wrapper container">
@@ -291,6 +292,7 @@
     <h5 class="text-center special-font"><?php print t("See also");?></h5>
   </div>
 </div>
+</div>
 <?php 
   /* Популярные обзоры */
   print views_embed_view('cyprus', 'theme_reviews5');
@@ -312,7 +314,10 @@
       print views_embed_view('cyprus', 'top_events');
       break;
     default:
-      # code...
+      /* Популярные места */
+      print views_embed_view('cyprus', 'top_places');
+      /* События из Афиши */
+      print views_embed_view('cyprus', 'top_events');
       break;
   }
 ?>

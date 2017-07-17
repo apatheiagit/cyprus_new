@@ -6,6 +6,7 @@
     if($id == 'field_bloger') { $bloger_tid = $field->content; }    
  endforeach; ?>
 <?php 	
+	$theme_path = path_to_theme();
 	global $language_content; 
 	$lang = $language_content->language;
 	if ($lang == 'en') $prefix = '/en'; else $prefix = '';
@@ -35,7 +36,7 @@
 			<div class="title"><?php print str_replace("/en/en", "/en", $title)?></div>
 		</div>
 		<div class="statistic">
-			<div class="metrika metrika-watch"><span class="ikon ikon-eye"></span><span class="count"><?php print $totalcount;?></span></div>
+			<div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
 		</div>		
 	</div>
 </div>

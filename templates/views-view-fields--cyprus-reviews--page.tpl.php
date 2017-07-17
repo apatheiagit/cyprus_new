@@ -13,7 +13,9 @@
     if($id == 'field_rubtic') { $rubric = $field->content; }
     if($id == 'field_specproekt') { $specproekt_tid = $field->content; }
  endforeach; ?>
+
 <?php 	
+	$theme_path = path_to_theme();
 	global $language_content; 
 	$lang = $language_content->language;
 	if ($lang == 'en') $prefix = '/en'; else $prefix = '';
@@ -74,6 +76,6 @@
 		<?php endif;?>
 	</div>
 	<div class="statistic">
-		<div class="metrika metrika-watch"><span class="ikon ikon-eye"></span><span class="count"><?php print $totalcount;?></span></div>
+		<div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
 	</div>
 </div>

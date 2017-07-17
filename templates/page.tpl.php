@@ -7,10 +7,9 @@
     <div class="container">
     <div class="inside-container">  
       <div class="row">
-        <div class="col-sm-5 col-weather">
+        <div class="col-xs-12 col-sm-4 col-md-3 col-weather">
           <div class="weather-block">
-            <div class="city-filter">
-              <div class="city-label"><?php print t("weather")?>:</div>
+            <div class="city-filter">              
               <div class="current-city"><span class="name"><?php print t("Limassol");?></span></div>
               <div class="city-list">
                 <ul>
@@ -29,7 +28,18 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-8 col-sm-5 col-md-5  col-social">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-taxi">
+          <div class="taxi-form">
+            <div class="taxi-button">
+              <?php if($prefix == '') $taxi_link = "/place/transfer-na-kipre-s-kompaniey-global-transfer-services-ltd";
+              else $taxi_link = "/en/place/cyprus-global-transfer-services-ltd";?>
+              <a href="<?php print $taxi_link;?>#get"><?php print t("Book taxi");?></a>
+            </div>
+              <?php //print render($page['help']); ?>
+          </div>
+        </div>
+        <div class="clearfix visible-xs-block visible-sm-block"></div>
+        <div class="col-xs-8 col-sm-10 col-md-4 col-lg-3 col-social">
           <div class="soc-block">
           <?php if ($lang == 'en'):?>
             <a class="fb" title="Go Facebook" href="https://www.facebook.com/cyprusfortravellers.net/" rel="nofollow" target="_blank"></a>
@@ -46,7 +56,7 @@
           </div>
           <div class="media-kit"><a href="/sites/default/files/Media_Kit.pdf">Media kit</a></div>
         </div>
-        <div class="col-xs-4 col-sm-2 col-md-2 lang-block">        	
+        <div class="col-xs-4 col-sm-2 col-md-1 col-lg-2 lang-block">        	
     		<?php
 	            $lang_block = module_invoke('locale', 'block_view', 'language');
 	            print $lang_block['content'];
@@ -74,8 +84,8 @@
   </div>
   </div>
 </div>
-<div class="somit somit-body <?php print $page_type; ?>">   
-  <?php print render($page['help']); ?>
+<div class="somit somit-body <?php print $page_type; ?>">     
+  <?php print render($page['navigation']); ?>
   <?php print render($page['highlighted']); ?>
   <?php print $messages; ?>
   <?php print $breadcrumb; ?> 
@@ -88,11 +98,11 @@
   <div class="container footer-margin-top">
   <div class="border-top container-first">
     <div class="row">
-      <div class="col-sm-4 col-md-2">
+      <div class="col-sm-4 col-md-3 col-lg-2">
         <a href="/" class="bottom-logo"><img src="/sites/all/themes/cyprus_new/logo.svg" class="img-responsive" alt=""></a>        
       </div>
       <div class="col-sm-8 col-md-5">
-        <div class="bottom-descr">
+        <div class="bottom-descr"> 
           <p>© 2011-<?php print date("Y"); ?> <a href="http://cyprusfortravellers.net">CyprusForTravellers.net</a></p>
           <?php print $site_slogan; ?>          
         </div>
@@ -102,7 +112,7 @@
           <div class="bottom-rights">Перепечатка и использование любых материалов только с&nbsp;разрешения редакции: <a href="mailto:editor@cyprustrav.ru">editor@cyprustrav.ru</a></div>
         <?php endif;?>       
       </div>      
-      <div class="col-sm-12 col-md-5 text-right text-right-xs">        
+      <div class="col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-0 icon-links-block">        
         <div class="icon-link icon-link--subscribe"><a href="<?php print $prefix;?>/subscribe"><?php print t('Subscribe');?></a></div>
         <div class="icon-link icon-link--mediakit"><a href="/sites/default/files/Media_Kit.pdf">Media kit</a></div>             
       </div>
@@ -110,10 +120,10 @@
   </div>
   <div class="border-top container-second">
     <div class="row">
-      <div class="col-sm-8 col-md-7 col-md-offset-2">
+      <div class="col-sm-12 col-md-9 col-lg-7 col-lg-offset-2">
         <?php print render($page['footer']); ?> 
       </div>
-      <div class="col-sm-4 col-md-3 text-right text-right-xs">         
+      <div class="col-sm-12 col-md-3 social-block">         
         <div class="small-share-block share-links">          
           <?php if ($lang == 'en'):?>
             <a class="fa fa-facebook" title="Go Facebook" href="https://www.facebook.com/cyprusfortravellers.net/" rel="nofollow" target="_blank"><span class="visuallyhidden">Facebook</span></a>

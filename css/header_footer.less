@@ -7,7 +7,7 @@
 		border-bottom: 2px solid @grey-fon;
 		height: 53px;
 		padding-top: 15px;
-		@media @mobile{
+		@media @mobile_tablet{
 			height: auto;
 		}
 	}
@@ -20,39 +20,7 @@
 				border-bottom: 2px solid @grey-fon;
 			}
 		}
-	}
-	.page-recipes &, .page-cuisine &{
-		& .fixMenu{
-			& #menu-1160:before, & #menu-806:before{
-				display: none;
-			}
-		}
-		& #menu-1160, & #menu-806{
-			position: relative;			
-  		& a{
-  			border-radius: 3px;
-  			background-color: @grey-fon;
-  		}
-			&:before{
-				content: "";
-				position: absolute;
-				bottom: -35px;
-				left: 50%;
-				margin-left: -5px;
-				height: 10px;
-				width: 10px;
-				transform: rotate(-45deg);
-				border-color: @new-grey;
-				border-style: solid;
-				border-width: 2px 2px 0 0;
-				background-color: white;
-				z-index: 100;
-				@media @mobile_tablet{
-					display: none;
-				}
-			}
-		}
-	}
+	}	
 	& .top-logo{
 		display: block;		
 		margin: 14px auto;		
@@ -81,15 +49,16 @@
 	& .fixMenu{
 		border-bottom: 2px solid @grey-fon;
 		position:fixed;
-	    top:0;
-	    left:0;
-	    right:0;
-	    margin:0;
-	    z-index: 100;
-	    height: 50px;
-	    @media @mobile{
-	    	position: static;
-	    }
+    top:0;
+    left:0;
+    right:0;
+    margin:0;
+    z-index: 100;
+    height: 60px;
+    padding: 5px 0;
+    @media @mobile{
+    	position: static;
+    }
 		& .top-logo{
 			display: none;
 		}
@@ -135,7 +104,7 @@
 		position: relative;
 		text-transform: uppercase;
 		z-index: 300;
-		width: 152px;
+		width: 86px;
 		& .name{
 			background: url(../img/small-rectangle.png) no-repeat right 4px center;
 			display: inline-block;
@@ -179,7 +148,7 @@
 			background: #FFF;
 			display: none;
 			position: absolute;			
-			left: 58px;
+			left: 0;
 			top: 20px;
 			& ul {
 				border-style: solid;
@@ -383,8 +352,9 @@
 	& .border-top{
 		border-top: solid 2px @new-grey;		
 	}
-	& .container-first{
+	& .container-first.border-top{
 		padding-top: 30px;
+		border-top: solid 2px @text-color;
 	}
 	& .container-second{
 		margin-top: 30px;
@@ -547,20 +517,123 @@
 	    }
 	}
 }
+.lang-block{
+	@media @medium{
+		padding: 0;
+		& ul li a{
+			padding: 3px 5px;
+		}
+	}
+}
 .col-social{
 	min-height: 33px;
 	//overflow: hidden;
-	@media @mobile{
+	@media @mobile_tablet{
+		padding-right: 0;
 		& .soc-block{
 			float: left;
 		}
 		& .media-kit{
 			float: left;
-			margin-left: 20px;
+			margin-left: 15px;
+			margin-right: 0;
+		}
+	}
+}
+.taxi-form{
+	margin-top: -15px;
+	@media @tablet{
+		float: right;
+	}
+	@media @mobile{
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+}
+.taxi-button{
+	& a{
+		display: inline-block;
+		position: relative;
+		padding: 19px 20px 19px 55px;
+		font-size: 14px;
+		line-height: 14px;
+		transition: all 0.3s ease-in;
+		&:before{
+			content: "";
+			background-image: url(../img/Taxi_icon.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			height: 20px;
+			width: 38px;
+			position: absolute;
+			left: 10px;
+			top: 17px;
+		}
+		@media @tablet{
+			padding: 19px 9px 19px 55px;
+		}
+		@media @mobile{
+			padding: 10px 20px 10px 45px;
+			&:before{
+				left: 0px;
+				top: 7px;
+			}
+		}
+		&:hover{
+			text-decoration: none;
+			background-color: rgba(255,218,82,0.5)
 		}
 	}
 }
 .col-weather{
 	min-height: 30px;
 	//overflow: hidden;
+}
+.icon-links-block{
+	text-align: right;
+	@media @mobile_tablet{
+		text-align: left;
+		margin-top: 20px;
+	}
+}
+.social-block{
+	text-align: right;
+	@media @mobile_tablet{
+		text-align: center;
+		padding-top: 20px;
+		clear: both;
+	}
+}
+#menu-806, #menu-807, #menu-808,
+#menu-1158, #menu-1159, #menu-1160{
+	&.active-trail{
+		position: relative;			
+		& a{
+			border-radius: 3px;
+			background-color: @grey-fon;
+		}
+		&:before{
+			content: "";
+			position: absolute;
+			bottom: -35px;
+			left: 50%;
+			margin-left: -5px;
+			height: 10px;
+			width: 10px;
+			transform: rotate(-45deg);
+			border-color: @new-grey;
+			border-style: solid;
+			border-width: 2px 2px 0 0;
+			background-color: white;
+			z-index: 100;
+			@media @mobile_tablet{
+				display: none;
+			}
+		}
+	}
+	.fixMenu &{
+		&:before{
+			display: none;
+		}
+	}
 }

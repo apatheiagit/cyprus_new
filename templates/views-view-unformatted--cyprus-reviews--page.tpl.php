@@ -10,6 +10,7 @@
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
+
 <?php foreach ($rows as $id => $row): ?>
   <?php if (($id == 3)):?>
 		<div class="col-sm-8 media-wrapper--big">
