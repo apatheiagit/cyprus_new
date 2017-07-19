@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="white-container container <?php print $classes; ?>">
+<div class="wide-container container <?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>

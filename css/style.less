@@ -465,50 +465,50 @@ html.js fieldset.collapsed{
 .pager{
 	padding-bottom: 30px;
 }
-.view-display-id-recipes, .view-id-cyprus_reviews,
-.view-id-blog{
-	& .pager-load-more{
-		border: none;		
-		margin-bottom: 30px;
-		padding: 10px;
+
+.pager-load-more{
+	border: none;		
+	margin-bottom: 30px;
+	padding: 10px;
+	position: relative;
+	&:hover{
+		background: none;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background-color: @text-color;
+		left: 0;
+		top: 50%;
+		z-index: 10;
+	}
+	& li{
+		width: auto;
+		display: inline-block;
+	}
+	& a{
+		border: 1px solid @text-color;
+		border-radius: 3px;
+		background-color: @grey-fon;
+		color: @text-color;
+		display: inline-block;
+		letter-spacing: 2px;
+		font-size: 14px;
+		text-transform: uppercase;
+		transition: all 0.4s ease-in;
+		padding: 10px 30px;
 		position: relative;
+		z-index: 50;
 		&:hover{
-			background: none;
-		}
-		&:before{
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 1px;
-			background-color: @text-color;
-			left: 0;
-			top: 50%;
-			z-index: 10;
-		}
-		& li{
-			width: auto;
-			display: inline-block;
-		}
-		& a{
-			border: 1px solid @text-color;
-			border-radius: 3px;
-			background-color: @grey-fon;
-			color: @text-color;
-			display: inline-block;
-			letter-spacing: 2px;
-			font-size: 14px;
-			text-transform: uppercase;
-			transition: all 0.4s ease-in;
-			padding: 10px 30px;
-			position: relative;
-			z-index: 100;
-			&:hover{
-				text-decoration: none;
-				background: lighten(@grey-fon, 20%);
-			}
+			text-decoration: none;
+			background: lighten(@grey-fon, 20%);
 		}
 	}
 }
+
+/*
 .pager-load-more{
 	border: 2px solid @grey-fon;
 	font-size: 14px;
@@ -532,7 +532,7 @@ html.js fieldset.collapsed{
 	&.pager-load-more-empty{
 		display: none;
 	}
-}
+}*/
 .breadcrumb{		
 	font-size: 10px;
 	font-weight: 600;
@@ -669,11 +669,11 @@ html.js fieldset.collapsed{
 	& .btn-default:focus, & .btn-default.focus,
 	& .open>.dropdown-toggle.btn-default, & .btn-default:hover,
 	& .form-item-when-value-date input:hover {
-	  	background-color: @grey-fon !important;
+	  	background-color: white !important;
 	  	border-color: @grey-fon;
 	}
 	& .caret{ 
-		background: url(../img/bg-select.png) no-repeat 0px 00000px;
+		background: url(../img/bg-select.png) no-repeat 0px 0px;
 		border: none;
 		margin-top: -3px !important;
 		height: 8px;
@@ -691,6 +691,9 @@ html.js fieldset.collapsed{
 		box-shadow: none;
 		margin: 0;
 		padding: 0;
+	}
+	& .dropdown-menu>li>a:hover, & .dropdown-menu>li>a:focus{
+		background-color: #f9f9f9;
 	}
 }
 
