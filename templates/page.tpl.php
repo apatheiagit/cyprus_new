@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="clearfix visible-xs-block visible-sm-block"></div>
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-lg-6 col-logo">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 col-md-offset-0 col-md-4 col-lg-6 col-logo">
            <a href="<?php print $prefix;?>/" class="top-logo"><img src="/sites/all/themes/cyprus_new/logo.svg"  alt="Cyprustravellers"></a>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 lang-block">        	
