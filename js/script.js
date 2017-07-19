@@ -84,7 +84,7 @@ Drupal.behaviors.my_custom_behavior = {
             $('#block-search-form').hide();
             $('.map-wrapper').css('visibility','hidden');
         });
-        $('.icon-search').click(function(){
+        $('.search-buttn').click(function(){
         	$('.body').css('width', $('.body').css('width'));
         	$('body').css('overflow-y', 'hidden');
             $('<div id="mybox_overlay"></div>')

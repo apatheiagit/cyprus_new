@@ -4,30 +4,24 @@
 	background: white;
 	border-bottom: 2px solid @grey-fon;
 	& .upper-header{
-		border-bottom: 2px solid @grey-fon;
-		height: 53px;
-		padding-top: 15px;
-		@media @mobile_tablet{
-			height: auto;
-		}
-	}
-	.page-recipes &, .page-culture &, .page-entertainment &,
-	.page-cuisine &, .page-photoreviews &, .page-lifehack &,
-	.page-blog &, .page-special &, .page-reviews &{
-		& .upper-header{
-			border-bottom: none;
-			& .inside-container{
-				border-bottom: 2px solid @grey-fon;
+		& .inside-container{
+			border-bottom: 1px solid @text-color;
+			@media @mobile{
+				border-bottom: none;
 			}
 		}
 	}	
 	& .top-logo{
 		display: block;		
-		margin: 14px auto;		
+		margin: 25px 0 25px 66px;		
 		& img{
-			max-height: 52px;
+			height: 55px;
+		}
+		@media @medium{
+			margin: 25px 0 25px 0px;		
 		}
 		@media @tablet{
+			margin: -45px 0 25px 0px;
 			& img{
 				width: 100%;
 			}
@@ -35,6 +29,7 @@
 		@media @mobile{
 			max-width: 170px;
 			text-align: center;
+			margin: 10px auto;
 			& img{
 				width: 100%;
 			}
@@ -58,6 +53,8 @@
     padding: 5px 0;
     @media @mobile{
     	position: static;
+    	border-bottom: none;
+    	height: auto;
     }
 		& .top-logo{
 			display: none;
@@ -70,12 +67,18 @@
 			}
 		}
 		& .bottom-header{
-			& .search-block{
-				margin-top: 8px;
+			& .block-menu ul li{
+				margin: 13px 0;
+				@media @tablet{
+					margin: 18px 0;
+				}
+				@media @mobile{
+					margin: 0;
+				}
 			}
-			& .block-menu{
-				padding-top: 8px;
-			}
+		}
+		& .search-block{
+			margin-top: 15px;
 		}
 		@media @mobile{
 			& .bottom-header{
@@ -88,30 +91,22 @@
 				}
 			}
 		}
-		@media @medium{
-			& .logo-hidden-xs{
-				width: 10%;
-			}
-			& .main-header{
-				width: 90%;
-			}
-		}
+		
 	}
 	& .city-filter{
 		cursor: pointer;
-		font-size: 11px;
+		font-size: 12px;
 		float: left;
 		position: relative;
-		text-transform: uppercase;
 		z-index: 300;
-		width: 86px;
+		width: 82px;
 		& .name{
-			background: url(../img/small-rectangle.png) no-repeat right 4px center;
+			background: url(../img/menu.svg) no-repeat right 4px center;
 			display: inline-block;
 			line-height: 20px;
 			padding: 0 18px 0 4px;
 			vertical-align: middle;
-			//width: 88px;
+			display: block;
 		}
 		& .weather-menu{
 			background: url(../img/bg-weather-menu.png) 0 0 no-repeat;
@@ -131,6 +126,7 @@
 			float: left;
 			color: black;
 			font-weight: 600;
+			width: 100%;
 			&.city-list-open{	
 					border-color: @grey-fon;
 					background: @grey-fon;
@@ -159,7 +155,7 @@
 			& ul li{
 				list-style: none;
 				font-size: 11px;
-				padding: 3px 18px 3px 4px;
+				padding: 3px 23px 3px 4px;
 				&:hover{
 					background: lighten(@super-light-text, 10%);
 				}
@@ -188,57 +184,48 @@
 				font-size: 10px;
 				vertical-align: super;
 			}
+			& .weather-degree{
+				font-weight: 600;
+			}
 		}
 	}
 	& .bottom-header{
-		clear: both;   
-		margin-top: 8px;
-		& .search-block{
-			border-left: 1px solid @almost-white;
-			float: right;
-			margin-top: 20px;
-			padding-left: 17px;
-			padding-top: 1px;
-			@media @tablet{
-				margin-top: 5px;
-			}
-			@media @mobile{
-				display: none;
-			}
-			& .icon{				
-				cursor: pointer;
-			}
-		}
+		clear: both; 		
 		& .block-menu{
-			min-height: 45px;
-			padding-top: 22px;
+			min-height: 45px;			
+			text-align: center;
 			@media @mobile_tablet{
 				padding-top: 0;
 			}			
 			& ul{
+				width: 100%;
 				& li{
 					color: @text-color;
-					font-size: 15px;
-					font-weight: 600;				
+					font-size: 18px;
+					font-weight: 500;				
 					text-transform: uppercase;
+					float: none;
+					display: inline-block;
+					margin: 26px 0;
 					&.active-trail>a { 
 						border-radius: 3px;
   					background-color: @grey-fon;
 					}					
 					@media @medium{
-						font-size: 14px;
-						font-weight: 500;	
+						font-size: 14px;						
 						& a{
 							padding: 4px 5px !important;
 						}
 					}
 					@media @tablet{
-						font-size: 12px;
-						font-weight: 500;
-						margin-top: 8px;	
+						font-size: 12px;						
+						margin: 18px 0;
 						& a{
 							padding: 4px 5px !important;
 						}
+					}
+					@media @mobile{
+						margin: 0 0;
 					}
 					& a{
 						padding: 4px 10px;
@@ -251,6 +238,29 @@
 				}
 			}
 		}
+	}
+}
+.search-block{
+	float: right;
+	margin-top: 30px;
+	@media @tablet{
+		margin-top: 17px;
+	}
+	@media @mobile{
+		display: none;
+	}
+	& .search-buttn{
+		background: url(../img/search.svg) no-repeat;				
+		cursor: pointer;
+		display: block;
+		height: 20px;
+		width: 20px;
+	}
+}
+.weather-block{
+	margin-top: 42px;
+	@media @mobile{
+		margin-top: 15px;
 	}
 }
 .soc-block{
@@ -406,23 +416,39 @@
 .lang-block{
 	& .language-switcher-locale-url{
 		float: right;
+		margin-top: 42px;
+		@media @tablet{
+			margin-top: 0px;
+		}
+		@media @mobile{
+			margin-top: -10px;
+			margin-bottom: 10px;
+		}
 	}	
 	& ul{
 		& li{
 			display: inline-block;
 			list-style: none;
-			font-size: 14px;
+			font-size: 12px;
 			& a{
 				display: inline-block;
-				color: @grey;
-				padding: 3px 9px;
-				border-radius: 9px;
+				color: @grey;				
+				font-weight: 600;
+				position: relative;
 				&:hover{
-					text-decoration: none;
+					text-decoration: underline;
 				}
 				&.active{
-					color: white;
-					background-color: @grey;
+					color: @text-color;					
+				}
+			}
+			&.first a{
+				padding-right: 8px;
+				&:before{
+					content: "/";
+					position: absolute;
+					top: 0;
+					right: 0;
 				}
 			}
 		}
@@ -517,14 +543,6 @@
 	    }
 	}
 }
-.lang-block{
-	@media @medium{
-		padding: 0;
-		& ul li a{
-			padding: 3px 5px;
-		}
-	}
-}
 .col-social{
 	min-height: 33px;
 	//overflow: hidden;
@@ -541,22 +559,26 @@
 	}
 }
 .taxi-form{
-	margin-top: -15px;
+	margin-top: 25px;
+	@media @medium{
+		margin-left: -50px;
+	}
 	@media @tablet{
 		float: right;
+		margin-top: 10px;
 	}
 	@media @mobile{
-		margin-top: 0;
-		margin-bottom: 10px;
+		margin-top: 5px;
+		margin-left: -20px;
 	}
 }
 .taxi-button{
 	& a{
 		display: inline-block;
 		position: relative;
-		padding: 19px 20px 19px 55px;
-		font-size: 14px;
-		line-height: 14px;
+		padding: 19px 20px 19px 50px;
+		font-size: 12px;
+		line-height: 12px;
 		transition: all 0.3s ease-in;
 		&:before{
 			content: "";
@@ -570,7 +592,7 @@
 			top: 15px;
 		}
 		@media @tablet{
-			padding: 19px 9px 19px 55px;
+			padding: 19px 0px 19px 55px;
 		}
 		@media @mobile{
 			padding: 10px 20px 10px 45px;
@@ -615,7 +637,7 @@
 		&:before{
 			content: "";
 			position: absolute;
-			bottom: -35px;
+			bottom: -33px;
 			left: 50%;
 			margin-left: -5px;
 			height: 10px;

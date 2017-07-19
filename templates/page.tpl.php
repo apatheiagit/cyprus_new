@@ -7,7 +7,7 @@
     <div class="container">
     <div class="inside-container">  
       <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-3 col-weather">
+        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-weather">
           <div class="weather-block">
             <div class="city-filter">              
               <div class="current-city"><span class="name"><?php print t("Limassol");?></span></div>
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-8 col-md-4 col-taxi">
+        <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 col-taxi">
           <div class="taxi-form">
             <div class="taxi-button">
               <?php if($prefix == '') $taxi_link = "/place/transfer-na-kipre-s-kompaniey-global-transfer-services-ltd";
@@ -39,28 +39,14 @@
           </div>
         </div>
         <div class="clearfix visible-xs-block visible-sm-block"></div>
-        <div class="col-xs-8 col-sm-10 col-md-4 col-lg-3 col-social">
-          <div class="soc-block">
-          <?php if ($lang == 'en'):?>
-            <a class="fb" title="Go Facebook" href="https://www.facebook.com/cyprusfortravellers.net/" rel="nofollow" target="_blank"></a>
-            <a class="gp" title="Go Tumblr" href="http://cyprusfortravellers.tumblr.com/" rel="nofollow" target="_blank"></a>         
-            <a class="tw" title="Go Twitter" href="https://twitter.com/cyprusfortravel" rel="nofollow" target="_blank"></a>
-            <a class="ig" title="Go Instagram" href="https://instagram.com/cyprusfortravellers" rel="nofollow" target="_blank"></a>
-          <?php else:?>
-            <a class="vk" title="Перейти в группу Вконтакте" href="https://vk.com/cyprusfortravellers" rel="nofollow" target="_blank"></a>
-            <a class="fb" title="Перейти в группу в Фейсбуке" href="https://www.facebook.com/cyprusfortravellers/" rel="nofollow" target="_blank"></a>
-            <a class="gp" title="Перейти в группу в Tumblr" href="http://cyprusfortravellers.tumblr.com/" rel="nofollow" target="_blank"></a>         
-            <a class="tw" title="Перейти в группу в Twitter" href="https://twitter.com/cyprusfortravel" rel="nofollow" target="_blank"></a>
-            <a class="ig" title="Перейти на страницу в Instagram" href="https://instagram.com/cyprusfortravellers" rel="nofollow" target="_blank"></a>
-          <?php endif;?>
-          </div>
-          <div class="media-kit"><a href="/sites/default/files/Media_Kit.pdf">Media kit</a></div>
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-lg-6 col-logo">
+           <a href="<?php print $prefix;?>/" class="top-logo"><img src="/sites/all/themes/cyprus_new/logo.svg"  alt="Cyprustravellers"></a>
         </div>
-        <div class="col-xs-4 col-sm-2 col-md-1 col-lg-2 lang-block">        	
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 lang-block">        	
     		<?php
-	            $lang_block = module_invoke('locale', 'block_view', 'language');
-	            print $lang_block['content'];
-	          ?>        	
+          $lang_block = module_invoke('locale', 'block_view', 'language');
+          print $lang_block['content'];
+        ?>        	
         </div>
       </div>
     </div>
@@ -69,16 +55,17 @@
   <div class="topMenu">
   <div class="container">
     <div class="row">
-      <div class="logo-hidden-xs col-sm-2 col-md-3">
-        <a href="<?php print $prefix;?>/" class="top-logo"><img src="/sites/all/themes/cyprus_new/logo.svg"  alt="Cyprustravellers"></a>
+      <div class="logo-hidden-xs col-sm-1 col-md-1">       
         <a href="<?php print $prefix;?>/" class="logo-mini"><img src="/sites/all/themes/cyprus_new/img/logo-mini.png"  alt="Cyprustravellers"></a>
         <span class="wrap-toggle-btn hidden-sm hidden-md hidden-lg"><span class="toggle-btn"></span></span>
       </div>
-      <div class="col-sm-10 col-md-9 main-header">        
-        <div class="bottom-header">
-        <div class="search-block"><span class="icon icon-search"></span></div>
-        <?php print render($page['header']); ?>       
+      <div class="col-sm-10 col-md-10 main-header">        
+        <div class="bottom-header">        
+          <?php print render($page['header']); ?>       
         </div>
+      </div>
+      <div class="col-sm-1 col-md-1 col-search">
+        <div class="search-block"><span class="search-buttn"></span></div>
       </div>
     </div>
   </div>
