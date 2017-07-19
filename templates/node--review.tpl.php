@@ -287,11 +287,6 @@
     <?php endforeach; ?>
   </div>
 </div>
-<div class="container">
-  <div class="bordered-top">
-    <h5 class="text-center special-font"><?php print t("See also");?></h5>
-  </div>
-</div>
 </div>
 <?php 
   /* Популярные обзоры */

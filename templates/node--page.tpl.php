@@ -27,11 +27,6 @@
   </div>
 </div>
 <?php else:?>
-<div class="container white-container">
-  <div class="bordered-top">
-    <h5 class="text-center special-font"><?php print t("See also");?></h5>
-  </div>
-</div>
 <?php   
     /* Популярные события в Афише */
     print views_embed_view('cyprus', 'top_events');

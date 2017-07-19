@@ -272,12 +272,6 @@
   </div>
  </div>
 </div>
-
-<div class="container">
-  <div class="bordered-top">
-    <h5 class="text-center special-font"><?php print t("See also");?></h5>
-  </div>
-</div>
 <?php 
   /* Популярные места в этом городе */
   print views_embed_view('cyprus', 'top_places');
