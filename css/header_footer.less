@@ -101,7 +101,7 @@
 		z-index: 300;
 		width: 82px;
 		& .name{
-			background: url(../img/menu.svg) no-repeat right 4px center;
+			background: url(../img/menu.svg) no-repeat right 2px center;
 			display: inline-block;
 			line-height: 20px;
 			padding: 0 18px 0 4px;
@@ -125,7 +125,7 @@
 		& .current-city{	
 			float: left;
 			color: black;
-			font-weight: 600;
+			font-weight: 700;
 			width: 100%;
 			&.city-list-open{	
 					border-color: @grey-fon;
@@ -164,8 +164,12 @@
 	}
 	& .weather{
 		margin-top: -5px;
+		margin-left: 5px;
 		float: left;
 		white-space: nowrap;
+		@media @mobile{
+			margin-left: 0px;
+		}
 		& .weather-icon{
 			display: inline-block;
 			margin-top: -10px;
@@ -185,7 +189,7 @@
 				vertical-align: super;
 			}
 			& .weather-degree{
-				font-weight: 600;
+				font-weight: 700;
 			}
 		}
 	}
@@ -433,7 +437,7 @@
 			& a{
 				display: inline-block;
 				color: @grey;				
-				font-weight: 600;
+				font-weight: 700;
 				position: relative;
 				&:hover{
 					text-decoration: underline;
@@ -560,12 +564,14 @@
 }
 .taxi-form{
 	margin-top: 25px;
+	margin-left: -22px;
 	@media @medium{
 		margin-left: -50px;
 	}
 	@media @tablet{
 		float: right;
 		margin-top: 10px;
+		margin-left: 0px;
 	}
 	@media @mobile{
 		margin-top: 5px;
