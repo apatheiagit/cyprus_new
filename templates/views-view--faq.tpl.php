@@ -28,7 +28,7 @@
  */
 ?>
 <div class="white-container container <?php print $classes; ?>">
-<div class="container-bordered article-content">
+<div class="article-content">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
@@ -89,11 +89,6 @@
   <?php endif; ?>
 </div>
 </div><?php /* class view */ ?>
-<div class="container white-container">
-  <div class="bordered-top">
-    <h5 class="text-center special-font"><?php print t("See also");?></h5>
-  </div>
-</div>
 <?php 
   /* Популярные события в Афише */
   print views_embed_view('cyprus', 'top_events');

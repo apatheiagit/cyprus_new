@@ -77,7 +77,7 @@
   <?php print render($page['navigation']); ?>
   <?php print render($page['highlighted']); ?>
   <?php print $messages; ?>
-  <?php print $breadcrumb; ?> 
+  <?php /*print $breadcrumb; */?> 
   <?php print render($tabs); ?>
   <?php print render($page['top']); ?>
   <?php print render($page['content']); ?>
