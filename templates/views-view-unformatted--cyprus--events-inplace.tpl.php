@@ -12,7 +12,7 @@
 <?php endif; ?>
 <?php $counter = 0;?>
 <?php foreach ($rows as $id => $row): ?>
-	<?php if($counter < 4):?>
+	<?php if($counter < 3):?>
   <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
     <?php print $row; ?>
   </div>

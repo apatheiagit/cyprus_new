@@ -291,28 +291,32 @@
 <?php 
   /* Популярные обзоры */
   print views_embed_view('cyprus', 'theme_reviews5');
-  switch ($type) {
-    case 'text':
+  /* События из Афиши */
+  print views_embed_view('cyprus', 'top_events');
+  /* Популярные места */
+  print views_embed_view('cyprus', 'top_places');
+  //switch ($type) {
+  //  case 'text':
       /* Популярные места */
-      print views_embed_view('cyprus', 'top_places');
+  //    print views_embed_view('cyprus', 'top_places');
       /* События из Афиши */
-      print views_embed_view('cyprus', 'top_events');
-      break;
-    case 'photo':
+  //    print views_embed_view('cyprus', 'top_events');
+  //    break;
+  //  case 'photo':
       /* События из Афиши */
-      print views_embed_view('cyprus', 'top_events');
+  //    print views_embed_view('cyprus', 'top_events');
        /* Популярные места */
-      print views_embed_view('cyprus', 'top_places');
-      break;
-    case 'recipe':
+  //    print views_embed_view('cyprus', 'top_places');
+  //    break;
+  //  case 'recipe':
       /* События из Афиши */
-      print views_embed_view('cyprus', 'top_events');
-      break;
-    default:
+  //    print views_embed_view('cyprus', 'top_events');
+  //     break;
+  //  default:
       /* Популярные места */
-      print views_embed_view('cyprus', 'top_places');
+  //    print views_embed_view('cyprus', 'top_places');
       /* События из Афиши */
-      print views_embed_view('cyprus', 'top_events');
-      break;
-  }
+  //    print views_embed_view('cyprus', 'top_events');
+  //    break;
+  //}
 ?>

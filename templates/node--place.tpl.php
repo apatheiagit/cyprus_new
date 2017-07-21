@@ -273,10 +273,10 @@
  </div>
 </div>
 <?php 
+ /* Афиша в этом месте */
+  print views_embed_view('cyprus', 'events_inplace');
   /* Популярные места в этом городе */
   print views_embed_view('cyprus', 'top_places');
   /* Популярные обзоры из того же раздела */
-  print views_embed_view('cyprus', 'theme_reviews');
-  /* Афиша в этом месте */
-  print views_embed_view('cyprus', 'events_inplace');
+  print views_embed_view('cyprus', 'theme_reviews'); 
 ?>

@@ -1,5 +1,6 @@
 <?php foreach ($fields as $id => $field): 
     if($id == 'field_main_img') { $image = $field->content; }
+    if($id == 'path') { $path = $field->content; }
     if($id == 'title') { $title = $field->content; }
     if($id == 'field_title') { $title = $field->content; }
     if($id == 'body') { $body = $field->content; }

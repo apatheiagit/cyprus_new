@@ -29,10 +29,10 @@
 <?php else:?>
 <?php   
     /* Популярные события в Афише */
-    print views_embed_view('cyprus', 'top_events');
-    /* Популярные обзоры из того же раздела */
-    print views_embed_view('cyprus', 'top_reviews');
+    print views_embed_view('cyprus', 'top_events');    
     /* Популярные места в том же городе */
     print views_embed_view('cyprus', 'top_places');  
+    /* Популярные обзоры из того же раздела */
+    print views_embed_view('cyprus', 'top_reviews');
 ?>
 <?php endif; ?>

@@ -54,6 +54,7 @@
   </div>
   <div class="topMenu">
   <div class="container">
+  <div class="inside-container">
     <div class="row">
       <div class="logo-hidden-xs col-sm-1 col-md-1">       
         <a href="<?php print $prefix;?>/" class="logo-mini"><img src="/sites/all/themes/cyprus_new/img/logo-mini.png"  alt="Cyprustravellers"></a>
@@ -68,6 +69,7 @@
         <div class="search-block"><span class="search-buttn"></span></div>
       </div>
     </div>
+  </div>
   </div>
   </div>
 </div>

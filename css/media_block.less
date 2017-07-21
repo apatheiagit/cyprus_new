@@ -680,6 +680,36 @@
     }
   }
 }
-.view-display-id-top_places{
+.view-display-id-top_places, .view-display-id-top_events, .view-display-id-events_inplace{
   background-color: @grey-fon;
+}
+.view-display-id-top_events, .view-display-id-events_inplace{
+  margin-bottom: 30px;
+}
+.media-block--event{
+  & .category{
+    margin-bottom: 14px;
+    & a{
+      border: 1px solid @text-color;
+      border-radius: 2px;
+      display: inline-block;
+      padding: 10px 14px 8px;
+      margin-right: 10px;
+    }
+    & .date{
+      text-transform: none;
+      font-size: 14px;
+      vertical-align: middle;
+      letter-spacing: 0;
+    }
+  }
+  & .title{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  & .statistic{
+    & path, & .count{
+      fill: @text-color;
+    }
+  }
 }
