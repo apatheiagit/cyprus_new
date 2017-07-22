@@ -1,7 +1,7 @@
 @import url('constants.less');
 
 .article-content{
-	padding: 30px 0;
+	padding: 30px 0 20px 0;
 	& h1, & h2, & h3, & h4, & h5, & h6{
 		font-family: @special-font;
 	}
@@ -20,8 +20,8 @@
 	}
 	& h1, & h2, & h3, & h4, & h5, & h6, & p, & ul, & ol, & hr{
 		@media @tablet{
-			margin-left: 20px;
-			margin-right: 20px;
+			margin-left: 20px !important;
+			margin-right: 20px !important;
 		}
 		@media @mobile{
 			margin-left: 10px !important;
@@ -535,18 +535,31 @@
 	}
 }
 & .tags-block{
+	margin: 50px 0 30px;
+	padding: 0 170px;
+	@media @mobile_tablet{
+		padding: 0 0px;
+		margin: 30px 0 30px;
+	}
 	& h5{
 		font-family: @special-font;
 		font-size: 20px;
 		margin: 10px 0;
 	}
-	margin: 30px 0;
 	& a{
+		color: @dark-grey;
 		display: inline-block;
-		margin-right: 17px;
+		font-size: 14px;
+		margin-right: 6px;
+		margin-bottom: 12px;
 		text-transform: capitalize;
+		text-decoration: none;
+		border-radius: 2px;
+  	border: solid 1px @dark-grey;
+  	padding: 7px 10px;
 		&:hover{
 			color: @orange;
+			border-color: @orange;
 			text-decoration: none;
 		}
 	}
@@ -567,7 +580,9 @@
 			padding: 10px 10px 10px 200px;
 			position: relative;
 			@media @mobile_tablet{
-				margin: 0 0;			
+				margin: 0 0;		
+				font-size: 13px;	
+				padding: 10px 10px 10px 170px;
 			}
 			&>div{
 				position: absolute;
@@ -591,19 +606,19 @@
 }
 .photo-controls-wrapper{
 	border-bottom: 1px solid #CCC;
-	margin: -60px 15% 30px;
+	margin: -60px 170px 0px;
 	padding: 20px 0;
 	position: relative;
 	z-index: 10;
 	@media @mobile_tablet{
-		margin-left: 0;
-		margin-right: 0;
+		margin: -60px 0px 0px;
 		padding: 20px 10px;		
 	}
 	& .photo-controls{
-		background-color: white;
 		height: 22px;
-		width: 200px;
+		@media @mobile_tablet{
+			font-size: 13px;
+		}
 	}
 	& .customBtn{
 		background-image: url(../img/owl-controls.png);
@@ -630,7 +645,7 @@
 	}
 }
 .somit-gallery{	
-	padding: 30px 0;
+	margin: 30px 0;
 	& .container{
 		background-color: white;
 	}
@@ -777,5 +792,40 @@
 	min-height: 700px;
 	& .article-content{
 		padding: 0 0 30px 0;
+	}
+}
+.media-detail{
+	.statistic{
+		display: inline-block;
+		opacity: .3;
+		margin-right: 20px;
+	  & .count{
+	    color: black;
+	    font-size: 18px;
+	    line-height: 1.2;
+	    margin-left: 10px;
+	    vertical-align: middle;
+	  }
+	  & svg{
+	    width: 30px;
+	    height: 30px;
+	    vertical-align: middle;    
+	  }
+	  & .stat-icon{
+	    fill: black;
+	  }
+	}
+}
+.media-detail--place, & .media-detail--event{
+	& .tags-block{
+		padding: 0 80px;
+		@media @mobile_tablet{
+			padding: 0 0;
+		}
+	}
+}
+.article-recipe{
+	& .container-bordered{
+		border-bottom: 1px solid @grey-fon;
 	}
 }

@@ -1135,6 +1135,139 @@ img.monochrome {
 		}
 	}
 }
+.detail-share-block{
+	background-color: @grey-fon;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 50px;
+  padding-bottom: 35px;
+  margin-bottom: 30px;
+	& .title{
+		font-family: @special-font;
+	  font-size: 32px;
+	  line-height: 1.07; 
+	  margin-bottom: 20px;
+	  @media @mobile_tablet{
+	  	font-size: 24px;
+	  	margin-bottom: 10px;
+	  }
+	}
+	& .fa{
+		display: inline-block;
+		position: relative;
+		border-radius: 2px;
+  	border: solid 1px @text-color;
+  	padding: 16px 30px 16px 70px;
+    margin: 15px;
+    @media @mobile{
+    	height: 56px;
+    	width: 56px;
+    	padding: 0;
+    	margin: 5px;
+    	& span{
+    		display: none;
+    	}
+    	&:before, &:after{
+    		left: 13px !important;
+    	}
+    }
+    &:hover{
+    	color: white;
+    	text-decoration: none;
+    	opacity: 1;
+    	&:after{
+    		background-color: white;
+    	}
+    }
+  	& span{
+  		font-size: 14px;
+  		letter-spacing: 2.3px;
+  		text-transform: uppercase;
+  	}
+  	&.fa-facebook{
+  		&:hover{
+				background-color: rgb(57, 87, 154);
+				border-color: rgb(57, 87, 154);
+				&:before{
+					background-image: url(../img/facebook-c.png);
+				}
+  		}
+  		&:before{
+				height: 21px;
+	    	top: 18px;
+	    }
+		}
+		&.fa-twitter{
+			&:hover{
+				background-color: rgb(0, 171, 240);
+				border-color: rgb(0, 171, 240);
+				&:before{
+					background-image: url(../img/twitter-c.png);
+				}
+			}
+  		&:before{
+				height: 17px;
+    		top: 19px;
+	    }
+		}
+		&.fa-telegram{
+			&:hover{
+				background-color: rgb(0, 136, 204);
+				border-color: rgb(0, 136, 204);
+				&:before{
+					background-image: url(../img/telegram-c.png);
+				}
+			}
+  		&:before{
+				height: 16px;
+	   		top: 19px;
+	   	}
+		}
+		&.fa-vk{
+			&:hover{
+				background-color: rgb(65, 101, 139);
+				border-color: rgb(65, 101, 139);
+				&:before{
+					background-image: url(../img/vkontakte-c.png);
+				}
+			}
+  		&:before{
+				height: 14px;
+	    	top: 20px;
+	    }
+		}
+		&.fa-tumblr{
+			&:hover{
+				background-color: rgb(46, 78, 103);
+				border-color: rgb(46, 78, 103);
+				&:before{
+					background-image: url(../img/tumblr-c.png);
+				}
+			}
+  		&:before{
+				height: 20px;
+	    	top: 17px;
+	    }
+		}
+		&:before{
+			left: 30px;
+			width: 30px;
+			z-index: 3;
+			transition: all 0.5s ease-in;
+		}
+		&:after{
+  		content: "";
+  		border-radius: 50%;
+  		background-color: @text-color;
+  		height: 30px;
+  		width: 30px;
+  		position: absolute;
+  		top: 12px;
+  		left: 30px;
+  		z-index: 2;
+  	}
+	}
+}
 .big-share-block{
 	background-color: @new-grey;
 	padding: 30px;

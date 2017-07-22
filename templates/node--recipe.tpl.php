@@ -1,4 +1,13 @@
-<div class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<?php
+    $theme_path = path_to_theme();
+    global $language_content; 
+    $lang = $language_content->language;
+    if ($lang == 'en') $prefix = '/en'; else $prefix = '';
+    $term_city = taxonomy_term_load($content['field_city']['#items'][0]['taxonomy_term']->tid);
+    $translated_term_city = i18n_taxonomy_localize_terms($term_city); 
+?>
+<?php $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
+<div class="media-detail media-detail--recipe node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
  <div class="article-photo-wrapper container">
     <div class="main-photo">
     <?php
@@ -21,15 +30,6 @@
     </div>
   </div>
  <div class="article-recipe container">
-   <div class="article-share-wrapper">
-      <div class="article-stat">
-        <?php $count = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
-        <div class="stat stat-watch"><span class="icon icon-views"></span><span class="count <?php if($count >= 1000) print 'many'; ?>"><?php print  $count; ?></span></div>    
-      </div>
-      <div class="article-share">
-        <div class="pluso" data-background="none;" data-options="big,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,facebook,tumblr,twitter"></div>
-      </div>
-    </div>
     <div class="container-bordered">
       <div class="article-content">
         <div class="recipe-summery"><big><?php print $content['body']['#items'][0]['value']; ?></big></div>      
@@ -77,26 +77,41 @@
             print $new_body; ?>
         </div>
       </div>
-      <script type="text/javascript">(function() {
-      if (window.pluso)if (typeof window.pluso.start == "function") return;
-      if (window.ifpluso==undefined) { window.ifpluso = 1;
-        var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-        s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-        s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-        var h=d[g]('body')[0];
-        h.appendChild(s);
-      }})();</script>
     </div>
-    <div class="article-share-wrapper">
-    <div class="article-stat">
-      <?php $count = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
-      <div class="stat stat-watch"><span class="icon icon-views"></span><span class="count <?php if($count >= 1000) print 'many'; ?>"><?php print  $count; ?></span></div>    
+    <div class="tags-block">
+      <div class="statistic">
+        <div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
+      </div>
     </div>
-    <div class="article-share">
-      <div class="pluso" data-background="none;" data-options="big,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,facebook,tumblr,twitter"></div>
-    </div>
+  </div>    
+</div>
+<?php /* Поделитесь с друзьями */?>
+<?php $current_url = url(current_path(), array('absolute' => TRUE)); $current_title = drupal_get_title();?>
+<div class="wide-container container detail-share-block">  
+  <div class="title"><?php print t("Share with friends");?></div>       
+  <div class="share-links">         
+    <a href="http://www.facebook.com/sharer.php?src=sp&amp;u=<?php print urlencode($current_url);?>" class="fa fa-facebook" target="_blank">
+      <span class="note"><?php print t("Facebook");?></span></a>    
+    <a href="http://twitter.com/home?status=<?php print urlencode($current_url);?>&amp;text=<?php print $current_title;?>" class="fa fa-twitter" target="_blank">
+      <span class="note"><?php print t("Twitter");?></span></a>   
+    <a href="https://telegram.me/share/url?url=<?php print urlencode($current_url);?>&amp;text=<?php print $current_title;?>" class="fa fa-telegram" target="_blank" >
+      <span class="note"><?php print t("Telegram");?></span></a>            
+    <a href="http://vk.com/share.php?url=<?php print urlencode($current_url);?>&amp;title=<?php print $current_title;?>" class="fa fa-vk" target="_blank">
+      <span class="note"><?php print t("ВКонтакте");?></span></a> 
+    <a href="http://www.tumblr.com/share/link?url=<?php print urlencode($current_url);?>&amp;name=<?php print $current_title;?>" class="fa fa-tumblr" target="_blank">
+      <span class="note"><?php print t("Tumblr");?></span></a>  
   </div>
-  </div>
+  <script type="text/javascript">
+  (function($) {
+    $(function() {          
+      $('.share-links a').on('click', function(){   
+        var Url = $(this).attr('href');
+        var newWin = window.open(Url, 'example', 'width=600,height=400');
+        return false;
+      });
+     })
+  })(jQuery);    
+  </script>
 </div>
 <?php 
   /* Обзоры из раздела кухня*/

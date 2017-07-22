@@ -24,7 +24,7 @@
  	}
  	$titleLength = iconv_strlen($title, 'UTF-8');
 ?>
-<div class="col-sm-4 media-wrapper--normal">
+<div class="col-sm-6 col-md-4 media-wrapper--normal">
 <div class="media-block media-block--review media-block--event">
 	<div class="photo">		
 		<?php print $image;?>

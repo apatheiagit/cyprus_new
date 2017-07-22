@@ -1,6 +1,5 @@
 <?php    
-    hide($content['comments']);
-    hide($content['links']); 
+    $theme_path = path_to_theme();
     global $language_content; 
     $lang = $language_content->language;
     if ($lang == 'en') $prefix = '/en'; else $prefix = '';
@@ -31,6 +30,7 @@
       print $gallery;
     }   
 ?>
+<?php $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
 <?php $type = $content['field_type']['#items']['0']['value']; ?>
 <div class="media-detail media-detail--<?php print $type;?>">
 <div class="article-item article-item--detail-photo">  
@@ -120,26 +120,6 @@
   <?php endif;?>
 </div>
 <div class="article-item article-item--detail-content container">
-  <script type="text/javascript">(function() {
-    if (window.pluso)if (typeof window.pluso.start == "function") return;
-    if (window.ifpluso==undefined) { window.ifpluso = 1;
-      var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-      s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-      s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-      var h=d[g]('body')[0];
-      h.appendChild(s);
-    }})();
-  </script>
-  <div class="article-share-wrapper">
-    <div class="article-stat">
-      <?php $count = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
-      <div class="stat stat-watch"><span class="icon icon-views"></span><span class="count <?php if($count >= 1000) print 'many'; ?>"><?php print  $count; ?></span></div>    
-    </div>
-    <div class="article-share">
-      <div class="pluso" data-background="none;" data-options="big,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,facebook,tumblr,twitter"></div>
-    </div>
-  </div>
-  <div class="container-bordered">
     <div class="article-content">
       <?php 
           /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
@@ -261,63 +241,48 @@
           print_gallery($photo_review_photos, "review", $photo_review->title); 
         ?>     
       <?php endif; ?> 
-       
-    </div>
-  </div>
-  <div class="article-share-wrapper">
-    <div class="article-stat">
-      <?php $count = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
-      <div class="stat stat-watch"><span class="icon icon-views"></span><span class="count <?php if($count >= 1000) print 'many'; ?>"><?php print  $count; ?></span></div>    
-    </div>
-    <div class="article-share">
-      <div class="pluso" data-background="none;" data-options="big,square,line,horizontal,nocounter,sepcounter=1,theme=14" data-services="vkontakte,facebook,tumblr,twitter"></div>
-    </div>
-  </div>
-  <div class="tags-block">
-    <h5><?php print t("Related topics"); ?></h5>   
-    <?php foreach ($content['field_section']['#items'] as $section):?>
-      <?php $term_section = taxonomy_term_load($section['taxonomy_term']->tid);
-            $translated_term_section = i18n_taxonomy_localize_terms($term_section); ?>
-      <a href="<?php print $prefix;?>/<?php print $term_section->field_english['und'][0]['value'];?>"><?php print $translated_term_section->name;?></a>
-    <?php endforeach; ?>
-    <?php foreach ($content['field_tags']['#items'] as $tags):?>
-       <?php $term_tag = taxonomy_term_load($tags['taxonomy_term']->tid);
-            $translated_term_tag = i18n_taxonomy_localize_terms($term_tag); ?>
-      <a href="<?php print $prefix;?>/tags/<?php print str_replace(" ", "-", $tags['taxonomy_term']->name);?>"><?php print $translated_term_tag->name;?></a>
-    <?php endforeach; ?>
-  </div>
+      <div class="tags-block">
+        <div class="statistic">
+          <div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
+        </div>   
+        <?php foreach ($content['field_section']['#items'] as $section):?>
+          <?php $term_section = taxonomy_term_load($section['taxonomy_term']->tid);
+                $translated_term_section = i18n_taxonomy_localize_terms($term_section); ?>
+          <a href="<?php print $prefix;?>/<?php print $term_section->field_english['und'][0]['value'];?>"><?php print $translated_term_section->name;?></a>
+        <?php endforeach; ?>
+        <?php foreach ($content['field_tags']['#items'] as $tags):?>
+           <?php $term_tag = taxonomy_term_load($tags['taxonomy_term']->tid);
+                $translated_term_tag = i18n_taxonomy_localize_terms($term_tag); ?>
+          <a href="<?php print $prefix;?>/tags/<?php print str_replace(" ", "-", $tags['taxonomy_term']->name);?>"><?php print $translated_term_tag->name;?></a>
+        <?php endforeach; ?>
+      </div>
+  </div>  
 </div>
 </div>
 <?php /* Поделитесь с друзьями */?>
 <?php $current_url = url(current_path(), array('absolute' => TRUE)); $current_title = drupal_get_title();?>
-<div class="wide-container container">  
-  <div class="big-share-block">
-    <div class="text-center">
-      <div class="title"><?php print t("Share with friends");?></div>       
-      <div class="share-links">         
-        <a href="http://www.facebook.com/sharer.php?src=sp&amp;u=<?php print urlencode($current_url);?>" class="fa fa-facebook" target="_blank">
-          <span class="visuallyhidden">Facebook</span></a>    
-        <a href="http://twitter.com/home?status=<?php print urlencode($current_url);?>&amp;text=<?php print $current_title;?>" class="fa fa-twitter" target="_blank">
-          <span class="visuallyhidden">Twitter</span></a>   
-        <a href="https://telegram.me/share/url?url=<?php print urlencode($current_url);?>&amp;text=<?php print $current_title;?>" class="fa fa-telegram" target="_blank" >
-          <span class="visuallyhidden">Telegram</span></a>            
-        <a href="http://vk.com/share.php?url=<?php print urlencode($current_url);?>&amp;title=<?php print $current_title;?>" class="fa fa-vk" target="_blank">
-          <span class="visuallyhidden">ВКонтакте</span></a> 
-        <a href="http://www.tumblr.com/share/link?url=<?php print urlencode($current_url);?>&amp;name=<?php print $current_title;?>" class="fa fa-tumblr" target="_blank">
-          <span class="visuallyhidden">Tumblr</span></a>  
-      </div>
-    </div>
+<div class="wide-container container detail-share-block">  
+  <div class="title"><?php print t("Share with friends");?></div>       
+  <div class="share-links">         
+    <a href="http://www.facebook.com/sharer.php?src=sp&amp;u=<?php print urlencode($current_url);?>" class="fa fa-facebook" target="_blank">
+      <span class="note"><?php print t("Facebook");?></span></a>    
+    <a href="http://twitter.com/home?status=<?php print urlencode($current_url);?>&amp;text=<?php print $current_title;?>" class="fa fa-twitter" target="_blank">
+      <span class="note"><?php print t("Twitter");?></span></a>   
+    <a href="https://telegram.me/share/url?url=<?php print urlencode($current_url);?>&amp;text=<?php print $current_title;?>" class="fa fa-telegram" target="_blank" >
+      <span class="note"><?php print t("Telegram");?></span></a>            
+    <a href="http://vk.com/share.php?url=<?php print urlencode($current_url);?>&amp;title=<?php print $current_title;?>" class="fa fa-vk" target="_blank">
+      <span class="note"><?php print t("ВКонтакте");?></span></a> 
+    <a href="http://www.tumblr.com/share/link?url=<?php print urlencode($current_url);?>&amp;name=<?php print $current_title;?>" class="fa fa-tumblr" target="_blank">
+      <span class="note"><?php print t("Tumblr");?></span></a>  
   </div>
   <script type="text/javascript">
   (function($) {
-    $(function() {  
-        
-        $('.share-links a').on('click', function(){   
-          var Url = $(this).attr('href');
-          var newWin = window.open(Url, 'example', 'width=600,height=400');
-          return false;
-        });
-
+    $(function() {          
+      $('.share-links a').on('click', function(){   
+        var Url = $(this).attr('href');
+        var newWin = window.open(Url, 'example', 'width=600,height=400');
+        return false;
+      });
      })
   })(jQuery);    
   </script>
