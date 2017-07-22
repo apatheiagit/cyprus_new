@@ -3,6 +3,7 @@
 @review-height: 480px;
 @top3reviews1-height: 590px;
 @top3reviews2-height: 280px;
+@quarter-height: 380px;
 @blog-height: 90px;
 @special-height: 475px;
 
@@ -160,6 +161,9 @@
 }
 .media-block--review{
   height: @review-height;
+  @media @medium{
+    height: @review-height * 0.9;
+  }
   & .category{
     margin-top: 20px;
   }
@@ -668,7 +672,10 @@
    margin-top: 0px;
 }
 .media-block--quarter{
-  height: 380px;
+  height: @quarter-height;
+  @media @mobile_tablet{
+    height: @quarter-height * 1.16;
+  }
   & .title{
     font-size: 20px;
     line-height: 1.4;
