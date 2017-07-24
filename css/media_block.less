@@ -6,6 +6,7 @@
 @quarter-height: 380px;
 @blog-height: 90px;
 @special-height: 475px;
+@index-height: 540px;
 
 .statistic{
   & .count{
@@ -716,6 +717,104 @@
   & .statistic{
     & path, & .count{
       fill: @text-color;
+      color: @text-color;
+    }
+  }
+}
+.media-block--index{
+  height: @index-height;
+  margin-bottom: 0;
+  text-align: center;
+  @media @extra-large{
+    height: @index-height * 1.32;
+  }
+  @media @medium{
+    height: @index-height * 0.83;
+    & img{
+      max-width: none;
+      max-height: @index-height * 0.83;
+      width: auto !important;
+    }
+  }
+  @media @tablet{
+    height: @index-height * 0.65;
+    & img{
+      max-width: none;
+      max-height: @index-height * 0.65;
+      width: auto !important;
+    }
+  }
+  @media @mobile{
+    height: @index-height * 0.46;
+    & img{
+      max-width: none;
+      max-height: @index-height * 0.46;
+      width: auto !important;
+    }
+  }
+  &:hover {
+    & .photo img {
+      transform: scale(1);
+    }
+  }
+  & .photo {
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    @media @mobile{
+      max-width: 100%;
+    }
+  }
+  & .container{
+    position: relative;
+    z-index: 2;
+    color: white;
+    height: 100%;
+  }
+  & .text{
+    width: calc(~'100% - 30px');
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  & .category{
+    color: white;
+    font-size: 14px;
+    @media @mobile{
+      font-size: 12px;
+    }
+  }
+  & .title{
+    margin: 20px 0;
+    & .big{ font-size: 72px; }
+    & .small{ font-size: 36px; }
+    @media @medium{
+      & .big{ font-size: 48px; }
+      & .small{ font-size: 26px; }
+    }
+    @media @tablet{
+      & .big{ font-size: 36px; }
+      & .small{ font-size: 22px; }
+    }
+    @media @mobile{
+      & .big{ font-size: 26px; }
+      & .small{ font-size: 18px; }
+    }
+    & a:hover{
+      color: @light-grey;
+      text-decoration: none;
+    }
+  }
+  & .statistic{
+    position: static;
+    & path, & .count{
+      fill: white;
+      color: white;
     }
   }
 }
