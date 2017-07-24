@@ -7,6 +7,7 @@
 @blog-height: 90px;
 @special-height: 475px;
 @index-height: 540px;
+@new-review-height: 430px;
 
 .statistic{
   & .count{
@@ -784,10 +785,7 @@
   }
   & .category{
     color: white;
-    font-size: 14px;
-    @media @mobile{
-      font-size: 12px;
-    }
+    font-size: 12px;
   }
   & .title{
     margin: 20px 0;
@@ -817,4 +815,96 @@
       color: white;
     }
   }
+}
+.media-wrapper--medium{
+  & .media-block--new-review{
+    height: @new-review-height; 
+    color: white;
+    @media @medium{
+      height: @new-review-height * 0.8; 
+    }
+    @media @mobile_tablet{
+      height: @new-review-height * 0.62; 
+    }
+    & .photo {
+      position: absolute!important;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      @media @mobile{
+        max-width: 100%;
+      }
+      &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 50%,rgba(0,0,0,.7));      
+        z-index: 10;
+      } 
+    }
+    & .title{
+      font-weight: bold;
+    }
+    & .category{
+      color: white;
+      font-size: 12px;
+    }    
+    & .text{
+      position: absolute;
+      left: 20px;
+      top: 200px;
+      z-index: 3;
+      width: calc(~'100% - 40px');
+      @media @medium{
+        top: 120px;
+      }
+      @media @mobile_tablet{
+        top: 20px;
+      }
+    }
+    & .statistic{
+      left: 20px;
+      bottom: 20px;
+      & path, & .count{
+        fill: white;
+        color: white;
+      }
+    }
+  }
+}
+.media-block--new-review{
+  & .descr{
+    font-size: 18px;
+    line-height: 26px;
+  }
+  & .statistic{
+    bottom: 0px;
+  }
+}
+.view-display-id-new_reviews{
+  & .white-container{
+    border-radius: 5px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.view-display-id-top3_reviews{
+  padding-top: 30px;
+  padding-bottom: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+.index-head{
+  font-size: 24px;
+  font-family: @special-font;
+  line-height: 1.33;
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
 }

@@ -3,16 +3,12 @@
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
 	<?php if ($id < 2):?>
-		<div class="col-sm-6">
-			<div class="article-item article-item--typical article-item--into-photo">
+		<div class="col-sm-6 media-wrapper--medium">
 			<?php print $row; ?>
-			</div>
-		</div>
+		</div>		
 	<?php else:?>
-	<div class="col-sm-4">
-		<div class="article-item article-item--basic article-item--common">
+		<div class="col-sm-4 media-wrapper--normal">
 	    <?php print $row; ?>
 	  </div>
-	</div>
 	<?php endif;?>
 <?php endforeach; ?>

@@ -27,15 +27,17 @@
  * @ingroup views_templates
  */
 ?>
-<div class="wide-container container <?php print $classes; ?>">
+<div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="view-header">
-      <?php print $header; ?>
+    <div class="wide-container container">
+      <div class="view-header">
+        <?php print $header; ?>
+      </div>
     </div>
   <?php endif; ?>
 
@@ -52,9 +54,11 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
+  <div class="white-container container">
     <div class="view-content row">
       <?php print $rows; ?>
     </div>
+  </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">
       <?php print $empty; ?>
