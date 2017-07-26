@@ -10,6 +10,7 @@
 @new-review-height: 430px;
 @event-height: 465px;
 @events-height: 165px;
+@photo-height: 692px;
 
 .statistic{
   & .count{
@@ -767,6 +768,16 @@
     @media @mobile{
       max-width: 100%;
     }
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 30%, rgba(0,0,0,.4) 50%, rgba(0,0,0,.2) 80%, rgba(0,0,0,.0));      
+      z-index: 10;
+    } 
   }
   & .container{
     position: relative;
@@ -1061,6 +1072,94 @@
     }
     & .title{
       font-size: 20px;
+    }
+  }
+}
+.media-block--main-photo{
+  height: @photo-height;
+  color: white;
+  text-align: center;
+  @media @medium{
+    height: @photo-height * 0.78;
+  }
+  @media @tablet{
+    height: @photo-height * 0.6;
+  }
+  @media @mobile{
+    height: @photo-height * 0.3;
+  }
+  & .photo{
+    border-radius: 5px;
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 30%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.2) 80%, rgba(0,0,0,.0));      
+      z-index: 10;
+    } 
+    & img{
+      border-radius: 5px;
+    }
+  }
+  & .text{    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+    z-index: 3;
+    width: 100%;
+  }
+  & a:hover{
+    text-decoration: none;
+    color: darken(white, 10%);
+  }
+  & .title{
+    font-size: 48px;
+    @media @medium{
+      font-size: 40px; 
+    }
+    @media @tablet{
+      font-size: 30px;       
+    }
+    @media @mobile{
+      font-size: 22px;        
+    }     
+  }
+  & .descr{
+    font-size: 18px;
+    @media @mobile_tablet{
+      font-size: 16px;
+    }
+  }
+  & .category{
+    font-size: 12px;
+    @media @mobile_tablet{
+      font-size: 10px;
+    }
+    & a{
+      color: white;
+      border-radius: 2px;
+      display: inline-block;
+      padding: 10px 14px 8px;
+    }
+  }
+  &.media-block--entertainment .category a{ background-color: @blue; }
+  &.media-block--culture .category a{ background-color: @orange; }
+  &.media-block--cuisine .category a{ background-color: @lime; }
+  & .statistic{
+    margin-top: 20px;
+    position: static;
+    & path, & .count{
+      fill: white;
+      color: white;
     }
   }
 }

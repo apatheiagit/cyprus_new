@@ -1359,6 +1359,12 @@ img.monochrome {
 	& .form-item-mail{
 		display: inline-block;
 		margin: 0;
+		@media @medium{
+	  	margin-top: 10px;
+	  }
+		@media @tablet{
+	  	margin-top: 10px;
+	  }
 		& label{
 			display: none;
 		}
@@ -1372,7 +1378,11 @@ img.monochrome {
 		  padding: 0 26px;
 		  font-size: 18px;
 		  @media @mobile {
-		  	width: 200px;
+		  	width: 240px;
+		  	height: 40px;
+		  	margin-right: 0;
+		  	margin-top: 10px;
+		  	margin-bottom: 10px;
 		  }
 		  &:focus{
 		  	outline-width: 0;
@@ -1387,8 +1397,19 @@ img.monochrome {
 	  background-image: linear-gradient(to bottom, #84bf41, #64ac55);
 	  position: relative;
 	  transition: all 0.5s ease-in;
+	  @media @medium{
+	  	margin-top: 10px;
+	  }
+	  @media @tablet{
+	  	margin-top: 10px;
+	  }
    	@media @mobile {
 	  	width: 140px;
+	  	height: 40px;
+	  	& input{
+	  		padding: 0!important;
+	  		font-size: 14px !important;
+	  	}
 	  	&:before{
 	  		display: none;
 	  	}
