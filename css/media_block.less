@@ -1037,3 +1037,30 @@
     }
   }
 }
+.media-wrapper--normal{
+  & .media-block--pop-place{
+    & .descr{
+      font-size: 18px;
+      @media @mobile_tablet{
+        font-size: 16px;
+      }
+    }
+    & .category{
+      font-size: 12px;
+      @media @mobile_tablet{
+        font-size: 10px;
+      }
+    }
+  }
+}
+.media-wrapper--small{
+  & .media-block--pop-place{
+    height: @review-height * 0.875;
+    @media @mobile_tablet{
+      height: @review-height * 0.94;
+    }
+    & .title{
+      font-size: 20px;
+    }
+  }
+}
