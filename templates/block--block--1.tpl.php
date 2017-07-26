@@ -1,5 +1,5 @@
 <?php $current_url = url(current_path(), array('absolute' => TRUE)); $current_title = drupal_get_title();?>
-<div class="wide-container container">	
+<div class="wide-container container share-block-container">	
 	<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> big-share-block">
 		<div class="text-center">
 			<div class="title">Делитесь историями, рассказывайте о нас друзьям</div>

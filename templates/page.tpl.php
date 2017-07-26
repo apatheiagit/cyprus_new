@@ -84,7 +84,7 @@
   <?php print render($page['bottom']); ?>
 </div>
 <div class="somit somit-footer">
-  <div class="container footer-margin-top">
+  <div class="wide-container-wo container footer-margin-top">
   <div class="border-top container-first">
     <div class="row">
       <div class="col-sm-4 col-md-3 col-lg-2">
