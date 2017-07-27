@@ -29,6 +29,10 @@
 		<?php print $image;?>
 	</div>	
 	<div class="text">
+	<div class="nav-block">
+		<div class="next-event">-></div>
+		<div class="prev-event"><-</div>
+	</div>
 		<div class="category">
 			<a href="<?php print $prefix;?>/events?city=<?php print $city;?>"><?php print $city_name;?></a>
 			<span class="date"><?php print $when;?></span>
