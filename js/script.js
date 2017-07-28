@@ -197,7 +197,12 @@ Drupal.behaviors.my_custom_behavior = {
 				next_wrap.html(this_content).attr("id", "event_" + this_id).attr('data-id', this_id);
 			});
 
-			//$('.form-select').val('All');		
+			$('.article-content a[href*=#]').click(function(){				
+			    $('html, body').animate({
+			        scrollTop: $( $(this).attr('href') ).offset().top - 60
+			    }, 500);
+			    return false;
+			});	
 
   	})
     
