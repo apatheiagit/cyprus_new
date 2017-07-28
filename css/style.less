@@ -1585,6 +1585,17 @@ img.monochrome {
 	background-color: @event-fon;
 	border-radius: 5px;
 	margin-bottom: 30px;
+	& .index-head{
+		text-align: left;
+		margin: 30px 30px;
+		@media @tablet{
+			font-size: 20px;
+			margin: 30px 10px;
+		}
+		@media @mobile{
+			text-align: center;
+		}
+	}
 }
 .view-display-id-top_places, .view-display-id-top_events, .view-display-id-events_inplace{
   background-color: @grey-fon;
@@ -1643,11 +1654,43 @@ img.monochrome {
 	padding-right: 0;
 }
 .nav-block{
-	& div{
-		font-size: 36px;
+	position: absolute;
+	z-index: 5;
+	top: -55px;
+  left: 50%;
+  text-align: center;
+  width: 240px;
+  margin-left: -120px;
+  @media @mobile{
+  	display: none;
+  }
+	& .nav-btn{		
+		height: 16px;
+		width: 20px;
 		cursor: pointer;
+		float: left;
+	}
+	& .start-date{
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 1;
+		color: @text-color;		
+		float: left;
+		width: 195px;
 	}
 	.media-wrapper--wo-image &{
 		display: none;
+	}
+}
+#event_0{
+	& .next-event {
+		cursor: default;
+		& rect{ fill: @footer-link;}
+	}
+}
+#event_3{
+	& .prev-event {
+		cursor: default;
+		rect{ fill: @footer-link;}
 	}
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" class="arrow arrow-left"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 21 16.9" style="enable-background:new 0 0 21 16.9;" xml:space="preserve">
+<rect x="2.3" y="7.4" width="18.7" height="2.2"/>
+<rect x="-0.9" y="3.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.051 5.0152)" width="11.9" height="2.2"/>
+<rect x="-0.9" y="10.7" transform="matrix(0.7071 0.7071 -0.7071 0.7071 9.8235 -4.930861e-02)" width="11.8" height="2.2"/>
+</svg>

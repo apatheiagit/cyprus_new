@@ -173,8 +173,8 @@ Drupal.behaviors.my_custom_behavior = {
 			    }
 			});
 
-			$(document).on('click', '.next-event', function(){
-				var this_wrap = $(this).parent().parent().parent().parent();
+			$(document).on('click', '.prev-event', function(){
+				var this_wrap = $(this).parent().parent().parent();
 				var this_id = parseInt(this_wrap.attr('data-id'));
 				var this_content = this_wrap.html();
 				if (this_id < 3) var next_id = this_id + 1;
@@ -185,8 +185,8 @@ Drupal.behaviors.my_custom_behavior = {
 				next_wrap.html(this_content).attr("id", "event_" + this_id).attr('data-id', this_id);
 			});
 
-			$(document).on('click', '.prev-event', function(){
-				var this_wrap = $(this).parent().parent().parent().parent();
+			$(document).on('click', '.next-event', function(){
+				var this_wrap = $(this).parent().parent().parent();
 				var this_id = parseInt(this_wrap.attr('data-id'));
 				var this_content = this_wrap.html();
 				if (this_id > 0) var next_id = this_id - 1;

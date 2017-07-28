@@ -8,6 +8,7 @@
     if($id == 'field_subtitle') { $subtitle = $field->content; }
     if($id == 'totalcount') { $totalcount = $field->content; }
     if($id == 'field_when') { $when = $field->content; }
+    if($id == 'field_when_1') { $when_1 = $field->content; }
     if($id == 'field_event_type') { $event_type = $field->content; }
  endforeach; ?>
 
@@ -25,14 +26,15 @@
  	$titleLength = iconv_strlen($title, 'UTF-8');
 ?>
 <div class="media-block media-block--event">
+	<div class="nav-block">
+		<div class="next-event nav-btn"><?php print file_get_contents($theme_path."/img/left.svg");?></div>
+		<div class="start-date"><?php print $when_1;?></div>
+		<div class="prev-event nav-btn"><?php print file_get_contents($theme_path."/img/right.svg");?></div>
+	</div>
 	<div class="photo">		
 		<?php print $image;?>
 	</div>	
-	<div class="text">
-	<div class="nav-block">
-		<div class="next-event">-></div>
-		<div class="prev-event"><-</div>
-	</div>
+	<div class="text">	
 		<div class="category">
 			<a href="<?php print $prefix;?>/events?city=<?php print $city;?>"><?php print $city_name;?></a>
 			<span class="date"><?php print $when;?></span>
