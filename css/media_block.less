@@ -798,7 +798,7 @@
     font-size: 12px;
   }
   & .title{
-    margin: 20px 0;
+    margin: 10px 0 20px;
     & .big{ font-size: 72px; }
     & .small{ font-size: 36px; }
     @media @medium{
@@ -1006,11 +1006,14 @@
       background-color: @event-fon;
       border-color: @event-fon;
       font-size: 12px;
+      transition: all 0.3s ease-in;
       @media @mobile_tablet{
         font-size: 10px;
       }
       &:hover{
-        color: darken(@category-text, 20%);
+        background-color: @category-text;
+        border-color: @category-text;
+        color: white;
       }
     }   
     & .descr{
@@ -1123,6 +1126,9 @@
   }
   & .title{
     font-size: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     @media @medium{
       font-size: 40px; 
     }
