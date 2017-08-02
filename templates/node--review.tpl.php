@@ -30,54 +30,17 @@
       print $gallery;
     }   
 ?>
-<?php $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
-<?php $type = $content['field_type']['#items']['0']['value']; ?>
+<?php 
+  $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;
+  $type = $content['field_type']['#items']['0']['value']; 
+  $special = $content['field_special']['#items']['0']['value']; 
+  $city = $content['field_city']['#items']['0']['value']; 
+  $section = $content['field_section']['#items']['0']['taxonomy_term']->tid; 
+?>
 <div class="media-detail media-detail--<?php print $type;?>">
-<div class="article-item article-item--detail-photo">  
-  <?php if($type == 'blog'):?>
-  <div class="article-photo-wrapper container">
-    <div class="main-photo bottom-blackout">
-      <?php 
-        $params = array(
-          'style_name' => 'cyprus1140x440',
-          'path' => $content['field_main_img']['#items']['0']['uri'],
-          'alt' => $title,
-          'title' => $title,
-          'attributes' => array('class' => array('img-responsive')),
-          'getsize' => FALSE,
-        );
-      ?>
-      <?php  print theme('image_style', $params); ?>
-    </div>
-    <div class="main-info main-info--bottom">
-      <div class="article-title">
-        <span class="big"><?php print $title;?></span><br><span class="small"><?php print $content['field_subtitle']['#items']['0']['value'];?></span>
-      </div>
-      <div class="bloger-block">
-        <div class="photo">
-        <?php $bloger = $content['field_bloger']['#items']['0']['taxonomy_term'];?>
-        <a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>">          
-          <?php 
-            $params = array(
-              'style_name' => 'cyprus63x63',
-              'path' => $bloger->field_image['und'][0]['uri'],
-              'alt' => $bloger->name,
-              'title' => $bloger->name,
-              'attributes' => array('class' => array('img-circle','monochrome')),
-              'getsize' => FALSE,
-            );
-          ?>
-          <?php  print theme('image_style', $params); ?>
-        </a></div>
-        <div class="info">
-          <div class="date"><?php print format_date($node->created, 'date'); ?></div>
-          <div class="name"><a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>"><?php print $bloger->name;?></a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <?php else:?> 
-  <div class="article-photo">       
+
+<div class="media-detail--main-photo">
+  <div class="photo">
     <?php
       $params = array(
         'style_name' => 'cyprus1920x800',
@@ -89,36 +52,64 @@
       );?>    
     <?php  print theme('image_style', $params); ?>
   </div>
-  <div class="article-text article-text--center">
-    <div class="container"> 
-      <?php $special = $content['field_special']['#items']['0']['value']; ?>
-      <?php if($special == 1):?>
-        <?php if(isset($content['field_specproekt'])):?>
-          <?php $term_specproekt = taxonomy_term_load($content['field_specproekt']['#items'][0]['taxonomy_term']->tid);
-            $translated_term_specproekt = i18n_taxonomy_localize_terms($term_specproekt); ?>
-          <a class="article-type article-type--white" href="<?php print $prefix;?>/special/<?php print $content['field_specproekt']['#items'][0]['taxonomy_term']->tid;?>"><?php print $translated_term_specproekt->name;?></a>
+  <div class="container">
+    <div class="text">    
+      <?php if($type != 'top5'):?>
+      <div class="category">
+       <?php if(isset($content['field_specproekt'])):?>
+          <?php $term_specproekt = taxonomy_term_load($content['field_specproekt']['#items'][0]['taxonomy_term']->tid); $translated_term_specproekt = i18n_taxonomy_localize_terms($term_specproekt); ?>
+          <a href="<?php print $prefix;?>/special/<?php print $content['field_specproekt']['#items'][0]['taxonomy_term']->tid;?>"><?php print $translated_term_specproekt->name;?></a>
+        <?php elseif($type == 'photo'):?>
+          <a href="<?php print $prefix;?>/photoreviews"><?php print t("Picture story");?></a>
+        <?php elseif($type == 'lifehack'):?>
+          <a href="<?php print $prefix;?>/lifehack"><?php print t("Life hack");?></a>
+        <?php elseif($type == 'blog'):?>
+          <a href="<?php print $prefix;?>/blog"><?php print t("Personal experience");?></a>
         <?php else:?>
-          <a class="article-type article-type--white" href="<?php print $prefix;?>/special"><?php print t("Special project");?></a>
+          <?php $terms = taxonomy_term_load($section); $english = $terms->field_english['und'][0]['value']; $russian_name_localize = i18n_taxonomy_localize_terms($terms); $russian = $russian_name_localize->name;?>
+          <a href="<?php print $prefix;?>/<?php print $english;?>"><?php print $russian; ?></a>
         <?php endif;?>
-      <?php endif;?> 
-      <?php if($type == 'photo'):?>
-        <div class="article-type article-type--white"><?php print t("Picture story");?></div>
-      <?php endif;?>     
-      <?php if($type == 'lifehack'):?>
-        <div class="article-type article-type--lifehack"><a class="type-text" href="<?php print $prefix;?>/lifehack"><?php print t("Life hack");?></a></div>
-      <?php endif;?> 
-      <h1 class="article-title">
+      </div>    
+      <?php endif;?>
+      <div class="title">
         <span class="big"><?php 
           if(isset($content['field_heading']['#items']['0']['value'])){
             print $content['field_heading']['#items']['0']['value'];
           }else{
             print $title;}?></span>
-        <br><span class="small"><?php print $content['field_subtitle']['#items']['0']['value'];?></span>
-      </h1>
-    </div>      
-  </div> 
-  <?php endif;?>
+        <?php if(isset($content['field_subtitle']['#items'])):?>
+          <br><span class="small"><?php print $content['field_subtitle']['#items']['0']['value'];?></span>
+        <?php endif;?>
+      </div>
+      <div class="statistic">
+        <div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
+      </div>
+    </div>
+  </div>
 </div>
+<!--
+  <div class="bloger-block">
+    <div class="photo">
+    <?php $bloger = $content['field_bloger']['#items']['0']['taxonomy_term'];?>
+    <a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>">          
+      <?php 
+        $params = array(
+          'style_name' => 'cyprus63x63',
+          'path' => $bloger->field_image['und'][0]['uri'],
+          'alt' => $bloger->name,
+          'title' => $bloger->name,
+          'attributes' => array('class' => array('img-circle','monochrome')),
+          'getsize' => FALSE,
+        );
+      ?>
+      <?php  print theme('image_style', $params); ?>
+    </a></div>
+    <div class="info">
+      <div class="date"><?php print format_date($node->created, 'date'); ?></div>
+      <div class="name"><a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>"><?php print $bloger->name;?></a></div>
+    </div>
+  </div>
+-->
 <div class="article-item article-item--detail-content container">
     <div class="article-content">
       <?php 
