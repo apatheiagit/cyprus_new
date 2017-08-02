@@ -700,9 +700,17 @@
     & a{
       border: 1px solid @text-color;
       border-radius: 2px;
+      color: @text-color;
       display: inline-block;
       padding: 10px 14px 8px;
       margin-right: 10px;
+      transition: all 0.3s ease-in;
+      &:hover{
+        background-color: @category-text;
+        border-color: @category-text;
+        color: white;
+        text-decoration: none;
+      } 
     }
     & .date{
       text-transform: none;
@@ -922,6 +930,11 @@
       margin-top: 0;
       margin-bottom: 10px;
       color: @text-color;
+      & a:hover{
+        background-color: @category-text;
+        border-color: @category-text;
+        color: @event-fon;
+      } 
     }
     & .date{
       @media @tablet{
@@ -1005,16 +1018,15 @@
     & .category a{ 
       background-color: @event-fon;
       border-color: @event-fon;
-      font-size: 12px;
-      transition: all 0.3s ease-in;
-      @media @mobile_tablet{
-        font-size: 10px;
-      }
+      font-size: 12px;    
       &:hover{
         background-color: @category-text;
         border-color: @category-text;
         color: white;
-      }
+      }  
+      @media @mobile_tablet{
+        font-size: 10px;
+      }      
     }   
     & .descr{
       font-size: 24px;
