@@ -55,10 +55,6 @@
     <div class="view-content row">
       <?php print $rows; ?>
     </div>
-  <?php elseif ($empty): ?>
-    <div class="view-empty">
-      <?php print $empty; ?>
-    </div>
   <?php endif; ?>
 
   <?php if ($pager): ?>
@@ -88,3 +84,9 @@
   <?php endif; ?>
 
 </div><?php /* class view */ ?>
+
+<?php if ($empty): ?>
+  <div class="view-empty">
+    <?php print $empty; ?>
+  </div>
+<?php endif; ?>
