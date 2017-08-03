@@ -25,6 +25,9 @@
 }
 .article-content{
 	padding: 40px 0 20px 0;
+	@media @mobile{
+		padding: 20px 0 20px 0;
+	}
 	& h1, & h2, & h3, & h4, & h5, & h6{
 		font-family: @special-font;
 	}
@@ -691,6 +694,11 @@
   float: left;
   text-align: right;
   padding-right: 30px;
+  @media @mobile{
+  	margin-top: 20px;
+  	width: 100%;
+  	float: none;
+  }
   &:hover{
   	& img{
   		filter: grayscale(100%);  
