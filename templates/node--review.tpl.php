@@ -87,30 +87,30 @@
     </div>
   </div>
 </div>
-<!--
+<div class="article-item article-item--detail-content container">
+<?php if($type == 'blog'):?>
   <div class="bloger-block">
     <div class="photo">
     <?php $bloger = $content['field_bloger']['#items']['0']['taxonomy_term'];?>
     <a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>">          
       <?php 
         $params = array(
-          'style_name' => 'cyprus63x63',
+          'style_name' => 'cyprus150x150',
           'path' => $bloger->field_image['und'][0]['uri'],
           'alt' => $bloger->name,
           'title' => $bloger->name,
-          'attributes' => array('class' => array('img-circle','monochrome')),
+          'attributes' => array('class' => array('img-circle')),
           'getsize' => FALSE,
         );
       ?>
       <?php  print theme('image_style', $params); ?>
     </a></div>
-    <div class="info">
-      <div class="date"><?php print format_date($node->created, 'date'); ?></div>
+    <div class="info">      
       <div class="name"><a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>"><?php print $bloger->name;?></a></div>
+      <div class="date"><?php print format_date($node->created, 'date'); /*format_interval((time() - $node->created) , 2) . t(' ago'); */ ?></div>
     </div>
   </div>
--->
-<div class="article-item article-item--detail-content container">
+<?php endif?>
     <div class="article-content">
       <?php 
           /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */

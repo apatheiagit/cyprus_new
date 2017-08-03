@@ -27,9 +27,6 @@ if(typeof(CKEDITOR) !== 'undefined') {
             { name : 'Address'			, element : 'address' },
             */
 
-            { name : 'Blue Title'		, element : 'h3', styles : { 'color' : 'Blue' } },
-            { name : 'Red Title'		, element : 'h3', styles : { 'color' : 'Red' } },
-
             /* Inline Styles */
 
             // These are core styles available as toolbar buttons. You may opt enabling
@@ -109,6 +106,14 @@ if(typeof(CKEDITOR) !== 'undefined') {
                 attributes :
                 {
                     'class' : 'introduction'
+                }
+            },
+            {
+                name : 'Изящный разделитель',
+                element : 'p',
+                attributes :
+                {
+                    'class' : 'elegant'
                 }
             },
 
