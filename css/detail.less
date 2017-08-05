@@ -883,8 +883,9 @@
   position: relative;
   @media @large{
   	& img{
-  		width: 100%;
+  		width: auto;
   		height: @main-photo-height;
+  		margin: 0 auto;
   	}
   }
   @media @medium{
@@ -924,6 +925,7 @@
     height: 100%;
     overflow: hidden;
     z-index: 1;
+    background-color: black;
     @media @mobile{
       max-width: 100%;
     }
@@ -1001,8 +1003,11 @@
   }
 }
 .media-detail--top5{
-	& .photo:after{
-		display: none;
+	& .photo{
+		background-color: white;
+		&:after{
+			display: none;
+		}
 	}
 	& .text{
 		color: @text-color;
