@@ -1,5 +1,5 @@
 @import url('constants.less');
-@main-photo-height: 800px;
+@main-photo-height: 793px;
 
 .introduction{
 	border-bottom: solid 1px @grey;
@@ -877,14 +877,23 @@
 	}
 }
 .media-detail--main-photo{
-	height: @main-photo-height;
+	
   margin-bottom: 0;
   text-align: center;
   position: relative;
-  @media @large{
+  @media @m-large{
+  	height: @main-photo-height !important;
   	& img{
   		width: auto;
-  		height: @main-photo-height;
+  		//height: @main-photo-height;
+  		margin: 0 auto;
+  	}
+  }
+  @media @large{
+  	height: @main-photo-height * 0.825;
+  	& img{
+  		width: auto;
+  		//height: @main-photo-height;
   		margin: 0 auto;
   	}
   }
