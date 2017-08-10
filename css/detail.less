@@ -961,16 +961,21 @@
   & .text{
     width: calc(~'100% - 30px');
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 30px;    
     padding-left: 15px;
     padding-right: 15px;
+    @media @mobile{
+    	top: 15px;
+    }
   }
   & .category{
     color: white;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2.6px;
+    @media @mobile{
+    	font-size: 10px;
+    }
   }
   & .title{
     margin: 0 0 10px 0;
