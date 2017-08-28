@@ -110,6 +110,35 @@
       <div class="date"><?php print format_date($node->created, 'date'); /*format_interval((time() - $node->created) , 2) . t(' ago'); */ ?></div>
     </div>
   </div>
+<?php elseif(isset($content['field_author']['#items']['0']['taxonomy_term'])):?>
+  <div class="bloger-block">
+    <div class="photo">
+    <?php $author = $content['field_author']['#items']['0']['taxonomy_term'];?>              
+      <?php 
+        $params = array(
+          'style_name' => 'cyprus150x150',
+          'path' => $author->field_image['und'][0]['uri'],
+          'alt' => $author->name,
+          'title' => $author->name,
+          'attributes' => array('class' => array('img-circle')),
+          'getsize' => FALSE,
+        );
+      ?>
+      <?php  print theme('image_style', $params); ?>
+    </div>
+    <div class="info">      
+      <div class="title"><span class='label'><?php print t('Author'); ?>:</span> <b><?php print $author->name;?></b></div>
+      <?php if(isset($content['field_translator']['#items']['0']['taxonomy_term'])):?>
+        <?php $translator = $content['field_translator']['#items']['0']['taxonomy_term'];?>
+        <div class="title translator"><span class='label'><?php print t('Translate'); ?>:</span> <?php print $translator->name;?></div>
+      <?php endif;?>
+      <?php if(isset($content['field_photographer']['#items']['0']['taxonomy_term'])):?>
+        <?php $photographer = $content['field_photographer']['#items']['0']['taxonomy_term'];?>
+        <div class="title photographer"><span class='label'><?php print t('Photo'); ?>:</span> <?php print $photographer->name;?></div>
+      <?php endif;?>
+      <div class="date"><?php print format_date($node->created, 'date'); /*format_interval((time() - $node->created) , 2) . t(' ago'); */ ?></div>
+    </div>
+  </div>
 <?php endif?>
     <div class="article-content">
       <?php 
