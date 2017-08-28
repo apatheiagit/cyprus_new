@@ -124,7 +124,9 @@
           'getsize' => FALSE,
         );
       ?>
-      <?php  print theme('image_style', $params); ?>
+      <?php if (isset($author->field_image['und'][0]['uri'])):?>
+        <?php print theme('image_style', $params); ?>
+      <?php endif;?>
     </div>
     <div class="info">      
       <div class="title"><span class='label'><?php print t('Author'); ?>:</span> <b><?php print $author->name;?></b></div>
