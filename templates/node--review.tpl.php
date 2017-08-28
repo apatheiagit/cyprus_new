@@ -130,7 +130,7 @@
       <div class="title"><span class='label'><?php print t('Author'); ?>:</span> <b><?php print $author->name;?></b></div>
       <?php if(isset($content['field_translator']['#items']['0']['taxonomy_term'])):?>
         <?php $translator = $content['field_translator']['#items']['0']['taxonomy_term'];?>
-        <div class="title translator"><span class='label'><?php print t('Translate'); ?>:</span> <?php print $translator->name;?></div>
+        <div class="title translator"><span class='label'><?php print t('Translation'); ?>:</span> <?php print $translator->name;?></div>
       <?php endif;?>
       <?php if(isset($content['field_photographer']['#items']['0']['taxonomy_term'])):?>
         <?php $photographer = $content['field_photographer']['#items']['0']['taxonomy_term'];?>
