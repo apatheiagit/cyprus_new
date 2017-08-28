@@ -33,7 +33,7 @@
             <div class="taxi-button">
               <?php if($prefix == '') $taxi_link = "/place/transfer-na-kipre-s-kompaniey-global-transfer-services-ltd";
               else $taxi_link = "/en/place/cyprus-global-transfer-services-ltd";?>
-              <a href="<?php print $taxi_link;?>#get"><?php print t("Book taxi");?></a>
+              <a href="<?php print $taxi_link;?>#get"><?php print t("Book a taxi");?></a>
             </div>
               <?php //print render($page['help']); ?>
           </div>
