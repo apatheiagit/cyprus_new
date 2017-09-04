@@ -107,6 +107,14 @@
     </a></div>
     <div class="info">      
       <div class="name"><a href="<?php print $prefix;?>/blog/<?php print $bloger->tid;?>"><?php print $bloger->name;?></a></div>
+      <?php if(isset($content['field_translator']['#items']['0']['taxonomy_term'])):?>
+        <?php $translator = $content['field_translator']['#items']['0']['taxonomy_term'];?>
+        <div class="title translator"><span class='label'><?php print t('Translation'); ?>:</span> <?php print $translator->name;?></div>
+      <?php endif;?>
+      <?php if(isset($content['field_photographer']['#items']['0']['taxonomy_term'])):?>
+        <?php $photographer = $content['field_photographer']['#items']['0']['taxonomy_term'];?>
+        <div class="title photographer"><span class='label'><?php print t('Photo'); ?>:</span> <?php print $photographer->name;?></div>
+      <?php endif;?>
       <div class="date"><?php print format_date($node->created, 'date'); /*format_interval((time() - $node->created) , 2) . t(' ago'); */ ?></div>
     </div>
   </div>
@@ -138,7 +146,7 @@
         <?php $photographer = $content['field_photographer']['#items']['0']['taxonomy_term'];?>
         <div class="title photographer"><span class='label'><?php print t('Photo'); ?>:</span> <?php print $photographer->name;?></div>
       <?php endif;?>
-      <div class="date"><?php print format_date($node->created, 'date'); /*format_interval((time() - $node->created) , 2) . t(' ago'); */ ?></div>
+      <div class="date"><?php print format_date($node->created, 'date'); ?></div>
     </div>
   </div>
 <?php endif?>
