@@ -116,12 +116,16 @@ Drupal.behaviors.my_custom_behavior = {
 		    items: 1,
 		    loop: true,
 		    dots: true,
-		    onInitialize: function (event) {
+		    autoplay:true,
+		    autoplayTimeout: 6000,
+		    autoplaySpeed: 5000,
+		    autoplayHoverPause:true,
+		    /*onInitialize: function (event) {
 	        if ($('.articles--index .article-item').size() <= 1) {
 	           this.settings.loop = false;
 	           this.settings.dotsClass = 'disable-dots';
 	        }
-	    	}
+	    	}*/
 		  });
 		  $('.affiche-carousel').owlCarousel({
 		    items: 1,
