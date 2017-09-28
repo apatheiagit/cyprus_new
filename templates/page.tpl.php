@@ -33,7 +33,7 @@
             <div class="taxi-button">
               <?php if($prefix == '') $taxi_link = "/place/transfer-na-kipre-s-kompaniey-global-transfer-services-ltd";
               else $taxi_link = "/en/place/cyprus-global-transfer-services-ltd";?>
-              <a href="<?php print $taxi_link;?>#get"><?php print t("Book taxi");?></a>
+              <a href="<?php print $taxi_link;?>#get"><?php print t("Book a taxi");?></a>
             </div>
               <?php //print render($page['help']); ?>
           </div>
@@ -96,9 +96,9 @@
           <?php print $site_slogan; ?>          
         </div>
         <?php if ($lang == "en"):?>
-          <div class="bottom-rights">Reproduction or use of any materials only with the permission of the publisher: <a href="mailto:editor@cyprustrav.ru">editor@cyprustrav.ru</a></div>
+          <div class="bottom-rights">Reproduction or use of any materials only with the permission of the publisher: <a href="mailto:editor@cyprusfortravellers.net">editor@cyprusfortravellers.net</a></div>
         <?php else: ?>
-          <div class="bottom-rights">Перепечатка и использование любых материалов только с&nbsp;разрешения редакции: <a href="mailto:editor@cyprustrav.ru">editor@cyprustrav.ru</a></div>
+          <div class="bottom-rights">Перепечатка и использование любых материалов только с&nbsp;разрешения редакции: <a href="mailto:editor@cyprusfortravellers.net">editor@cyprusfortravellers.net</a></div>
         <?php endif;?>       
       </div>      
       <div class="col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-0 icon-links-block">        

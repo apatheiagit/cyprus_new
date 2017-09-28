@@ -718,11 +718,19 @@
 		text-transform: uppercase;
 	}
 	& .date{
-		border-top: 1px solid @grey;
+		text-transform: uppercase;
 		color: @footer-link;
+	}
+	& .title{
+		color: @footer-link;
+		& b{
+			color: @text-color;
+		}
+	}
+	& .date, & .photographer, & .translator{
+		border-top: 1px solid @grey;
 		margin-top: 10px;
 		padding-top: 10px;
-		text-transform: uppercase;
 	}
 }
 .map-wrapper{
