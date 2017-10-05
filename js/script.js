@@ -120,6 +120,8 @@ Drupal.behaviors.my_custom_behavior = {
 		    autoplayTimeout: 6000,
 		    autoplaySpeed: 5000,
 		    autoplayHoverPause:true,
+		    animateOut: 'fadeOut',
+    		animateIn: 'fadeIn',
 		    /*onInitialize: function (event) {
 	        if ($('.articles--index .article-item').size() <= 1) {
 	           this.settings.loop = false;
