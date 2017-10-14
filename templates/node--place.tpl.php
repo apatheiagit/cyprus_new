@@ -188,7 +188,7 @@
   <?php endif;?>  
   <?php /* Фотографии этого места */ ?>
     <?php if (isset($content['field_photos']['#items'])):?>
-    <div class="somit somit-gallery "><!--somit-gallery--small-->
+    <div class="somit somit-gallery ">
         <div class="photo-carousel">
           <?php foreach ($content['field_photos']['#items'] as $photo):?>
             <div class="photo-item">
@@ -204,12 +204,12 @@
             </div>              
           <?php endforeach; ?>
         </div>
-        <div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div> <div class="owl-counter">Фото <span class="current-photo">1</span> из <?php print count($content['field_photos']['#items']);?></div> <div class="customBtn customNextBtn"></div></div></div> 
+        <div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div> <div class="owl-counter"><span class="current-photo">1</span> / <?php print count($content['field_photos']['#items']);?></div> <div class="customBtn customNextBtn"></div></div></div> 
     </div>  
     <?php endif; ?>
     <?php /* Фотографии из привязанного фотообзора */ ?>
     <?php if (isset($content['field_photo_review']['#items']['0'])):?>
-    <div class="somit somit-gallery "><!--somit-gallery--small-->
+    <div class="somit somit-gallery ">
         <div class="photo-carousel">
           <?php $photo_review = $content['field_photo_review']['#items']['0']['entity'];?>
           <?php foreach ($photo_review->field_photos['und'] as $photo):?>
@@ -226,7 +226,7 @@
             </div>              
           <?php endforeach; ?>
         </div>
-        <div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div> <div class="owl-counter">Фото <span class="current-photo">1</span> из <?php print count($photo_review->field_photos['und']);?></div> <div class="customBtn customNextBtn"></div></div></div> 
+        <div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div> <div class="owl-counter"><span class="current-photo">1</span> / <?php print count($photo_review->field_photos['und']);?></div> <div class="customBtn customNextBtn"></div></div></div> 
     </div>  
     <?php endif; ?>
   <div class="tags-block">

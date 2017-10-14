@@ -599,20 +599,17 @@
 			max-width: 100%;
 		}
 		& .descr{
+			color: @footer-link;
 			height: 60px;
 			margin: 0 15%;
-			padding: 10px 10px 10px 200px;
+			padding: 30px 0 0 0;
 			position: relative;
+			text-align: center;
 			@media @mobile_tablet{
 				margin: 0 0;		
 				font-size: 13px;	
-				padding: 10px 10px 10px 170px;
-			}
-			&>div{
-				position: absolute;
-				top: 50%;  
-				transform: translateY(-50%);
-			}
+				padding: 10px ;
+			}			
 		}
 	}
 	.somit-gallery--small &{
@@ -629,47 +626,42 @@
 	}
 }
 .photo-controls-wrapper{
-	border-bottom: 1px solid #CCC;
-	margin: -60px 170px 0px;
-	padding: 20px 0;
-	position: relative;
+	position: absolute;
+	bottom: 75px;
+	width: 100%;
+	color: white;
 	z-index: 10;
-	@media @mobile_tablet{
-		margin: -60px 0px 0px;
-		padding: 20px 10px;		
-	}
+	text-align: center;
+	font-weight: 800;	
 	& .photo-controls{
-		height: 22px;
 		@media @mobile_tablet{
 			font-size: 13px;
 		}
 	}
 	& .customBtn{
-		background-image: url(../img/owl-controls.png);
+		background-image: url(../img/owl-controls.svg);
 		background-repeat: no-repeat;
 		cursor: pointer;
 		display: inline-block;
-		height: 22px;
-		width: 23px;
+		height: 18px;
+    width: 36px;
 	}
 	& .customPrevBtn{
-		background-position: left top;
+		transform: rotate(180deg);
 	}
 	& .customNextBtn{
-		background-position: right top;
+		
 	}
 	& .owl-counter{
 		display: inline-block;
-		margin: 0 10px;
-		vertical-align: super;
-    	line-height: 22px;
-	}
-	.somit-gallery--small &{
-		margin: -60px 0 30px;
+		margin: 0 16px;
+		vertical-align: text-top;
+    line-height: 18px;
 	}
 }
 .somit-gallery{	
 	margin: 30px 0;
+	position: relative;
 	& .container{
 		background-color: white;
 	}

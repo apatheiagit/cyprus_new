@@ -66,7 +66,7 @@
                 </div>              
               <?php endforeach; ?>
             </div>
-            <div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div> <div class="owl-counter"><?php print t("Photo");?> <span class="current-photo">1</span> <?php print t("of");?> <?php print count($content['field_photos']['#items']);?></div> <div class="customBtn customNextBtn"></div></div></div> 
+            <div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div> <div class="owl-counter"><span class="current-photo">1</span> / <?php print count($content['field_photos']['#items']);?></div> <div class="customBtn customNextBtn"></div></div></div> 
         </div>  
         <?php endif; ?>
         <div class="recipe-cooking">

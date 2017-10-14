@@ -21,11 +21,8 @@
         $gallery .= '</div>';
       }
       $gallery .= '</div>';
-      $gallery .= '<div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div><div class="owl-counter">';
-      $gallery .= t('Photo');  
-      $gallery .= ' <span class="current-photo">1</span> ';
-      $gallery .= t('of');
-      $gallery .= ' '.count($photo_array).'</div> <div class="customBtn customNextBtn"></div></div></div>';
+      $gallery .= '<div class="photo-controls-wrapper"><div class="photo-controls"><div class="customBtn customPrevBtn"></div><div class="owl-counter">';  
+      $gallery .= ' <span class="current-photo">1</span> \\ '.count($photo_array).'</div> <div class="customBtn customNextBtn"></div></div></div>';
       $gallery .= '</div>';
       print $gallery;
     }   
