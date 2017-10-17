@@ -55,8 +55,65 @@
 			margin-right: 10px !important;
 		}
 	}
-	& a{
-		text-decoration: underline;
+	& .article-content-text a{
+		background-color: #f8e81c;
+		position: relative;
+		display: inline-block;
+		& strong{
+			font-weight: normal;
+		}
+		& .tooltip{
+			position: absolute;
+	    padding: 5px 0;
+	    display: block;
+	    left: 50%;
+	    width: 240px;
+	    transform: translateX(-50%);
+	    top: 25px;
+			& .tooltip-inner {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+		    padding: 15px 8px;
+		    color: #fff;
+		    text-align: center;
+		    background-color: #000;
+		    border-radius: 10px;
+		    display: block;
+		    position: relative;
+		    &:before {
+			    position: absolute;
+			    width: 0;
+			    height: 0;
+			    border-color: transparent;
+			    border-style: solid;
+			    top: 0;
+			    left: 50%;
+			    margin-left: -5px;
+			    content: "";
+			    border-width: 0 5px 5px;
+			    border-bottom-color: #000;
+			    z-index: 4;
+				}
+				&:after{
+					content: '';
+					border-radius: 10px;
+			    position: absolute;
+			    top: 0;
+			    right: 0;
+			    left: 0;
+			    height: 100%;
+			    width: 100%;
+			    background-color: rgba(0,0,0,.3);
+			    z-index: 1;
+				}
+				& .tooltip-title{
+					position: relative;
+					z-index: 20;
+					font-size: 16px;
+				}
+			}
+		}
 	}
 	& p.photo-intext{
 		margin-top: 0px !important;

@@ -9,7 +9,7 @@
 <?php $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;?>
 <div class="media-detail media-detail--place article-detail article-detail--event">
   <div class="article-photo-wrapper container">
-    <div class="main-photo">
+    <div class="main-photo" id="mainPhoto">
      <?php
       if ($content['field_cut_photo']['#items']['0']['value'] == 'top'){
         $params = array(
@@ -44,7 +44,7 @@
     </div> 
     <div class="main-info">
       <div class="article-type"><a href="<?php print $prefix;?>/places?city=<?php print $content['field_city']['#items'][0]['taxonomy_term']->tid;?>"><?php print $translated_term_city->name;?></a></div>      
-      <h1 class="main-title">
+      <h1 class="main-title" id="mainTitle">
         <?php if (isset($content['field_title']['#items']['0']['value'])):?>
           <?php print $content['field_title']['#items']['0']['value']; ?>
         <?php else:?>

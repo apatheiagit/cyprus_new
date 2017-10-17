@@ -37,7 +37,7 @@
 <div class="media-detail media-detail--<?php print $type;?>">
 
 <div class="media-detail--main-photo">
-  <div class="photo">
+  <div class="photo" id="mainPhoto">
     <?php
       $params = array(
         'style_name' => 'cyprus1920x800',
@@ -68,7 +68,7 @@
         <?php endif;?>
       </div>    
       <?php endif;?>
-      <div class="title">
+      <div class="title" id="mainTitle">
         <span class="big"><?php 
           if(isset($content['field_heading']['#items']['0']['value'])){
             print $content['field_heading']['#items']['0']['value'];
@@ -148,6 +148,7 @@
   </div>
 <?php endif?>
     <div class="article-content">
+      <div class="article-content-text">
       <?php 
           /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
           $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $content['body']['#items'][0]['value']);
@@ -185,7 +186,7 @@
           </div>
         <?php endforeach; ?>
       <?php endif;?>
-	  <?php
+	    <?php
         /* Если к обзору привязаны рецепты, показываем их */
         if (isset($content['field_recipe']['#items']['0'])): ?>
         <h2 class="bordered"><?php print t("Recipes");?></h2>
@@ -268,6 +269,7 @@
           print_gallery($photo_review_photos, "review", $photo_review->title); 
         ?>     
       <?php endif; ?> 
+      </div>
       <div class="tags-block">
         <div class="statistic">
           <div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>

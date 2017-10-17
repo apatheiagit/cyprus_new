@@ -209,22 +209,75 @@ Drupal.behaviors.my_custom_behavior = {
 			    }, 500);
 			    return false;
 			});	
+			
+			let xhr = new XMLHttpRequest();		
+			let linkElement = null;	
+			let lc = 0, current_link = 0;
+
+			$('.article-content-text a').each(function(){
+				$(this).attr('id', 'link_'+lc);
+				lc += 1;
+			})
+
+			$('.article-content-text a').mouseenter(function(){
+				let url = $(this).attr('href');
+				current_link = $(this).attr('id');
+				if ((url.indexOf('//cyprusfortravellers') !== -1) || (url.charAt(0) == '/')){
+					xhr.addEventListener("load", onLoadLink);
+					xhr.open('GET', url, true);
+					xhr.send();
+				}				
+			});
+
+			$('.article-content-text a').mouseleave(function(){
+				$('.link-tooltip').remove();
+			});
+
+			function onLoadLink() {
+			  let data = xhr.responseText;
+			  let el = $( '<div></div>' );
+				el.html(data);
+				let title = $('#mainTitle', el).html();
+
+				let pictUrl = $('#mainPhoto img', el).attr('src');
+
+				$('<div class="tooltip tooltip-bottom link-tooltip"><div class="tooltip-inner"></div></div>').appendTo($('#'+current_link));
+
+				$('.tooltip-inner').css('background-image', 'url('+pictUrl+')');
+				$('.tooltip-inner').append('<div class="tooltip-title"></div');
+				$('.tooltip-title').html(title);
+
+				//console.log($('#mainTitle', el).html());
+				//console.log(current_link);
+			}
 
   	})
-    
-    function getWeather(city){		
-	$.ajax({
-	  url: "/weather.php",
-	  data: "q="+city+"&units=metric",
-	  success: function(data, status, xhr){
-	    weatherCallBack(data);	
-	    //console.log(xhr.responseText);	  
-	  },
-	  error: function (request, status, error) {
+  function getURLcontent(url){
+		$.ajax({
+		  url: "/link.php",
+		  data: "url="+url,
+		  success: function(data, status, xhr){	
+		    console.log(data);	  
+		  },
+		  error: function (request, status, error) {
+	      console.log('error');
+	      console.log(request.responseText);
+	    }
+		})
+	}  
+  function getWeather(city){		
+		$.ajax({
+		  url: "/weather.php",
+		  data: "q="+city+"&units=metric",
+		  success: function(data, status, xhr){
+		    weatherCallBack(data);	
+		    //console.log(xhr.responseText);	  
+		  },
+		  error: function (request, status, error) {
         //console.log('error');
         //console.log(request.responseText);
     	}
-	})		
+		})		
 	}
 	function weatherCallBack(data){
 	    var w = JSON.parse(data);
