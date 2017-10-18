@@ -223,9 +223,10 @@ Drupal.behaviors.my_custom_behavior = {
 				let url = $(this).attr('href');
 				current_link = $(this).attr('id');
 				if ((url.indexOf('//cyprusfortravellers') !== -1) || (url.charAt(0) == '/')){
-					xhr.addEventListener("load", onLoadLink);
-					xhr.open('GET', url, true);
-					xhr.send();
+					//xhr.addEventListener("load", onLoadLink);
+					//xhr.open('GET', url, true);
+					//xhr.send();
+					getURLcontent(url, current_link);
 				}				
 			});
 
@@ -244,7 +245,7 @@ Drupal.behaviors.my_custom_behavior = {
 				$('<div class="tooltip tooltip-bottom link-tooltip"><div class="tooltip-inner"></div></div>').appendTo($('#'+current_link));
 
 				$('.tooltip-inner').css('background-image', 'url('+pictUrl+')');
-				$('.tooltip-inner').append('<div class="tooltip-title"></div');
+				$('.tooltip-inner').append('<div class="tooltip-title"></div>');
 				$('.tooltip-title').html(title);
 
 				//console.log($('#mainTitle', el).html());
@@ -252,12 +253,13 @@ Drupal.behaviors.my_custom_behavior = {
 			}
 
   	})
-  function getURLcontent(url){
+  function getURLcontent(url, current_link){
 		$.ajax({
 		  url: "/link.php",
 		  data: "url="+url,
 		  success: function(data, status, xhr){	
-		    console.log(data);	  
+		    //console.log(data);	
+		    $('#'+current_link).append(data);  
 		  },
 		  error: function (request, status, error) {
 	      console.log('error');
