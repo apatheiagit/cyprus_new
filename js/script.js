@@ -213,6 +213,8 @@ Drupal.behaviors.my_custom_behavior = {
 			let xhr = new XMLHttpRequest();		
 			let linkElement = null;	
 			let lc = 0, current_link = 0;
+			let isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+			let isIE = !!navigator.userAgent.match(/Trident/g) || !!navigator.userAgent.match(/MSIE/g);
 
 			$('.article-content-text a').each(function(){
 				$(this).attr('id', 'link_'+lc);
@@ -220,15 +222,15 @@ Drupal.behaviors.my_custom_behavior = {
 			})
 
 			$('.article-content-text a').mouseenter(function(){
-				let url = $(this).attr('href');
-				current_link = $(this).attr('id');
-				$('.link-tooltip').remove();
-				if ((url.indexOf('//cyprusfortravellers') !== -1) || (url.charAt(0) == '/')){
-					//xhr.addEventListener("load", onLoadLink);
-					//xhr.open('GET', url, true);
-					//xhr.send();
-					getURLcontent(url, current_link);
-				}				
+				if (!isFirefox && !isIE){
+					let url = $(this).attr('href');
+					let lang = document.documentElement.lang;
+					current_link = $(this).attr('id');
+					$('.link-tooltip').remove();
+					if ((url.indexOf('//cyprusfortravellers') !== -1) || (url.charAt(0) == '/')){
+						getURLcontent(url, current_link, lang);
+					}	
+				}			
 			});
 
 			$('.article-content-text a').mouseleave(function(){
@@ -248,18 +250,16 @@ Drupal.behaviors.my_custom_behavior = {
 				$('.tooltip-inner').css('background-image', 'url('+pictUrl+')');
 				$('.tooltip-inner').append('<div class="tooltip-title"></div>');
 				$('.tooltip-title').html(title);
-
-				//console.log($('#mainTitle', el).html());
-				//console.log(current_link);
 			}
 
   	})
-  function getURLcontent(url, current_link){
+  function getURLcontent(url, current_link, lang){
 		$.ajax({
 		  url: "/link.php",
-		  data: "url="+url,
+		  data: "url="+url+'&lang='+lang,
+
 		  success: function(data, status, xhr){	
-		    //console.log(data);	
+		    console.log(xhr );	
 		    $('#'+current_link).append(data);  
 		  },
 		  error: function (request, status, error) {
