@@ -222,6 +222,7 @@ Drupal.behaviors.my_custom_behavior = {
 			$('.article-content-text a').mouseenter(function(){
 				let url = $(this).attr('href');
 				current_link = $(this).attr('id');
+				$('.link-tooltip').remove();
 				if ((url.indexOf('//cyprusfortravellers') !== -1) || (url.charAt(0) == '/')){
 					//xhr.addEventListener("load", onLoadLink);
 					//xhr.open('GET', url, true);
