@@ -12,6 +12,6 @@
 	$image = file_create_url($node->field_main_img['und'][0]['uri']);
 	if (isset($node->field_title['und'][0]['value'])) $title = $node->field_title['und'][0]['value'];
 	else $title = $node->title;
-	print '<div class="tooltip tooltip-bottom link-tooltip"><div class="tooltip-inner" style="background-image:url('.$image.')"><div class="tooltip-title">'.$title.'</div></div></div>';
+	print '<div class="tooltip tooltip-bottom link-tooltip"><div class="tooltip-inner" style="background-image:url('.$image.')"><div class="tooltip-title"><a href="/'.$alias.'">'.$title.'</a></div></div></div>';
 
 ?>
