@@ -1,12 +1,3 @@
-<?php
-/**
- * @file
- * Returns the HTML for a node.
- *
- * Complete documentation for this file is available online.
- * @see https://drupal.org/node/1728164
- */
-?>
 <div class="container white-container">  
   <div class="article-content node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix">
     <h1 class="main-title"><?php print $title; ?></h1>  
@@ -19,13 +10,23 @@
     <?php endif;?>
   </div>
 </div>
-<?php if ($node->nid != 27 && $node->nid != 1635): // Скрываем блок "Читайте также" на странице "Рекламодателям"?>
+<?php if ($node->nid != 27 && $node->nid != 1635 && $node->nid != 24 && $node->nid != 1634): // Скрываем блок "Читайте также" на странице "Рекламодателям" и "О проекте"?>
 <?php   
     /* Популярные события в Афише */
     print views_embed_view('cyprus', 'top_events');    
-    /* Популярные места в том же городе */
+    /* Популярные места  */
     print views_embed_view('cyprus', 'top_places');  
-    /* Популярные обзоры из того же раздела */
+    /* Популярные обзоры  */
     print views_embed_view('cyprus', 'top_reviews');
+?>
+<?php endif; ?>
+<?php if ($node->nid == 24 || $node->nid == 1634): // На странице "О проекте" показываем блок "Команда" и "Читайте также" в другом порядке ?>
+<?php
+  /* Команда  */
+  print views_embed_view('team', 'block');   
+  /* Популярные обзоры  */
+  print views_embed_view('cyprus', 'top_reviews');   
+  /* Популярные места */
+  print views_embed_view('cyprus', 'top_places');  
 ?>
 <?php endif; ?>
