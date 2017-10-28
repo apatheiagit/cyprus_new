@@ -21,8 +21,6 @@
 ?>
 <?php endif; ?>
 <?php if ($node->nid == 24 || $node->nid == 1634): // На странице "О проекте" показываем блок "Команда" и "Читайте также" в другом порядке ?>
-<?php global $user;?>
-<?php if($user->uid):?>
 <?php
   /* Команда  */
   print views_embed_view('team', 'block'); 
@@ -55,7 +53,6 @@
   })(jQuery);    
   </script>
 </div>
-<?php endif;?>
 <?  
   /* Популярные обзоры  */
   print views_embed_view('cyprus', 'top_reviews');   
