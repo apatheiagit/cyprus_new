@@ -116,6 +116,22 @@ if(typeof(CKEDITOR) !== 'undefined') {
                     'class' : 'elegant'
                 }
             },
+            {
+                name : 'Большая цитата',
+                element : 'div',
+                attributes :
+                {
+                    'class' : 'big-quotation'
+                }
+            },
+            {
+                name : 'Подпись к цитате',
+                element : 'div',
+                attributes :
+                {
+                    'class' : 'big-signature'
+                }
+            },
 
     ]);
 }
