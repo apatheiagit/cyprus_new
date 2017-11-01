@@ -203,9 +203,10 @@ Drupal.behaviors.my_custom_behavior = {
 				next_wrap.html(this_content).attr("id", "event_" + this_id).attr('data-id', this_id);
 			});
 
-			$('.article-content a[href*=#]').click(function(){				
-			    $('html, body').animate({
-			        scrollTop: $( $(this).attr('href') ).offset().top - 60
+			$('.article-content a[href*=#]').click(function(){		
+					let name = $(this).attr('href'); name = name.substr(1);   	
+			    $('html, body').animate({			    	
+			      scrollTop: $( $('a[name='+name+']') ).offset().top - 80
 			    }, 500);
 			    return false;
 			});	
