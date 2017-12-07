@@ -118,8 +118,11 @@
       <div class="article-detail-block ">
         <div class="article-text bordered-top">
         <?php print($content['body']['#items'][0]['value']);?>
+        <?php /* Виджет на странице про Трипстер http://cyprusfortravellers.net/place/tripster-neobychnye-ekskursii-po-kipru */ ?>
+        <?php if ($node->nid == 3337):?>
+        	<div style="margin: 20px 0px;"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&country=Cyprus&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>
+        <?php endif;?>
         </div>
-
       </div>      
   </div> 
   <div class="map-wrapper">
