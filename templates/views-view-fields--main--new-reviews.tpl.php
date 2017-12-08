@@ -68,10 +68,8 @@
 				<a href="<?php print $prefix;?>/<?php print $english;?>"><?php print $russian; ?></a>
 		<?php endif;?>
 		</div>		
-		<div class="title"><a href="<?php print $path;?>"><?php print $title?></a></div>
-		<?php if ($titleLength < 46):?>
-			<div class="descr"><a href="<?php print $path;?>"><?php print $body;?></a></div>
-		<?php endif;?>
+		<div class="title"><a href="<?php print $path;?>"><?php print $title?></a></div>		
+		<div class="descr <?php if ($titleLength > 46):?> covert<?php endif;?>"><a href="<?php print $path;?>"><?php print $body;?></a></div>		
 	</div>
 	<div class="statistic">
 		<div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
