@@ -2,6 +2,15 @@
 <?php global $user; $clear_class = "";
       global $language_content; $lang = $language_content->language; if ($lang == 'en') $prefix = '/en'; else $prefix = '';
 ?>
+<?php if($is_front):?>
+<div style="background-color: white">
+  <div class="container">
+    <div style="border-bottom: 1px solid #111;">
+      <a href="https://experience.tripster.ru/?exp_partner=cyprusfortravellers&utm_source=cyprusfortravellers&utm_medium=banner&utm_campaign=affiliates" target="_blank"><img src="http://cyprusfortravellers.net/sites/default/files/Tripster.png"></a>
+    </div>
+  </div>
+</div>
+<?php endif;?>
 <div class="somit somit-header <?php print $page_type; ?>">
   <div class="upper-header">
     <div class="container">
