@@ -2,7 +2,7 @@
 <?php global $user; $clear_class = "";
       global $language_content; $lang = $language_content->language; if ($lang == 'en') $prefix = '/en'; else $prefix = '';
 ?>
-<?php if($is_front):?>
+<?php if($is_front && $lang == 'ru'):?>
 <div style="background-color: white">
   <div class="container">
     <div style="border-bottom: 1px solid #111;">
