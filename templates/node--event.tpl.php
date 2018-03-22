@@ -80,7 +80,7 @@
                   ?>                    
                 </span>
               </div>
-            <?php endif;?>
+            <?php endif;?>            
             <?php if (isset($content['field_address']['#items']['0']['value'])):?>
               <div class="item-row">
                 <span class="item-label"><?php print t("Address");?>:</span>
@@ -93,7 +93,7 @@
                   <?php if(isset($content['field_latlng']['#items'][0])):?> <span class="show_map">(<?php print t("Show map");?>)</span><?php endif;?>
                 </span>
               </div>
-            <?php elseif (isset($content['field_places']['0']['#markup'])):?>
+            <?php elseif (isset($content['field_places']['0']['#item'])):?>
               <div class="item-row">
                 <span class="item-label"><?php print t("Address");?>:</span>
                 <span class="item-value">
@@ -127,7 +127,13 @@
               <div class="item-row">
                 <?php $newphrase = str_replace('http://', '', $content['field_www']['#items']['0']['value']);?>
                 <?php $newphrase = str_replace('https://', '', $newphrase);?>
-                <span class="item-label"><?php print t("Website") ?>:</span><span class="item-value"><?php print($newphrase);?></span>
+                <span class="item-label"><?php print t("Website") ?>:</span><span class="item-value">
+                  <?php if ($content['field_special']['#items']['0']['value'] == 1):?>
+                    <a href="//<?php print($newphrase);?>" target="_blank"><?php print($newphrase);?></a>
+                  <?php else:?>
+                    <?php print($newphrase);?>
+                  <?php endif;?> 
+                </span>
               </div>
             <?php endif;?>
          </div>

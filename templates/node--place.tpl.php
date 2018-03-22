@@ -106,7 +106,7 @@
                 <?php $newphrase = str_replace('https://', '', $newphrase);?>
                 <span class="item-label"><?php print t("Website") ?>:</span><span class="item-value">
                   <?php if ($content['field_special']['#items']['0']['value'] == 1):?>
-                    <a href="<?php print($newphrase);?>" target="_blank"><?php print($newphrase);?></a>
+                    <a href="//<?php print($newphrase);?>" target="_blank"><?php print($newphrase);?></a>
                    <?php else:?>
                     <?php print($newphrase);?>
                   <?php endif;?>                  
