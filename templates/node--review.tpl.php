@@ -5,14 +5,16 @@
     if ($lang == 'en') $prefix = '/en'; else $prefix = '';
     $term_city = taxonomy_term_load($content['field_city']['#items'][0]['taxonomy_term']->tid);
     $translated_term_city = i18n_taxonomy_localize_terms($term_city); 
-    function print_gallery($photo_array, $image_style, $p_title){
+    function print_gallery($photo_array, $image_style, $p_title, $watermark = 1){
       $gallery = '<div class="somit somit-gallery">';
       $gallery .= '<div class="photo-carousel">';
+      if (is_null($watermark) || ($watermark == 1)){  $style_name = 'cyprus1140x720';}
+      elseif ($watermark == 0) {$style_name = 'cyprus1140x720wo';}
       foreach ($photo_array as $key => $photo) {
         $gallery .= '<div class="photo-item">';
         $photo_title = $photo['title'] == null ? $p_title : $photo['title'];
         $param = array(
-          'style_name' => 'cyprus1140x720',
+          'style_name' => $style_name,
           'path' => $photo['uri'],
           'getsize' => FALSE,
         );
@@ -162,7 +164,7 @@
               if(isset($content['field_photogallery']['#items'][$key])){
                 $photo_gallery = $content['field_photogallery']['#items'][$key]['entity'];
                 $photo_gallery_photos = $photo_gallery->field_photos['und'];
-                print_gallery($photo_gallery_photos, "review", $photo_gallery->title);
+                print_gallery($photo_gallery_photos, "review", $photo_gallery->title, $photo_gallery->field_watermark['und'][0]['value']);
                 $global_key = $key;
               }
             }
@@ -176,13 +178,17 @@
         <?php foreach ($content['field_photos']['#items'] as $photo):?>
           <div class="photo-intext">
             <?php 
+              $watermark = $content['field_watermark']['#items']['0']['value'];
+              if (is_null($watermark) || ($watermark == 1)){  $style_name = 'cyprus1140x720';}
+              elseif ($watermark == 0) {$style_name = 'cyprus1140x720wo';}                          
                 $param = array(
-                  'style_name' => 'cyprus1140x720',
+                  'style_name' => $style_name,
                   'path' => $photo['uri'],
                   'getsize' => FALSE,
                 );
                 print theme('image_style', $param);
               ?> 
+
           </div>
         <?php endforeach; ?>
       <?php endif;?>
@@ -252,7 +258,7 @@
               if (isset($content['field_photogallery']['#items'][$global_key])){
                 $photo_gallery = $content['field_photogallery']['#items'][$global_key]['entity'];
                 $photo_gallery_photos = $photo_gallery->field_photos['und'];
-                print_gallery($photo_gallery_photos, "review", $photo_gallery->title);
+                print_gallery($photo_gallery_photos, "review", $photo_gallery->title, $photo_gallery->field_watermark['und'][0]['value']);
                 $global_key = $global_key + 1;
               }
             }
@@ -266,7 +272,7 @@
         <?php 
           $photo_review = $content['field_photo_review']['#items']['0']['entity'];
           $photo_review_photos = $photo_review->field_photos['und'];
-          print_gallery($photo_review_photos, "review", $photo_review->title); 
+          print_gallery($photo_review_photos, "review", $photo_review->title, $photo_review->field_watermark['und'][0]['value']); 
         ?>     
       <?php endif; ?> 
       </div>

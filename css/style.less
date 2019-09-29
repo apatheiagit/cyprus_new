@@ -362,14 +362,15 @@ a:focus {  color: inherit; text-decoration: none;}
 	margin-bottom: 0;
 	padding-bottom: 20px;
 }
-.profile, .user form, .user .sticky-table, .page-node-edit form, .page-node-add form, .node-type-list{
+.profile, .user form, .user .sticky-table, .page-node-edit form, 
+.page-node-add form, .node-type-list, #taxonomy-form-term, #i18n-taxonomy-translation-term-form{
 	.quasi-container();
 	margin-bottom: 0;
 	margin-top: 0;
 	padding-bottom: 20px;
 	padding-top: 20px;
 }
-.tabs-primary, .tabs-secondary{
+.tabs-primary, .tabs-secondary, .page-node-translate .somit-body{
 	.quasi-container();
   margin-bottom: 0;
 	margin-top: 0;
@@ -1697,5 +1698,20 @@ img.monochrome {
 	& .prev-event {
 		cursor: default;
 		rect{ fill: @footer-link;}
+	}
+}
+.page-taxonomy-term {
+	& .view-taxonomy-term{
+		min-height: 300px;
+	}
+	& .view-content{
+		margin-bottom: 100px;
+		& ul{
+			margin-left: 50px;
+			& li{
+				font-size: 18px;
+				margin: 20px 0;
+			}
+		}
 	}
 }

@@ -1,12 +1,14 @@
 <?php  
-    function print_gallery($photo_array, $image_style, $p_title){
+    function print_gallery($photo_array, $image_style, $p_title, $watermark = 1){
       $gallery = '<div class="somit somit-gallery">';
       $gallery .= '<div class="photo-carousel">';
+      if (is_null($watermark) || ($watermark == 1)){  $style_name = 'cyprus1140x720';}
+      elseif ($watermark == 0) {$style_name = 'cyprus1140x720wo';}
       foreach ($photo_array as $key => $photo) {
         $gallery .= '<div class="photo-item">';
         $photo_title = $photo['title'] == null ? $p_title : $photo['title'];
         $param = array(
-          'style_name' => 'cyprus1140x720',
+          'style_name' => $style_name,
           'path' => $photo['uri'],
           'getsize' => FALSE,
         );
@@ -28,7 +30,7 @@
   <div class="container-bordered">
     <div class="article-content node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix">
       <h1 class="main-title"><?php print $title; ?></h1>  
-      <?php  print_gallery($content['field_photos']['#items'], "review", $photo_gallery->title); ?>
+      <?php  print_gallery($content['field_photos']['#items'], "review", $title, $content['field_watermark']['#items'][0]['value']); ?>      
     </div>
   </div>
 </div>
