@@ -55,7 +55,7 @@
 			<a class="photo-icon" href="<?php print $prefix;?>/photoreviews"></a>
 		<?php endif;?>
 		<div class="category">
-		<?php if($special == 1):?>
+		<?php if(isset($special) && ($special == 1)):?>
 			<?php if(isset($specproekt_tid)):?>
 				<a href="<?php print $prefix;?>/special/<?php print $specproekt_tid;?>"><?php print $specproekt;?></a>
 			<?php else:?>

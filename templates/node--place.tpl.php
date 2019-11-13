@@ -11,34 +11,22 @@
   <div class="article-photo-wrapper container">
     <div class="main-photo" id="mainPhoto">
      <?php
-      if ($content['field_cut_photo']['#items']['0']['value'] == 'top'){
-        $params = array(
-          'style_name' => 'cyprus1140x440top',
-          'path' => $content['field_main_img']['#items']['0']['uri'],
-          'alt' => $title,
-          'title' => $title,
-          'attributes' => array('class' => array('img-responsive')),
-          'getsize' => FALSE,
-        );
-      }elseif($content['field_cut_photo']['#items']['0']['value'] == 'bottom'){
-        $params = array(
-          'style_name' => 'cyprus1140x440bottom',
-          'path' => $content['field_main_img']['#items']['0']['uri'],
-          'alt' => $title,
-          'title' => $title,
-          'attributes' => array('class' => array('img-responsive')),
-          'getsize' => FALSE,
-        );
-      }else{
-        $params = array(
-          'style_name' => 'cyprus1140x440',
-          'path' => $content['field_main_img']['#items']['0']['uri'],
-          'alt' => $title,
-          'title' => $title,
-          'attributes' => array('class' => array('img-responsive')),
-          'getsize' => FALSE,
-        );
+      $style_name = 'cyprus1140x440';        
+      if (isset($content['field_cut_photo'])){
+        if ($content['field_cut_photo']['#items']['0']['value'] == 'top'){
+          $style_name = 'cyprus1140x440top';            
+        }elseif($content['field_cut_photo']['#items']['0']['value'] == 'bottom'){
+          $style_name = 'cyprus1140x440bottom';
+        }
       }
+      $params = array(
+        'style_name' => $style_name,
+        'path' => $content['field_main_img']['#items']['0']['uri'],
+        'alt' => $title,
+        'title' => $title,
+        'attributes' => array('class' => array('img-responsive')),
+        'getsize' => FALSE,
+      );
       print theme('image_style', $params);
     ?>  
     </div> 
@@ -105,11 +93,11 @@
                 <?php $newphrase = str_replace('http://', '', $content['field_www']['#items']['0']['value']);?>
                 <?php $newphrase = str_replace('https://', '', $newphrase);?>
                 <span class="item-label"><?php print t("Website") ?>:</span><span class="item-value">
-                  <?php if ($content['field_special']['#items']['0']['value'] == 1):?>
-                    <a href="//<?php print($newphrase);?>" target="_blank"><?php print($newphrase);?></a>
-                   <?php else:?>
-                    <?php print($newphrase);?>
-                  <?php endif;?>                  
+                    <?php if (isset($content['field_special']) && ($content['field_special']['#items']['0']['value'] == 1)):?>                   
+                      <a href="//<?php print($newphrase);?>" target="_blank"><?php print($newphrase);?></a>
+                     <?php else:?>
+                      <?php print($newphrase);?>
+                    <?php endif;?>                                  
                 </span>
               </div>
             <?php endif;?>
@@ -118,13 +106,13 @@
       <div class="article-detail-block ">
         <div class="article-text bordered-top">
         <?php print($content['body']['#items'][0]['value']);?>
-        <?php /* Виджет на странице про Трипстер http://cyprusfortravellers.net/place/tripster-neobychnye-ekskursii-po-kipru */ ?>
-        <?php if ($node->nid == 3337):?>
-        	<div style="margin: 20px 0px;"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&city=Ayia_Napa&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>
+        <?php /* Виджет на странице про Трипстер /place/tripster-neobychnye-ekskursii-po-kipru */ ?>
+        <?php if ($node->nid == 3337): ?>
+          <div class="trpspter"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&city=Ayia_Napa&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>
         <?php elseif ($node->nid == 3340):?>
-          <div style="margin: 20px 0px;"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&city=Limassol&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>        
+          <div class="trpspter"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&city=Limassol&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>        
         <?php elseif ($node->nid == 3341):?>
-          <div style="margin: 20px 0px;"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&city=Larnaca&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>
+          <div class="trpspter"><script id="tripster-1" src="https://experience.tripster.ru/partner/?template=loader&version=2&partner=cyprusfortravellers&city=Larnaca&order=random&num=3&script_id=tripster-1&widget_template=horizontal&width=100%25&height=700"></script></div>
         <?php endif;?>
         </div>
       </div>      
@@ -133,63 +121,72 @@
     <div id="map_canvas" class="map-container"></div>
   </div>
   <?php if(isset($content['field_latlng']['#items'][0])):?>
-  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCBHA4KKBAltxjI2LHONR2AhNJekCfx1Vw&sensor=false"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
   <script type="text/javascript">
+  (function($) {
+  $(function(){
+    $('.show_map').click(function(){
+      $('.body').css('width', $('.body').css('width'));
+      $('body').css('overflow-y', 'hidden');
+      $('<div id="mybox_overlay"></div>')
+      .css('top',$(document).scrollTop()).css('opacity','0').animate({'opacity':'0.75'},'slow').appendTo('body');
+      $('<span class="lb-close"></span>').prependTo('.map-wrapper');
+      $('.map-wrapper').css('visibility','visible');
+    })
+
     <?php
     print "var Address = [";
     foreach ($content['field_latlng']['#items'] as $latlng) { print "'".$latlng['value']."',"; }
     print "];";
     ?>
-    var markers = new Array();
-    var Locations = new Array(); 
-    function initialize() {
-      geocoder = new google.maps.Geocoder();
-      var latlng = new google.maps.LatLng(35.126413, 33.429859);
-      var mapOptions =  {zoom: 15, center: latlng}
-      map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);      
-      codeAddress(Address[0]);      
-      for (var i = 0; i < Address.length; i++) {
-        setMarkers(Address[i]);
-      }
+    var mymap = L.map('map_canvas').setView([34.684936, 33.056198], 16);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYXBhdGhlaWEiLCJhIjoiY2p5eWdldnAzMTA0bzNjbWVxN2V4eGsxMSJ9.K0GrQhIKuXexBH6bj0kv6Q', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiYXBhdGhlaWEiLCJhIjoiY2p5eWdldnAzMTA0bzNjbWVxN2V4eGsxMSJ9.K0GrQhIKuXexBH6bj0kv6Q'
+    }).addTo(mymap);
+    for (var i = 0; i < Address.length; i++) {
+      if (Address[i].match(/^\d/)) {        
+        var latlng_array = Address[i].split(", ");
+        var lat = latlng_array[0];
+        var lng = latlng_array[1];
+        if (lng.match(/^\d/)){
+          var marker = L.marker([lat, lng]).addTo(mymap);
+          mymap.panTo(new L.LatLng(lat, lng));
+        }
+      }else{
+        setOSM_Markers(Address[i]);
+      } 
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    function setMarkers(address){
-      geocoder.geocode( {address:address}, function(results, status) 
-      {
-        if (status == google.maps.GeocoderStatus.OK){
-          var marker = new google.maps.Marker(
-          {
-            icon: '/sites/all/themes/cyprus_new/img/pin.svg',
-            map: map,
-            position: results[0].geometry.location,
-            title: address
-          });
-        } else {
-          console.log('Geocode was not successful for the following reason: ' + status);
-       }
-      });
-    } 
-    function codeAddress(address) {
-      geocoder.geocode( {address:address}, function(results, status){
-        if (status == google.maps.GeocoderStatus.OK)   map.setCenter(results[0].geometry.location);
-        else console.log('Geocode was not successful for the following reason: ' + status);
+    function setOSM_Markers(address){
+      var res = encodeURI(address);
+      var url = 'http://api.geonames.org/searchJSON?username=apatheiar&q='+res;
+      
+      $.ajax({
+        url: url,
+        dataType: 'jsonp',        
+        success: function(data){
+          console.log(data);
+          if(data.totalResultsCount > 0){
+            var lat = data.geonames[0].lat;
+            var lng = data.geonames[0].lng;
+            var marker = L.marker([lat, lng]).addTo(mymap);
+            mymap.panTo(new L.LatLng(lat, lng));
+          }
+        },
+        error: function(jqXHR, err, ex){
+          console.log("jqXHR:");
+          console.log(jqXHR);
+        }
       });
     }
-  </script>
-  <script type="text/javascript">
-  (function($) {
-      $(function() {  
-        $('.show_map').click(function(){
-            $('.body').css('width', $('.body').css('width'));
-            $('body').css('overflow-y', 'hidden');
-            $('<div id="mybox_overlay"></div>')
-            .css('top',$(document).scrollTop()).css('opacity','0').animate({'opacity':'0.75'},'slow').appendTo('body');
-            google.maps.event.trigger(map, 'resize');
-            $('<span class="lb-close"></span>').prependTo('.map-wrapper');
-            //$('.map-wrapper').show();
-            $('.map-wrapper').css('visibility','visible');
-        })
-     });
+  })
   })(jQuery);   
   </script>
   <?php endif;?>  

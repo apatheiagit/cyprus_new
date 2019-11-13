@@ -33,7 +33,8 @@
   $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;
   $type = $content['field_type']['#items']['0']['value']; 
   $special = $content['field_special']['#items']['0']['value']; 
-  $city = $content['field_city']['#items']['0']['value']; 
+  $city = "";
+  $city = isset($content['field_city']['#items']['0']['value']) ? $content['field_city']['#items']['0']['value'] : ""; 
   $section = $content['field_section']['#items']['0']['taxonomy_term']->tid; 
 ?>
 <div class="media-detail media-detail--<?php print $type;?>">
@@ -202,7 +203,7 @@
           <div class="article-recipe">
             <?php $item = $recipe['entity'];?>
             <h5 class="uppercase"><?php print $item->title; ?></h5>
-            <?php if (isset($item->body)):?>
+            <?php if (isset($item->body['und'])):?>
             <div class="recipe-summery"><?php print $item->body['und'][0]['value']; ?></div>
             <?php endif;?>
             <?php 

@@ -1324,21 +1324,24 @@
 .view-id-team.wide-container .views-row-4 .info,
 .view-id-team.wide-container .views-row-7 .info,
 .view-id-team.wide-container .views-row-10 .info,
-.view-id-team.wide-container .views-row-13 .info {
+.view-id-team.wide-container .views-row-13 .info,
+.view-id-team.wide-container .views-row-16 .info {
   background-color: #84bf41;
 }
 .view-id-team.wide-container .views-row-2 .info,
 .view-id-team.wide-container .views-row-5 .info,
 .view-id-team.wide-container .views-row-8 .info,
 .view-id-team.wide-container .views-row-11 .info,
-.view-id-team.wide-container .views-row-14 .info {
+.view-id-team.wide-container .views-row-14 .info,
+.view-id-team.wide-container .views-row-17 .info {
   background-color: #35a0cd;
 }
 .view-id-team.wide-container .views-row-3 .info,
 .view-id-team.wide-container .views-row-6 .info,
 .view-id-team.wide-container .views-row-9 .info,
 .view-id-team.wide-container .views-row-12 .info,
-.view-id-team.wide-container .views-row-15 .info {
+.view-id-team.wide-container .views-row-15 .info,
+.view-id-team.wide-container .views-row-18 .info {
   background-color: #df542f;
 }
 .view-id-team.wide-container .view-footer {
