@@ -299,6 +299,20 @@ Drupal.behaviors.my_custom_behavior = {
 	   	//console.log('changeWeather');
 	}
 
+	$('.txtHeaderSearch').on('keypress', function (e) {
+    if (e.which == 13) {
+      var word = $(this).val();
+      if (word) {
+        document.location.href = '/search/node/' + encodeURIComponent(word) + '%20type%3Alifestyle';
+      }
+    }
+  });
+
+  $('.btn-subscr').on('click', function(){
+  	var email = $('.phseudo-subscribe input').val();
+  	document.location.href = '/subscribe?email=' + email;
+  });
+
   }
 };
 

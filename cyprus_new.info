@@ -55,7 +55,9 @@ stylesheets[all][] = css/bootstrap.min.css
 stylesheets[all][] = js/plugins/select/css/bootstrap-select.min.css
 stylesheets[all][] = js/plugins/fotorama/fotorama.css
 stylesheets[all][] = js/plugins/owl/owl.carousel.css
+stylesheets[all][] = js/plugins/aos/aos.css
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/life.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
@@ -76,6 +78,8 @@ scripts[] = js/bootstrap.min.js
 scripts[] = js/plugins/select/js/bootstrap-select.min.js
 scripts[] = js/plugins/fotorama/fotorama.js
 scripts[] = js/plugins/owl/owl.carousel.min.js
+scripts[] = js/plugins/owl/owl.carousel2.thumbs.min.js
+scripts[] = js/plugins/aos/aos.js
 scripts[] = js/script.js
 
 

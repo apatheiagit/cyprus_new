@@ -292,6 +292,75 @@
           <a href="<?php print $prefix;?>/tags/<?php print str_replace(" ", "-", $tags['taxonomy_term']->name);?>"><?php print $translated_term_tag->name;?></a>
         <?php endforeach; ?>
       </div>
+      <p>
+        <script charset="utf-8" type="text/javascript">
+          window.TP_FORM_SETTINGS = window.TP_FORM_SETTINGS || {};
+          window.TP_FORM_SETTINGS["94932d885b8f53d2d8fb94766f6246eb"] = {
+        "handle": "94932d885b8f53d2d8fb94766f6246eb",
+        "widget_name": "Поисковая форма #1",
+        "border_radius": "5",
+        "additional_marker": null,
+        "width": null,
+        "show_logo": true,
+        "show_hotels": false,
+        "form_type": "avia",
+        "locale": "ru",
+        "currency": "rub",
+        "sizes": "default",
+        "search_target": "_blank",
+        "active_tab": "avia",
+        "search_host": "hydra.aviasales.ru",
+        "hotels_host": "search.hotellook.com",
+        "hotel": "",
+        "hotel_alt": "",
+        "avia_alt": "",
+        "retargeting": true,
+        "trip_class": "economy",
+        "depart_date": null,
+        "return_date": null,
+        "check_in_date": null,
+        "check_out_date": null,
+        "no_track": false,
+        "powered_by": false,
+        "id": 221509,
+        "marker": 275688,
+        "origin": {
+          "name": ""
+        },
+        "destination": {
+          "name": "Ларнака",
+          "iata": "LCA"
+        },
+        "color_scheme": {
+          "name": "white_blue",
+          "icons": "icons_blue",
+          "background": "#ffffff",
+          "color": "#000000",
+          "border_color": "#cccccc",
+          "button": "#03bae4",
+          "button_text_color": "#ffffff",
+          "input_border": "#cccccc"
+        },
+        "hotels_type": "hotellook_host",
+        "best_offer": {
+          "locale": "ru",
+          "currency": "rub",
+          "marker": 275688,
+          "search_host": "hydra.aviasales.ru",
+          "offers_switch": false,
+          "api_url": "//www.travelpayouts.com/minimal_prices/offers.json",
+          "routes": []
+        },
+        "hotel_logo_host": null,
+        "search_logo_host": "www.aviasales.ru",
+        "hotel_marker_format": null,
+        "hotelscombined_marker": null,
+        "responsive": true,
+        "height": 194
+      };
+      </script>
+      <script charset="utf-8" src="//old.travelpayouts.com/widgets/94932d885b8f53d2d8fb94766f6246eb.js?v=1966" async></script>
+      </p>
   </div>  
 </div>
 </div>

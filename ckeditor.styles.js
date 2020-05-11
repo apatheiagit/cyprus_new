@@ -132,6 +132,14 @@ if(typeof(CKEDITOR) !== 'undefined') {
                     'class' : 'big-signature'
                 }
             },
+            {
+                name : 'Подпись к фото',
+                element : 'div',
+                attributes :
+                {
+                    'class' : 'img-caption'
+                }
+            },
 
     ]);
 }

@@ -256,7 +256,10 @@
       <?php endforeach; ?>
     <?php endif; ?>
   </div>
- </div>
+  <div style="margin-bottom: 20px;">  
+  <script src="https://c18.travelpayouts.com/content?promo_id=1490&shmarker=275688&table=true&rows=2&columns=7&cellWidth=158&countries=43&powered_by=false" charset="utf-8" async></script>
+  </div>
+ </div> 
 </div>
 <?php /* Поделитесь с друзьями */?>
 <?php $current_url = url(current_path(), array('absolute' => TRUE)); $current_title = drupal_get_title();?>
