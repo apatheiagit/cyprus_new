@@ -247,3 +247,10 @@ function cyprus_new_menu_link(array $variables) {
   return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 
 }
+
+function cyprus_new_preprocess_views_view(&$vars) {
+  $view = $vars['view'];
+  $vars['title'] = filter_xss_admin($view->get_title());
+}
+
+

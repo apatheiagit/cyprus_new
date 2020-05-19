@@ -313,7 +313,173 @@ Drupal.behaviors.my_custom_behavior = {
   	document.location.href = '/subscribe?email=' + email;
   });
 
-  }
+  $('.color-title').each(function(){
+  	var text = $(this).text().trim().split(" ");
+  	var first = text.shift();
+  	var result = (text.length > 0 ? "<span>" + first + "</span> " : first) + text.join(" ");
+  	if (first.charAt(0) == '#'){
+  		result = "<span>#</span>" + first.substr(1);
+  	}
+  	$(this).html(result);
+  });
+
+  var viewport = $(window).width();
+
+  $('.topics-carousel').owlCarousel({
+		loop:false,
+		margin:20,
+		nav:true,
+		dots:false,
+		responsive:{
+			0:{
+				items:2
+			},
+			600:{
+				items:3
+			},
+			1000:{
+				items:4
+			}
+		}
+	});
+	var topics_items = $('.topics-carousel .topic-item').length;
+	if ((viewport >= 1000 && topics_items < 4)
+		|| ((viewport < 1000 && viewport >= 600) && topics_items < 3)
+		|| (viewport < 600 && topics_items < 1)){
+		$('.topics-carousel .owl-controls').hide();
+	}
+
+	$('.topics3-carousel').owlCarousel({
+		loop:false,
+		margin:20,
+		nav:true,
+		dots:false,
+		responsive:{
+			0:{
+				items:2
+			},
+			600:{
+				items:2
+			},
+			1000:{
+				items:3
+			}
+		}
+	});
+	var topics3_items = $('.topics3-carousel .topic-item').length;
+	if ((viewport >= 1000 && topics3_items < 3)
+		|| ((viewport < 1000 && viewport >= 600) && topics3_items < 2)
+		|| (viewport < 600 && topics3_items < 2)){
+		$('.topics3-carousel .owl-controls').hide();
+	}
+
+	$('.movie-premieres-carousel').owlCarousel({
+		loop:false,
+		margin:20,
+		nav:true,
+		dots:false,
+		responsive:{
+			0:{
+				items:2
+			},
+			600:{
+				items:3
+			},
+			1000:{
+				items:4
+			}
+		}
+	});
+	var movie_items = $('.movie-premieres-carousel .topic-item').length;
+	if ((viewport >= 1000 && movie_items < 4)
+		|| ((viewport < 1000 && viewport >= 600) && movie_items < 3)
+		|| (viewport < 600 && movie_items < 2)){
+		$('.movie-premieres-carousel .owl-controls').hide();
+	}
+
+	$('.trailer-carousel').owlCarousel({
+		loop:false,
+		nav:true,
+		dots:false,
+		items: 1
+	});
+	var trailer_items = $('.trailer-carousel .trailers-block').length;
+	if (trailer_items < 2){
+		$('.trailer-carousel .owl-controls').hide();
+	}
+
+
+	$('.hit-main-carousel').owlCarousel({
+		loop:false,
+		nav:false,
+		dots:false,
+		items: 1,
+		autoplay:true,
+    autoplayTimeout:15000,
+    autoplayHoverPause:true,
+		thumbs: true,
+    thumbsPrerendered: true,
+    thumbContainerClass: 'hit-topic-container',
+    thumbItemClass: 'hit-topic-item',
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 25,
+        margin: 10
+      },
+      768: {
+        items: 1
+      }
+    }
+	});
+	var hit_big_height, hit_big_width, hit_small_width, hit_small_height;
+	/*$('.hit-topic-big .photo-big img').on('load', function(){
+		hit_big_height = $('.hit-topic-big .photo-big img').height();
+		hit_big_width= $('.hit-topic-big .photo-big img').width();
+		$('.hit-topic-big').css({'height': hit_big_height + 'px'});
+		$('.hit-topic-small').css({'height': hit_big_height + 'px'});
+		$('.hit-topic-big').css({'width': hit_big_width + 'px'});
+	});
+	
+	$('.hit-topic-small .photo-small img').on('load', function(){
+		hit_small_height = $('.hit-topic-small .photo-small img').height();
+		hit_small_width= $('.hit-topic-small .photo-small img').width();
+		$('.hit-topic-big').css({'height': hit_small_height + 'px'});
+		$('.hit-topic-small').css({'height': hit_small_height + 'px'});
+		$('.hit-topic-small').css({'width': hit_small_width + 'px'});
+	});*/
+	
+	$('.hit-topic-small').on('click', function(){
+		var hit_small = $(this).html();
+		$(this).addClass('active').children().css('opacity', 0.7);
+		$('.hit-topic-big').children().css('opacity', 0.7);
+		setTimeout( function() {
+      $('.hit-topic-small.active').html($('.hit-topic-big').html());
+			$('.hit-topic-big').html(hit_small);
+			$('.hit-topic-small.active').children().css('opacity', 1);
+			$('.hit-topic-big').children().css('opacity', 1);
+			$('.hit-topic-small.active').removeClass('active');
+     }, 400);		
+		
+	});
+
+	
+	$('.play-trailer').on('click', function(){
+		$('body').addClass('modal-open');
+		$('body').append('<div class="modal-backdrop"></div>');
+		$('body').append('<div class="modal my-modal"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"></div></div></div>');
+		$('.modal, .modal-backdrop').addClass('show');
+		$('.modal-content').append('<div class="modal-close"></div>');
+		$('.modal-content').append($(this).children('.video-hidden').html());
+	});
+	$(document).on('click', '.modal-close', function(){
+		$('body').removeClass('modal-open');
+		$('.modal-backdrop').remove();
+		$('.modal').remove();
+	})	
+
+}
 };
 
 

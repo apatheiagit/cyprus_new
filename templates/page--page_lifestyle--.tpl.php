@@ -1,9 +1,34 @@
-<?php $page_type = arg(0); 
-$url_alias = drupal_get_path_alias(current_path()); $partition = explode('/', $url_alias);?>
-<?php global $user; $clear_class = "";
-      global $language_content; $lang = $language_content->language; if ($lang == 'en') $prefix = '/en'; else $prefix = '';
+<?php 
+	$page_type = arg(0); 
+	$url_alias = drupal_get_path_alias(current_path()); 
+	$partition = explode('/', $url_alias); 
+	$partition_name = "";
+	if(isset($partition[1])) $partition_name = $partition[1];
+	global $user; $clear_class = "";
+  global $language_content; $lang = $language_content->language; if ($lang == 'en') $prefix = '/en'; else $prefix = '';
+
+/*$page_type = arg(0); 
+$url_alias = drupal_get_path_alias(current_path()); 
+$partition = explode('/', $url_alias); 
+$partition_name = "";
+if(isset($partition[1])) {
+  $partition_name = $partition[1];
+  $section_query = db_select('taxonomy_term_data', 'term');
+  $section_query -> leftJoin('field_data_field_english', 'section', 'term.tid = section.entity_id');    
+  $section_query -> fields('term', array('tid'));
+  $section_query -> condition('section.field_english_value', $partition_name, '='); 
+  $section_query -> condition('section.entity_type', 'taxonomy_term', '='); 
+  $section_result = $section_query -> execute();
+  $section = $section_result -> fetchCol();
+  return $section;
+}else{
+  return;
+}
+print "<h1>";
+print_r ($section);
+print "</h1>";*/
 ?>
-<div class="partition-life <?php print $page_type; ?> partition-life-<?php print $partition[1]; ?>">
+<div class="partition-life <?php print $page_type; ?> partition-life-<?php print $partition_name; ?>">
 <header class="l-header">
   <div class="container">
     <div class="row">
@@ -14,11 +39,11 @@ $url_alias = drupal_get_path_alias(current_path()); $partition = explode('/', $u
           </svg>
         </div>
         <div class="l-logo">
-          <a href="/lifestyle"><img src="/sites/all/themes/cyprus_new/img/mini-logo.svg" alt=""></a>
+          <a href="<?php print $prefix;?>/lifestyle"><img src="/sites/all/themes/cyprus_new/img/mini-logo.svg" alt=""></a>
         </div>
       </div>
       <div class="col-xs-8 col-sm-4">
-        <div class="partition-name"><?php print t('lifestyle');?></div>
+        <div class="partition-name"><a href="<?php print $prefix;?>/lifestyle"><?php print t('lifestyle');?></a></div>
       </div>
       <div class="col-xs-2 col-sm-4">
         <div class="l-search-block">
@@ -56,7 +81,7 @@ $url_alias = drupal_get_path_alias(current_path()); $partition = explode('/', $u
           <?php print t('Back');?>
         </a>
         <div class="current-partition">
-          <?php print t($partition[1]);?>
+          <?php print t($partition_name);?>
         </div>      
       </div>
       <div class="col col-md-6">
@@ -75,6 +100,8 @@ $url_alias = drupal_get_path_alias(current_path()); $partition = explode('/', $u
     </div>
   </div>
 </div>
+<?php print $messages; ?>
+<?php print render($tabs); ?>
 <?php print render($page['content']); ?>
 <div class="l-footer">
   <div class="top-footer">
@@ -86,7 +113,7 @@ $url_alias = drupal_get_path_alias(current_path()); $partition = explode('/', $u
           </div>
         </div>
         <div class="col-xs-8 col-sm-4">
-          <div class="partition-name">лайфстайл</div>
+          <div class="partition-name"><?php print t('lifestyle');?></div>
         </div>
         <div class="col-xs-2 col-sm-4">
           <div class="l-search-block hidden-xs">

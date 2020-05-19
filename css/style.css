@@ -7680,3 +7680,12 @@ img.monochrome:hover {
   font-size: 18px;
   margin: 20px 0;
 }
+.tripster-block {
+  background-color: white;
+}
+.tripster-block .brdr {
+  border-bottom: 1px solid #111;
+}
+.weather {
+  opacity: 0;
+}

@@ -6,6 +6,7 @@
   $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;
   $rubric = $content['field_rubric']['#items']['0']['tid']; 
   $terms = taxonomy_term_load($rubric); $english = $terms->field_english['und'][0]['value']; $russian_name_localize = i18n_taxonomy_localize_terms($terms); $russian = $russian_name_localize->name;
+  $watermark = $content['field_watermark']['#items']['0']['value'];
 ?>
 <div class="partition-detail">
   <div class="container container-white">
@@ -15,10 +16,37 @@
 
       <h1 class="h1-title"><?php print $title;?></h1>
 
+      <?php if (isset($content['field_www']['#items'])):?>
+        <div class="video-block">
+          <div class="photo">
+            <?php
+              if ($watermark == 1){  $style_name = 'life1340_730water';}
+              elseif ($watermark == 0) {$style_name = 'life1340_730';}    
+              $params = array(
+                'style_name' => $style_name,
+                'path' => $content['field_image']['#items']['0']['uri'],
+                'alt' => $title,
+                'title' => $title,
+                'attributes' => array('class' => array('img-responsive')),
+                'getsize' => FALSE,
+              );?>    
+            <?php  print theme('image_style', $params); ?>
+            <svg width="94" height="94" viewBox="0 0 94 94" fill="none" class="icon-play">
+              <circle cx="47" cy="47" r="47" fill="white"/>
+              <path d="M35.9414 27.6472V66.3531L66.3532 47.0002L35.9414 27.6472Z" fill="black"/>
+            </svg>
+          </div>
+          <div class="video">
+            <?php print $content['field_www']['#items']['0']['value'];?>
+          </div>
+        </div>        
+      <?php else:?>
       <div class="main-image photo">
         <?php
+          if ($watermark == 1){  $style_name = 'life1340_730water';}
+          elseif ($watermark == 0) {$style_name = 'life1340_730';}    
           $params = array(
-            'style_name' => 'life1340_730',
+            'style_name' => $style_name,
             'path' => $content['field_image']['#items']['0']['uri'],
             'alt' => $title,
             'title' => $title,
@@ -27,18 +55,19 @@
           );?>    
         <?php  print theme('image_style', $params); ?>
       </div>
+    <?php endif;?>
 
       <?php print($content['body']['#items'][0]['value']);?>
 
       <?php 
         /* Если фотографии просто добавлены в обзор, выводим их крупно в виде ленты */
         if (isset($content['field_photos']['#items'])):?>
+        <?php               
+            if ($watermark == 1){  $style_name = 'life892_502water';}
+            elseif ($watermark == 0) {$style_name = 'life892_502';}?>
         <?php foreach ($content['field_photos']['#items'] as $photo):?>
-          <div class="photo-intext">
-            <?php 
-              $watermark = $content['field_watermark']['#items']['0']['value'];
-              if (is_null($watermark) || ($watermark == 1)){  $style_name = 'life892_502water';}
-              elseif ($watermark == 0) {$style_name = 'life892_502';}                          
+          <p>
+            <?php               
                 $param = array(
                   'style_name' => $style_name,
                   'path' => $photo['uri'],
@@ -46,7 +75,8 @@
                 );
                 print theme('image_style', $param);
               ?> 
-          </div>
+          </p>
+          <div class="img-caption"><?php print $photo['alt']; ?></div>
         <?php endforeach; ?>
       <?php endif;?>
 
@@ -90,6 +120,12 @@
               var Url = $(this).attr('href');
               var newWin = window.open(Url, 'example', 'width=600,height=400');
               return false;
+            });
+            $('.video-block .photo').on('click', function(){
+              $(this).addClass('inactive');
+              var video = $(this).next('.video').children('iframe');
+              var symbol = video[0].src.indexOf("?") > -1 ? "&" : "?";
+              video[0].src += symbol + "autoplay=1";
             });
            })
         })(jQuery);    
