@@ -24,7 +24,7 @@
               elseif ($watermark == 0) {$style_name = 'life1340_730';}    
               $params = array(
                 'style_name' => $style_name,
-                'path' => $content['field_image']['#items']['0']['uri'],
+                'path' => $content['field_main_img']['#items']['0']['uri'],
                 'alt' => $title,
                 'title' => $title,
                 'attributes' => array('class' => array('img-responsive')),
@@ -47,7 +47,7 @@
           elseif ($watermark == 0) {$style_name = 'life1340_730';}    
           $params = array(
             'style_name' => $style_name,
-            'path' => $content['field_image']['#items']['0']['uri'],
+            'path' => $content['field_main_img']['#items']['0']['uri'],
             'alt' => $title,
             'title' => $title,
             'attributes' => array('class' => array('img-responsive')),

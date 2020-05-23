@@ -503,7 +503,7 @@
   width: 100%;
   height: 16px;
   left: 0;
-  top: 28px;
+  bottom: -24px;
 }
 .l-top-menu li a {
   color: black;
@@ -512,6 +512,9 @@
   font-weight: 500;
   font-size: 32px;
   padding: 11px 0;
+}
+.l-top-menu .current-partition:first-letter {
+  text-transform: uppercase;
 }
 @media (max-width: 767px) {
   .l-top-menu .current-partition {
@@ -867,6 +870,9 @@
   .hit-topic-nav .title {
     display: none;
   }
+}
+.hit-topic-carousel {
+  overflow: hidden;
 }
 .hit-topic-carousel .container-fluid {
   display: -webkit-box;
@@ -2757,60 +2763,60 @@
   color: #27AE60;
 }
 /* /gardening */
-/* food */
-.partition-life-food .l-header,
-.partition-life-food .l-top-menu {
+/* beauty */
+.partition-life-beauty .l-header,
+.partition-life-beauty .l-top-menu {
   background-color: #F8CE4B;
 }
-.partition-life-food .l-header {
+.partition-life-beauty .l-header {
   border-color: #FEE289;
 }
-.partition-life-food .l-top-menu ul li.active-trail:after {
+.partition-life-beauty .l-top-menu ul li.active-trail:after {
   background-color: #FEE289;
 }
 @media (max-width: 767px) {
-  .partition-life-food .l-top-menu ul li.active-trail:after {
+  .partition-life-beauty .l-top-menu ul li.active-trail:after {
     display: none;
   }
 }
-.partition-life-food .hit-topic-carousel,
-.partition-life-food .partition-detail {
+.partition-life-beauty .hit-topic-carousel,
+.partition-life-beauty .partition-detail {
   background: -webkit-linear-gradient(top, #F8CE4B 190px, white 190px);
   background: linear-gradient(to bottom, #F8CE4B 190px, white 190px);
 }
-.partition-life-food .hit-topic-big .l-rubric {
+.partition-life-beauty .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #FEE289;
 }
-.partition-life-food .hit-topic-big .descr {
+.partition-life-beauty .hit-topic-big .descr {
   color: white;
 }
-.partition-life-food .color-title span {
+.partition-life-beauty .color-title span {
   color: #F8CE4B;
 }
-.partition-life-food .author:after,
-.partition-life-food .author:before {
+.partition-life-beauty .author:after,
+.partition-life-beauty .author:before {
   background-color: #FEE289;
 }
-.partition-life-food .decor.decor-9,
-.partition-life-food .decor.decor-101,
-.partition-life-food .decor.decor-102,
-.partition-life-food .decor.decor-103 {
+.partition-life-beauty .decor.decor-9,
+.partition-life-beauty .decor.decor-101,
+.partition-life-beauty .decor.decor-102,
+.partition-life-beauty .decor.decor-103 {
   background-color: #F8CE4B;
 }
-.partition-life-food .decor.decor-6,
-.partition-life-food .decor.decor-7,
-.partition-life-food .decor.decor-8,
-.partition-life-food .decor.decor-10 {
+.partition-life-beauty .decor.decor-6,
+.partition-life-beauty .decor.decor-7,
+.partition-life-beauty .decor.decor-8,
+.partition-life-beauty .decor.decor-10 {
   background-color: #FEE289;
 }
-.partition-life-food .photo-topics {
+.partition-life-beauty .photo-topics {
   background-color: #F8CE4B;
 }
-.partition-life-food .topic-item .title:hover {
+.partition-life-beauty .topic-item .title:hover {
   color: #F8CE4B;
 }
-/* /food */
+/* /beauty */
 /* zerowaste */
 .partition-life-zerowaste .l-header,
 .partition-life-zerowaste .l-top-menu {

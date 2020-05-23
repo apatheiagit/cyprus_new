@@ -29,7 +29,7 @@
             </svg>
           </div>
           <div class="l-logo">
-            <a href="<?php print $prefix;?>/lifestyle"><img src="/sites/all/themes/cyprus_new/img/mini-logo.svg" alt=""></a>
+            <a href="<?php print $prefix;?>/"><img src="/sites/all/themes/cyprus_new/img/mini-logo.svg" alt=""></a>
           </div>
         </div>
         <div class="col-xs-8 col-sm-4">
@@ -99,7 +99,7 @@
         <div class="row">
           <div class="col-xs-2 col-sm-4">
             <div class="l-logo">
-              <a href="/lifestyle"><img src="/sites/all/themes/cyprus_new/img/mini-logo.svg" alt=""></a>
+              <a href="/"><img src="/sites/all/themes/cyprus_new/img/mini-logo.svg" alt=""></a>
             </div>
           </div>
           <div class="col-xs-8 col-sm-4">

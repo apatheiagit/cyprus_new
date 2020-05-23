@@ -1,5 +1,5 @@
 <?php foreach ($fields as $id => $field): 
-    if($id == 'field_image') { $image = $field->content; }
+    if($id == 'field_main_img') { $image = $field->content; }
     if($id == 'title') { $title = $field->content; }   
     if($id == 'field_rubric') { $rubric = $field->content; }
     if($id == 'totalcount') { $totalcount = $field->content; }
@@ -30,7 +30,7 @@
     <div class="l-rubric">
       <a href="<?php print $prefix;?>/lifestyle/all/<?php print $term_rubric->field_english['und'][0]['value'];?>"><?php print $rubric_name; ?></a>
         <?php if(isset($kind)):?>
-          | <?php print $kind_name;?>
+          | <a href="<?php print $prefix."/lifestyle/all/".$term_rubric->field_english['und'][0]['value']."/".$kind;?>"><?php print $kind_name;?></a>
         <?php endif;?>
         <span>| <?php print $totalcount;?></span>
     </div>
