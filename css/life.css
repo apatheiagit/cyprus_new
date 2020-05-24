@@ -875,9 +875,6 @@
   overflow: hidden;
 }
 .hit-topic-carousel .container-fluid {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   max-width: 1630px;
 }
 @media (min-width: 1601px) {
@@ -891,6 +888,21 @@
   .hit-topic-carousel .container-fluid {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+.hit-topic-carousel .mobile-carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .hit-topic-carousel .mobile-carousel {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .hit-topic-carousel .owl-carousel .owl-stage {
+    margin-left: -25px;
   }
 }
 .hit-topic-carousel .hit-topic {
@@ -1040,11 +1052,6 @@
     line-height: 20px;
   }
 }
-@media (max-width: 767px) {
-  .hit-topic-carousel .hit-topic-small {
-    display: none;
-  }
-}
 .hit-topic-carousel .hit-topic-small .photo-big,
 .hit-topic-carousel .hit-topic-small .decor {
   display: none;
@@ -1064,6 +1071,13 @@
     bottom: 20px;
   }
 }
+@media (max-width: 767px) {
+  .hit-topic-carousel .hit-topic-small .info {
+    top: 20px;
+    width: 80%;
+    color: #111111;
+  }
+}
 .hit-topic-carousel .hit-topic-small .title {
   font-size: 17px;
   line-height: 24px;
@@ -1080,11 +1094,45 @@
     line-height: 20px;
   }
 }
+@media (max-width: 767px) {
+  .hit-topic-carousel .hit-topic-small .title {
+    font-size: 26px;
+    line-height: 34px;
+    margin: 8px 0;
+  }
+}
 .hit-topic-carousel .hit-topic-small .descr {
   display: none;
 }
+@media (max-width: 767px) {
+  .hit-topic-carousel .hit-topic-small .descr {
+    display: block;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+}
 .hit-topic-carousel .hit-topic-small .l-rubric {
   color: white;
+}
+@media (max-width: 767px) {
+  .hit-topic-carousel .hit-topic-small .l-rubric {
+    color: #111111;
+    padding: 2px 10px;
+    text-transform: lowercase;
+  }
+  .hit-topic-carousel .hit-topic-small .l-rubric span {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hit-topic-carousel .hit-topic-small .photo-small {
+    display: none;
+  }
+  .hit-topic-carousel .hit-topic-small .photo-big,
+  .hit-topic-carousel .hit-topic-small .decor-9 {
+    display: block;
+  }
 }
 .l-rubric {
   color: #999999;
@@ -2423,6 +2471,28 @@
 .video-hidden {
   display: none;
 }
+.mobile-carousel.owl-carousel .owl-controls {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  margin-left: 0;
+  text-align: center;
+}
+.mobile-carousel.owl-carousel .owl-controls .owl-dots {
+  width: 100%;
+  height: 8px;
+}
+.mobile-carousel.owl-carousel .owl-controls .owl-dot {
+  vertical-align: top;
+}
+.mobile-carousel.owl-carousel .owl-controls .owl-dot span {
+  border: none;
+  border-radius: 0;
+  display: block;
+  height: 4px;
+  margin: 0;
+  width: 120px;
+}
 /* orange */
 .partition-life- .l-header,
 .partition-life-all .l-header,
@@ -2499,12 +2569,31 @@
   background: -webkit-linear-gradient(top, #7C97A7 190px, white 190px);
   background: linear-gradient(to bottom, #7C97A7 190px, white 190px);
 }
+@media (max-width: 767px) {
+  .partition-life-cinema .hit-topic-carousel,
+  .partition-life-cinema .partition-detail {
+    background: -webkit-linear-gradient(top, #7C97A7 203px, white 203px);
+    background: linear-gradient(to bottom, #7C97A7 203px, white 203px);
+  }
+  .partition-life-cinema .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #AECFE1;
+  }
+}
 .partition-life-cinema .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #AECFE1;
 }
 .partition-life-cinema .hit-topic-big .descr {
   color: white;
+}
+@media (max-width: 767px) {
+  .partition-life-cinema .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #AECFE1;
+  }
+  .partition-life-cinema .hit-topic-small .descr {
+    color: white;
+  }
 }
 .partition-life-cinema .color-title span {
   color: #7C97A7;
@@ -2556,12 +2645,31 @@
   background: -webkit-linear-gradient(top, #8240EE 190px, white 190px);
   background: linear-gradient(to bottom, #8240EE 190px, white 190px);
 }
+@media (max-width: 767px) {
+  .partition-life-lifehack .hit-topic-carousel,
+  .partition-life-lifehack .partition-detail {
+    background: -webkit-linear-gradient(top, #8240EE 203px, white 203px);
+    background: linear-gradient(to bottom, #8240EE 203px, white 203px);
+  }
+  .partition-life-lifehack .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #D5ABFF;
+  }
+}
 .partition-life-lifehack .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #D5ABFF;
 }
 .partition-life-lifehack .hit-topic-big .descr {
   color: white;
+}
+@media (max-width: 767px) {
+  .partition-life-lifehack .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #D5ABFF;
+  }
+  .partition-life-lifehack .hit-topic-small .descr {
+    color: white;
+  }
 }
 .partition-life-lifehack .color-title span {
   color: #8240EE;
@@ -2613,12 +2721,31 @@
   background: -webkit-linear-gradient(top, #FBDFC6 190px, white 190px);
   background: linear-gradient(to bottom, #FBDFC6 190px, white 190px);
 }
+@media (max-width: 767px) {
+  .partition-life-psychology .hit-topic-carousel,
+  .partition-life-psychology .partition-detail {
+    background: -webkit-linear-gradient(top, #FBDFC6 203px, white 203px);
+    background: linear-gradient(to bottom, #FBDFC6 203px, white 203px);
+  }
+  .partition-life-psychology .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #F9E6D6;
+  }
+}
 .partition-life-psychology .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #F9E6D6;
 }
 .partition-life-psychology .hit-topic-big .descr {
   color: white;
+}
+@media (max-width: 767px) {
+  .partition-life-psychology .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #F9E6D6;
+  }
+  .partition-life-psychology .hit-topic-small .descr {
+    color: white;
+  }
 }
 .partition-life-psychology .color-title span {
   color: #FBDFC6;
@@ -2670,12 +2797,31 @@
   background: -webkit-linear-gradient(top, #35A0CD 190px, white 190px);
   background: linear-gradient(to bottom, #35A0CD 190px, white 190px);
 }
+@media (max-width: 767px) {
+  .partition-life-fashion .hit-topic-carousel,
+  .partition-life-fashion .partition-detail {
+    background: -webkit-linear-gradient(top, #35A0CD 203px, white 203px);
+    background: linear-gradient(to bottom, #35A0CD 203px, white 203px);
+  }
+  .partition-life-fashion .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #C9ECFB;
+  }
+}
 .partition-life-fashion .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #C9ECFB;
 }
 .partition-life-fashion .hit-topic-big .descr {
   color: white;
+}
+@media (max-width: 767px) {
+  .partition-life-fashion .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #C9ECFB;
+  }
+  .partition-life-fashion .hit-topic-small .descr {
+    color: white;
+  }
 }
 .partition-life-fashion .color-title span {
   color: #35A0CD;
@@ -2727,12 +2873,31 @@
   background: -webkit-linear-gradient(top, #27AE60 190px, white 190px);
   background: linear-gradient(to bottom, #27AE60 190px, white 190px);
 }
+@media (max-width: 767px) {
+  .partition-life-gardening .hit-topic-carousel,
+  .partition-life-gardening .partition-detail {
+    background: -webkit-linear-gradient(top, #27AE60 203px, white 203px);
+    background: linear-gradient(to bottom, #27AE60 203px, white 203px);
+  }
+  .partition-life-gardening .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #88EAB1;
+  }
+}
 .partition-life-gardening .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #88EAB1;
 }
 .partition-life-gardening .hit-topic-big .descr {
   color: white;
+}
+@media (max-width: 767px) {
+  .partition-life-gardening .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #88EAB1;
+  }
+  .partition-life-gardening .hit-topic-small .descr {
+    color: white;
+  }
 }
 .partition-life-gardening .color-title span {
   color: #27AE60;
@@ -2763,60 +2928,79 @@
   color: #27AE60;
 }
 /* /gardening */
-/* beauty */
-.partition-life-beauty .l-header,
-.partition-life-beauty .l-top-menu {
+/* wellness */
+.partition-life-wellness .l-header,
+.partition-life-wellness .l-top-menu {
   background-color: #F8CE4B;
 }
-.partition-life-beauty .l-header {
+.partition-life-wellness .l-header {
   border-color: #FEE289;
 }
-.partition-life-beauty .l-top-menu ul li.active-trail:after {
+.partition-life-wellness .l-top-menu ul li.active-trail:after {
   background-color: #FEE289;
 }
 @media (max-width: 767px) {
-  .partition-life-beauty .l-top-menu ul li.active-trail:after {
+  .partition-life-wellness .l-top-menu ul li.active-trail:after {
     display: none;
   }
 }
-.partition-life-beauty .hit-topic-carousel,
-.partition-life-beauty .partition-detail {
+.partition-life-wellness .hit-topic-carousel,
+.partition-life-wellness .partition-detail {
   background: -webkit-linear-gradient(top, #F8CE4B 190px, white 190px);
   background: linear-gradient(to bottom, #F8CE4B 190px, white 190px);
 }
-.partition-life-beauty .hit-topic-big .l-rubric {
+@media (max-width: 767px) {
+  .partition-life-wellness .hit-topic-carousel,
+  .partition-life-wellness .partition-detail {
+    background: -webkit-linear-gradient(top, #F8CE4B 203px, white 203px);
+    background: linear-gradient(to bottom, #F8CE4B 203px, white 203px);
+  }
+  .partition-life-wellness .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #FEE289;
+  }
+}
+.partition-life-wellness .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #FEE289;
 }
-.partition-life-beauty .hit-topic-big .descr {
+.partition-life-wellness .hit-topic-big .descr {
   color: white;
 }
-.partition-life-beauty .color-title span {
+@media (max-width: 767px) {
+  .partition-life-wellness .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #FEE289;
+  }
+  .partition-life-wellness .hit-topic-small .descr {
+    color: white;
+  }
+}
+.partition-life-wellness .color-title span {
   color: #F8CE4B;
 }
-.partition-life-beauty .author:after,
-.partition-life-beauty .author:before {
+.partition-life-wellness .author:after,
+.partition-life-wellness .author:before {
   background-color: #FEE289;
 }
-.partition-life-beauty .decor.decor-9,
-.partition-life-beauty .decor.decor-101,
-.partition-life-beauty .decor.decor-102,
-.partition-life-beauty .decor.decor-103 {
+.partition-life-wellness .decor.decor-9,
+.partition-life-wellness .decor.decor-101,
+.partition-life-wellness .decor.decor-102,
+.partition-life-wellness .decor.decor-103 {
   background-color: #F8CE4B;
 }
-.partition-life-beauty .decor.decor-6,
-.partition-life-beauty .decor.decor-7,
-.partition-life-beauty .decor.decor-8,
-.partition-life-beauty .decor.decor-10 {
+.partition-life-wellness .decor.decor-6,
+.partition-life-wellness .decor.decor-7,
+.partition-life-wellness .decor.decor-8,
+.partition-life-wellness .decor.decor-10 {
   background-color: #FEE289;
 }
-.partition-life-beauty .photo-topics {
+.partition-life-wellness .photo-topics {
   background-color: #F8CE4B;
 }
-.partition-life-beauty .topic-item .title:hover {
+.partition-life-wellness .topic-item .title:hover {
   color: #F8CE4B;
 }
-/* /beauty */
+/* /wellness */
 /* zerowaste */
 .partition-life-zerowaste .l-header,
 .partition-life-zerowaste .l-top-menu {
@@ -2838,12 +3022,31 @@
   background: -webkit-linear-gradient(top, #7789C8 190px, white 190px);
   background: linear-gradient(to bottom, #7789C8 190px, white 190px);
 }
+@media (max-width: 767px) {
+  .partition-life-zerowaste .hit-topic-carousel,
+  .partition-life-zerowaste .partition-detail {
+    background: -webkit-linear-gradient(top, #7789C8 203px, white 203px);
+    background: linear-gradient(to bottom, #7789C8 203px, white 203px);
+  }
+  .partition-life-zerowaste .mobile-carousel.owl-carousel .owl-controls .owl-dots {
+    background-color: #A1B2EE;
+  }
+}
 .partition-life-zerowaste .hit-topic-big .l-rubric {
   color: #111111;
   background-color: #A1B2EE;
 }
 .partition-life-zerowaste .hit-topic-big .descr {
   color: white;
+}
+@media (max-width: 767px) {
+  .partition-life-zerowaste .hit-topic-small .l-rubric {
+    color: #111111;
+    background-color: #A1B2EE;
+  }
+  .partition-life-zerowaste .hit-topic-small .descr {
+    color: white;
+  }
 }
 .partition-life-zerowaste .color-title span {
   color: #7789C8;

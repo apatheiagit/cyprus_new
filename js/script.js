@@ -343,9 +343,9 @@ Drupal.behaviors.my_custom_behavior = {
 		}
 	});
 	var topics_items = $('.topics-carousel .topic-item').length;
-	if ((viewport >= 1000 && topics_items < 4)
-		|| ((viewport < 1000 && viewport >= 600) && topics_items < 3)
-		|| (viewport < 600 && topics_items < 1)){
+	if ((viewport >= 1000 && topics_items < 5)
+		|| ((viewport < 1000 && viewport >= 600) && topics_items < 4)
+		|| (viewport < 600 && topics_items < 3)){
 		$('.topics-carousel .owl-controls').hide();
 	}
 
@@ -367,9 +367,9 @@ Drupal.behaviors.my_custom_behavior = {
 		}
 	});
 	var topics3_items = $('.topics3-carousel .topic-item').length;
-	if ((viewport >= 1000 && topics3_items < 3)
-		|| ((viewport < 1000 && viewport >= 600) && topics3_items < 2)
-		|| (viewport < 600 && topics3_items < 2)){
+	if ((viewport >= 1000 && topics3_items < 4)
+		|| ((viewport < 1000 && viewport >= 600) && topics3_items < 3)
+		|| (viewport < 600 && topics3_items < 3)){
 		$('.topics3-carousel .owl-controls').hide();
 	}
 
@@ -391,9 +391,9 @@ Drupal.behaviors.my_custom_behavior = {
 		}
 	});
 	var movie_items = $('.movie-premieres-carousel .topic-item').length;
-	if ((viewport >= 1000 && movie_items < 4)
-		|| ((viewport < 1000 && viewport >= 600) && movie_items < 3)
-		|| (viewport < 600 && movie_items < 2)){
+	if ((viewport >= 1000 && movie_items < 5)
+		|| ((viewport < 1000 && viewport >= 600) && movie_items < 4)
+		|| (viewport < 600 && movie_items < 3)){
 		$('.movie-premieres-carousel .owl-controls').hide();
 	}
 
@@ -433,22 +433,21 @@ Drupal.behaviors.my_custom_behavior = {
       }
     }
 	});
-	var hit_big_height, hit_big_width, hit_small_width, hit_small_height;
-	/*$('.hit-topic-big .photo-big img').on('load', function(){
-		hit_big_height = $('.hit-topic-big .photo-big img').height();
-		hit_big_width= $('.hit-topic-big .photo-big img').width();
-		$('.hit-topic-big').css({'height': hit_big_height + 'px'});
-		$('.hit-topic-small').css({'height': hit_big_height + 'px'});
-		$('.hit-topic-big').css({'width': hit_big_width + 'px'});
-	});
 	
-	$('.hit-topic-small .photo-small img').on('load', function(){
-		hit_small_height = $('.hit-topic-small .photo-small img').height();
-		hit_small_width= $('.hit-topic-small .photo-small img').width();
-		$('.hit-topic-big').css({'height': hit_small_height + 'px'});
-		$('.hit-topic-small').css({'height': hit_small_height + 'px'});
-		$('.hit-topic-small').css({'width': hit_small_width + 'px'});
-	});*/
+	if(viewport < 600){
+		$('.mobile-carousel').owlCarousel({
+			loop:false,
+			nav:false,
+			dots:true,
+			items: 1,
+			margin: 10,
+			stagePadding: 25,
+			autoplay:true,
+	    autoplayTimeout:15000,
+	    autoplayHoverPause:true,
+	    responsiveClass: true
+		});
+	}
 	
 	$('.hit-topic-small').on('click', function(){
 		var hit_small = $(this).html();

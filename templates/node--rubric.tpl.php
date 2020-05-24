@@ -91,6 +91,7 @@
 <?php else: ?>
   <div class="hit-topic-carousel"> <?php /* На остальных страницах 3 главных баннера  */ ?>
     <div class="container-fluid">
+      <div class="mobile-carousel">
     <?php foreach ($content["field_main_article"]["#items"] as $key => $target) {
       $topic = node_load($target["target_id"]);
       $topic_totalcount = statistics_get($topic->nid);
@@ -130,6 +131,7 @@
         </div>
       </div>
     <?php }?> 
+    </div>
     </div>
   </div>
 <?php endif;?>
@@ -277,23 +279,25 @@
 <div class="best-recipes bordered">
     <div class="container">
       <h2 class="color-title"><span>ЛУЧШИЕ</span> РЕЦЕПТЫ</h2>
-      <div class="row row-10">
-        <div class="col col-sm-4 col-md-4">
+      <div class="trailer-carousel owl-carousel owl-nav-theme">
+        <?php $big_array = array_chunk($content["field_recipe"]["#items"], 3);
+        foreach($big_array as $part_array):?>
+        <div class="trailers-block">
           <div class="row row-10">
-            <?php if (isset($content["field_recipe"]["#items"]["1"])){
-              foreach ($content["field_recipe"]["#items"] as $key => $target) {
-                $recipe = node_load($target["target_id"]);
-                $recipe_totalcount = statistics_get($recipe->nid);
-                $recipe_rubric = $recipe->field_category_recipe['und']['0']['tid']; 
-                $recipe_terms = taxonomy_term_load($recipe_rubric); 
-                $recipe_russian = $recipe_terms->name;
-                if ($key > 0 && $key < 3){?>
-              <div class="col col-xs-6 col-sm-12">
-                <div class="topic-item topic-item-usial">
+            <?php foreach ($part_array as $key => $target) {
+              $recipe = node_load($target["target_id"]);
+              $recipe_totalcount = statistics_get($recipe->nid);
+              $recipe_rubric = $recipe->field_category_recipe['und']['0']['tid']; 
+              $recipe_terms = taxonomy_term_load($recipe_rubric); 
+              $recipe_russian = $recipe_terms->name;
+            ?>
+            <?php if ($key == 2):?>
+              <div class="col col-sm-8 col-md-8">             
+                <div class="topic-item topic-item-trailer">
                   <div class="photo">
                     <?php
                       $params = array(
-                        'style_name' => 'life430_253',
+                        'style_name' => 'life883_717',
                         'path' => $recipe->field_main_img['und'][0]['uri'],
                         'alt' => $recipe->title,
                         'title' => $recipe->title,
@@ -307,39 +311,39 @@
                   </div>
                 </div>
               </div>
-            <?php }
-              }
-            } ?>            
+            <?php else:?>
+              <?php if ($key == 0):?>
+              <div class="col col-sm-4 col-md-4">
+                <div class="row row-10">
+              <?php endif;?>    
+                  <div class="col col-xs-6 col-sm-12">
+                    <div class="topic-item topic-item-usial ">
+                      <div class="photo">
+                        <?php
+                          $params = array(
+                            'style_name' => 'life430_253',
+                            'path' => $recipe->field_main_img['und'][0]['uri'],
+                            'alt' => $recipe->title,
+                            'title' => $recipe->title,
+                            'getsize' => FALSE,
+                          );?>    
+                        <?php  print theme('image_style', $params); ?>
+                      </div>
+                      <div class="info">
+                        <div class="l-rubric"><a href="<?php $prefix;?>/recipes?category_recipe=<?php print $recipe_rubric;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
+                        <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
+                      </div>
+                    </div>
+                  </div>
+              <?php if ($key == 1):?>        
+                </div>
+              </div>
+              <?php endif;?>
+            <?endif;?>            
+          <?php }?>
           </div>
         </div>
-        <div class="col col-sm-8 col-md-8">
-          <?php 
-          if (isset($content["field_recipe"]["#items"]["0"])){
-            $recipe = node_load($content["field_recipe"]["#items"]["0"]["target_id"]);
-            $recipe_totalcount = statistics_get($recipe->nid);
-            $recipe_rubric = $recipe->field_category_recipe['und']['0']['tid']; 
-            $recipe_terms = taxonomy_term_load($recipe_rubric); 
-            $recipe_russian = $recipe_terms->name;
-          ?>
-          <div class="topic-item topic-item-trailer">
-            <div class="photo">
-              <?php
-                $params = array(
-                  'style_name' => 'life883_717',
-                  'path' => $recipe->field_main_img['und'][0]['uri'],
-                  'alt' => $recipe->title,
-                  'title' => $recipe->title,
-                  'getsize' => FALSE,
-                );?>    
-              <?php  print theme('image_style', $params); ?>
-            </div>
-            <div class="info">
-              <div class="l-rubric"><a href="<?php $prefix;?>/recipes?category_recipe=<?php print $recipe_rubric;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
-              <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
-            </div>
-          </div>
-          <?php } ?>
-        </div>
+        <?php endforeach;?>
       </div>
     </div>
   </div>
