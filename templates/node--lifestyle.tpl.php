@@ -3,6 +3,10 @@
   global $language_content; 
   $lang = $language_content->language;
   if ($lang == 'en') $prefix = '/en'; else $prefix = '';
+  $url_alias = drupal_get_path_alias(current_path()); 
+  $partition = explode('/', $url_alias); 
+  $partition_name = "";
+  if(isset($partition[1])) $partition_name = $partition[1];
   $totalcount = isset($content['links']['statistics']['#links']['statistics_counter']['title']) ? (int) $content['links']['statistics']['#links']['statistics_counter']['title'] : 10;
   $rubric = $content['field_rubric']['#items']['0']['tid']; 
   $terms = taxonomy_term_load($rubric); $english = $terms->field_english['und'][0]['value']; $russian_name_localize = i18n_taxonomy_localize_terms($terms); $russian = $russian_name_localize->name;
@@ -12,7 +16,7 @@
   <div class="container container-white">
     <div class="content">
       
-      <div class="l-rubric"><?php print $russian; ?> | <?php print $totalcount;?></div>
+      <div class="l-rubric"><?php print t($partition_name); ?> | <?php print $totalcount;?></div>
 
       <h1 class="h1-title"><?php print $title;?></h1>
 
@@ -80,10 +84,27 @@
         <?php endforeach; ?>
       <?php endif;?>
 
-      <?php if(isset($content['field_author']['#items']['0']['taxonomy_term'])):?>
+      <?php if(isset($content['field_author']['#items']['0']['taxonomy_term']) || isset($content['field_translator']['#items']['0']['taxonomy_term'])):?>
         <?php $author = $content['field_author']['#items']['0']['taxonomy_term'];?>
-        <div class="author"><b><?php print t('Author'); ?>:</b> <?php print $author->name;?></div>
+        <div class="author"><b><?php print t('Author'); ?>:</b> <?php print $author->name;?>
+        <?php if(isset($content['field_translator']['#items']['0']['taxonomy_term'])):?>
+          <?php $translator = $content['field_translator']['#items']['0']['taxonomy_term'];?>
+          <br><b><?php print t('Translation'); ?>:</b> <?php print $translator->name;?>
+        <?php endif;?>
+        </div>
       <?php endif ?>
+
+      <div class="tags-block">
+        <div class="statistic">
+          <div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
+        </div> 
+        <?php foreach ($content['field_tags']['#items'] as $tags):?>
+           <?php $term_tag = taxonomy_term_load($tags['taxonomy_term']->tid);
+                $translated_term_tag = i18n_taxonomy_localize_terms($term_tag); ?>
+          <a href="<?php print $prefix;?>/tags/<?php print str_replace(" ", "-", $tags['taxonomy_term']->name);?>"><?php print $translated_term_tag->name;?></a>
+        <?php endforeach; ?>
+      </div>
+      
 
       <?php /* Поделитесь с друзьями */?>
       <?php $current_url = url(current_path(), array('absolute' => TRUE)); $current_title = drupal_get_title();?>

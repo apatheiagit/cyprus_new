@@ -29,7 +29,7 @@
 ?>
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
+  <?php if ($title && $rows): ?>
     <h2 class="color-title hidden-xs"><?php print $title; ?></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>

@@ -43,7 +43,7 @@
                 <path d="M4 12L1.5 14.5" stroke="black" stroke-width="2" stroke-linecap="square"/>
               </svg>
             </div>
-            <input type="text" placeholder="Искать по рубрике" class="txtHeaderSearch">
+            <input type="text" placeholder="<?php print t('Search by category');?>" class="txtHeaderSearch">
             <span class="close-search">
               <svg width="24" height="24" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 13.4546L5.45455 20L4 18.5455L10.5455 12L4 5.45456L5.45455 4.00001L12 10.5455L18.5455 4L20 5.45455L13.4545 12L20 18.5455L18.5455 20L12 13.4546Z"></path>
@@ -113,7 +113,7 @@
                   <path d="M4 12L1.5 14.5" stroke="black" stroke-width="2" stroke-linecap="square"/>
                 </svg>
               </div>
-              <input type="text" class="txtHeaderSearch" placeholder="Искать по рубрике">
+              <input type="text" class="txtHeaderSearch" placeholder="<?php print t('Search by category');?>">
             </div>
           </div>
         </div>
@@ -124,8 +124,8 @@
         <div class="row row-10">
           <div class="col col-md-3">
             <div class="phseudo-subscribe">
-              <input type="text" placeholder="Ваша почта">
-              <span class="btn-subscr">Подписаться</span>
+              <input type="text" placeholder="<?php print t('Your mail');?>">
+              <span class="btn-subscr"><?php print t('Subscribe');?></span>
             </div>
           </div>
           <div class="col col-md-6">
@@ -315,10 +315,9 @@
     </div>
   </div>
 </div>
+<?php endif;?>
 <div class="totopcontroller">
   <div class="container">
     <div class="icon icon-to-top"></div>
   </div>
 </div>
-
-<?php endif;?>

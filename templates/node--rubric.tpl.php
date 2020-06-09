@@ -142,7 +142,7 @@
 <?php /* Блок с Лидирующей статьей (выбирается менеджером) и Свежими статьями (4 самые последние статьи) */ ?>
 <div class="topic-views fresh-topics bordered">
   <div class="container">
-    <h2 class="color-title visible-xs"><span>СВЕЖИЕ</span> статьи</h2>
+    <h2 class="color-title visible-xs"><?php print t('Recent articles'); ?></h2>
     <div class="row row-10">
       <div class="col col-sm-6">
         <?php 
@@ -278,7 +278,7 @@
 <?php if(isset($content["field_recipe"]["#items"]["0"])): ?>
 <div class="best-recipes bordered">
     <div class="container">
-      <h2 class="color-title"><span>ЛУЧШИЕ</span> РЕЦЕПТЫ</h2>
+      <h2 class="color-title"><?php print t('The best recipes'); ?></h2>
       <div class="trailer-carousel owl-carousel owl-nav-theme">
         <?php $big_array = array_chunk($content["field_recipe"]["#items"], 3);
         foreach($big_array as $part_array):?>
@@ -351,10 +351,10 @@
 <?php /* На остальных страницах блок Лучшее из раздела */ ?>
 <?php if ($partition_name != "" && isset($content["field_subtitle"]["#items"]["0"])):?>
 <div class="container">
-  <h2 class="color-title"><?php print $content["field_subtitle"]["#items"]["0"]["value"];?></h2>
+  <h2 class="color-title title_best_topics"><?php print $content["field_subtitle"]["#items"]["0"]["value"];?></h2>
 </div>
 <?php endif;?>
-<?php if($content["field_best_articles"]["#items"][0]):?> <?php /* Если менеджер выбрал Лучшие статьи, то они отображаются */ ?>
+<?php if(isset($content["field_best_articles"]["#items"][0])):?> <?php /* Если менеджер выбрал Лучшие статьи, то они отображаются */ ?>
     
   <?php if($partition_name == "cinema"):?> <?php /* На странице Кино отображаем блок Новые трейлеры */ ?>
     <div class="container">
@@ -427,7 +427,7 @@
 
   <?php else:?> <?php /* На остальных страницах отображаем карусельку с Лучшими статьями, отобранными менеджером */ ?>
     <div class="container">
-      <div class="topics3-carousel owl-carousel owl-nav-theme">
+      <div class="best_topics-carousel topics3-carousel owl-carousel owl-nav-theme">
         <?php foreach ($content["field_best_articles"]["#items"] as $key => $target) {
           $topic = node_load($target["target_id"]);
           $topic_totalcount = statistics_get($topic->nid);
@@ -473,3 +473,14 @@
 
 <?php /* На главной странице отображаем Психология, на других ничего */ ?>
 <?php print render($content['field_psychology']);?>
+
+<script>
+  (function ($) {
+    if(!($('.view-display-id-best_topics .topic-item').length) && !($('.best_topics-carousel').length)){
+      $('.title_best_topics').remove();
+    }
+    if($('.view-display-id-fresh_topics .topic-item-usial').length <= 1){
+      $('.field-name-field-fresh').remove();
+    }
+  }(jQuery));
+</script>

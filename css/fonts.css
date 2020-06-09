@@ -127,9 +127,14 @@
     font-weight: 800;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Ikra Slab';
-    src: url('fonts/ikra/ikraslab-400-normal.woff2') format('woff2'), url('fonts/ikra/ikraslab-400-normal.woff') format('woff'), url('fonts/ikra/ikraslab-400-normal.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+@font-face{
+  font-family: 'Ikra Slab';
+  src: url('fonts/ikra/IkraSlab.eot');
+  src: local('IkraSlab'),
+      url('fonts/ikra/IkraSlab.eot?#iefix') format('embedded-opentype'),
+      url('fonts/ikra/IkraSlab.woff2') format('woff2'),
+      url('fonts/ikra/IkraSlab.woff') format('woff'),
+      url('fonts/ikra/IkraSlab.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -28,11 +28,6 @@
  */
 ?>
 <div class="<?php print $classes; ?>">
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <?php print $title; ?>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
   <?php
     $exp_block = module_invoke('views', 'block_view', '-exp-cyprus-recipes');
     print render($exp_block['content']);
