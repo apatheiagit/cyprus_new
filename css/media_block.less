@@ -734,9 +734,6 @@
   height: @index-height;
   margin-bottom: 0;
   text-align: center;
-  @media @extra-large{
-    height: @index-height * 1.32;
-  }
   @media @ipad_pro{
     & img{
       height: 100%;
@@ -768,10 +765,10 @@
     }
   }
   @media @mobile{
-    height: @index-height * 0.46;
+    height: @index-height * 0.3;
     & img{
       max-width: none;
-      max-height: @index-height * 0.46;
+      max-height: @index-height * 0.3;
       width: auto !important;
     }
   }
@@ -917,6 +914,12 @@
   }
   & .statistic{
     bottom: 0px;
+  }
+  .media-wrapper--normal &{
+    & .statistic{
+      width: 100%;
+      background: white;
+    }
   }
 }
 .media-wrapper--wo-image{
@@ -1214,5 +1217,15 @@
       fill: white;
       color: white;
     }
+  }
+}
+.view-display-id-big_reviews{
+  background-color: white;
+  max-width: 1248px;
+  padding: 0 24px 24px;
+  border-radius: 0 0 16px 16px;
+  margin: 0 auto;
+  @media @mobile{
+    padding: 0;
   }
 }

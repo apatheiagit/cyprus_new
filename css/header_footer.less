@@ -1,8 +1,24 @@
 @import url('constants.less');
 
 .somit-header{
-	background: white;
-	//border-bottom: 2px solid @grey-fon;	
+	@media @mobile_tablet{
+		background: white;
+	}
+	@media @medium{
+		background: white;
+	}
+	.not-front &{
+		background-color: white;
+	}
+	& .container{
+		@media (min-width: 1300px){
+			width: 1248px;
+			background: white;
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+		
+	}	
 	& .upper-header{
 		& .inside-container{
 			border-bottom: 1px solid @text-color;
@@ -39,7 +55,7 @@
 		display: none;
 	}
 	& .topMenu{
-		background: white;
+		
 		/*& .inside-container{
 			border-bottom: 2px solid @grey-fon;
 		}*/

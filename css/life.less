@@ -1,7 +1,7 @@
 @import url('fonts.css');
 @import url('constants.less');
-@lifehack: #8240EE;
-@lifehack2: #D5ABFF;
+@lifehack: #A281D9;
+@lifehack2: #DAC0F4;
 @cinema: #7C97A7;
 @cinema2: #AECFE1;
 @psychology: #FBDFC6;
@@ -14,6 +14,7 @@
 @food2: #FEE289;
 @zerowaste: #7789C8;
 @zerowaste2: #A1B2EE;
+
 
 .partition-life {
 	background: white;
@@ -1039,6 +1040,7 @@
 		.title{
 			height: auto;
 			max-height: 70px;
+			min-height: 48px;
 		}
 	}
 }
@@ -2384,8 +2386,94 @@
 		}
 	}
 }
+#block-views-lifestyle-front{
+	
+}
 .field-widget-viewfield-select{
 	& .form-type-textfield{
 		display: none;
+	}
+}
+.view-display-id-front{
+	.container{
+		background: @orange2;
+		border-radius: 5px;		
+	  padding-top: 18px;
+	  padding-bottom: 30px;	  
+	  margin-bottom: 32px;
+	  overflow: hidden;	 
+	  position: relative; 
+	  @media (min-width: 1230px){
+	  	padding-left: 30px;
+	    padding-right: 30px;
+	    width: 1200px;
+	  }
+	  &:before{
+	  	content: "";
+	  	background-color: @pink;
+	  	width: 200px;
+	    height: 200px;
+	    border-radius: 50%;
+	    top: -50px;
+	    left: -25px;
+			position: absolute;
+			z-index: 1;
+	  }
+	}  
+	.view-content{
+		z-index: 10;
+		position: relative;
+		margin-left: -15px;
+    margin-right: -15px;
+    &:after{
+    	clear: both;
+    	content: "";
+    	display: table;
+    }
+	}
+	.views-row{
+		width: 33.33333333%;
+		float: left;
+		position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 18px 0;
+    @media @mobile{
+    	width: 100%;
+    }
+	}
+	.color-title{
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 29px;
+		margin: 0;
+		text-transform: lowercase;
+		position: relative;
+    z-index: 10;
+    height: 54px;
+    @media @mobile{
+    	height: auto;
+    }
+    @media @tablet{
+    	height: 70px;
+    }
+	}
+	.view-footer{
+		text-align: center;
+		a{
+			display: inline-block;
+			background-color: @pink;
+			padding: 10px 22px;
+			font-weight: 500;
+			font-size: 13px;
+			line-height: 24px;
+		}
+	}
+	.l-rubric{
+		color: white;
+	}
+	.topic-item-usial .title{
+		border-bottom: 1px solid @text-color;
 	}
 }

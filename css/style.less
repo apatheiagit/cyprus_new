@@ -4,7 +4,7 @@
 @import url('page.less');
 @import url('detail.less');
 @import url('article_item.less');
-@import url('media_block.less'); 
+@import url('media_block.less');
 
 body { background: @grey-fon; font-family: @font-family; font-size: @basic-font; font-weight: 400; color: @text-color;}
 h1,h2,h3,h4,h6,h6,p,ul,li {margin: 0; padding:0px; }
@@ -186,6 +186,9 @@ a:focus {  color: inherit; text-decoration: none;}
 		}
 		& .owl-dot {
 	    	display: inline-block;
+	    	@media @mobile{
+	    		display: none;
+	    	}
 			& span {
 		    border: 1px solid black;	    
 		    border-radius: 50%;
@@ -1723,4 +1726,60 @@ img.monochrome {
 }
 .weather{
 	opacity: 0;
+}
+.front{
+	background: url(../img/aroma.png) no-repeat top center #F8F8F8;
+	@media @medium{
+		background-size: 1600px;
+	}
+	.aroma-block{
+		text-align: center;
+		padding: 74px 0;
+		@media @mobile{
+			padding: 24px 0;
+		}
+		@media @tablet{
+			padding: 34px 0;
+		}
+		@media @medium{
+			padding: 64px 0;
+		}
+		.h1{
+			font-family: Optima;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 64px;
+			line-height: 78px;
+			margin: 0 0 9px 0;
+			@media @mobile{
+				font-size: 24px;
+				line-height: 28px; 
+			}
+			@media @tablet{
+				font-size: 54px;
+				line-height: 68px;
+			}
+		}
+		.descr{
+			font-family: PermianSlabSerifTypeface;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 24px; 
+			line-height: 30px;
+			position: relative;
+			@media @mobile{
+				font-size: 14px;
+				line-height: 20px;
+			}
+			&:before, &:after{
+				content: "";
+				width: 27px;
+				height: 1px;
+				background: black;
+				display: inline-block;
+				margin: 0 8px;
+				vertical-align: middle;
+			}
+		}
+	}
 }

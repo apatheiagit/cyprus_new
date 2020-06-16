@@ -1468,6 +1468,7 @@
 .fresh-topics .topic-item-usial .title {
   height: auto;
   max-height: 70px;
+  min-height: 48px;
 }
 .bordered .container {
   position: relative;
@@ -2641,13 +2642,13 @@
 /* lifehack */
 .partition-life-lifehack .l-header,
 .partition-life-lifehack .l-top-menu {
-  background-color: #8240EE;
+  background-color: #A281D9;
 }
 .partition-life-lifehack .l-header {
-  border-color: #D5ABFF;
+  border-color: #DAC0F4;
 }
 .partition-life-lifehack .l-top-menu ul li.active-trail:after {
-  background-color: #D5ABFF;
+  background-color: #DAC0F4;
 }
 @media (max-width: 767px) {
   .partition-life-lifehack .l-top-menu ul li.active-trail:after {
@@ -2656,22 +2657,22 @@
 }
 .partition-life-lifehack .hit-topic-carousel,
 .partition-life-lifehack .partition-detail {
-  background: -webkit-linear-gradient(top, #8240EE 190px, white 190px);
-  background: linear-gradient(to bottom, #8240EE 190px, white 190px);
+  background: -webkit-linear-gradient(top, #A281D9 190px, white 190px);
+  background: linear-gradient(to bottom, #A281D9 190px, white 190px);
 }
 @media (max-width: 767px) {
   .partition-life-lifehack .hit-topic-carousel,
   .partition-life-lifehack .partition-detail {
-    background: -webkit-linear-gradient(top, #8240EE 203px, white 203px);
-    background: linear-gradient(to bottom, #8240EE 203px, white 203px);
+    background: -webkit-linear-gradient(top, #A281D9 203px, white 203px);
+    background: linear-gradient(to bottom, #A281D9 203px, white 203px);
   }
   .partition-life-lifehack .mobile-carousel.owl-carousel .owl-controls .owl-dots {
-    background-color: #D5ABFF;
+    background-color: #DAC0F4;
   }
 }
 .partition-life-lifehack .hit-topic-big .l-rubric {
   color: #111111;
-  background-color: #D5ABFF;
+  background-color: #DAC0F4;
 }
 .partition-life-lifehack .hit-topic-big .descr {
   color: white;
@@ -2679,39 +2680,39 @@
 @media (max-width: 767px) {
   .partition-life-lifehack .hit-topic-small .l-rubric {
     color: #111111;
-    background-color: #D5ABFF;
+    background-color: #DAC0F4;
   }
   .partition-life-lifehack .hit-topic-small .descr {
     color: white;
   }
 }
 .partition-life-lifehack .color-title span {
-  color: #8240EE;
+  color: #A281D9;
 }
 .partition-life-lifehack .author:after,
 .partition-life-lifehack .author:before {
-  background-color: #D5ABFF;
+  background-color: #DAC0F4;
 }
 .partition-life-lifehack .share-block a {
-  background-color: #8240EE;
+  background-color: #A281D9;
 }
 .partition-life-lifehack .decor.decor-9,
 .partition-life-lifehack .decor.decor-101,
 .partition-life-lifehack .decor.decor-102,
 .partition-life-lifehack .decor.decor-103 {
-  background-color: #8240EE;
+  background-color: #A281D9;
 }
 .partition-life-lifehack .decor.decor-6,
 .partition-life-lifehack .decor.decor-7,
 .partition-life-lifehack .decor.decor-8,
 .partition-life-lifehack .decor.decor-10 {
-  background-color: #D5ABFF;
+  background-color: #DAC0F4;
 }
 .partition-life-lifehack .photo-topics {
-  background-color: #8240EE;
+  background-color: #A281D9;
 }
 .partition-life-lifehack .topic-item .title:hover {
-  color: #8240EE;
+  color: #A281D9;
 }
 /* /lifehack */
 /* psychology */
@@ -3179,4 +3180,93 @@
 }
 .field-widget-viewfield-select .form-type-textfield {
   display: none;
+}
+.view-display-id-front .container {
+  background: #DF542F;
+  border-radius: 5px;
+  padding-top: 18px;
+  padding-bottom: 30px;
+  margin-bottom: 32px;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 1230px) {
+  .view-display-id-front .container {
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 1200px;
+  }
+}
+.view-display-id-front .container:before {
+  content: "";
+  background-color: #F6BFB1;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  top: -50px;
+  left: -25px;
+  position: absolute;
+  z-index: 1;
+}
+.view-display-id-front .view-content {
+  z-index: 10;
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.view-display-id-front .view-content:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.view-display-id-front .views-row {
+  width: 33.33333333%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 18px 0;
+}
+@media (max-width: 767px) {
+  .view-display-id-front .views-row {
+    width: 100%;
+  }
+}
+.view-display-id-front .color-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin: 0;
+  text-transform: lowercase;
+  position: relative;
+  z-index: 10;
+  height: 54px;
+}
+@media (max-width: 767px) {
+  .view-display-id-front .color-title {
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .view-display-id-front .color-title {
+    height: 70px;
+  }
+}
+.view-display-id-front .view-footer {
+  text-align: center;
+}
+.view-display-id-front .view-footer a {
+  display: inline-block;
+  background-color: #F6BFB1;
+  padding: 10px 22px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 24px;
+}
+.view-display-id-front .l-rubric {
+  color: white;
+}
+.view-display-id-front .topic-item-usial .title {
+  border-bottom: 1px solid #111111;
 }

@@ -9,11 +9,10 @@
       if($partition_name == 'all') $partition_name = $partition[2];
 ?>
 <?php if($is_front && $lang == 'ru'):?>
-<div class="tripster-block">
+<div class="aroma-block">
   <div class="container">
-    <div class="brdr">
-      <a href="https://experience.tripster.ru/?exp_partner=cyprusfortravellers&utm_source=cyprusfortravellers&utm_medium=banner&utm_campaign=affiliates" target="_blank"><img src="http://cyprusfortravellers.net/sites/default/files/Tripster.png"></a>
-    </div>
+    <div class="h1">Aroma Castle, Pyrgos</div>
+    <div class="descr">Новое средневековье на Кипре</div>
   </div>
 </div>
 <?php endif;?>

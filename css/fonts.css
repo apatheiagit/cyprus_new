@@ -138,3 +138,18 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Optima';
+  src: url('fonts/optima/Optima.eot');
+  src: url('fonts/optima/Optima.eot?#iefix') format('embedded-opentype'),
+  url('fonts/optima/Optima.woff') format('woff'),
+  url('fonts/optima/Optima.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+    font-family: 'PermianSlabSerifTypeface';
+    src: url('fonts/PermianSlabSerifTypeface.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
