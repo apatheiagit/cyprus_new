@@ -3,8 +3,7 @@
     if($id == 'title') { $title = $field->content; }   
     if($id == 'field_rubric') { $rubric = $field->content; }
     if($id == 'totalcount') { $totalcount = $field->content; }
-    if($id == 'field_kind') { $kind = $field->content; }   
-    if($id == 'field_kind_1') { $kind_name = $field->content; } 
+    if($id == 'field_kindt') { $kind = $field->content; }   
     if($id == 'field_background') { $movie = $field->content; }    
  endforeach; ?>
 <?php
@@ -30,7 +29,7 @@
     <div class="l-rubric">
       <a href="<?php print $prefix;?>/lifestyle/all/<?php print $term_rubric->field_english['und'][0]['value'];?>"><?php print $rubric_name; ?></a>
         <?php if(isset($kind)):?>
-          | <a href="<?php print $prefix."/lifestyle/all/".$term_rubric->field_english['und'][0]['value']."/".$kind;?>"><?php print $kind_name;?></a>
+          | <?php print $kind;?>
         <?php endif;?>
         <span>| <?php print $totalcount;?></span>
     </div>

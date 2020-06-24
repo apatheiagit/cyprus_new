@@ -7,7 +7,6 @@
   $partition = explode('/', $url_alias); 
   $partition_name = "";
   if(isset($partition[1])) $partition_name = $partition[1];
-  $kind_field = field_info_field('field_kind');
   function substrwords($text, $maxchar, $end='...') {
     if (strlen($text) > $maxchar || $text == '') {
         $words = preg_split('/\s/', $text);      
@@ -152,8 +151,9 @@
             $leader_rubric = $leader->field_rubric['und']['0']['tid']; 
             $leader_terms = taxonomy_term_load($leader_rubric); $leader_english = $leader_terms->field_english['und'][0]['value']; 
             $leader_russian = $leader_terms->name;
-            $leader_kind = $leader->field_kind["und"][0]["value"];
-            $leader_label = $kind_field['settings']['allowed_values'][$leader_kind];
+            $leader_kind = $leader->field_kindt["und"][0]["tid"];
+            $leader_kind_terms = i18n_taxonomy_localize_terms(taxonomy_term_load($leader_kind));
+            $leader_label = $leader_kind_terms->name;
             $leader_video = $leader->field_www["und"][0]["value"];
           ?>
           <div class="topic-item topic-item-trailer">          
@@ -171,13 +171,13 @@
             <div class="info">
               <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$leader_english;?>"><?php print t($leader_english); ?></a>
                 <?php if($leader_kind):?>
-                | <a href="<?php print $prefix."/lifestyle/all/".$leader_english."/".$leader_kind;?>"><?php print t($leader_label);?></a>
+                | <?php print t($leader_label);?>
                 <?php endif;?> 
                 | <?php print $leader_totalcount['totalcount'];?>
               </div>
               <div class="title"><a href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$leader->nid); ?>"><?php print $leader->title;?></a></div>
               <div class="descr"><?php print $leader->field_heading["und"][0]["value"];?></div>
-              <?php if($leader_kind == 'video' && (isset($leader_video))):?>
+              <?php if($leader_kind == 323 && (isset($leader_video))):?>
                 <div class="special-mark special-mark-video play-trailer">
                   <span class="ellipse">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" >
@@ -188,7 +188,7 @@
                     <?php print $leader_video;?>
                   </div>
                 </div>
-              <?php elseif ($leader_kind == 'photo'):?>
+              <?php elseif ($leader_kind == 322):?>
                 <a href="/<?php print drupal_get_path_alias("node/".$leader->nid); ?>" class="special-mark special-mark-photo">
                   <span class="ellipse">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" >
@@ -223,8 +223,9 @@
     $highlightr_rubric = $highlight->field_rubric['und']['0']['tid']; 
     $highlight_terms = taxonomy_term_load($highlightr_rubric); $highlight_english = $highlight_terms->field_english['und'][0]['value']; 
     $highlight_russian = $highlight_terms->name;
-    $highlight_kind = $highlight->field_kind["und"][0]["value"];
-    $highlight_label = $kind_field['settings']['allowed_values'][$highlight_kind];
+    $highlight_kind = $highlight->field_kindt["und"][0]["tid"];
+    $highlight_kind_terms = i18n_taxonomy_localize_terms(taxonomy_term_load($highlight_kind));
+    $highlight_label = $highlight_kind_terms->name;
   ?>
 <div class="photo-topics">
   <div class="decor decor-3"></div>    
@@ -237,11 +238,11 @@
       <div class="info">
         <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$highlight_english;?>"><?php print $highlight_russian; ?></a>  
           <?php if (isset($highlight_kind)):?> 
-          | <a href="<?php print $prefix."/lifestyle/all/".$highlight_english."/".$highlight_kind;?>"><?php print $highlight_label;?></a> 
+          | <?php print $highlight_label;?> 
           <?php endif;?>
           | <?php print $highlight_totalcount['totalcount'];?></div>
         <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>"><?php print $highlight->title;?></a></div>
-        <?php if ($highlight_kind == 'photo'):?>
+        <?php if ($highlight_kind == 322):?>
         <a class="special-mark special-mark-photo" href="/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>">
           <span class="ellipse">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" >
@@ -434,8 +435,10 @@
           $topic_rubric = $topic->field_rubric['und']['0']['tid']; 
           $topic_terms = taxonomy_term_load($topic_rubric); $topic_english = $topic_terms->field_english['und'][0]['value'];
           $topic_russian = $topic_terms->name;
-          $topic_kind = $topic->field_kind["und"][0]["value"];          
-          $topic_label = $kind_field['settings']['allowed_values'][$topic_kind];
+          $topic_kind = $topic->field_kindt["und"][0]["tid"];
+          $topic_kind_terms = i18n_taxonomy_localize_terms(taxonomy_term_load($topic_kind));
+          $topic_label = $topic_kind_terms->name;
+
         ?> 
         <div class="topic-item topic-item-usial">
           <div class="photo">
@@ -452,7 +455,7 @@
           <div class="info">
             <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $topic_russian; ?></a> 
               <?php if(isset($topic_kind)):?>
-              | <a href="<?php print $prefix."/lifestyle/all/".$topic_english."/".$topic_kind;?>"><?php print $topic_label;?></a>
+              | <?php print $topic_label;?>
               <?php endif;?>
               <span>| <?php print $topic_totalcount["totalcount"];?></span>
             </div>
