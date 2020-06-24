@@ -266,15 +266,13 @@
 		}*/
 }
 .somit-header .fixMenu {
-  border-bottom: 2px solid #f3f3f3;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   margin: 0;
-  z-index: 100;
+  z-index: 1000;
   height: 60px;
-  padding: 5px 0;
 }
 @media (max-width: 767px) {
   .somit-header .fixMenu {

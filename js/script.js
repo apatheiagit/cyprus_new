@@ -172,7 +172,7 @@ Drupal.behaviors.my_custom_behavior = {
 			})
 
 			$(window).scroll(function() {
-			    if ($(this).scrollTop() > 50) {
+			    if ($(this).scrollTop() > 265) {
 			         $('.topMenu').addClass('fixMenu');
 			    } else {
 			         $('.topMenu').removeClass('fixMenu');

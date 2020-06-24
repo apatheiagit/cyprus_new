@@ -210,15 +210,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 col-taxi">
-          <div class="taxi-form">
-            <div class="taxi-button">
-              <?php if($prefix == '') $taxi_link = "/place/transfer-na-kipre-s-kompaniey-global-transfer-services-ltd";
-              else $taxi_link = "/en/place/cyprus-global-transfer-services-ltd";?>
-              <a href="<?php print $taxi_link;?>#get"><?php print t("Book a taxi");?></a>
-            </div>
-              <?php //print render($page['help']); ?>
-          </div>
+        <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 col-taxi">          
         </div>
         <div class="clearfix visible-xs-block visible-sm-block"></div>
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-offset-0 col-md-offset-0 col-md-4 col-lg-6 col-logo">
@@ -285,7 +277,7 @@
       </div>      
       <div class="col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-0 icon-links-block">        
         <div class="icon-link icon-link--subscribe"><a href="<?php print $prefix;?>/subscribe"><?php print t('Subscribe');?></a></div>
-        <div class="icon-link icon-link--mediakit"><a href="/sites/default/files/Media_Kit.pdf">Media kit</a></div>             
+        <!--<div class="icon-link icon-link--mediakit"><a href="/sites/default/files/Media_Kit.pdf">Media kit</a></div>-->             
       </div>
     </div>
   </div>

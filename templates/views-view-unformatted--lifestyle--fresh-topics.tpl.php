@@ -12,6 +12,9 @@
 	  <div <?php if ($classes_array[$id]): ?> class="col col-xs-6 <?php print $classes_array[$id]; ?>"<?php endif; ?>>
 	    <?php print $row; ?>
 	  </div>
+	  <?php if($id == 1):?>
+	  	<div class="clearfix"></div>
+	  <?php endif;?>
 	<?php endforeach; ?>
 </div>
 

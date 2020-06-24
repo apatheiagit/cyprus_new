@@ -49,7 +49,7 @@
             <?php  print theme('image_style', $params); ?>
           </div>
           <div class="info">
-            <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $topic_russian; ?></a></div>
+            <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print t($topic_english); ?></a></div>
             <div class="title"><a href="<?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
             <div class="descr"><?php print $topic->field_heading["und"][0]["value"];?></div>
           </div>
@@ -63,7 +63,7 @@
           $topic = node_load($target["target_id"]);
           $topic_totalcount = statistics_get($topic->nid);
           $topic_rubric = $topic->field_rubric['und']['0']['tid']; 
-          $topic_terms = taxonomy_term_load($topic_rubric);
+          $topic_terms = taxonomy_term_load($topic_rubric); $topic_english = $topic_terms->field_english['und'][0]['value']; 
           $topic_russian = $topic_terms->name;
         ?>
         <div class="hit-topic-item active">
@@ -79,7 +79,7 @@
             <?php  print theme('image_style', $params); ?>
           </div>
           <div class="info">
-            <div class="l-rubric"><?php print $topic_russian; ?> <span>| <?php print $topic_totalcount["totalcount"];?></span></div>
+            <div class="l-rubric"><?php print t($topic_english); ?> <span>| <?php print $topic_totalcount["totalcount"];?></span></div>
             <div class="title"><?php print substrwords($topic->title, 70);?></div>
             <div class="descr"><?php print $topic->field_heading["und"][0]["value"];?></div>
           </div>
@@ -125,7 +125,7 @@
             <?php  print theme('image_style', $params); ?>
         </div>
         <div class="info">
-          <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $topic_russian; ?></a> <span>| <?php print $topic_totalcount["totalcount"];?></span></div>
+          <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print t($topic_english); ?></a> <span>| <?php print $topic_totalcount["totalcount"];?></span></div>
           <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
           <div class="descr"><?php print $topic->field_heading["und"][0]["value"];?></div>
         </div>
@@ -169,13 +169,13 @@
               <?php  print theme('image_style', $params); ?>
             </div>
             <div class="info">
-              <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$leader_english;?>"><?php print $leader_russian; ?></a>
+              <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$leader_english;?>"><?php print t($leader_english); ?></a>
                 <?php if($leader_kind):?>
-                | <a href="<?php print $prefix."/lifestyle/all/".$leader_english."/".$leader_kind;?>"><?php print $leader_label;?></a>
+                | <a href="<?php print $prefix."/lifestyle/all/".$leader_english."/".$leader_kind;?>"><?php print t($leader_label);?></a>
                 <?php endif;?> 
                 | <?php print $leader_totalcount['totalcount'];?>
               </div>
-              <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$leader->nid); ?>"><?php print $leader->title;?></a></div>
+              <div class="title"><a href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$leader->nid); ?>"><?php print $leader->title;?></a></div>
               <div class="descr"><?php print $leader->field_heading["und"][0]["value"];?></div>
               <?php if($leader_kind == 'video' && (isset($leader_video))):?>
                 <div class="special-mark special-mark-video play-trailer">
@@ -274,11 +274,11 @@
 </div>
 <?php endif;?>
 
-<?php /* На главной странице Лайфстайл отображаем Лучшие рецепты */ ?>
+<?php /* На главной странице Лайфстайл отображаем статьи с типом "Гурман-киноман" */ ?>
 <?php if(isset($content["field_recipe"]["#items"]["0"])): ?>
 <div class="best-recipes bordered">
     <div class="container">
-      <h2 class="color-title"><?php print t('The best recipes'); ?></h2>
+      <h2 class="color-title"><?php print t('Film Foodie'); ?></h2>
       <div class="trailer-carousel owl-carousel owl-nav-theme">
         <?php $big_array = array_chunk($content["field_recipe"]["#items"], 3);
         foreach($big_array as $part_array):?>
@@ -287,8 +287,8 @@
             <?php foreach ($part_array as $key => $target) {
               $recipe = node_load($target["target_id"]);
               $recipe_totalcount = statistics_get($recipe->nid);
-              $recipe_rubric = $recipe->field_category_recipe['und']['0']['tid']; 
-              $recipe_terms = taxonomy_term_load($recipe_rubric); 
+              $recipe_rubric = $recipe->field_rubric['und']['0']['tid']; 
+              $recipe_terms = taxonomy_term_load($recipe_rubric); $recipe_english = $recipe_terms->field_english['und'][0]['value']; 
               $recipe_russian = $recipe_terms->name;
             ?>
             <?php if ($key == 2):?>
@@ -306,7 +306,7 @@
                     <?php  print theme('image_style', $params); ?>
                   </div>
                   <div class="info">
-                    <div class="l-rubric"><a href="<?php $prefix;?>/recipes?category_recipe=<?php print $recipe_rubric;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
+                    <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
                     <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
                   </div>
                 </div>
@@ -330,7 +330,7 @@
                         <?php  print theme('image_style', $params); ?>
                       </div>
                       <div class="info">
-                        <div class="l-rubric"><a href="<?php $prefix;?>/recipes?category_recipe=<?php print $recipe_rubric;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
+                        <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
                         <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
                       </div>
                     </div>
