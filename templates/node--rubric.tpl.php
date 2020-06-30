@@ -274,83 +274,9 @@
   </div>
 </div>
 <?php endif;?>
-
-<?php /* На главной странице Лайфстайл отображаем статьи с типом "Гурман-киноман" */ ?>
-<?php if(isset($content["field_recipe"]["#items"]["0"])): ?>
-<div class="best-recipes bordered">
-    <div class="container">
-      <h2 class="color-title"><?php print t('Film Foodie'); ?></h2>
-      <div class="trailer-carousel owl-carousel owl-nav-theme">
-        <?php $big_array = array_chunk($content["field_recipe"]["#items"], 3);
-        foreach($big_array as $part_array):?>
-        <div class="trailers-block">
-          <div class="row row-10">
-            <?php foreach ($part_array as $key => $target) {
-              $recipe = node_load($target["target_id"]);
-              $recipe_totalcount = statistics_get($recipe->nid);
-              $recipe_rubric = $recipe->field_rubric['und']['0']['tid']; 
-              $recipe_terms = taxonomy_term_load($recipe_rubric); $recipe_english = $recipe_terms->field_english['und'][0]['value']; 
-              $recipe_russian = $recipe_terms->name;
-            ?>
-            <?php if ($key == 2):?>
-              <div class="col col-sm-8 col-md-8">             
-                <div class="topic-item topic-item-trailer">
-                  <div class="photo">
-                    <?php
-                      $params = array(
-                        'style_name' => 'life883_717',
-                        'path' => $recipe->field_main_img['und'][0]['uri'],
-                        'alt' => $recipe->title,
-                        'title' => $recipe->title,
-                        'getsize' => FALSE,
-                      );?>    
-                    <?php  print theme('image_style', $params); ?>
-                  </div>
-                  <div class="info">
-                    <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
-                    <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
-                  </div>
-                </div>
-              </div>
-            <?php else:?>
-              <?php if ($key == 0):?>
-              <div class="col col-sm-4 col-md-4">
-                <div class="row row-10">
-              <?php endif;?>    
-                  <div class="col col-xs-6 col-sm-12">
-                    <div class="topic-item topic-item-usial ">
-                      <div class="photo">
-                        <?php
-                          $params = array(
-                            'style_name' => 'life430_253',
-                            'path' => $recipe->field_main_img['und'][0]['uri'],
-                            'alt' => $recipe->title,
-                            'title' => $recipe->title,
-                            'getsize' => FALSE,
-                          );?>    
-                        <?php  print theme('image_style', $params); ?>
-                      </div>
-                      <div class="info">
-                        <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
-                        <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
-                      </div>
-                    </div>
-                  </div>
-              <?php if ($key == 1 || ($key == 0 && count($part_array) == 1)):?>        
-                </div>
-              </div>
-              <?php endif;?>
-            <?endif;?>            
-          <?php }?>
-          </div>
-        </div>
-        <?php endforeach;?>
-      </div>
-    </div>
-  </div>
-<?php endif;?> 
-<?php /* На остальных страницах блок Лучшее из раздела */ ?>
-<?php if ($partition_name != "" && isset($content["field_subtitle"]["#items"]["0"])):?>
+ 
+<?php /* На главной странице Лайфстайл отображаем статьи с типом Мода, на остальных страницах блок Лучшее из раздела */ ?>
+<?php if (isset($content["field_subtitle"]["#items"]["0"])):?>
 <div class="container">
   <h2 class="color-title title_best_topics"><?php print $content["field_subtitle"]["#items"]["0"]["value"];?></h2>
 </div>
@@ -469,6 +395,81 @@
     
 <?php else:?> <?php /* иначе Последние статьи, исключая те, что вверху в блоке Свежие статьи */ ?>
   <?php print render($content['field_best']);?>
+<?php endif;?>
+
+<?php /* На главной странице Лайфстайл отображаем статьи с типом "Гурман-киноман" */ ?>
+<?php if(isset($content["field_recipe"]["#items"]["0"])): ?>
+<div class="best-recipes bordered">
+    <div class="container">
+      <h2 class="color-title"><?php print t('Film Foodie'); ?></h2>
+      <div class="trailer-carousel owl-carousel owl-nav-theme">
+        <?php $big_array = array_chunk($content["field_recipe"]["#items"], 3);
+        foreach($big_array as $part_array):?>
+        <div class="trailers-block">
+          <div class="row row-10">
+            <?php foreach ($part_array as $key => $target) {
+              $recipe = node_load($target["target_id"]);
+              $recipe_totalcount = statistics_get($recipe->nid);
+              $recipe_rubric = $recipe->field_rubric['und']['0']['tid']; 
+              $recipe_terms = taxonomy_term_load($recipe_rubric); $recipe_english = $recipe_terms->field_english['und'][0]['value']; 
+              $recipe_russian = $recipe_terms->name;
+            ?>
+            <?php if ($key == 2):?>
+              <div class="col col-sm-8 col-md-8">             
+                <div class="topic-item topic-item-trailer">
+                  <div class="photo">
+                    <?php
+                      $params = array(
+                        'style_name' => 'life883_717',
+                        'path' => $recipe->field_main_img['und'][0]['uri'],
+                        'alt' => $recipe->title,
+                        'title' => $recipe->title,
+                        'getsize' => FALSE,
+                      );?>    
+                    <?php  print theme('image_style', $params); ?>
+                  </div>
+                  <div class="info">
+                    <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
+                    <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
+                  </div>
+                </div>
+              </div>
+            <?php else:?>
+              <?php if ($key == 0):?>
+              <div class="col col-sm-4 col-md-4">
+                <div class="row row-10">
+              <?php endif;?>    
+                  <div class="col col-xs-6 col-sm-12">
+                    <div class="topic-item topic-item-usial ">
+                      <div class="photo">
+                        <?php
+                          $params = array(
+                            'style_name' => 'life430_253',
+                            'path' => $recipe->field_main_img['und'][0]['uri'],
+                            'alt' => $recipe->title,
+                            'title' => $recipe->title,
+                            'getsize' => FALSE,
+                          );?>    
+                        <?php  print theme('image_style', $params); ?>
+                      </div>
+                      <div class="info">
+                        <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print $recipe_russian; ?></a> | <?php print $recipe_totalcount['totalcount'];?></div>
+                        <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$recipe->nid); ?>"><?php print $recipe->title;?></a></div>              
+                      </div>
+                    </div>
+                  </div>
+              <?php if ($key == 1 || ($key == 0 && count($part_array) == 1)):?>        
+                </div>
+              </div>
+              <?php endif;?>
+            <?endif;?>            
+          <?php }?>
+          </div>
+        </div>
+        <?php endforeach;?>
+      </div>
+    </div>
+  </div>
 <?php endif;?>
 
 <?php /* На главной странице отображаем #нольотходов, в разделе Кино - Лучшие сериалы, в остальных разделах Выбор редакции (статьи с наименьшим просмотром) */ ?>
