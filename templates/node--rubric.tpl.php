@@ -336,7 +336,7 @@
                       </div>
                     </div>
                   </div>
-              <?php if ($key == 1):?>        
+              <?php if ($key == 1 || ($key == 0 && count($part_array) == 1)):?>        
                 </div>
               </div>
               <?php endif;?>
@@ -479,11 +479,6 @@
 
 <script>
   (function ($) {
-    if(!($('.view-display-id-best_topics .topic-item').length) && !($('.best_topics-carousel').length)){
-      $('.title_best_topics').remove();
-    }
-    if($('.view-display-id-fresh_topics .topic-item-usial').length <= 1){
-      $('.field-name-field-fresh').remove();
-    }
+
   }(jQuery));
 </script>
