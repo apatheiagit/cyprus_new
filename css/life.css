@@ -1452,6 +1452,9 @@
   max-height: 70px;
   min-height: 48px;
 }
+.fresh-topics .col-sm-6 {
+  min-height: 0;
+}
 .bordered .container {
   position: relative;
 }
@@ -1479,7 +1482,8 @@
   opacity: 0.18;
 }
 .news-topics {
-  margin: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .bordered-container {
   border-top: 1px solid #AECFE1;
@@ -2188,6 +2192,12 @@
     padding-right: 16px;
   }
 }
+.partition-detail .content a {
+  text-decoration: underline;
+}
+.partition-detail .content a:hover {
+  text-decoration: none;
+}
 .partition-detail .main-image {
   margin-left: -10%;
   margin-right: -10%;
@@ -2620,6 +2630,9 @@
 .partition-life-cinema .topic-item .title:hover {
   color: #7C97A7;
 }
+.partition-life-cinema .partition-detail .content a {
+  color: #7C97A7;
+}
 /* /cinema */
 /* lifehack */
 .partition-life-lifehack .l-header,
@@ -2694,6 +2707,9 @@
   background-color: #A281D9;
 }
 .partition-life-lifehack .topic-item .title:hover {
+  color: #A281D9;
+}
+.partition-life-lifehack .partition-detail .content a {
   color: #A281D9;
 }
 /* /lifehack */
@@ -2772,6 +2788,9 @@
 .partition-life-psychology .topic-item .title:hover {
   color: #FBDFC6;
 }
+.partition-life-psychology .partition-detail .content a {
+  color: #FBDFC6;
+}
 /* /psychology */
 /* fashion */
 .partition-life-fashion .l-header,
@@ -2846,6 +2865,9 @@
   background-color: #35A0CD;
 }
 .partition-life-fashion .topic-item .title:hover {
+  color: #35A0CD;
+}
+.partition-life-fashion .partition-detail .content a {
   color: #35A0CD;
 }
 /* /fashion */
@@ -2924,6 +2946,9 @@
 .partition-life-gardening .topic-item .title:hover {
   color: #27AE60;
 }
+.partition-life-gardening .partition-detail .content a {
+  color: #27AE60;
+}
 /* /gardening */
 /* wellness */
 .partition-life-wellness .l-header,
@@ -3000,6 +3025,9 @@
 .partition-life-wellness .topic-item .title:hover {
   color: #F8CE4B;
 }
+.partition-life-wellness .partition-detail .content a {
+  color: #F8CE4B;
+}
 /* /wellness */
 /* zerowaste */
 .partition-life-zerowaste .l-header,
@@ -3074,6 +3102,9 @@
   background-color: #7789C8;
 }
 .partition-life-zerowaste .topic-item .title:hover {
+  color: #7789C8;
+}
+.partition-life-zerowaste .partition-detail .content a {
   color: #7789C8;
 }
 /* /zerowaste */

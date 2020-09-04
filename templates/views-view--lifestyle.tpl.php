@@ -27,8 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="<?php print $classes; ?>">
-  <div class="container">
+<div class="<?php print $classes; ?> container">
   <?php print render($title_prefix); ?>
   <?php if ($title && $rows): ?>
     <h2 class="color-title"><?php print $title; ?></h2>
@@ -87,5 +86,4 @@
       <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
-  </div>
 </div><?php /* class view */ ?>

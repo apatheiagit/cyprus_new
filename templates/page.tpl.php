@@ -10,10 +10,10 @@
 ?>
 <?php if($is_front && $lang == 'ru'):?>
 <div class="aroma-block">
-  <div class="container">
+  <a class="container" href="/review/lyudi-kipra-grek-po-imeni-grek">
     <div class="h1">Aroma Castle, Pyrgos</div>
     <div class="descr">Новое средневековье на Кипре</div>
-  </div>
+  </a>
 </div>
 <?php endif;?>
 <?php if($lifestyle):?>

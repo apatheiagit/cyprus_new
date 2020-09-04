@@ -222,7 +222,8 @@
     $highlight_totalcount = statistics_get($highlight->nid);
     $highlightr_rubric = $highlight->field_rubric['und']['0']['tid']; 
     $highlight_terms = taxonomy_term_load($highlightr_rubric); $highlight_english = $highlight_terms->field_english['und'][0]['value']; 
-    $highlight_russian = $highlight_terms->name;
+    $highlight_rubric_terms = i18n_taxonomy_localize_terms($highlight_terms);
+    $highlight_russian = $highlight_rubric_terms->name;
     $highlight_kind = $highlight->field_kindt["und"][0]["tid"];
     $highlight_kind_terms = i18n_taxonomy_localize_terms(taxonomy_term_load($highlight_kind));
     $highlight_label = $highlight_kind_terms->name;
@@ -241,9 +242,9 @@
           | <?php print $highlight_label;?> 
           <?php endif;?>
           | <?php print $highlight_totalcount['totalcount'];?></div>
-        <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>"><?php print $highlight->title;?></a></div>
+        <div class="title"><a href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>"><?php print $highlight->title;?></a></div>
         <?php if ($highlight_kind == 322):?>
-        <a class="special-mark special-mark-photo" href="/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>">
+        <a class="special-mark special-mark-photo" href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>">
           <span class="ellipse">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" >
               <path d="M8.00003 10.1333C9.17824 10.1333 10.1334 9.17821 10.1334 8C10.1334 6.82179 9.17824 5.86667 8.00003 5.86667C6.82182 5.86667 5.8667 6.82179 5.8667 8C5.8667 9.17821 6.82182 10.1333 8.00003 10.1333Z" fill="black"/>
@@ -252,7 +253,7 @@
           </span> <?php print t("Watch");?>            
         </a> 
         <?php else:?>
-          <a class="special-mark special-mark-read" href="/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>"><?php print t("Read");?> </a>
+          <a class="special-mark special-mark-read" href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$highlight->nid); ?>"><?php print t("Read");?> </a>
         <?php endif;?>                
       </div>
       <div class="photo">
