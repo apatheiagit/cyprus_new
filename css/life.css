@@ -3194,7 +3194,7 @@
 .field-widget-viewfield-select .form-type-textfield {
   display: none;
 }
-.view-display-id-front .container {
+.view-display-id-front {
   background: #DF542F;
   border-radius: 5px;
   padding-top: 18px;
@@ -3204,13 +3204,13 @@
   position: relative;
 }
 @media (min-width: 1230px) {
-  .view-display-id-front .container {
+  .view-display-id-front {
     padding-left: 30px;
     padding-right: 30px;
     width: 1200px;
   }
 }
-.view-display-id-front .container:before {
+.view-display-id-front:before {
   content: "";
   background-color: #F6BFB1;
   width: 200px;
