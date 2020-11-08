@@ -1839,6 +1839,9 @@
 }
 .view-all-articles{
 	margin-top: 28px;
+	@media @mobile{
+		margin-bottom: 28px;
+	}
 	a{
 		display: inline-block;
 		padding: 12px 20px;
@@ -1851,6 +1854,40 @@
 		}
 	}
 }
+.page-lifestyle-all .views-exposed-form{
+		background-color: rgba(124,151,167,0.32);
+		padding: 24px 0;
+		margin-bottom: 24px;
+		.views-exposed-widgets{
+			margin-bottom: 0;
+		}
+		.views-exposed-widget{
+			float: none;
+			padding: 0;			
+			.bef-select-as-links{
+				@media @mobile_tablet{
+					overflow: scroll;
+				}
+				&>.form-item{
+					display: flex;					
+				}
+			}
+			.form-item{
+				font-weight: 500;
+				font-size: 13px;
+				line-height: 29px;
+				text-transform: uppercase;
+				margin-right: 16px;
+				.active{
+					font-weight: 800;
+					color: @cinema;
+				}
+				a{
+					white-space: nowrap;
+				}
+			}
+		}
+	}
 /* orange */
 .partition-life-, .partition-life-all{
 	.l-header, .l-top-menu, .hit-topic-block{
