@@ -1491,8 +1491,9 @@
 }
 .top-footer{ 
 	margin-top: 50px;
-	border-width: 0;
-	padding: 0 0 24px 0;
+	border-top: 1px solid @grey3;
+	border-bottom: 0;
+	padding: 24px 0 24px 0;
 	@media @mobile{
 		margin-top: 0;
 		padding: 0;
@@ -1502,12 +1503,16 @@
 	}
  	& .partition-name{
 	 	font-size: 32px;
-	 	line-height: 50px;
+	 	line-height: 39px;
+	 	text-transform: lowercase;
  		color: @orange2;
  		@media @mobile{
 			font-size: 20px;
 			line-height: 28px;
 		}
+ 	}
+ 	.l-search-block{
+ 		padding-top: 12px;
  	}
 }
 .owl-nav-theme{
@@ -1832,6 +1837,20 @@
   	}
   }
 }
+.view-all-articles{
+	margin-top: 28px;
+	a{
+		display: inline-block;
+		padding: 12px 20px;
+		font-size: 17px;
+		line-height: 24px;
+		transition: all 0.4s ease-in;
+		&:hover{
+			text-decoration: none;
+			transform: translateY(2px);
+		}
+	}
+}
 /* orange */
 .partition-life-, .partition-life-all{
 	.l-header, .l-top-menu, .hit-topic-block{
@@ -1935,6 +1954,9 @@
 	.partition-detail .content a{
 		color:  @cinema;	
 	}
+	.view-all-articles a{
+		background-color: @cinema;
+	}
 } 
 /* /cinema */
 /* lifehack */
@@ -2001,6 +2023,9 @@
 	}
 	.partition-detail .content a{
 		color:  @lifehack;	
+	}
+	.view-all-articles a{
+		background-color: @lifehack;
 	}
 }
 /* /lifehack */
@@ -2069,6 +2094,9 @@
 	.partition-detail .content a{
 		color:  @psychology;	
 	}
+	.view-all-articles a{
+		background-color: @psychology;
+	}
 }
 /* /psychology */
 /* fashion */
@@ -2135,6 +2163,9 @@
 	}
 	.partition-detail .content a{
 		color:  @fashion;	
+	}
+	.view-all-articles a{
+		background-color: @fashion;
 	}
 }
 /* /fashion */
@@ -2203,6 +2234,9 @@
 	.partition-detail .content a{
 		color:  @gardening;	
 	}
+	.view-all-articles a{
+		background-color: @gardening;
+	}
 }
 /* /gardening */
 /* wellness */
@@ -2270,6 +2304,9 @@
 	.partition-detail .content a{
 		color:  @food;	
 	}
+	.view-all-articles a{
+		background-color: @food;
+	}
 }
 /* /wellness */
 /* zerowaste */
@@ -2336,6 +2373,9 @@
 	}
 	.partition-detail .content a{
 		color:  @zerowaste;	
+	}
+	.view-all-articles a{
+		background-color: @zerowaste;
 	}
 }
 /* /zerowaste */

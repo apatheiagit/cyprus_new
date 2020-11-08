@@ -2099,8 +2099,9 @@
 }
 .top-footer {
   margin-top: 50px;
-  border-width: 0;
-  padding: 0 0 24px 0;
+  border-top: 1px solid #EDEDED;
+  border-bottom: 0;
+  padding: 24px 0 24px 0;
 }
 @media (max-width: 767px) {
   .top-footer {
@@ -2113,7 +2114,8 @@
 }
 .top-footer .partition-name {
   font-size: 32px;
-  line-height: 50px;
+  line-height: 39px;
+  text-transform: lowercase;
   color: #DF542F;
 }
 @media (max-width: 767px) {
@@ -2121,6 +2123,9 @@
     font-size: 20px;
     line-height: 28px;
   }
+}
+.top-footer .l-search-block {
+  padding-top: 12px;
 }
 .owl-nav-theme .owl-controls {
   position: absolute;
@@ -2500,6 +2505,22 @@
   margin: 0;
   width: 120px;
 }
+.view-all-articles {
+  margin-top: 28px;
+}
+.view-all-articles a {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 17px;
+  line-height: 24px;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+.view-all-articles a:hover {
+  text-decoration: none;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
 /* orange */
 .partition-life- .l-header,
 .partition-life-all .l-header,
@@ -2633,6 +2654,9 @@
 .partition-life-cinema .partition-detail .content a {
   color: #7C97A7;
 }
+.partition-life-cinema .view-all-articles a {
+  background-color: #7C97A7;
+}
 /* /cinema */
 /* lifehack */
 .partition-life-lifehack .l-header,
@@ -2711,6 +2735,9 @@
 }
 .partition-life-lifehack .partition-detail .content a {
   color: #A281D9;
+}
+.partition-life-lifehack .view-all-articles a {
+  background-color: #A281D9;
 }
 /* /lifehack */
 /* psychology */
@@ -2791,6 +2818,9 @@
 .partition-life-psychology .partition-detail .content a {
   color: #FBDFC6;
 }
+.partition-life-psychology .view-all-articles a {
+  background-color: #FBDFC6;
+}
 /* /psychology */
 /* fashion */
 .partition-life-fashion .l-header,
@@ -2869,6 +2899,9 @@
 }
 .partition-life-fashion .partition-detail .content a {
   color: #35A0CD;
+}
+.partition-life-fashion .view-all-articles a {
+  background-color: #35A0CD;
 }
 /* /fashion */
 /* gardening */
@@ -2949,6 +2982,9 @@
 .partition-life-gardening .partition-detail .content a {
   color: #27AE60;
 }
+.partition-life-gardening .view-all-articles a {
+  background-color: #27AE60;
+}
 /* /gardening */
 /* wellness */
 .partition-life-wellness .l-header,
@@ -3028,6 +3064,9 @@
 .partition-life-wellness .partition-detail .content a {
   color: #F8CE4B;
 }
+.partition-life-wellness .view-all-articles a {
+  background-color: #F8CE4B;
+}
 /* /wellness */
 /* zerowaste */
 .partition-life-zerowaste .l-header,
@@ -3106,6 +3145,9 @@
 }
 .partition-life-zerowaste .partition-detail .content a {
   color: #7789C8;
+}
+.partition-life-zerowaste .view-all-articles a {
+  background-color: #7789C8;
 }
 /* /zerowaste */
 .modal-backdrop.show {

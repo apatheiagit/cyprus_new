@@ -49,7 +49,7 @@
           </div>
           <div class="info">
             <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print t($topic_english); ?></a></div>
-            <div class="title"><a href="<?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
+            <div class="title"><a href="<?php print $prefix;?><?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
             <div class="descr"><?php print $topic->field_heading["und"][0]["value"];?></div>
           </div>
         </div>
@@ -125,7 +125,7 @@
         </div>
         <div class="info">
           <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print t($topic_english); ?></a> <span>| <?php print $topic_totalcount["totalcount"];?></span></div>
-          <div class="title"><a href="/<?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
+          <div class="title"><a href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
           <div class="descr"><?php print $topic->field_heading["und"][0]["value"];?></div>
         </div>
       </div>
@@ -478,6 +478,14 @@
 
 <?php /* На главной странице отображаем Психология, на других ничего */ ?>
 <?php print render($content['field_psychology']);?>
+
+<?php /* Кнопка перехода на все статьи раздела */ ?>
+<?php if($partition_name != ""): ?>
+  <div class="align-center view-all-articles">
+    <a href="<?php print $prefix;?>/lifestyle/all/<?php print $partition_name;?>"><?php print t("View all articles");?></a>
+  </div>
+
+<?php endif;?>
 
 <script>
   (function ($) {
