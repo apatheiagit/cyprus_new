@@ -103,6 +103,8 @@ Drupal.behaviors.my_custom_behavior = {
         });
 
         $('.main-filter .form-select').selectpicker();
+        $('.realty-filter .form-item-city .form-select').selectpicker();
+        $('.realty-filter .form-item-object .form-select').selectpicker();
         //$('.main-filter #edit-when-value-date').val("Выберите дату");
         
         $('#myModal').modal();

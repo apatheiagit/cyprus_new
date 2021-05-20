@@ -156,7 +156,9 @@ function cyprus_new_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#attributes']['placeholder'] = t('Search');
   }
   if($form['#id'] == 'views-exposed-form-cyprus-places' || 
-     $form['#id'] == 'views-exposed-form-cyprus-events') {
+     $form['#id'] == 'views-exposed-form-cyprus-events' ||
+     $form['#id'] == 'views-exposed-form-lifestyle-page-lifestyle' ||
+     $form['#id'] == 'views-exposed-form-realty-page') {
     foreach ($form['city']['#options'] as $key => &$option) {
       if ($key == 'All') {
         if ($lang == 'ru'){ $option = 'Весь Кипр';}
@@ -181,6 +183,52 @@ function cyprus_new_form_alter(&$form, &$form_state, $form_id) {
         else{ $option = 'All events'; }
       }      
     }  
+    foreach ($form['kind']['#options'] as $key => &$option) {
+      if ($key == 'All') {
+        if ($lang == 'ru'){ $option = 'Все статьи';}
+        else{ $option = 'All articles'; }
+      }      
+    }
+    foreach ($form['object']['#options'] as $key => &$option) {
+      if ($key == 'All') {
+        if ($lang == 'ru'){ $option = 'Все варианты';}
+        else{ $option = 'All options'; }
+      }
+      if ($key == 'Apartment') {
+        if ($lang == 'ru'){ $option = 'Квартира';}
+        else{ $option = 'Apartment'; }
+      } 
+      if ($key == 'House') {
+        if ($lang == 'ru'){ $option = 'Дом';}
+        else{ $option = 'House'; }
+      }      
+    }  
+    foreach ($form['transaction']['#options'] as $key => &$option) {
+      if ($key == 'Buy') {
+        if ($lang == 'ru'){ $option = 'Купить';}
+        else{ $option = 'Buy'; }
+      }  
+      if ($key == 'Rent') {
+        if ($lang == 'ru'){ $option = 'Снять';}
+        else{ $option = 'Rent'; }
+      }      
+    }
+    foreach ($form['housing']['#options'] as $key => &$option) {
+      if ($key == 'All') {
+        if ($lang == 'ru'){ $option = 'Новостройки';}
+        else{ $option = 'Newbuilding'; }
+      } 
+      if ($key == 'newbuilding') {
+        if ($lang == 'ru'){ $option = 'Новостройки';}
+        else{ $option = 'Newbuilding'; }
+      }      
+    }
+    foreach ($form['rooms']['#options'] as $key => &$option) {
+      if ($key == 'Studio') {
+        if ($lang == 'ru'){ $option = 'Студия';}
+        else{ $option = 'Studio'; }
+      }      
+    }
   }
   if ($form['#id'] === 'simplenews-block-form-61') {      
 

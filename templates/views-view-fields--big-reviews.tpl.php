@@ -10,6 +10,7 @@
     if($id == 'field_subtitle') { $subtitle = $field->content; }
     if($id == 'field_specproekt') { $specproekt_tid = $field->content; }
     if($id == 'totalcount') { $totalcount = $field->content; }
+    if($id == 'type') { $type = $field->content; }
  endforeach; ?>
  <?php 	
  	$theme_path = path_to_theme();
@@ -45,6 +46,8 @@
 					<a href="<?php print $prefix;?>/special/<?php print $specproekt_tid;?>"><?php print $specproekt;?></a>
 				<?php elseif(isset($city)):?>
 						<a href="<?php print $prefix;?>/reviews/<?php print $city;?>"><?php print $city_name; ?></a>
+				<?php elseif($type == 'lifestyle'):?>
+						<a href="<?php print $prefix;?>/lifestyle"><?php print t($type); ?></a>
 				<?php else:?>
 						<a href="<?php print $prefix;?>/<?php print $english;?>"><?php print $russian; ?></a>
 				<?php endif;?>

@@ -49,7 +49,7 @@
           </div>
           <div class="info">
             <div class="l-rubric"><a href="<?php print $prefix."/lifestyle/all/".$topic_english;?>"><?php print t($topic_english); ?></a></div>
-            <div class="title"><a href="<?php print $prefix;?><?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 70);?></a></div>
+            <div class="title"><a href="<?php print $prefix;?>/<?php print drupal_get_path_alias("node/".$topic->nid); ?>"><?php print substrwords($topic->title, 100);?></a></div>
             <div class="descr"><?php print $topic->field_heading["und"][0]["value"];?></div>
           </div>
         </div>
@@ -295,7 +295,7 @@
               $topic = node_load($target["target_id"]);
               $topic_totalcount = statistics_get($topic->nid);
               $topic_rubric = $topic->field_rubric['und']['0']['tid']; 
-              $topic_terms = taxonomy_term_load($topic_rubric); $topic_english = $topic_terms->field_english['und'][0]['value'];
+              $topic_terms = i18n_taxonomy_localize_terms(taxonomy_term_load($topic_rubric)); $topic_english = $topic_terms->field_english['und'][0]['value'];
               $topic_russian = $topic_terms->name;
               $topic_video = $topic->field_www["und"][0]["value"];
               $trailer = $topic->type == "trailer" ? true : false;
@@ -412,7 +412,7 @@
               $recipe = node_load($target["target_id"]);
               $recipe_totalcount = statistics_get($recipe->nid);
               $recipe_rubric = $recipe->field_rubric['und']['0']['tid']; 
-              $recipe_terms = taxonomy_term_load($recipe_rubric); $recipe_english = $recipe_terms->field_english['und'][0]['value']; 
+              $recipe_terms = i18n_taxonomy_localize_terms(taxonomy_term_load($recipe_rubric)); $recipe_english = $recipe_terms->field_english['und'][0]['value']; 
               $recipe_russian = $recipe_terms->name;
             ?>
             <?php if ($key == 2):?>

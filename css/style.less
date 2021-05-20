@@ -830,6 +830,11 @@ html.js fieldset.collapsed{
 		text-transform: uppercase;
 	}
 }
+& h6{
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 22px;
+}
 
 .recipe-filter{
 	background-color: white;	
@@ -1260,59 +1265,35 @@ img.monochrome {
   	}
 	}
 }
+.share-block-container{
+	padding-left: 0;
+	padding-right: 0;
+}
 .big-share-block{
-	background-color: @new-grey;
+	background-color: rgba(216,216,216,0.4);
 	padding: 30px;
 	//margin-bottom: 30px;
 	& .title{
 		font-family: @special-font;
-	  font-size: 30px;
-	  line-height: 1.07; 
+	  font-size: 24px;
+		line-height: 32px; 
 	  margin-bottom: 10px;
 	  @media @mobile_tablet{
 	  	font-size: 24px;
 	  }
 	}
 	& .text{
-		font-size: 20px;
+		font-size: 18px;
+		line-height: 25px;
 		@media @mobile_tablet{
 	  	font-size: 16px;
 	  }
 	}	
-	& .fa{
-		background-color: @text-color;	
-		height: 38px;
-		width: 38px;
-		margin: 17px 8px 0;
-		@media @medium{
-			margin: 17px 6px 0;
-		}
-		@media @mobile_tablet{
-			margin: 10px 5px 0 5px;
-		}
-		&.fa-facebook:before{
-			height: 24px;
-			top: 7px;
-		}
-		&.fa-twitter:before{
-			height: 20px;
-			top: 9px;
-		}
-		&.fa-telegram:before{
-			height: 20px;
-			top: 9px;
-			left: -1px;
-		}
-		&.fa-vk:before{
-			height: 16px;
-	    top: 12px;
-	    left: -1px;
-		}
-		&.fa-tumblr:before{
-			height: 22px;
-    	top: 8px;
-		}
-	}
+	.share-links{
+		padding-top: 10px;
+		display: flex;
+		justify-content: space-between;
+	}	
 }
 .small-share-block{
 	& .fa{
