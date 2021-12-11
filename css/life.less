@@ -4,8 +4,8 @@
 @lifehack2: #DAC0F4;
 @cinema: #7C97A7;
 @cinema2: #AECFE1;
-@psychology: #FBDFC6;
-@psychology2: #F9E6D6;
+@psychology: #E2A570;
+@psychology2: #FFF1E4;
 @fashion: #35A0CD;
 @fashion2: #C9ECFB;
 @gardening: #27AE60;
@@ -18,12 +18,15 @@
 
 .partition-life {
 	background: white;
-	color: black; 
+	color: black;
 	font-family: @montserrat;
 	& .container{
 		@media @m-large{
 			width: 1340px;
 		}
+	}
+	.hit-topic-item .photo, .topic-item-small .photo{
+		border-radius: 4px;
 	}
 }
 .l-header, .top-footer{
@@ -53,7 +56,7 @@
 		font-weight: 600;
 		font-size: 54px;
 		line-height: 66px;
-		text-align: center;		
+		text-align: center;
 		@media @mobile{
 			font-size: 28px;
 			line-height: 34px;
@@ -100,10 +103,10 @@
 		@media @tablet{
 			padding-top: 20px;
 		}
-		::-webkit-input-placeholder { 
+		::-webkit-input-placeholder {
 		  color: black;
 		}
-		:-ms-input-placeholder { 
+		:-ms-input-placeholder {
 		  color: black;
 		}
 		::placeholder {
@@ -116,14 +119,14 @@
 			font-weight: 500;
 			font-size: 12px;
 			line-height: 20px;
-			width: 120px;	
+			width: 120px;
 			&:focus		{
 				outline: none;
-			}			
+			}
 			@media @tablet{
 				font-size: 11px;
 			}
-		}			
+		}
 	}
 	& .close-search{
 		display: none;
@@ -149,7 +152,7 @@
 				display: block;
 			}
 		}
-	}	
+	}
 }
 .l-top-menu{
 	border-bottom: 1px solid black;
@@ -163,7 +166,7 @@
 	}
 	.l-menu{
 		@media @mobile{
-			display: none;			
+			display: none;
 		}
 		&.open{
 			display: block;
@@ -192,11 +195,11 @@
 	& .mobile-header{
 		display: none;
 		@media @mobile{
-			display: block;	
+			display: block;
 			height: 58px;
-			border-bottom: 1px solid @input-border;		
+			border-bottom: 1px solid @input-border;
 		}
-		& .close-burger{		
+		& .close-burger{
 			background: black;
 			height: 58px;
 			width: 58px;
@@ -225,7 +228,7 @@
     @media @tablet{
 			margin: 14px auto;
     }
-    
+
 	}
 	& li{
 		list-style: none;
@@ -253,7 +256,7 @@
 			color: black;
 		}
 	}
-	& .current-partition{		
+	& .current-partition{
 		font-weight: 500;
 		font-size: 32px;
 		padding: 11px 0;
@@ -264,11 +267,11 @@
 			text-align: center;
 			font-size: 20px;
 			line-height: 24px;
-		}	
+		}
 		@media @standart{
 			font-size: 25px;
     	line-height: 46px;
-		}	
+		}
 	}
 	& .back-button{
 		display: none;
@@ -301,7 +304,7 @@
 	}
 	@media @tablet{
 		height: 500px;
-	}	
+	}
 	& .container{
 		position: relative;
 		@media @mobile{
@@ -313,13 +316,13 @@
 		z-index: 20;
 		@media @mobile{
 			height: 427px;
-		}	
+		}
 		@media @tablet{
 			overflow: hidden;
-		}	
+		}
 		& .owl-carousel .owl-stage {
     	margin-left: -25px;
-		}	
+		}
 		& .photo{
 			max-width: 530px;
 			margin-top: 70px;
@@ -344,9 +347,9 @@
 			z-index: 2;
 			width: 46%;
 			left: 54%;
-			top: 50%;    
-    	transform: translateY(-50%);			
-			
+			top: 50%;
+    	transform: translateY(-50%);
+
 			@media @mobile{
 				width: calc(~'100% - 10px');
 				left: 5px;
@@ -354,7 +357,7 @@
 				top: auto;
 				transform: none;
 			}
-			
+
 		}
 		& .l-rubric{
 			padding: 2px 10px;
@@ -386,12 +389,12 @@
 			}
 			& a:hover{
 				text-decoration: none;
-			}	
+			}
 		}
 		& .descr{
 			font-weight: 500;
 			font-size: 24px;
-			line-height: 32px;			
+			line-height: 32px;
 			max-width: 380px;
 			padding-bottom: 40px;
 			@media @mobile{
@@ -402,7 +405,7 @@
 				font-size: 18px;
 				line-height: 26px;
 			}
-		}	
+		}
 	}
 }
 .hit-topic-nav{
@@ -482,7 +485,7 @@
 		@media @mobile{
 			margin: 0;
 			height: 4px;
-			overflow: hidden;			
+			overflow: hidden;
 			width: 50%;
 			border: none;
 		}
@@ -511,7 +514,7 @@
 }
 .hit-topic-carousel{
 	overflow: hidden;
-	& .container-fluid{		
+	& .container-fluid{
 		max-width: 1630px;
 		@media @m-large{
 			position: relative;
@@ -538,10 +541,10 @@
 		background: @cinema;
 		margin: 20px 20px 0 0;
 		position: relative;
-		z-index: 20;		
+		z-index: 20;
 		display: inline-block;
-		cursor: pointer;		
-		overflow: hidden;		
+		cursor: pointer;
+		overflow: hidden;
 		@media @tablet{
 			margin: 20px 16px 0 0;
 		}
@@ -555,30 +558,30 @@
 		}
 		& .info{
 			position: absolute;
-			z-index: 2;	
+			z-index: 2;
 			left: 0;
-			padding: 0 25px;		
-			transition: opacity 0.4s ease-in;	
+			padding: 0 25px;
+			transition: opacity 0.4s ease-in;
 			@media @tablet{
 				padding: 0 14px;
 			}
 			@media @medium{
 				padding: 0 20px;
 			}
-		}		
+		}
 		& .title{
 			font-family: 'Ikra Slab';
-			font-weight: normal;			
-			margin: 14px 0;		
+			font-weight: normal;
+			margin: 14px 0;
 			& a:hover{
 				text-decoration: none;
-			}	
-		}	
+			}
+		}
 		& .l-rubric{
 			@media @tablet{
 				font-size: 11px;
 				line-height: 14px;
-			}	
+			}
 		}
 	}
 	& .hit-topic-big{
@@ -595,17 +598,17 @@
 				width: 80%;
 			}
 		}
-		& .l-rubric{			
+		& .l-rubric{
 			padding: 2px 10px;
 			text-transform: lowercase;
 			& span{
 				display: none;
 			}
 		}
-		& .title{			
+		& .title{
 			font-size: 44px;
 			line-height: 48px;
-			max-width: 480px;			
+			max-width: 480px;
 			@media @tablet{
 				font-size: 22px;
     		line-height: 32px;
@@ -617,7 +620,7 @@
 			@media @mobile{
 				font-size: 26px;
 				line-height: 34px;
-				margin: 8px 0;		
+				margin: 8px 0;
 			}
 		}
 		& .descr{
@@ -639,14 +642,14 @@
 			}
 		}
 	}
-	& .hit-topic-small{		
+	& .hit-topic-small{
 		& .photo-big, & .decor{
 			display: none;
 		}
 		& .info{
 			width: 100%;
 			bottom: 50px;
-			color: white;	
+			color: white;
 			@media @tablet{
 				bottom: 14px;
 			}
@@ -659,7 +662,7 @@
 				color: @text-color;
 			}
 		}
-		& .title{			
+		& .title{
 			font-size: 17px;
 			line-height: 24px;
 			@media @tablet{
@@ -673,7 +676,7 @@
 			@media @mobile{
 				font-size: 26px;
 				line-height: 34px;
-				margin: 8px 0;		
+				margin: 8px 0;
 			}
 		}
 		& .descr{
@@ -686,7 +689,7 @@
 			}
 		}
 		& .l-rubric{
-			color: white;			
+			color: white;
 			@media @mobile{
 				color: @text-color;
 				padding: 2px 10px;
@@ -722,7 +725,7 @@
 	position: relative;
 	&:hover{
 		& .photo img{
-    	transform: scale(1.17);
+    	transform: scale(1.07);
 		}
 	}
 	& .title{
@@ -730,11 +733,15 @@
 		transition: color 0.2s ease;
 		& a:hover{
 			text-decoration: none;
+			color: #373737;
 		}
+	}
+	.photo{
+		border-radius: 8px;
 	}
 	& .photo img{
 		backface-visibility: hidden;
-  	transition: transform 700ms;
+  		transition: transform 1400ms;
 	}
 }
 .topic-item-trailer{
@@ -747,6 +754,7 @@
 			top: 0; bottom: 0;
 			background: @grey-text;
 			opacity: 0.32;
+			border-radius: 8px;
 		}
 	}
 	& .info{
@@ -777,7 +785,10 @@
 	    line-height: 30px;
 	    margin: 60px 0 10px;
 		}
-	}	
+		a:hover{
+			color: #BCBCBC;
+		}
+	}
 	& .descr{
 		font-size: 13px;
 		text-transform: uppercase;
@@ -788,7 +799,7 @@
 }
 .topic-item-announce{
 	margin-bottom: 14px;
-	@media @mobile{	
+	@media @mobile{
 		margin-top: 14px;
 	}
 	& .photo{
@@ -807,7 +818,7 @@
 		position: absolute;
 		color: white;
 		padding: 24px 50px;
-		width: 100%;		
+		width: 100%;
 		left: 0;
 		top: 50%;
     transform: translateY(-50%);
@@ -886,14 +897,14 @@
 		margin: 10px 0;
 	}
 	.owl-item &{
-		& .title{			
+		& .title{
 			height: 70px;
 		}
 	}
 }
 .topic-item-photo{
 	margin: 48px 48px 0 48px;
-	display: flex;	
+	display: flex;
 	position: relative;
 	z-index: 20;
 	@media @mobile{
@@ -965,7 +976,7 @@
 	& .title{
 		font-weight: 500;
 		font-size: 12px;
-		line-height: 16px;		
+		line-height: 16px;
 		height: 48px;
 		@media @m-large{
 			font-size: 13px;
@@ -1017,7 +1028,7 @@
 		text-transform: uppercase;
 	}
 }
-.fresh-topics{	
+.fresh-topics{
 	& .color-title{
 		margin-top: 0;
 	}
@@ -1035,8 +1046,8 @@
 		min-height: 0;
 	}
 }
-.bordered{	
-	& .container{	
+.bordered{
+	& .container{
 		position: relative;
 		&:after{
 			content: "";
@@ -1048,10 +1059,10 @@
 			width: calc(~'100% - 30px');
 			opacity: 0.18;
 		}
-	}	
+	}
 }
 .bordered2{
-	& .container{	
+	& .container{
 		position: relative;
 		&:before{
 			content: "";
@@ -1077,7 +1088,7 @@
 	font-weight: 500;
 	font-size: 13px;
 	line-height: 24px;
-	margin-top: 20px;	
+	margin-top: 20px;
 	display: block;
 	cursor: pointer;
 	& .ellipse{
@@ -1320,7 +1331,7 @@
 			width: 49px;
 		}
 	}
-	
+
 	&.decor-101, &.decor-102, &.decor-103, &.decor-104{
 		@media @medium{
 			display: none;
@@ -1329,7 +1340,7 @@
 			display: none;
 		}
 	}
-	
+
 }
 .photo{
 	overflow: hidden;
@@ -1368,7 +1379,7 @@
 	line-height: 12px;
 	color: @grey-text;
 	@media @mobile{
-		padding: 12px 0; 
+		padding: 12px 0;
 		font-size: 11px;
 		line-height: 20px;
 	}
@@ -1403,7 +1414,7 @@
 }
 .l-footer-menu{
 	border-top: 1px solid @grey3;
-	padding: 20px 0;	
+	padding: 20px 0;
 	@media @mobile{
 		border-top: none;
 		padding: 0 0 24px 0;
@@ -1489,7 +1500,7 @@
 		}
 	}
 }
-.top-footer{ 
+.top-footer{
 	margin-top: 50px;
 	border-top: 1px solid @grey3;
 	border-bottom: 0;
@@ -1535,6 +1546,9 @@
 			text-indent: 20px;
 			background: url(../img/ic-owl-arrow.svg) no-repeat center;
 			margin-left: 20px;
+      &:hover{
+        opacity: 0.67;
+      }
     }
     & .owl-prev{
 			transform: rotate(180deg);
@@ -1542,7 +1556,7 @@
 	}
 }
 .owl-carousel{
-  touch-action: manipulation; 
+  touch-action: manipulation;
 }
 .partition-detail{
 	padding-top: 20px;
@@ -1660,7 +1674,7 @@
 		}
 	}
 	& .author{
-		margin: 32px 0;		
+		margin: 32px 0;
 		font-size: 18px;
 		line-height: 28px;
 		position: relative;
@@ -1668,7 +1682,7 @@
 		@media @mobile{
 			font-size: 16px;
 			line-height: 22px;
-			margin: 24px 0;	
+			margin: 24px 0;
 			padding-top: 24px;
 		}
 		&:before, &:after{
@@ -1714,14 +1728,14 @@
 	& .share-block{
 		border-top: 1px solid @light-blue-grey2;
 		padding-top: 44px;
-		margin: 32px 0;	
+		margin: 32px 0;
 		@media @mobile{
-			margin: 24px 0;	
-		}	
+			margin: 24px 0;
+		}
 		& a{
 			height: 44px;
-			width: 44px;	
-			padding-top: 14px; 
+			width: 44px;
+			padding-top: 14px;
 			display: inline-block;
 			text-align: center;
 			margin-right: 8px;
@@ -1730,9 +1744,9 @@
 			}
 			@media @mobile{
 				height: 32px;
-				width: 32px;	
-				padding-top: 8px; 	
-			}	
+				width: 32px;
+				padding-top: 8px;
+			}
 		}
 	}
 	& .tags-block{
@@ -1753,7 +1767,7 @@
 	  & svg{
 	    width: 30px;
 	    height: 30px;
-	    vertical-align: middle;    
+	    vertical-align: middle;
 	  }
 	  & .stat-icon{
 	    fill: black;
@@ -1828,7 +1842,7 @@
   &  .owl-dot{
   	vertical-align: top;
   	& span{
-  		border: none;  
+  		border: none;
   		border-radius: 0;
 	    display: block;
 	    height: 4px;
@@ -1863,13 +1877,13 @@
 		}
 		.views-exposed-widget{
 			float: none;
-			padding: 0;			
+			padding: 0;
 			.bef-select-as-links{
 				@media @mobile_tablet{
 					overflow: scroll;
 				}
 				&>.form-item{
-					display: flex;					
+					display: flex;
 				}
 			}
 			.form-item{
@@ -1916,13 +1930,10 @@
 		color: @orange2;
 	}
 	.photo-topics{
-		background-color: @blue2;	
+		background-color: @blue2;
 	}
 	.decor.decor-101, .decor.decor-102, .decor.decor-103{
-		background-color: @blue2;	
-	}
-	.topic-item .title:hover{
-		color: @orange2;
+		background-color: @blue2;
 	}
 }
 /* /orange */
@@ -1983,18 +1994,15 @@
 		background-color: @cinema2;
 	}
 	.photo-topics{
-		background-color: @cinema;	
-	}
-	.topic-item .title:hover{
-		color: @cinema;
+		background-color: @cinema;
 	}
 	.partition-detail .content a{
-		color:  @cinema;	
+		color:  @cinema;
 	}
 	.view-all-articles a{
 		background-color: @cinema;
 	}
-} 
+}
 /* /cinema */
 /* lifehack */
 .partition-life-lifehack{
@@ -2053,13 +2061,10 @@
 		background-color: @lifehack2;
 	}
 	.photo-topics{
-		background-color: @lifehack;	
-	}
-	.topic-item .title:hover{
-		color: @lifehack;
+		background-color: @lifehack;
 	}
 	.partition-detail .content a{
-		color:  @lifehack;	
+		color:  @lifehack;
 	}
 	.view-all-articles a{
 		background-color: @lifehack;
@@ -2123,13 +2128,10 @@
 		background-color: @psychology2;
 	}
 	.photo-topics{
-		background-color: @psychology;	
-	}
-	.topic-item .title:hover{
-		color: @psychology;
+		background-color: @psychology;
 	}
 	.partition-detail .content a{
-		color:  @psychology;	
+		color:  @psychology;
 	}
 	.view-all-articles a{
 		background-color: @psychology;
@@ -2193,13 +2195,10 @@
 		background-color: @fashion2;
 	}
 	.photo-topics{
-		background-color: @fashion;	
-	}
-	.topic-item .title:hover{
-		color: @fashion;
+		background-color: @fashion;
 	}
 	.partition-detail .content a{
-		color:  @fashion;	
+		color:  @fashion;
 	}
 	.view-all-articles a{
 		background-color: @fashion;
@@ -2263,13 +2262,10 @@
 		background-color: @gardening2;
 	}
 	.photo-topics{
-		background-color: @gardening;	
-	}
-	.topic-item .title:hover{
-		color: @gardening;
+		background-color: @gardening;
 	}
 	.partition-detail .content a{
-		color:  @gardening;	
+		color:  @gardening;
 	}
 	.view-all-articles a{
 		background-color: @gardening;
@@ -2333,13 +2329,10 @@
 		background-color: @food2;
 	}
 	.photo-topics{
-		background-color: @food;	
-	}
-	.topic-item .title:hover{
-		color: @food;
+		background-color: @food;
 	}
 	.partition-detail .content a{
-		color:  @food;	
+		color:  @food;
 	}
 	.view-all-articles a{
 		background-color: @food;
@@ -2403,13 +2396,10 @@
 		background-color: @zerowaste2;
 	}
 	.photo-topics{
-		background-color: @zerowaste;	
-	}
-	.topic-item .title:hover{
-		color: @zerowaste;
+		background-color: @zerowaste;
 	}
 	.partition-detail .content a{
-		color:  @zerowaste;	
+		color:  @zerowaste;
 	}
 	.view-all-articles a{
 		background-color: @zerowaste;
@@ -2468,7 +2458,7 @@
 			}
 			&:before{
 				transform: rotate(45deg);
-				left: 11px;			
+				left: 11px;
 			}
 			&:after{
 				transform: rotate(-45deg);
@@ -2483,7 +2473,7 @@
 	}
 }
 #block-views-lifestyle-front{
-	
+
 }
 .field-widget-viewfield-select{
 	& .form-type-textfield{
@@ -2491,14 +2481,14 @@
 	}
 }
 .view-display-id-front{
-	
+
 	background: @orange2;
-	border-radius: 5px;		
+	border-radius: 5px;
   padding-top: 18px;
-  padding-bottom: 30px;	  
+  padding-bottom: 30px;
   margin-bottom: 32px;
-  overflow: hidden;	 
-  position: relative; 
+  overflow: hidden;
+  position: relative;
   @media (min-width: 1230px){
   	padding-left: 30px;
     padding-right: 30px;
@@ -2515,7 +2505,7 @@
 		position: absolute;
 		z-index: 1;
   }
-	  
+
 	.view-content{
 		z-index: 10;
 		position: relative;
