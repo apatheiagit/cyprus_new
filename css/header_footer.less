@@ -339,7 +339,6 @@
 	& a{
 		display: inline-block;
 		position: relative;
-		padding-left: 30px;
 		&:before{
 			content:"";
 			background-image: url(../img/spritesheet-subscribe.png);
@@ -376,41 +375,137 @@
 	color: @text-color;
 	font-size: 14px;
 	font-weight: 400;
-	margin-top: 40px;
+	margin-top: 48px;
 	& a{
-		color: @footer-link;
+		color: #333333;
 	}
 	& .border-top{
 		border-top: solid 2px @new-grey;		
 	}
 	& .container-first.border-top{
-		padding-top: 30px;
-		border-top: solid 2px #979797;
+		padding-top: 32px;
+		border-top: solid 2px #9B9B9B;
+		#block-menu-menu-top-menu{
+			@media @mobile{
+				display: block;
+			}
+		}
+		.block-menu{
+			font-size: 18px;
+			line-height: 25px;
+			.menu{
+				display: flex;
+				max-width: 600px;
+				flex-wrap: wrap;
+				li{
+					margin-right: 32px;
+					margin-bottom: 24px;				
+				}
+			}			
+		}
+		.subscribe-media{
+			display: flex;
+			justify-content: space-between;
+			border-top: 2px solid #9B9B9B;
+			margin-top: 8px;
+			padding: 32px 0;
+			@media @mobile{
+				display: block;
+			}
+		}
+		.left {
+			.icon-link{
+				font-weight: normal;
+				padding-left: 0;
+				margin-right: 24px;
+				a:before{
+					display: none;
+				}
+				svg{
+					display: inline-block;
+					transform: translateY(6px);
+					margin-right: 8px;
+				}
+			}
+		}
+		.newfa{
+			height: 23px;
+			width: 23px;
+			margin-left: 8px;
+			display: inline-block;
+			position: relative;
+			&:before{
+				content: "";
+				position: absolute;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: contain;
+				left: 0;
+				width: 23px;
+				top: 0;
+				height: 23px;
+			}
+			&.newfa-vk:before{
+				background-image: url("/sites/all/themes/cyprus_new/img/vk.svg");
+			}
+			&.newfa-facebook:before{
+				background-image: url("/sites/all/themes/cyprus_new/img/facebook.svg");
+			}
+			&.newfa-twitter:before{
+				background-image: url("/sites/all/themes/cyprus_new/img/twitter.svg");
+			}
+			&.newfa-instagram:before{
+				background-image: url("/sites/all/themes/cyprus_new/img/instagram.svg");
+			}
+			&.newfa-tumblr:before{
+				background-image: url("/sites/all/themes/cyprus_new/img/tumblr.svg");
+			}
+		}		
+		.bottom-longtext{
+			p{
+				margin-bottom: 16px;
+			}
+		}
+		.most-bottom{
+			border-top: 1px solid #9B9B9B;
+			width: calc(~'100% - 30px');
+			overflow: hidden;
+			margin-left: 15px;
+			margin-right: 15px;
+			padding-top: 24px;
+			padding-bottom: 32px;
+			.menu-name-menu-bottom{
+				margin-left: -15px;
+			}
+		}
 	}
 	& .container-second{
 		margin-top: 30px;
 		padding: 20px 0 10px;
 	}
 	& .bottom-logo{
-		padding-bottom: 25px;
+		padding-bottom: 32px;
 		display: block;
-    margin: 0 auto;
-    @media @mobile{
-    	max-width: 160px;
-    	text-align: center;
-    }
+		margin: 0 auto;
+		@media @mobile{
+			max-width: 160px;
+			text-align: center;
+		}
     & img{
-    	max-width: 160px;
+    	max-width: 170px;
     }
 	}
 	& .menu-block-wrapper{		
 		& ul{
 			& li{
-				font-size: 12px;
-				font-weight: 600;
-				margin-right: 15px;					
+				font-size: 14px;
+				font-weight: normal;
+				margin-right: 14px;					
 				text-transform: uppercase;
-				& a{					
+				&.last{
+					margin-right: 0;
+				}
+				& a{				
 									
 					&:hover{
 						text-decoration: underline;
@@ -430,8 +525,13 @@
 		}
 	}
 	& .copyright{
-		font-size: 13px;
-		padding-top: 32px;
+		font-size: 16px;
+		line-height: 22px;
+		@media @mobile{
+			font-size: 14px;
+			clear: both;
+			padding-top: 24px;
+		}
 	}	
 }
 .lang-block{

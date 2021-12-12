@@ -261,50 +261,62 @@
   <div class="wide-container-wo container footer-margin-top">
   <div class="border-top container-first">
     <div class="row">
-      <div class="col-sm-4 col-md-3 col-lg-2">
-        <a href="/" class="bottom-logo"><img src="/sites/all/themes/cyprus_new/logo.svg" class="img-responsive" alt=""></a>        
-      </div>
-      <div class="col-sm-8 col-md-5">
-        <div class="bottom-descr"> 
-          <p>© 2011-<?php print date("Y"); ?> <a href="http://cyprusfortravellers.net">CyprusForTravellers.net</a></p>
-          <?php print $site_slogan; ?>          
+      <div class="col-sm-6 col-md-7">
+        <?php print render($page['header']); ?> 
+        <div class="subscribe-media">
+          <div class="left">
+            <div class="icon-link"><a href="<?php print $prefix;?>/subscribe">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" >
+                <path d="M5.25 4C3.46403 4 2 5.46403 2 7.25V16.75C2 18.536 3.46403 20 5.25 20H18.75C20.536 20 22 18.536 22 16.75V7.25C22 5.46403 20.536 4 18.75 4H5.25ZM5.25 5.5H18.75C19.725 5.5 20.5 6.27497 20.5 7.25V7.80273L12 12.3975L3.5 7.80273V7.25C3.5 6.27497 4.27497 5.5 5.25 5.5ZM3.5 9.50781L11.6436 13.9102C11.7531 13.9693 11.8755 14.0003 12 14.0003C12.1245 14.0003 12.2469 13.9693 12.3564 13.9102L20.5 9.50781V16.75C20.5 17.725 19.725 18.5 18.75 18.5H5.25C4.27497 18.5 3.5 17.725 3.5 16.75V9.50781Z" fill="#333333"/>
+              </svg>
+              <?php print t('Subscribe');?></a></div>
+            <div class="icon-link"><a href="/sites/default/files/Media_Kit.pdf" download>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M4.25 2.5C3.0095 2.5 2 3.5095 2 4.75V19.25C2 20.4905 3.0095 21.5 4.25 21.5H6.41016C6.01416 21.0885 5.72682 20.5735 5.59082 20H4.25C3.8365 20 3.5 19.6635 3.5 19.25V4.75C3.5 4.3365 3.8365 4 4.25 4H5.59082C5.72732 3.4265 6.01416 2.9115 6.41016 2.5H4.25ZM8.75 2.5C7.51625 2.5 6.5 3.51625 6.5 4.75V19.25C6.5 20.4838 7.51625 21.5 8.75 21.5H19.75C20.9838 21.5 22 20.4838 22 19.25V9.25C22 9.0511 21.9209 8.86036 21.7803 8.71973L15.7803 2.71973C15.6396 2.57907 15.4489 2.50004 15.25 2.5H8.75ZM8.75 4H14.5V7.75C14.5 8.98375 15.5162 10 16.75 10H20.5V19.25C20.5 19.6733 20.1733 20 19.75 20H8.75C8.32675 20 8 19.6733 8 19.25V4.75C8 4.32675 8.32675 4 8.75 4ZM16 5.06055L19.4395 8.5H16.75C16.3268 8.5 16 8.17325 16 7.75V5.06055ZM11.25 12.5C11.1506 12.4986 11.0519 12.517 10.9597 12.554C10.8675 12.5911 10.7836 12.6461 10.7128 12.7159C10.642 12.7857 10.5858 12.8688 10.5474 12.9605C10.5091 13.0522 10.4893 13.1506 10.4893 13.25C10.4893 13.3494 10.5091 13.4478 10.5474 13.5395C10.5858 13.6312 10.642 13.7143 10.7128 13.7841C10.7836 13.8539 10.8675 13.9089 10.9597 13.946C11.0519 13.983 11.1506 14.0014 11.25 14H17.25C17.3494 14.0014 17.4481 13.983 17.5403 13.946C17.6325 13.9089 17.7164 13.8539 17.7872 13.7841C17.858 13.7143 17.9142 13.6312 17.9526 13.5395C17.9909 13.4478 18.0107 13.3494 18.0107 13.25C18.0107 13.1506 17.9909 13.0522 17.9526 12.9605C17.9142 12.8688 17.858 12.7857 17.7872 12.7159C17.7164 12.6461 17.6325 12.5911 17.5403 12.554C17.4481 12.517 17.3494 12.4986 17.25 12.5H11.25ZM11.25 16C11.1506 15.9986 11.0519 16.017 10.9597 16.054C10.8675 16.0911 10.7836 16.1461 10.7128 16.2159C10.642 16.2857 10.5858 16.3688 10.5474 16.4605C10.5091 16.5522 10.4893 16.6506 10.4893 16.75C10.4893 16.8494 10.5091 16.9478 10.5474 17.0395C10.5858 17.1312 10.642 17.2143 10.7128 17.2841C10.7836 17.3539 10.8675 17.4089 10.9597 17.446C11.0519 17.483 11.1506 17.5014 11.25 17.5H15.75C15.8494 17.5014 15.9481 17.483 16.0403 17.446C16.1325 17.4089 16.2164 17.3539 16.2872 17.2841C16.358 17.2143 16.4142 17.1312 16.4526 17.0395C16.4909 16.9478 16.5107 16.8494 16.5107 16.75C16.5107 16.6506 16.4909 16.5522 16.4526 16.4605C16.4142 16.3688 16.358 16.2857 16.2872 16.2159C16.2164 16.1461 16.1325 16.0911 16.0403 16.054C15.9481 16.017 15.8494 15.9986 15.75 16H11.25Z" fill="#333333"/>
+            </svg>
+              Media kit</a></div>
+          </div>
+          <div class="social-block">
+            <div class="small-share-block share-links">          
+              <?php if ($lang == 'en'):?>
+                <a class="newfa newfa-facebook" title="Go Facebook" href="https://www.facebook.com/cyprusfortravellers.net/" rel="nofollow" target="_blank"><span class="visuallyhidden">Facebook</span></a>
+                <a class="newfa newfa-tumblr" title="Go Tumblr" href="http://cyprusfortravellers.tumblr.com/" rel="nofollow" target="_blank"><span class="visuallyhidden">Tumblr</span></a>          
+                <a class="newfa newfa-twitter" title="Go Twitter" href="https://twitter.com/cyprusfortravel" rel="nofollow" target="_blank"><span class="visuallyhidden">Twitter</span></a>
+                <a class="newfa newfa-instagram" title="Go Instagram" href="https://instagram.com/cyprusfortravellers" rel="nofollow" target="_blank"><span class="visuallyhidden">Instagram</span></a>
+              <?php else:?>
+                <a class="newfa newfa-vk" title="Перейти в группу Вконтакте" href="https://vk.com/cyprusfortravellers" rel="nofollow" target="_blank"><span class="visuallyhidden">ВКонтакте</span></a>
+                <a class="newfa newfa-facebook" title="Перейти в группу в Фейсбуке" href="https://www.facebook.com/cyprusfortravellers/" rel="nofollow" target="_blank"><span class="visuallyhidden">Facebook</span></a>  
+                <a class="newfa newfa-tumblr" title="Перейти в группу в Tumblr" href="http://cyprusfortravellers.tumblr.com/" rel="nofollow" target="_blank"><span class="visuallyhidden">Tumblr</span></a>          
+                <a class="newfa newfa-twitter" title="Перейти в группу в Twitter" href="https://twitter.com/cyprusfortravel" rel="nofollow" target="_blank"><span class="visuallyhidden">Twitter</span></a>
+                <a class="newfa newfa-instagram" title="Перейти на страницу в Instagram" href="https://instagram.com/cyprusfortravellers" rel="nofollow" target="_blank"><span class="visuallyhidden">Instagram</span></a> 
+              <?php endif;?>
+            </div>
+          </div>
         </div>
-        <?php if ($lang == "en"):?>
-          <div class="bottom-rights">Reproduction or use of any materials only with the permission of the publisher: <a href="mailto:editor@cyprusfortravellers.net">editor@cyprusfortravellers.net</a></div>
-        <?php else: ?>
-          <div class="bottom-rights">Перепечатка и использование любых материалов только с&nbsp;разрешения редакции: <a href="mailto:editor@cyprusfortravellers.net">editor@cyprusfortravellers.net</a></div>
-        <?php endif;?>       
-      </div>      
-      <div class="col-sm-8 col-sm-offset-4 col-md-4 col-md-offset-0 icon-links-block">        
-        <div class="icon-link icon-link--subscribe"><a href="<?php print $prefix;?>/subscribe"><?php print t('Subscribe');?></a></div>
-        <!--<div class="icon-link icon-link--mediakit"><a href="/sites/default/files/Media_Kit.pdf">Media kit</a></div>-->             
       </div>
-    </div>
-  </div>
-  <div class="border-top container-second">
-    <div class="row">
-      <div class="col-sm-12 col-md-9 col-lg-7 col-lg-offset-2">
-        <?php print render($page['footer']); ?> 
-      </div>
-      <div class="col-sm-12 col-md-3 social-block">         
-        <div class="small-share-block share-links">          
-          <?php if ($lang == 'en'):?>
-            <a class="fa fa-facebook" title="Go Facebook" href="https://www.facebook.com/cyprusfortravellers.net/" rel="nofollow" target="_blank"><span class="visuallyhidden">Facebook</span></a>
-            <a class="fa fa-tumblr" title="Go Tumblr" href="http://cyprusfortravellers.tumblr.com/" rel="nofollow" target="_blank"><span class="visuallyhidden">Tumblr</span></a>          
-            <a class="fa fa-twitter" title="Go Twitter" href="https://twitter.com/cyprusfortravel" rel="nofollow" target="_blank"><span class="visuallyhidden">Twitter</span></a>
-            <a class="fa-instagram" title="Go Instagram" href="https://instagram.com/cyprusfortravellers" rel="nofollow" target="_blank"><span class="visuallyhidden">Instagram</span></a>
-          <?php else:?>
-            <a class="fa fa-vk" title="Перейти в группу Вконтакте" href="https://vk.com/cyprusfortravellers" rel="nofollow" target="_blank"><span class="visuallyhidden">ВКонтакте</span></a>
-            <a class="fa fa-facebook" title="Перейти в группу в Фейсбуке" href="https://www.facebook.com/cyprusfortravellers/" rel="nofollow" target="_blank"><span class="visuallyhidden">Facebook</span></a>  
-            <a class="fa fa-tumblr" title="Перейти в группу в Tumblr" href="http://cyprusfortravellers.tumblr.com/" rel="nofollow" target="_blank"><span class="visuallyhidden">Tumblr</span></a>          
-            <a class="fa fa-twitter" title="Перейти в группу в Twitter" href="https://twitter.com/cyprusfortravel" rel="nofollow" target="_blank"><span class="visuallyhidden">Twitter</span></a>
-            <a class="fa fa-instagram" title="Перейти на страницу в Instagram" href="https://instagram.com/cyprusfortravellers" rel="nofollow" target="_blank"><span class="visuallyhidden">Instagram</span></a> 
+      <div class="col-sm-6 col-md-5">
+        <a href="/" class="bottom-logo"><img src="/sites/all/themes/cyprus_new/logo.svg" class="img-responsive" alt=""></a>
+        <div class="bottom-longtext">
+          <p><?php print $site_slogan; ?></p>
+          <?php if ($lang == "en"):?>
+            <p>Reproduction or use of any materials only with the permission of the publisher: <a href="mailto:editor@cyprusfortravellers.net">editor@cyprusfortravellers.net</a></p>
+          <?php else: ?>
+            <p>Перепечатка и использование любых материалов только с&nbsp;разрешения редакции: <a href="mailto:editor@cyprusfortravellers.net">editor@cyprusfortravellers.net</a></p>
           <?php endif;?>
         </div>
+      </div>
+      <div class="most-bottom">
+        <div class="col-sm-6 col-md-7">
+          <?php print render($page['footer']); ?> 
+        </div>
+        <div class="col-sm-6 col-md-5">
+          <p class="copyright">© 2011-<?php print date("Y"); ?> <a href="http://cyprusfortravellers.net">CyprusForTravellers.net</a></p>
         </div>
       </div>
+      
     </div>
   </div>
+ 
 </div>
 <?php endif;?>
 <div class="totopcontroller">
