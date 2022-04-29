@@ -13,11 +13,11 @@
 <div class="row">
 <?php foreach ($rows as $id => $row): ?>
   <?php if (($id == 0)):?>
-		<div class="col-sm-4 col-md-8 media-wrapper--big">
+		<div class="col-sm-12 col-md-8 media-wrapper--big">
 			<?php print $row; ?>
 		</div>
 	<?php else:?>
-		<div class="col-sm-4 media-wrapper--normal">			
+		<div class="col-sm-6 col-md-4  media-wrapper--normal">			
 	    <?php print $row; ?>
 		</div>
 	<?php endif;?>

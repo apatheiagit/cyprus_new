@@ -22,23 +22,23 @@
  * - $pager: The pager next/prev links to display, if any
  * - $exposed: Exposed widget form/info to display
  * - $feed_icon: Feed icon to display, if any
- * - $more: A link to view more, if any
+ * - $more: A link to view more, if any.
  *
  * @ingroup views_templates
  */
 ?>
-<?php if ($header): ?>
+<div class="container">
+<div class="<?php print $classes; ?>">
+  <?php print render($title_prefix); ?>
+  <?php if ($title && $rows): ?>
+    <h2 class="color-title"><?php print $title; ?></h2>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
+  <?php if ($header): ?>
     <div class="view-header">
       <?php print $header; ?>
     </div>
-<?php endif; ?>
-<div class="container <?php print $classes; ?>">
-  <?php print render($title_prefix); ?>
-  <?php if ($title): ?>
-    <?php print $title; ?>
   <?php endif; ?>
-  <?php print render($title_suffix); ?>
-  
 
   <?php if ($exposed): ?>
     <div class="view-filters">
@@ -54,9 +54,7 @@
 
   <?php if ($rows): ?>
     <div class="view-content">
-      <div class="row">
-        <?php print $rows; ?>
-      </div>
+      <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">
@@ -89,5 +87,5 @@
       <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
-
+  </div>
 </div><?php /* class view */ ?>

@@ -24,7 +24,7 @@
 	<div class="text">
 		<div class="category"><a href="<?php print $prefix;?>/places?city=<?php print $city;?>"><?php print $city_name;?></a></div>
 		<div class="title"><a href="<?php print $path;?>"><?php print $title?></a></div>
-		<?php if ($titleLength < 46):?>
+		<?php if ($titleLength < 66):?>
 			<div class="descr"><a href="<?php print $path;?>"><?php print $body;?></a></div>
 		<?php endif;?>
 	</div>	

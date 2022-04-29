@@ -27,18 +27,19 @@
  * @ingroup views_templates
  */
 ?>
-<?php if ($header): ?>
-    <div class="view-header">
-      <?php print $header; ?>
-    </div>
-<?php endif; ?>
-<div class="container <?php print $classes; ?>">
+<div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
-  
+  <?php if ($header): ?>
+    <div class="wide-container container">
+      <div class="view-header">
+        <?php print $header; ?>
+      </div>
+    </div>
+  <?php endif; ?>
 
   <?php if ($exposed): ?>
     <div class="view-filters">
@@ -53,11 +54,11 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content">
-      <div class="row">
-        <?php print $rows; ?>
-      </div>
+  <div class="white-container container">
+    <div class="view-content pop-places-carousel">
+      <?php print $rows; ?>
     </div>
+  </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">
       <?php print $empty; ?>

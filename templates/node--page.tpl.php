@@ -11,9 +11,7 @@
   </div>
 </div>
 <?php if ($node->nid != 27 && $node->nid != 1635 && $node->nid != 24 && $node->nid != 1634): // Скрываем блок "Читайте также" на странице "Рекламодателям" и "О проекте"?>
-<?php   
-    /* Популярные события в Афише */
-    print views_embed_view('cyprus', 'top_events');    
+<?php    
     /* Популярные места  */
     print views_embed_view('cyprus', 'top_places');  
     /* Популярные обзоры  */

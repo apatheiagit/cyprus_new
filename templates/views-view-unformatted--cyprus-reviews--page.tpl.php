@@ -13,11 +13,11 @@
 
 <?php foreach ($rows as $id => $row): ?>
   <?php if (($id == 3)):?>
-		<div class="col-sm-8 media-wrapper--big">
+		<div class="col-md-8 col-sm-12 media-wrapper--big">
 			<?php print $row; ?>
 		</div>
 	<?php else:?>
-		<div class="col-sm-4 media-wrapper--normal">			
+		<div class="col-md-4 col-sm-6 media-wrapper--normal">			
 	    <?php print $row; ?>
 		</div>
 	<?php endif;?>

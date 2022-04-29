@@ -8,7 +8,7 @@
     if($id == 'totalcount') { $totalcount = $field->content; }
  endforeach; ?>
 <?php $theme_path = path_to_theme();?>
-<div class="media-block media-block--recipe  <?php if($advt == 1) print "media-block--fon";?>">						
+<div class="media-block media-block--recipe media-block--fon">						
 	<div class="photo"><?php print $image;?></div>
 	<div class="text">			
 		<div class="category"><?php print $type;?></div>

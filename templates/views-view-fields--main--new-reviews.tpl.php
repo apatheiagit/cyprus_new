@@ -1,4 +1,4 @@
-<?php foreach ($fields as $id => $field): 
+<?php foreach ($fields as $id => $field){ 
     if($id == 'field_main_img') { $image = $field->content; }
     if($id == 'title') { $title = $field->content; }
     if($id == 'path') { $path = $field->content; }
@@ -11,7 +11,7 @@
     if($id == 'field_rubtic') { $rubric = $field->content; }
     if($id == 'field_special') { $special = $field->content; }
     if($id == 'field_specproekt') { $specproekt_tid = $field->content; }
- endforeach; ?>
+ } ?>
 <?php 	
 	$theme_path = path_to_theme();
 	global $language_content; 

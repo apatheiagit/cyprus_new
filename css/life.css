@@ -486,11 +486,6 @@
   left: 0;
   bottom: -24px;
 }
-@media (min-width: 1200px) and (max-width: 1440px) {
-  .l-top-menu li {
-    margin: 0 10px;
-  }
-}
 .l-top-menu li a {
   color: black;
 }
@@ -507,12 +502,6 @@
     text-align: center;
     font-size: 20px;
     line-height: 24px;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1440px) {
-  .l-top-menu .current-partition {
-    font-size: 25px;
-    line-height: 46px;
   }
 }
 .l-top-menu .back-button {
@@ -1004,7 +993,7 @@
   .hit-topic-carousel .hit-topic-small .info {
     top: 20px;
     width: 80%;
-    color: #111111;
+    color: #1A1919;
   }
 }
 .hit-topic-carousel .hit-topic-small .title {
@@ -1046,7 +1035,7 @@
 }
 @media (max-width: 767px) {
   .hit-topic-carousel .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     padding: 2px 10px;
     text-transform: lowercase;
   }
@@ -1310,7 +1299,7 @@
 }
 .topic-item-photo .l-rubric,
 .topic-item-photo .special-mark {
-  color: #111111;
+  color: #1A1919;
 }
 .partition-life- .topic-item-photo .l-rubric,
 .partition-life- .topic-item-photo .special-mark {
@@ -2604,7 +2593,7 @@
   }
 }
 .partition-life-cinema .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #AECFE1;
 }
 .partition-life-cinema .hit-topic-big .descr {
@@ -2612,7 +2601,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-cinema .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #AECFE1;
   }
   .partition-life-cinema .hit-topic-small .descr {
@@ -2681,7 +2670,7 @@
   }
 }
 .partition-life-lifehack .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #DAC0F4;
 }
 .partition-life-lifehack .hit-topic-big .descr {
@@ -2689,7 +2678,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-lifehack .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #DAC0F4;
   }
   .partition-life-lifehack .hit-topic-small .descr {
@@ -2758,7 +2747,7 @@
   }
 }
 .partition-life-psychology .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #FFF1E4;
 }
 .partition-life-psychology .hit-topic-big .descr {
@@ -2766,7 +2755,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-psychology .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #FFF1E4;
   }
   .partition-life-psychology .hit-topic-small .descr {
@@ -2835,7 +2824,7 @@
   }
 }
 .partition-life-fashion .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #C9ECFB;
 }
 .partition-life-fashion .hit-topic-big .descr {
@@ -2843,7 +2832,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-fashion .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #C9ECFB;
   }
   .partition-life-fashion .hit-topic-small .descr {
@@ -2912,7 +2901,7 @@
   }
 }
 .partition-life-gardening .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #88EAB1;
 }
 .partition-life-gardening .hit-topic-big .descr {
@@ -2920,7 +2909,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-gardening .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #88EAB1;
   }
   .partition-life-gardening .hit-topic-small .descr {
@@ -2989,7 +2978,7 @@
   }
 }
 .partition-life-wellness .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #FEE289;
 }
 .partition-life-wellness .hit-topic-big .descr {
@@ -2997,7 +2986,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-wellness .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #FEE289;
   }
   .partition-life-wellness .hit-topic-small .descr {
@@ -3066,7 +3055,7 @@
   }
 }
 .partition-life-zerowaste .hit-topic-big .l-rubric {
-  color: #111111;
+  color: #1A1919;
   background-color: #A1B2EE;
 }
 .partition-life-zerowaste .hit-topic-big .descr {
@@ -3074,7 +3063,7 @@
 }
 @media (max-width: 767px) {
   .partition-life-zerowaste .hit-topic-small .l-rubric {
-    color: #111111;
+    color: #1A1919;
     background-color: #A1B2EE;
   }
   .partition-life-zerowaste .hit-topic-small .descr {
@@ -3192,93 +3181,4 @@
 }
 .field-widget-viewfield-select .form-type-textfield {
   display: none;
-}
-.view-display-id-front {
-  background: #DF542F;
-  border-radius: 5px;
-  padding-top: 18px;
-  padding-bottom: 30px;
-  margin-bottom: 32px;
-  overflow: hidden;
-  position: relative;
-}
-@media (min-width: 1230px) {
-  .view-display-id-front {
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 1200px;
-  }
-}
-.view-display-id-front:before {
-  content: "";
-  background-color: #F6BFB1;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  top: -50px;
-  left: -25px;
-  position: absolute;
-  z-index: 1;
-}
-.view-display-id-front .view-content {
-  z-index: 10;
-  position: relative;
-  margin-left: -15px;
-  margin-right: -15px;
-}
-.view-display-id-front .view-content:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-.view-display-id-front .views-row {
-  width: 33.33333333%;
-  float: left;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin: 18px 0;
-}
-@media (max-width: 767px) {
-  .view-display-id-front .views-row {
-    width: 100%;
-  }
-}
-.view-display-id-front .color-title {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  margin: 0;
-  text-transform: lowercase;
-  position: relative;
-  z-index: 10;
-  height: 54px;
-}
-@media (max-width: 767px) {
-  .view-display-id-front .color-title {
-    height: auto;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .view-display-id-front .color-title {
-    height: 70px;
-  }
-}
-.view-display-id-front .view-footer {
-  text-align: center;
-}
-.view-display-id-front .view-footer a {
-  display: inline-block;
-  background-color: #F6BFB1;
-  padding: 10px 22px;
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 24px;
-}
-.view-display-id-front .l-rubric {
-  color: white;
-}
-.view-display-id-front .topic-item-usial .title {
-  border-bottom: 1px solid #111111;
 }

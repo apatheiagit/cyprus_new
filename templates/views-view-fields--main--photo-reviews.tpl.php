@@ -42,10 +42,9 @@
 		<div class="title"><a href="<?php print $path;?>"><?php print $title?></a></div>
 		<?php if ($titleLength < 46):?>
 			<div class="descr"><a href="<?php print $path;?>"><?php print $body;?></a></div>
-		<?php endif;?>
-		<div class="statistic">
-			<div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
-		</div>
+		<?php endif;?>		
 	</div>
-	
+	<div class="statistic">
+		<div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
+	</div>
 </div>

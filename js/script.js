@@ -30,6 +30,9 @@ Drupal.behaviors.my_custom_behavior = {
 	  		$('.icon-opener').toggleClass('icon-opener-open');
 	  		$('.current-city').toggleClass('city-list-open');
 	  	});
+		$('.globus').click(function(){
+			$('.language-switcher-locale-url').toggle();
+		});
 	  	/*$('.city-list').hover(function(){}, function(){
 	  		$('.city-list').hide();
 	  		$('.current-city').removeClass('city-list-open');
@@ -114,23 +117,40 @@ Drupal.behaviors.my_custom_behavior = {
 	        currentCategory = $('.breadcrumb span.first a').attr('href');
 	        $('.breadcrumb span.first a').addClass(currentCategory.substring(1));
 	    };
-	    $('.articles--index').owlCarousel({
-		    items: 1,
-		    loop: true,
-		    dots: true,
-		    autoplay:true,
-		    autoplayTimeout: 6000,
-		    autoplaySpeed: 5000,
-		    autoplayHoverPause:true,
-		    animateOut: 'fadeOut',
-    		animateIn: 'fadeIn',
-		    /*onInitialize: function (event) {
-	        if ($('.articles--index .article-item').size() <= 1) {
-	           this.settings.loop = false;
-	           this.settings.dotsClass = 'disable-dots';
-	        }
-	    	}*/
-		  });
+		$('.media-reviews-carousel').owlCarousel({
+			nav: true,
+			dots: false,
+			margin: 24,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:2
+				},
+				1000:{
+					items:3
+				}
+			}
+		});
+		$('.pop-places-carousel').owlCarousel({
+			nav: true,
+			dots: false,
+			margin: 24,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:2
+				}
+			}
+		});
+		$('.photo-reviews-carousel').owlCarousel({
+			items: 1,
+			nav: true,
+			dots: false,
+		});
 		  $('.affiche-carousel').owlCarousel({
 		    items: 1,
 		    loop: true,

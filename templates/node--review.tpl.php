@@ -396,7 +396,7 @@
   /* Популярные обзоры */
   print views_embed_view('cyprus', 'theme_reviews5');
   /* События из Афиши */
-  print views_embed_view('cyprus', 'top_events');
+  //print views_embed_view('cyprus', 'top_events');
   /* Популярные места */
   print views_embed_view('cyprus', 'top_places');
   //switch ($type) {

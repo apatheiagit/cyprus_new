@@ -1,50 +1,52 @@
 @import url('constants.less');
 @recipe-height: 480px;
-@review-height: 480px;
+@review-height: 590px;
 @top3reviews1-height: 590px;
-@top3reviews2-height: 280px;
-@quarter-height: 380px;
+@top3reviews2-height: 282px;
+@quarter-height: 590px;
 @blog-height: 90px;
-@special-height: 475px;
+@special-height: 648px;
 @index-height: 540px;
 @new-review-height: 430px;
 @event-height: 465px;
 @events-height: 165px;
-@photo-height: 692px;
+@photo-height: 648px;
 
 .statistic{
   & .count{
-    color: @light-text;
-    font-size: 12px;
-    line-height: 1.2;
-    margin-left: 6px;
+    color: @text-color;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 8px;
     vertical-align: middle;
   }
   & svg{
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     vertical-align: middle;    
   }
   & .stat-icon{
-    fill: @new-grey;
+    stroke: @text-color;
   }
 }
 
 .media-block{
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   position: relative;
   &:hover{
     & .photo a:after{
       opacity: 1;
     }
     & .photo img{
-      transform: scale(1.1);
+      transform: scale(1.01);
     }
   }
   & .photo{
     text-align: center;
     position: relative;
     overflow: hidden;
+    border-radius: 16px;
     @media @mobile{
       max-width: 350px;
     }
@@ -72,10 +74,19 @@
   }
   & .category{
     color: @category-text;
-    font-size: 10px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2.6px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 8px 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 24px;
+    display: inline-block;
+    @media @mobile{
+      font-size: 12px;
+      line-height: 16px;
+      padding: 4px 8px;
+      border-radius: 16px;
+    }
   }
   & .kind{
     font-size: 12px;
@@ -84,21 +95,35 @@
     letter-spacing: 2.6px;
   }
   & .title {
-    font-size: 24px;
     font-family: @special-font;
-    line-height: 1.33;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 12px 0 16px;
   }
   & .descr {
-    font-size: 16px;
-    line-height: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
   }
   & .statistic{
     position: absolute;    
     z-index: 20;
     overflow: hidden;
-    bottom: 10px;
+    bottom: 24px;
+    &:before{
+      content: "";
+      display: block;
+      width: 55px;
+      height: 1px;
+      background-color: #E0E0E0;
+      margin-bottom: 16px;
+    }
+    .count{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 }
 
@@ -115,7 +140,7 @@
   }
 }
 .media-block--fon{
-  color: white;
+  color: #F2F2F2;
   padding-top: 200px;
   & .photo {
     position: absolute!important;
@@ -129,7 +154,7 @@
     }
     &:hover{
       & img{
-        transform: translateX(-30%) scale(1.1);
+        transform: translateX(-30%) scale(1.04);
         @media @mobile{ 
           transform: none;
         } 
@@ -157,39 +182,96 @@
   & .text{
     position: relative;
     z-index: 10;
+    padding: 0 24px;
+    @media @mobile{
+      position: absolute;
+      bottom: 84px;
+    }
   }
   & .category{
-    color: white;
+    background-color: #F2F2F2;
+    color: #8B8B8B;
   }
   & .statistic{
+    left: 24px;
+    bottom: 24px;
     & .count{
-      color: white;
+      color: #F2F2F2;
     }
-    & .stat-icon{
-      fill: white;
+    & path{
+      stroke: #F2F2F2;
     }
   }
 }
-.media-block--review{
-  height: @review-height;
-  @media @medium{
-    height: @review-height * 0.9;
+.view-display-id-top_reviews{
+  .media-block--review{
+    @media @tablet{
+      height: 590px;
+    }
   }
-  & .category{
-    margin-top: 20px;
+}
+.media-block--review, .media-block--place{
+  height: @review-height;
+  border: 1px solid #E0E0E0;
+  border-radius: 24px;
+  padding: 24px;
+  @media @small-notebook{
+    height: 510px;
+  }
+  @media @medium{
+    height: 530px;
+  }
+  @media @tablet{
+    height: 530px;
+  }
+  @media @mobile{
+    height: auto;
+    padding-bottom: 84px;
+  }
+  &:hover{
+    background: #FFFFFF;
+    box-shadow: 0px 16px 24px rgba(132, 131, 131, 0.24);
+  }
+  .photo{
+    margin-bottom: 24px;
+  }
+  .title:hover, .descr:hover{
+    color: #35A0CD;
   }
 }
 .media-block--text, .media-block--blog{
   & .statistic{   
-    left: 0px;
-    //bottom: 0px;    
+    left: 24px;
+    bottom: 24px;    
   }
 }
 .media-wrapper--big{
   & .media-block--review{
-    color: white;
+    color: #F2F2F2;
+    padding: 0;
     @media @mobile{
       background-color: @grey-text;
+      height: 290px;
+      .photo img{
+        height: 290px;
+        max-width: 950px;
+        width: auto;
+      }
+    }
+    @media @tablet{
+      height: 440px;
+    }
+    @media @medium{
+      .photo img{
+        height: 530px;
+        max-width: 1440px;
+      }
+    }
+    @media @small-notebook{
+      .photo img{
+        height: 510px;
+        max-width: 1440px;
+      }
     }
     & .photo {
       position: absolute!important;
@@ -209,10 +291,13 @@
         z-index: 10;
       }   
     }
+    a:hover{
+      color: #F2F2F2;
+    }
     & .text{
       position: absolute;
-      bottom: 60px;
-      left: 20px;
+      bottom: 84px;
+      left: 24px;
       z-index: 20;
     }
     & .descr{
@@ -222,16 +307,17 @@
       max-width: 600px;
     }
     & .category{
-      color: white;
+      background-color: #F2F2F2;
+      color: #8B8B8B;
     }
     & .statistic{
-      //bottom: 20px;
-      left: 20px;
+      bottom: 24px;
+      left: 24px;
       & .count{
-        color: white;
+        color: #F2F2F2;
       }
-      & .stat-icon{
-        fill: white;
+      & path{
+        stroke: #F2F2F2;
       }      
     }
   }
@@ -445,7 +531,7 @@
   }
 }
 .media-block--top3review{
-  color: white;
+  color: #F2F2F2;
   & .photo {
     position: absolute!important;
     top: 0;
@@ -469,8 +555,8 @@
   }
   & .text{
     position: absolute;
-    bottom: 60px;
-    left: 20px;
+    bottom: 84px;
+    left: 24px;
     z-index: 20;
   }
   & .descr{
@@ -480,13 +566,17 @@
     max-width: 650px;
   }
   & .category{
-    color: white;
+    background: #F2F2F2;
+    color: #8B8B8B;
   }
   & .statistic{
-    //bottom: 20px;
-    left: 20px;
+    bottom: 24px;
+    left: 24px;
     & .count{
-      color: white;
+      color: #F2F2F2;
+    }
+    path{
+      stroke: #F2F2F2;
     }
     & .stat-icon{
       fill: white;
@@ -496,11 +586,28 @@
 .media-wrapper--big{
   & .media-block--top3review{
     height: @top3reviews1-height; 
+    @media @tablet{
+      height: 440px;
+    }
+    @media @medium{
+      height: 490px;
+      .photo img {
+        height: 490px;
+        max-width: 1440px;
+      }
+    }
+    @media @small-notebook{
+      height: 590px;
+      .photo img {
+        height: 590px;
+        max-width: 1440px;
+      }
+    }
     & .title{
       font-size: 45px;
     }
-    @media @mobile_tablet{
-      height: @top3reviews2-height;
+    @media @mobile{
+      height: 200px;
       & .title{
         font-size: 20px;
         margin-bottom: 0;
@@ -514,6 +621,29 @@
 .media-wrapper--normal{
   & .media-block--top3review{
     height: @top3reviews2-height;
+    @media @tablet{
+      .photo img {
+        height: 280px;
+        max-width: 1440px;
+      }
+    }
+    @media @medium{
+      height: 232px;
+      .photo img {
+        height: 232px;
+        max-width: 1440px;
+      }
+    }
+    @media @small-notebook{
+      height: @top3reviews2-height;
+      .photo img {
+        height: @top3reviews2-height;
+        max-width: 1440px;
+      }
+    }
+    @media @mobile{
+      height: 200px;
+    }
     & .title{
       font-size: 20px;
       margin-bottom: 0;
@@ -525,19 +655,17 @@
   }
 }
 .blog-block{
-  margin-bottom: 30px;
   position: relative;
-  height: @blog-height;
-  &:hover{
-    & .photo img{
-      filter: grayscale(100%);      
-    }
+  @media @mobile_tablet{
+    margin-bottom: 24px;
+  }
+  @media @medium{
+    margin-bottom: 24px;
   }
   & .photo{
-    height: 67px;
-    width: 67px;
+    height: 64px;
+    width: 64px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     float: left;
     & img{
       transition: all 0.5s ease-in;
@@ -545,28 +673,40 @@
     }
   }
   & .title{
-    font-size: 16px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
   }
   & .title-wrap{
     height: 70px;
     position: relative;
-     margin-left: 87px;
+    margin-left: 80px;
+    @media @mobile{
+      height: auto;
+      margin-bottom: 16px;
+    }
   }
   & .statistic{
-    //bottom: 0;
-    left: 87px;
-    position: absolute;
+    margin-left: 80px;
+    &:before{
+      content: "";
+      display: block;
+      width: 55px;
+      height: 1px;
+      background-color: #E0E0E0;
+      margin-bottom: 16px;
+    }
   }
 }
 .media-block--special{
-  color: white;
+  color: #F2F2F2;
   text-align: center;
   height: @special-height;
+  @media @tablet{
+    height: 440px;
+  }
   @media @mobile{
-    height: @special-height/2;
+    height: 320px;
   }
   & .photo {
     position: absolute!important;
@@ -591,9 +731,9 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 50%,rgba(0,0,0,.7));      
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.3) 50%,rgba(0,0,0,.0));       
         z-index: 10;
-        opacity: 0.6;
+        opacity: 1;
       } 
     }      
   }
@@ -606,6 +746,7 @@
   }
   & .title{
     font-size: 70px;
+    line-height: 1.2;
     @media @medium{
       font-size: 52px;
     }
@@ -632,22 +773,22 @@
     }
   }
   & .category{
-    color: white;
+    background: #F2F2F2;
+    color: #8B8B8B;
   }
   & .statistic{
-    width: 100%;
-    position: relative;
-    margin-top: 20px;
+    position: static;
+    display: inline-block;
+    margin-top: 24px;
     & .count{
-      color: white;
+      color: #F2F2F2
     }
-    & .stat-icon{
-      fill: white;
+    & path{
+      stroke: #F2F2F2;
     }
   }
 }
-.video-block{
-  margin-bottom: 25px;
+.video-block{  
   & iframe{
     height: @special-height;
     @media @mobile{
@@ -656,6 +797,8 @@
   }
   & .theimage{
     cursor: pointer;
+    border-radius: 24px;
+    overflow: hidden;
   }
 }
 .blog-wrap--3{
@@ -665,32 +808,14 @@
     }
   }
 }
-.media-block--blogs{
-  text-align: center;
-  & .statistic{
-    width: 100%;
-  }
-  & .title{
-    @media @large{
-      padding: 0 5px;
-    }
-  }
-}
 
 .media-block--quarter{
   height: @quarter-height;
-  @media @mobile_tablet{
-    height: @quarter-height * 1.16;
+  @media @mobile{
+    height: auto;
   }
-  & .title{
-    font-size: 20px;
-    line-height: 1.4;
-  }
-  & .statistic{
-    bottom: 0;
-    & .count{
-      color: @text-color;
-    }
+  @media @small-notebook{
+    height: 540px;
   }
 }
 
@@ -731,112 +856,87 @@
   }
 }
 .media-block--index{
-  height: @index-height;
-  margin-bottom: 0;
-  text-align: center;
-  @media @ipad_pro{
-    & img{
-      height: 100%;
-      width: auto !important;
-      max-width: none;
-    }
+  margin-bottom: 48px;
+  @media @mobile_tablet{
+    margin-bottom: 24px;
   }
-  @media @monitor2{
-    & img{
-      height: 100%;
-      width: auto !important;
-      max-width: none;
-    }
-  }
-  @media @medium{
-    height: @index-height * 0.83;
-    & img{
-      max-width: none;
-      max-height: @index-height * 0.83;
-      width: auto !important;
-    }
-  }
-  @media @tablet{
-    height: @index-height * 0.65;
-    & img{
-      max-width: none;
-      max-height: @index-height * 0.65;
-      width: auto !important;
-    }
-  }
-  @media @mobile{
-    height: @index-height * 0.3;
-    & img{
-      max-width: none;
-      max-height: @index-height * 0.3;
-      width: auto !important;
-    }
-  }
-  &:hover {
-    & .photo img {
-      transform: scale(1);
-    }
-  }
-  & .photo {
-    position: absolute!important;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
-    @media @mobile{
-      max-width: 100%;
-    }
-    & a:after{
-      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 30%, rgba(0,0,0,.4) 50%, rgba(0,0,0,.2) 80%, rgba(0,0,0,.0));
-      opacity: 1;
-    } 
-  }
-  & .container{
+  &.media-block--review {
+    height: 648px;
     position: relative;
-    z-index: 2;
-    color: white;
-    height: 100%;
-  }
-  & .text{
-    width: calc(~'100% - 30px');
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  & .category{
-    color: white;
-    font-size: 12px;
-    margin-top: 0;
-  }
-  & .title{
-    margin: 10px 0 20px;
-    & .big{ font-size: 72px; }
-    & .small{ font-size: 36px; }
-    @media @medium{
-      & .big{ font-size: 48px; }
-      & .small{ font-size: 26px; }
+    border: none;
+    padding: 0;
+    @media @mobile{
+      height: 150px;
     }
     @media @tablet{
-      & .big{ font-size: 36px; }
-      & .small{ font-size: 22px; }
+      height: 348px;
     }
-    @media @mobile{
-      & .big{ font-size: 26px; }
-      & .small{ font-size: 18px; }
+    @media @medium{
+      height: 422px;
     }
-    & a:hover{
-      color: @light-grey;
-      text-decoration: none;
+    &:hover{
+      background: none;
+      .photo img{
+        transform: none;
+      }
     }
-  }
-  & .statistic{
-    position: static;
-    & path, & .count{
-      fill: white;
+    .photo{
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 0;
+      a:after{
+        opacity: 1;
+        background: linear-gradient(180deg, rgba(0,0,0,0.0000001), rgba(0,0,0,0.4), rgba(0,0,0,0.0000001));
+      }
+    }
+    .text{
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
       color: white;
+      @media @mobile{
+        left: 16px;
+      }
+    }
+    .title{
+      font-weight: 600;
+      font-size: 64px;
+      line-height: 84px;
+      max-width: 900px;
+      margin: 8px 0 16px;
+      @media @mobile{
+        font-size: 20px;
+        line-height: 24px;
+      }
+      @media @tablet{
+        font-size: 44px;
+        line-height: 64px;
+      }
+    }
+    .category{
+      margin-top: 0;
+      background-color: #F2F2F2;
+      color: #1A1919;
+      font-size: 16px;
+      line-height: 20px;
+      @media @mobile{
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .statistic{
+      color: #F2F2F2;
+      position: static;
+      &:before{
+        background-color: #F2F2F2;
+      }
+      .count{
+        color: #F2F2F2;
+      }
+      path{
+        stroke: #F2F2F2;
+      }
     }
   }
 }
@@ -904,7 +1004,21 @@
     }
   }
 }
-.media-block--new-review{
+.media-block--new-review, .media-block--pop-review{
+  height: 602px;
+  @media @small-notebook{
+    height: 510px;
+  }
+  @media @medium{
+    height: 530px;
+  }
+  @media @tablet{
+    height: 530px;
+  }
+  @media @mobile{
+    height: auto;
+    padding-bottom: 84px;
+  }
   & .descr{
     font-size: 18px;
     line-height: 26px;
@@ -913,13 +1027,7 @@
     }
   }
   & .statistic{
-    bottom: 0px;
-  }
-  .media-wrapper--normal &{
-    & .statistic{
-      width: 100%;
-      background: white;
-    }
+    bottom: 24px;
   }
 }
 .media-wrapper--wo-image{
@@ -1081,84 +1189,117 @@
     }
   }
 }
-.media-wrapper--normal{
-  & .media-block--pop-place{
-    & .descr{
-      font-size: 18px;
+.media-block--pop-place{
+  position: relative;
+  height: 550px;
+  border: none;
+  border-radius: 24px;
+  padding: 0;
+  @media @medium{
+    height: 356px;
+  }
+  @media @mobile_tablet{
+    height: auto;
+    padding-bottom: 60px;
+  }
+  .photo{
+    position: relative;
+    a:after{
+      opacity: 1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 1e-7), rgba(0, 0, 0, 0.4));
+    }
+  }
+  .text{
+    position: absolute;
+    left: 24px;
+    top: 280px;
+    @media @mobile_tablet{
+      position: static;
+    }
+    @media @medium{
+      top: auto;
+      bottom: 84px;
+    }
+    .category{
+      background: #F2F2F2;
+    }
+    .title{
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 44px;
+      color: #F2F2F2;
       @media @mobile_tablet{
-        font-size: 16px;
+        font-size: 24px;
+        line-height: 32px;
+        margin: 12px 0 16px;
+        color: @text-color;
       }
     }
-    & .category{
-      font-size: 12px;
+    .descr{
+      color: #F2F2F2;
       @media @mobile_tablet{
-        font-size: 10px;
+        color: @text-color;
       }
     }
   }
-}
-.media-wrapper--small{
-  & .media-block--pop-place{
-    height: @review-height * 0.875;
+  .statistic{
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
     @media @mobile_tablet{
-      height: @review-height * 0.94;
+      left: 0;
+      bottom: 0;
     }
-    & .title{
-      font-size: 20px;
+    path {
+      stroke: #F2F2F2;
+      @media @mobile_tablet{
+        stroke: @text-color;
+      }
+    }
+    .count {
+      color: #F2F2F2;
+      @media @mobile_tablet{
+        color: @text-color;
+      }
     }
   }
 }
 .media-block--main-photo{
   height: @photo-height;
-  color: white;
-  text-align: center;
+  color: #F2F2F2;
   @media @medium{
-    height: @photo-height * 0.78;
+    height: 422px;
   }
   @media @tablet{
-    height: @photo-height * 0.6;
+    height: 324px;
   }
   @media @mobile{
-    height: @photo-height * 0.3;
+    height: 290px;
+    .photo img{
+      height: 290px;
+      max-width: 1440px;
+      width: auto;
+    }
   }
   & .photo{
-    border-radius: 5px;
-    position: absolute!important;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    border-radius: 24px;
     overflow: hidden;
     z-index: 1;
-    &:after{
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-image: linear-gradient(to bottom, rgba(0,0,0,.0) 17%, rgba(0,0,0,.2) 30%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.2) 80%, rgba(0,0,0,.0));      
-      z-index: 10;
+    a:after{
+      opacity: 1;
+      background: linear-gradient(180.34deg, rgba(255, 255, 255, 0) 35.43%, rgba(0, 0, 0, 0.48) 73.96%, rgba(31, 30, 30, 0.48) 99.75%);
     } 
-    & img{
-      border-radius: 5px;
-    }
   }
   & .text{    
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);    
+    left: 24px;
+    bottom: 76px;   
     z-index: 3;
-    width: 100%;
-  }
-  & a:hover{
-    text-decoration: none;
-    color: darken(white, 10%);
   }
   & .title{
-    font-size: 48px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
     @media @medium{
       font-size: 40px; 
     }
@@ -1166,66 +1307,120 @@
       font-size: 30px;       
     }
     @media @mobile{
-      font-size: 22px;        
-    }     
-  }
-  & .descr{
-    font-size: 18px;
-    @media @mobile_tablet{
-      font-size: 16px;
-    }
-  }
+      font-size: 22px;
+      line-height: 30px;     
+    }   
+  }  
   & .category{
-    font-size: 12px;
-    @media @mobile_tablet{
-      font-size: 10px;
-    }
-    & a{
-      color: white;
-      border-radius: 2px;
-      display: inline-block;
-      padding: 10px 14px 8px;
-    }
+    background: #F2F2F2;
   }
-  &.media-block--entertainment .category a{ background-color: @blue; }
-  &.media-block--culture .category a{ background-color: @orange; }
-  &.media-block--cuisine .category a{ background-color: @lime; }
   & .statistic{
-    margin-top: 20px;
-    position: static;
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
     & path, & .count{
-      fill: white;
-      color: white;
+      stroke: #F2F2F2;
+      color: #F2F2F2;
     }
   }
 }
-.media-block--pop-review{
-  height: @review-height + 20px;
-  & .category{
-    color: white;
-    margin-bottom: 14px;
-    & a{
-      border: 1px solid white;
-      border-radius: 2px;
-      display: inline-block;
-      padding: 10px 14px 8px;
-      margin-right: 10px;
+.media-reviews-carousel.owl-carousel, .pop-places-carousel.owl-carousel,
+.photo-reviews-carousel.owl-carousel{
+  .owl-controls{
+    position: absolute;
+    top: -76px;
+    right: 0;
+    text-align: right;
+    left: auto;
+    margin-left: 0;
+    @media @mobile{
+      top: -60px;
     }
-  }
-  & .statistic{
-    & path, & .count{
-      fill: white;
-      color: white;
+    .owl-nav{
+      .disabled{
+        display: none;
+      }
+    }
+    .owl-prev, .owl-next{
+      border: 1px solid @text-color;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      overflow: hidden;
+      text-indent: 52px;
+      position: relative;
+      display: inline-block;
+      @media @mobile{
+        width: 30px;
+        height: 30px;
+      }
+      &:before, &:after{
+        content: "";
+        width: 12px;
+        height: 1px;
+        background-color:@text-color;
+        position: absolute;
+        @media @mobile{
+          width: 10px;
+        }
+      }
+      &:hover{
+        border-color: #8B8B8B;
+        &:before, &:after{
+          background-color:#8B8B8B;
+        }
+      }
+    }
+    .owl-prev{
+      margin-right: 16px;
+      &:before{
+        left: 18px;
+        top: 21px;
+        transform: rotate(-45deg);
+        @media @mobile{
+          left: 8px;
+          top: 10px;
+        }
+      }
+      &:after{
+        left: 18px;
+        top: 29px;
+        transform: rotate(45deg);
+        @media @mobile{
+          left: 8px;
+          top: 17px;
+        }
+      }
+    }
+    .owl-next{      
+      &:before{
+        left: 22px;
+        top: 21px;
+        transform: rotate(45deg);
+        @media @mobile{
+          left: 10px;
+          top: 10px;
+        }
+      }
+      &:after{
+        left: 22px;
+        top: 29px;
+        transform: rotate(-45deg);
+        @media @mobile{
+          left: 10px;
+          top: 17px;
+        }
+      }
     }
   }
 }
-.view-display-id-big_reviews{
-  background-color: white;
-  max-width: 1248px;
-  padding: 0 24px 24px;
-  border-radius: 0 0 16px 16px;
-  margin: 0 auto;
-  @media @mobile{
-    padding: 0;
+.view-display-id-top3_places{
+  .article-photo{
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .article-text--left .article-photo a:after{
+    border-radius: 24px;
+    overflow: hidden;
   }
 }

@@ -41,7 +41,7 @@
  	}
  	$titleLength = iconv_strlen($title, 'UTF-8');
 ?>
-<div class="media-block media-block--review <?php if(isset($rubric_type)):?>media-block--rubric<?endif;?> media-block--<?php print $type;?> media-block--<?php print $english;?>">
+<div class="media-block media-block--review <?php if(isset($rubric_type)):?>media-block--rubric<?endif;?>  media-block--<?php print $english;?>">
 	<?php if(isset($rubric_type) && $type != "photo"):?>
 		<div class="rubric">
 			<a href="<?php print $path;?>"><span class="canvas canvas--<?php print $rubric_type;?>"></span></a>

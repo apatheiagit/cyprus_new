@@ -1110,11 +1110,13 @@
   & .text{
     width: calc(~'100% - 30px');
     position: absolute;
-    top: 30px;    
+    top: 50%;
+    transform: translateY(-50%);    
     padding-left: 15px;
     padding-right: 15px;
     @media @mobile{
     	top: 15px;
+		transform: none;
     }
   }
   & .category{
@@ -1163,6 +1165,9 @@
       fill: white;
       color: white;
     }
+	path{
+		stroke: white;
+	}
   }
 }
 .media-detail--top5{

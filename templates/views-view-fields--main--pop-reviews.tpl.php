@@ -35,8 +35,7 @@
  		$specproekt = $specproekt_name_localize->name;	
  	}
  	$titleLength = iconv_strlen($title, 'UTF-8');
-?>
-<div class="col-sm-4 media-wrapper--normal">		
+?>		
 <div class="media-block media-block--review media-block--pop-review  media-block--<?php print $type;?> media-block--<?php print $english;?>">
 	<div class="photo">		
 		<?php print $image;?>
@@ -68,5 +67,4 @@
 	<div class="statistic">
 		<div class="metrika metrika-watch"><?php print file_get_contents($theme_path."/img/views.svg");?><span class="count"><?php print $totalcount;?></span></div>
 	</div>
-</div>
 </div>

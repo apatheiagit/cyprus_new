@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="wide-container-wo container <?php print $classes; ?>">
+<div class="container <?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
@@ -52,7 +52,7 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content">
+    <div class="view-content photo-reviews-carousel">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
