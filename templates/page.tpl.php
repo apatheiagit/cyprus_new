@@ -8,12 +8,19 @@
       if(isset($partition[1])) $partition_name = $partition[1];
       if($partition_name == 'all') $partition_name = $partition[2];
 ?>
-<?php if($is_front && $lang == 'ru'):?>
+<?php if($is_front):?>
 <div class="aroma-block">
-  <a class="container" href="/review/lyudi-kipra-grek-po-imeni-grek">
-    <div class="h1">Aroma Castle, Pyrgos</div>
-    <div class="descr">Новое средневековье на Кипре</div>
-  </a>
+  <?php if($lang == 'ru'):?>
+    <a class="container" href="/review/lyudi-kipra-grek-po-imeni-grek">
+      <div class="h1">Aroma Castle, Pyrgos</div>
+      <div class="descr">Новое средневековье на Кипре</div>
+    </a>
+    <?php else: ?>
+    <a class="container" href="/en/review/greek-named-grek">
+      <div class="h1">Aroma Castle, Pyrgos</div>
+      <div class="descr">Interview with an Architect</div>
+    </a>
+    <?php endif;?>
 </div>
 <?php endif;?>
 <?php if($lifestyle):?>
