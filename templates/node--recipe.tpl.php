@@ -48,10 +48,21 @@
             <?php endforeach;?>
           <?php endif;?> 
         </div>
+        <!-- Yandex.RTB R-A-2380395-1 -->
+        <div class="yandex-rtb yandex-rtb-top">
+        <div id="yandex_rtb_R-A-2380395-1"></div>
+        <script>window.yaContextCb.push(()=>{
+          Ya.Context.AdvManager.render({
+            "blockId": "R-A-2380395-1",
+            "renderTo": "yandex_rtb_R-A-2380395-1"
+          })
+        })
+        </script>
+        </div>
         <?php /* Фотографии этого рецепта */ ?>
         <?php if (isset($content['field_photos']['#items'])):?>
         <div class="somit somit-gallery somit-gallery--small">
-            <div class="photo-carousel">
+            <div class="photo-carousel owl-carousel">
               <?php foreach ($content['field_photos']['#items'] as $photo):?>
                 <div class="photo-item">
                   <?php 

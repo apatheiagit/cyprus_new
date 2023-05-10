@@ -52,7 +52,7 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content photo-reviews-carousel">
+    <div class="view-content photo-reviews-carousel owl-carousel">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>

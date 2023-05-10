@@ -7,7 +7,7 @@
     $translated_term_city = i18n_taxonomy_localize_terms($term_city); 
     function print_gallery($photo_array, $image_style, $p_title, $watermark = 1){
       $gallery = '<div class="somit somit-gallery">';
-      $gallery .= '<div class="photo-carousel">';
+      $gallery .= '<div class="photo-carousel owl-carousel">';
       if (is_null($watermark) || ($watermark == 1)){  $style_name = 'cyprus1140x720';}
       elseif ($watermark == 0) {$style_name = 'cyprus1140x720wo';}
       foreach ($photo_array as $key => $photo) {
@@ -152,9 +152,12 @@
 <?php endif?>
     <div class="article-content">
       <div class="article-content-text">
-      <?php 
+      <?php
+          $old_body = $content['body']['#items'][0]['value'];
+          /* Находим в тексте признак конца первого абзаца и добавляем туда рекламу от Яндекса */ 
+          $yandex_body = str_replace('</big></p>', '</big></p><div class="yandex-rtb"><div id="yandex_rtb_R-A-2380395-1"></div><script>window.yaContextCb.push(()=>{Ya.Context.AdvManager.render({"blockId": "R-A-2380395-1","renderTo": "yandex_rtb_R-A-2380395-1"})})</script></div>', $old_body);
           /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
-          $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $content['body']['#items'][0]['value']);
+          $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $yandex_body);
           /* Делим весь текст по значку параграфа § чтобы вставить Фотогалерею (если она есть) */
           $body_array = explode("§",$new_body);
           $global_key = 0;

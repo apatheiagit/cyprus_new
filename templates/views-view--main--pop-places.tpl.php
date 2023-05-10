@@ -55,7 +55,7 @@
 
   <?php if ($rows): ?>
   <div class="white-container container">
-    <div class="view-content pop-places-carousel">
+    <div class="view-content pop-places-carousel owl-carousel">
       <?php print $rows; ?>
     </div>
   </div>

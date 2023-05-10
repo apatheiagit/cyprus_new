@@ -282,3 +282,11 @@
   /* Популярные обзоры из того же раздела */
   print views_embed_view('cyprus', 'top_reviews');
 ?>
+<!-- Yandex.RTB R-A-2380395-2 -->
+<script>window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-2380395-2",
+		"type": "floorAd"
+	})
+})
+</script>

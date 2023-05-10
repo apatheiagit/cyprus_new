@@ -24,6 +24,8 @@ Drupal.behaviors.my_custom_behavior = {
 	  		$(this).toggleClass('city-list-open');
 	  	});
 	  	$('.city-list li').click(function(){
+			$('.city-list li.active').removeClass('active');
+			$(this).addClass('active');
 	  		$('.current-city').children('.name').text($(this).text());
 	  		getWeather($(this).children('span').attr('data-city'));
 	  		$('.city-list').toggle();

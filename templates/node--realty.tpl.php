@@ -28,7 +28,7 @@
     <div class="col-md-7 col-lg-8">
       <?php if (isset($content['field_photos']['#items'])):?>
         <div class="somit somit-gallery">
-          <div class="photo-carousel">
+          <div class="photo-carousel owl-carousel">
             <?php foreach ($content['field_photos']['#items'] as $photo):?>
               <div class="photo-item">
                 <?php 

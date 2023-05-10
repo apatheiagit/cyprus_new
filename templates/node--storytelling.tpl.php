@@ -18,7 +18,7 @@ foreach ($content['field_chap']['#items'] as $key => $chap){
 ?>
 <?php function print_carousel($nid, $image_style, $carousel_type){
   $photo_node = node_load($nid);
-  $carousel = '<div class="photo-carousel-wrap '.$carousel_type.'"><div class="story-carousel">';
+  $carousel = '<div class="photo-carousel-wrap '.$carousel_type.'"><div class="story-carousel owl-carousel">';
   if(isset($photo_node)){
     foreach ($photo_node->field_photos['und'] as $key => $photo) {
       $carousel .= '<div class="photo-item">';

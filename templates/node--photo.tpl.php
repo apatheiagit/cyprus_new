@@ -1,7 +1,7 @@
 <?php  
     function print_gallery($photo_array, $image_style, $p_title, $watermark = 1){
       $gallery = '<div class="somit somit-gallery">';
-      $gallery .= '<div class="photo-carousel">';
+      $gallery .= '<div class="photo-carousel owl-carousel">';
       if (is_null($watermark) || ($watermark == 1)){  $style_name = 'cyprus1140x720';}
       elseif ($watermark == 0) {$style_name = 'cyprus1140x720wo';}
       foreach ($photo_array as $key => $photo) {
@@ -36,7 +36,7 @@
 </div>
 <?php 
   /* Популярные события в Афише */
-  print views_embed_view('cyprus', 'top_events');
+  //print views_embed_view('cyprus', 'top_events');
   /* Популярные обзоры из того же раздела */
   print views_embed_view('cyprus', 'top_reviews');
   /* Популярные места в том же городе */

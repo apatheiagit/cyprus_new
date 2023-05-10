@@ -216,7 +216,7 @@
             <ul>
               <li><span data-city="Ayia-Napa"><?php print t("Ayia-Napa");?></span></li>
               <li><span data-city="Larnaca"><?php print t("Larnaca");?></span></li>
-              <li><span data-city="Limassol"><?php print t("Limassol");?></span></li>
+              <li class="active"><span data-city="Limassol"><?php print t("Limassol");?></span></li>
               <li><span data-city="Nicosia"><?php print t("Nicosia");?></span></li>
               <li><span data-city="Paphos"><?php print t("Paphos");?></span></li>  
               <li><span data-city="Polis"><?php print t("Polis");?></span></li>  

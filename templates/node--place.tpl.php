@@ -193,7 +193,7 @@
   <?php /* Фотографии этого места */ ?>
     <?php if (isset($content['field_photos']['#items'])):?>
     <div class="somit somit-gallery ">
-        <div class="photo-carousel">
+        <div class="photo-carousel owl-carousel">
           <?php foreach ($content['field_photos']['#items'] as $photo):?>
             <div class="photo-item">
               <?php 
@@ -214,7 +214,7 @@
     <?php /* Фотографии из привязанного фотообзора */ ?>
     <?php if (isset($content['field_photo_review']['#items']['0'])):?>
     <div class="somit somit-gallery ">
-        <div class="photo-carousel">
+        <div class="photo-carousel owl-carousel">
           <?php $photo_review = $content['field_photo_review']['#items']['0']['entity'];?>
           <?php foreach ($photo_review->field_photos['und'] as $photo):?>
             <div class="photo-item">
@@ -297,3 +297,11 @@
   /* Популярные обзоры из того же раздела */
   print views_embed_view('cyprus', 'theme_reviews'); 
 ?>
+<!-- Yandex.RTB R-A-2380395-2 -->
+<script>window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-2380395-2",
+		"type": "floorAd"
+	})
+})
+</script>

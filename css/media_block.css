@@ -219,9 +219,6 @@
 .media-block:hover .photo a:after {
   opacity: 1;
 }
-.media-block:hover .photo img {
-  transform: scale(1.01);
-}
 .media-block .photo {
   text-align: center;
   position: relative;
@@ -337,7 +334,7 @@
   }
 }
 .media-block--fon .photo:hover img {
-  transform: translateX(-30%) scale(1.04);
+  transform: translateX(-30%);
 }
 @media (max-width: 767px) {
   .media-block--fon .photo:hover img {
@@ -429,17 +426,11 @@
 .media-block--review:hover,
 .media-block--place:hover {
   background: #FFFFFF;
-  box-shadow: 0px 16px 24px rgba(132, 131, 131, 0.24);
+  box-shadow: 0px 12px 20px rgba(132, 131, 131, 0.24);
 }
 .media-block--review .photo,
 .media-block--place .photo {
   margin-bottom: 24px;
-}
-.media-block--review .title:hover,
-.media-block--place .title:hover,
-.media-block--review .descr:hover,
-.media-block--place .descr:hover {
-  color: #35A0CD;
 }
 .media-block--text .statistic,
 .media-block--blog .statistic {
@@ -573,7 +564,7 @@
   text-align: center;
 }
 .media-block--photo:hover .photo img {
-  transform: translateX(-30%) scale(1.1);
+  transform: translateX(-30%);
 }
 .media-block--photo .photo {
   position: absolute!important;
@@ -1673,9 +1664,9 @@
   stroke: #F2F2F2;
   color: #F2F2F2;
 }
-.media-reviews-carousel.owl-carousel .owl-controls,
-.pop-places-carousel.owl-carousel .owl-controls,
-.photo-reviews-carousel.owl-carousel .owl-controls {
+.media-reviews-carousel.owl-carousel .owl-nav,
+.pop-places-carousel.owl-carousel .owl-nav,
+.photo-reviews-carousel.owl-carousel .owl-nav {
   position: absolute;
   top: -76px;
   right: 0;
@@ -1684,23 +1675,19 @@
   margin-left: 0;
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls,
-  .pop-places-carousel.owl-carousel .owl-controls,
-  .photo-reviews-carousel.owl-carousel .owl-controls {
+  .media-reviews-carousel.owl-carousel .owl-nav,
+  .pop-places-carousel.owl-carousel .owl-nav,
+  .photo-reviews-carousel.owl-carousel .owl-nav {
     top: -60px;
   }
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-nav .disabled,
-.pop-places-carousel.owl-carousel .owl-controls .owl-nav .disabled,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-nav .disabled {
-  display: none;
-}
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next {
+  background: transparent;
   border: 1px solid #1A1919;
   border-radius: 50%;
   width: 52px;
@@ -1711,28 +1698,28 @@
   display: inline-block;
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-prev,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-prev,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-prev,
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-next,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-next,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-next {
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-prev,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-prev,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-prev,
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-next,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-next,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-next {
     width: 30px;
     height: 30px;
   }
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:before,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:before,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:before,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:before,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:before,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:before,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:after,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:after,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:after,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:after,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:after,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:after {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:before,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:before,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:before,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:before,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:before,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:before,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:after,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:after,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:after,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:after,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:after,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:after {
   content: "";
   width: 12px;
   height: 1px;
@@ -1740,107 +1727,116 @@
   position: absolute;
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-prev:before,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-prev:before,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:before,
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-next:before,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-next:before,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-next:before,
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-prev:after,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-prev:after,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:after,
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-next:after,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-next:after,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-next:after {
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-prev:before,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-prev:before,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:before,
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-next:before,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-next:before,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-next:before,
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-prev:after,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-prev:after,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:after,
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-next:after,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-next:after,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-next:after {
     width: 10px;
   }
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:hover,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:hover,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:hover,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:hover,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:hover,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:hover {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:hover,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:hover,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:hover,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:hover,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:hover,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:hover {
   border-color: #8B8B8B;
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:hover:before,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:hover:before,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:hover:before,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:hover:before,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:hover:before,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:hover:before,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:hover:after,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:hover:after,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:hover:after,
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:hover:after,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:hover:after,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:hover:after {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:hover:before,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:hover:before,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:hover:before,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:hover:before,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:hover:before,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:hover:before,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:hover:after,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:hover:after,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:hover:after,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:hover:after,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:hover:after,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:hover:after {
   background-color: #8B8B8B;
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev {
   margin-right: 16px;
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:before,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:before,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:before {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:before,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:before,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:before {
   left: 18px;
   top: 21px;
   transform: rotate(-45deg);
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-prev:before,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-prev:before,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:before {
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-prev:before,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-prev:before,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:before {
     left: 8px;
     top: 10px;
   }
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-prev:after,
-.pop-places-carousel.owl-carousel .owl-controls .owl-prev:after,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:after {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev:after,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev:after,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:after {
   left: 18px;
   top: 29px;
   transform: rotate(45deg);
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-prev:after,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-prev:after,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-prev:after {
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-prev:after,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-prev:after,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-prev:after {
     left: 8px;
     top: 17px;
   }
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:before,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:before,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:before {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:before,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:before,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:before {
   left: 22px;
   top: 21px;
   transform: rotate(45deg);
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-next:before,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-next:before,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-next:before {
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-next:before,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-next:before,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-next:before {
     left: 10px;
     top: 10px;
   }
 }
-.media-reviews-carousel.owl-carousel .owl-controls .owl-next:after,
-.pop-places-carousel.owl-carousel .owl-controls .owl-next:after,
-.photo-reviews-carousel.owl-carousel .owl-controls .owl-next:after {
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next:after,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next:after,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next:after {
   left: 22px;
   top: 29px;
   transform: rotate(-45deg);
 }
 @media (max-width: 767px) {
-  .media-reviews-carousel.owl-carousel .owl-controls .owl-next:after,
-  .pop-places-carousel.owl-carousel .owl-controls .owl-next:after,
-  .photo-reviews-carousel.owl-carousel .owl-controls .owl-next:after {
+  .media-reviews-carousel.owl-carousel .owl-nav .owl-next:after,
+  .pop-places-carousel.owl-carousel .owl-nav .owl-next:after,
+  .photo-reviews-carousel.owl-carousel .owl-nav .owl-next:after {
     left: 10px;
     top: 17px;
   }
+}
+.media-reviews-carousel.owl-carousel .owl-nav .owl-prev.disabled,
+.pop-places-carousel.owl-carousel .owl-nav .owl-prev.disabled,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-prev.disabled,
+.media-reviews-carousel.owl-carousel .owl-nav .owl-next.disabled,
+.pop-places-carousel.owl-carousel .owl-nav .owl-next.disabled,
+.photo-reviews-carousel.owl-carousel .owl-nav .owl-next.disabled {
+  pointer-events: none;
+  opacity: 0.25;
 }
 .view-display-id-top3_places .article-photo {
   border-radius: 24px;

@@ -56,7 +56,7 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content affiche-carousel white-dots margin-bottom">
+    <div class="view-content affiche-carousel owl-carousel white-dots margin-bottom">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>

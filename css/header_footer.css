@@ -321,6 +321,7 @@
   top: 30px;
   padding: 12px 16px;
   width: 100%;
+  text-align: left;
 }
 .somit-header .city-filter .city-list ul li {
   list-style: none;
@@ -328,9 +329,33 @@
   font-size: 14px;
   line-height: 17px;
   padding: 4px 0;
+  position: relative;
 }
 .somit-header .city-filter .city-list ul li:hover {
   color: #B1B1B1;
+}
+.somit-header .city-filter .city-list ul li.active {
+  color: #1A1919;
+}
+.somit-header .city-filter .city-list ul li.active:before {
+  content: "";
+  background-color: #1A1919;
+  width: 6px;
+  height: 1px;
+  position: absolute;
+  transform: rotate(50deg);
+  right: 9px;
+  top: 12px;
+}
+.somit-header .city-filter .city-list ul li.active:after {
+  content: "";
+  background-color: #1A1919;
+  width: 12px;
+  height: 1px;
+  position: absolute;
+  transform: rotate(-50deg);
+  right: 0px;
+  top: 10px;
 }
 .somit-header .weather {
   white-space: nowrap;
@@ -786,7 +811,7 @@
 }
 .lang-block ul li {
   list-style: none;
-  margin: 4px 0;
+  padding: 4px 0;
   text-align: left;
 }
 .lang-block ul li a {

@@ -2080,7 +2080,7 @@
 .top-footer .l-search-block {
   padding-top: 12px;
 }
-.owl-nav-theme .owl-controls {
+.owl-nav-theme .owl-nav {
   position: absolute;
   bottom: auto;
   left: auto;
@@ -2090,12 +2090,12 @@
   top: -44px;
 }
 @media (max-width: 992px) {
-  .owl-nav-theme .owl-controls {
+  .owl-nav-theme .owl-nav {
     top: -36px;
   }
 }
-.owl-nav-theme .owl-controls .owl-prev,
-.owl-nav-theme .owl-controls .owl-next {
+.owl-nav-theme .owl-nav .owl-prev,
+.owl-nav-theme .owl-nav .owl-next {
   height: 18px;
   width: 18px;
   overflow: hidden;
@@ -2104,11 +2104,11 @@
   background: url(../img/ic-owl-arrow.svg) no-repeat center;
   margin-left: 20px;
 }
-.owl-nav-theme .owl-controls .owl-prev:hover,
-.owl-nav-theme .owl-controls .owl-next:hover {
+.owl-nav-theme .owl-nav .owl-prev:hover,
+.owl-nav-theme .owl-nav .owl-next:hover {
   opacity: 0.67;
 }
-.owl-nav-theme .owl-controls .owl-prev {
+.owl-nav-theme .owl-nav .owl-prev {
   transform: rotate(180deg);
 }
 .owl-carousel {

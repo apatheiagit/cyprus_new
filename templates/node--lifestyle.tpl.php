@@ -155,3 +155,11 @@
     </div>
   </div>
 </div>
+<!-- Yandex.RTB R-A-2380395-2 -->
+<script>window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-2380395-2",
+		"type": "floorAd"
+	})
+})
+</script>
