@@ -48,13 +48,13 @@
             <?php endforeach;?>
           <?php endif;?> 
         </div>
-        <!-- Yandex.RTB R-A-2380395-1 -->
+        <!-- Yandex.RTB R-A-2379063-1 -->
         <div class="yandex-rtb yandex-rtb-top">
-        <div id="yandex_rtb_R-A-2380395-1"></div>
+        <div id="yandex_rtb_R-A-2379063-1"></div>
         <script>window.yaContextCb.push(()=>{
           Ya.Context.AdvManager.render({
-            "blockId": "R-A-2380395-1",
-            "renderTo": "yandex_rtb_R-A-2380395-1"
+            "blockId": "R-A-2379063-1",
+            "renderTo": "yandex_rtb_R-A-2379063-1"
           })
         })
         </script>

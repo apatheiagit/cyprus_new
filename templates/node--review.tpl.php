@@ -155,7 +155,7 @@
       <?php
           $old_body = $content['body']['#items'][0]['value'];
           /* Находим в тексте признак конца первого абзаца и добавляем туда рекламу от Яндекса */ 
-          $yandex_body = str_replace('</big></p>', '</big></p><div class="yandex-rtb"><div id="yandex_rtb_R-A-2380395-1"></div><script>window.yaContextCb.push(()=>{Ya.Context.AdvManager.render({"blockId": "R-A-2380395-1","renderTo": "yandex_rtb_R-A-2380395-1"})})</script></div>', $old_body);
+          $yandex_body = str_replace('</big></p>', '</big></p><div class="yandex-rtb"><div id="yandex_rtb_R-A-2379063-1"></div><script>window.yaContextCb.push(()=>{Ya.Context.AdvManager.render({"blockId": "R-A-2379063-1","renderTo": "yandex_rtb_R-A-2379063-1"})})</script></div>', $old_body);
           /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
           $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $yandex_body);
           /* Делим весь текст по значку параграфа § чтобы вставить Фотогалерею (если она есть) */
