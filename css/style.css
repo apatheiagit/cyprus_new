@@ -9200,24 +9200,6 @@ img.monochrome:hover {
 .weather {
   opacity: 0;
 }
-.front {
-  background: url(../img/aroma.png) no-repeat top center #FCFCFC;
-}
-@media (max-width: 767px) {
-  .front {
-    background-size: 840px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .front {
-    background-size: 1440px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-  .front {
-    background-size: 1600px;
-  }
-}
 .front .aroma-block {
   text-align: center;
   padding: 74px 0;
