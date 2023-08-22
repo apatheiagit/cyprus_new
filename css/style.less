@@ -1568,6 +1568,16 @@ img.monochrome {
   margin-bottom: 32px;
   border-radius: 5px;
 }
+.view-display-id-new_reviews .index-head,
+#block-views-cyprus-special-review .index-head,
+#block-views-blog-video .index-head{
+	&:after{
+		content: "/";
+		color: #DF542F;
+		margin-left: 8px;
+		display: inline-block;
+	}
+}
 .index-head, .border-title{
 	font-family: @special-font;
 	font-weight: 600;
@@ -1578,53 +1588,43 @@ img.monochrome {
 	@media @mobile{
 		font-size: 20px;
 	}
-	.view-display-id-new_reviews &,
-	#block-views-cyprus-special-review &,
-	#block-views-blog-video &{
-		&:after{
-			content: "/";
-			color: #DF542F;
-			margin-left: 8px;
-			display: inline-block;
-		}
+}
+#block-views-blog-block-blog-main .index-head,
+#block-views-blog-block-blog-fun .index-head,
+#block-views-blog-block-blog-culture .index-head,
+#block-views-blog-block-blog-cusine .index-head{
+	&:after{
+		content: "/";
+		color: #35A0CD;
+		margin-left: 8px;
+		display: inline-block;
 	}
-	#block-views-blog-block-blog-main &,
-	#block-views-blog-block-blog-fun &,
-	#block-views-blog-block-blog-culture &,
-	#block-views-blog-block-blog-cusine &{
-		&:after{
-			content: "/";
-			color: #35A0CD;
-			margin-left: 8px;
-			display: inline-block;
-		}
+}
+#block-views-main-pop-places .index-head{
+	margin-bottom: 24px;
+	&:after{
+		content: "/";
+		color: #84BF41;
+		margin-left: 8px;
+		display: inline-block;
 	}
-	#block-views-main-pop-places &{
-		margin-bottom: 24px;
-		&:after{
-			content: "/";
-			color: #84BF41;
-			margin-left: 8px;
-			display: inline-block;
-		}
+}
+#block-views-main-photo-reviews .index-head{
+	margin-bottom: 24px;
+	&:after{
+		content: "/";
+		color: #917E70;
+		margin-left: 8px;
+		display: inline-block;
 	}
-	#block-views-main-photo-reviews &{
-		margin-bottom: 24px;
-		&:after{
-			content: "/";
-			color: #917E70;
-			margin-left: 8px;
-			display: inline-block;
-		}
-	}
-	#block-views-main-pop-reviews &{
-		margin-bottom: 24px;
-		&:after{
-			content: "/";
-			color: #DF542F;
-			margin-left: 8px;
-			display: inline-block;
-		}
+}
+#block-views-main-pop-reviews .index-head{
+	margin-bottom: 24px;
+	&:after{
+		content: "/";
+		color: #DF542F;
+		margin-left: 8px;
+		display: inline-block;
 	}
 }
 #block-views-main-photo-reviews,

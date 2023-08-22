@@ -1408,6 +1408,7 @@
 }
 .media-wrapper--large .media-block--event .title {
   font-size: 48px;
+  line-height: 1.5;
   font-weight: normal;
   max-width: 800px;
   margin-top: 0;
@@ -1440,6 +1441,10 @@
   .media-wrapper--large .media-block--event .date {
     font-size: 14px;
   }
+}
+.media-wrapper--large .media-block--event .category {
+  padding: 0;
+  border: none;
 }
 .media-wrapper--large .media-block--event .category a {
   background-color: #f6eb3d;
@@ -1845,4 +1850,8 @@
 .view-display-id-top3_places .article-text--left .article-photo a:after {
   border-radius: 24px;
   overflow: hidden;
+}
+.view-display-id-adv_block .media-wrapper--large .media-block--event .statistic path {
+  stroke: white;
+  fill: none;
 }

@@ -257,7 +257,15 @@
     <?php endif; ?>
   </div>
   <div style="margin-bottom: 20px;">  
-  <script src="https://c18.travelpayouts.com/content?promo_id=1490&shmarker=275688&table=true&rows=2&columns=7&cellWidth=158&countries=43&powered_by=false" charset="utf-8" async></script>
+  <!-- Yandex.RTB R-A-2379063-3 -->
+  <div id="yandex_rtb_R-A-2379063-3"></div>
+      <script>window.yaContextCb.push(()=>{
+        Ya.Context.AdvManager.render({
+          "blockId": "R-A-2379063-3",
+          "renderTo": "yandex_rtb_R-A-2379063-3"
+        })
+      })
+      </script>
   </div>
  </div> 
 </div>

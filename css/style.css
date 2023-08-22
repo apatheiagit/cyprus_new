@@ -6754,6 +6754,7 @@
 }
 .media-wrapper--large .media-block--event .title {
   font-size: 48px;
+  line-height: 1.5;
   font-weight: normal;
   max-width: 800px;
   margin-top: 0;
@@ -6786,6 +6787,10 @@
   .media-wrapper--large .media-block--event .date {
     font-size: 14px;
   }
+}
+.media-wrapper--large .media-block--event .category {
+  padding: 0;
+  border: none;
 }
 .media-wrapper--large .media-block--event .category a {
   background-color: #f6eb3d;
@@ -7191,6 +7196,10 @@
 .view-display-id-top3_places .article-text--left .article-photo a:after {
   border-radius: 24px;
   overflow: hidden;
+}
+.view-display-id-adv_block .media-wrapper--large .media-block--event .statistic path {
+  stroke: white;
+  fill: none;
 }
 body {
   background: #FCFCFC;
@@ -9047,6 +9056,14 @@ img.monochrome:hover {
   margin-bottom: 32px;
   border-radius: 5px;
 }
+.view-display-id-new_reviews .index-head:after,
+#block-views-cyprus-special-review .index-head:after,
+#block-views-blog-video .index-head:after {
+  content: "/";
+  color: #DF542F;
+  margin-left: 8px;
+  display: inline-block;
+}
 .index-head,
 .border-title {
   font-family: 'Montserrat', sans-serif;
@@ -9062,58 +9079,37 @@ img.monochrome:hover {
     font-size: 20px;
   }
 }
-.view-display-id-new_reviews .index-head:after,
-.view-display-id-new_reviews .border-title:after,
-#block-views-cyprus-special-review .index-head:after,
-#block-views-cyprus-special-review .border-title:after,
-#block-views-blog-video .index-head:after,
-#block-views-blog-video .border-title:after {
-  content: "/";
-  color: #DF542F;
-  margin-left: 8px;
-  display: inline-block;
-}
 #block-views-blog-block-blog-main .index-head:after,
-#block-views-blog-block-blog-main .border-title:after,
 #block-views-blog-block-blog-fun .index-head:after,
-#block-views-blog-block-blog-fun .border-title:after,
 #block-views-blog-block-blog-culture .index-head:after,
-#block-views-blog-block-blog-culture .border-title:after,
-#block-views-blog-block-blog-cusine .index-head:after,
-#block-views-blog-block-blog-cusine .border-title:after {
+#block-views-blog-block-blog-cusine .index-head:after {
   content: "/";
   color: #35A0CD;
   margin-left: 8px;
   display: inline-block;
 }
-#block-views-main-pop-places .index-head,
-#block-views-main-pop-places .border-title {
+#block-views-main-pop-places .index-head {
   margin-bottom: 24px;
 }
-#block-views-main-pop-places .index-head:after,
-#block-views-main-pop-places .border-title:after {
+#block-views-main-pop-places .index-head:after {
   content: "/";
   color: #84BF41;
   margin-left: 8px;
   display: inline-block;
 }
-#block-views-main-photo-reviews .index-head,
-#block-views-main-photo-reviews .border-title {
+#block-views-main-photo-reviews .index-head {
   margin-bottom: 24px;
 }
-#block-views-main-photo-reviews .index-head:after,
-#block-views-main-photo-reviews .border-title:after {
+#block-views-main-photo-reviews .index-head:after {
   content: "/";
   color: #917E70;
   margin-left: 8px;
   display: inline-block;
 }
-#block-views-main-pop-reviews .index-head,
-#block-views-main-pop-reviews .border-title {
+#block-views-main-pop-reviews .index-head {
   margin-bottom: 24px;
 }
-#block-views-main-pop-reviews .index-head:after,
-#block-views-main-pop-reviews .border-title:after {
+#block-views-main-pop-reviews .index-head:after {
   content: "/";
   color: #DF542F;
   margin-left: 8px;
