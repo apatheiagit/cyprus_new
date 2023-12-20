@@ -256,17 +256,6 @@
       <?php endforeach; ?>
     <?php endif; ?>
   </div>
-  <div style="margin-bottom: 20px;">  
-  <!-- Yandex.RTB R-A-2379063-3 -->
-  <div id="yandex_rtb_R-A-2379063-3"></div>
-      <script>window.yaContextCb.push(()=>{
-        Ya.Context.AdvManager.render({
-          "blockId": "R-A-2379063-3",
-          "renderTo": "yandex_rtb_R-A-2379063-3"
-        })
-      })
-      </script>
-  </div>
  </div> 
 </div>
 <?php /* Поделитесь с друзьями */?>
@@ -305,11 +294,3 @@
   /* Популярные обзоры из того же раздела */
   print views_embed_view('cyprus', 'theme_reviews'); 
 ?>
-<!-- Yandex.RTB R-A-2379063-2 -->
-<script>window.yaContextCb.push(()=>{
-	Ya.Context.AdvManager.render({
-		"blockId": "R-A-2379063-2",
-		"type": "floorAd"
-	})
-})
-</script>

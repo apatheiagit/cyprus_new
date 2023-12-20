@@ -154,10 +154,8 @@
       <div class="article-content-text">
       <?php
           $old_body = $content['body']['#items'][0]['value'];
-          /* Находим в тексте признак конца первого абзаца и добавляем туда рекламу от Яндекса */ 
-          $yandex_body = str_replace('</big></p>', '</big></p><div class="yandex-rtb"><div id="yandex_rtb_R-A-2379063-1"></div><script>window.yaContextCb.push(()=>{Ya.Context.AdvManager.render({"blockId": "R-A-2379063-1","renderTo": "yandex_rtb_R-A-2379063-1"})})</script></div>', $old_body);
           /* Находим в тексте все картинки и к родительскому параграфу добавляем класс photo-intext */
-          $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $yandex_body);
+          $new_body = str_replace('<p><img', '<p class="photo-intext"><img', $old_body);
           /* Делим весь текст по значку параграфа § чтобы вставить Фотогалерею (если она есть) */
           $body_array = explode("§",$new_body);
           $global_key = 0;
@@ -295,15 +293,6 @@
           <a href="<?php print $prefix;?>/tags/<?php print str_replace(" ", "-", $tags['taxonomy_term']->name);?>"><?php print $translated_term_tag->name;?></a>
         <?php endforeach; ?>
       </div>
-     <!-- Yandex.RTB R-A-2379063-3 -->
-      <div id="yandex_rtb_R-A-2379063-3"></div>
-      <script>window.yaContextCb.push(()=>{
-        Ya.Context.AdvManager.render({
-          "blockId": "R-A-2379063-3",
-          "renderTo": "yandex_rtb_R-A-2379063-3"
-        })
-      })
-      </script>
   </div>  
 </div>
 </div>
